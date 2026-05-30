@@ -1,0 +1,1670 @@
+{
+  "auth_events": [],
+  "breadcrumbs": {
+    "case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+    "projection_hash": "733bf99fd790",
+    "q": "Please give me a report detailing how you addres",
+    "reused_active_case": true
+  },
+  "canonical_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+  "canonical_subject": "Cce, token, and users behavior",
+  "canonical_subject_history": [
+    {
+      "updated_at": "2026-05-29T15:25:14Z",
+      "value": "**Verification (Colossus)**"
+    }
+  ],
+  "canonical_subject_source": "derived_from_capture_units",
+  "canonical_subject_strategy": "deterministic_v1",
+  "canonical_subject_updated_at": "2026-05-29T20:02:10Z",
+  "case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+  "config": {
+    "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+    "path": "<env>",
+    "profile": "default",
+    "snapshot_sanitized": {
+      "profile": "default",
+      "settings": {
+        "auth_biometrics_only": false,
+        "auth_cmd": "",
+        "auth_mode": "off",
+        "auth_provider": "touchid",
+        "auth_timeout_ms": 30000,
+        "diagnostics_explicit_only": true,
+        "enable_project_init": true,
+        "enforce_in_path": false,
+        "kernel_path": null,
+        "record_after_answer": true,
+        "storage_mode": "standalone",
+        "storage_root": null
+      },
+      "source": "env"
+    }
+  },
+  "config_transitions": [],
+  "contract_check": {
+    "invalid_types": [],
+    "missing_keys": []
+  },
+  "created_at": "2026-05-29T15:15:33Z",
+  "epistemic_audit": {
+    "capture_turns": [
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-05-29T15:15:34Z",
+        "turn_id": "turn_309fa3c12ae64d1e835c87c39d9ab553",
+        "unit_count": 27,
+        "units": [
+          {
+            "index": 1,
+            "text": "**Verification (Colossus)**",
+            "unit_id": "cap_75c4ff1b81a3"
+          },
+          {
+            "index": 2,
+            "text": "Confirmed CWD: `/Users/kevinmattice/cce` via `pwd`.",
+            "unit_id": "cap_07e75bf501c4"
+          },
+          {
+            "index": 3,
+            "text": "Confirmed Phase 5.1 files exist in this repo:",
+            "unit_id": "cap_1f85d0a57a6e"
+          },
+          {
+            "index": 4,
+            "text": "`/Users/kevinmattice/cce/workspace_runtime/pdf_reader.py`",
+            "unit_id": "cap_384fef95aed4"
+          },
+          {
+            "index": 5,
+            "text": "`/Users/kevinmattice/cce/requirements.txt`",
+            "unit_id": "cap_f3db02b433a6"
+          },
+          {
+            "index": 6,
+            "text": "`/Users/kevinmattice/cce/tests/test_pdf_source_support.py`",
+            "unit_id": "cap_0391e1b1a465"
+          },
+          {
+            "index": 7,
+            "text": "Confirmed runtime supports PDFs: `SUPPORTED_READ_EXTENSIONS = {\".md\", \".txt\", \".pdf\"}` in `/Users/kevinmattice/cce/workspace_runtime/runtime.py`.",
+            "unit_id": "cap_2f1c9e986090"
+          },
+          {
+            "index": 8,
+            "text": "**Venv / deps**",
+            "unit_id": "cap_05bcba2d0058"
+          },
+          {
+            "index": 9,
+            "text": "Created project-local venv: `/Users/kevinmattice/cce/.venv` (using `/opt/homebrew/bin/python3.14` so `tomllib` exists).",
+            "unit_id": "cap_8b5f638b38b8"
+          },
+          {
+            "index": 10,
+            "text": "Installed deps: `pypdf` into `.venv`.",
+            "unit_id": "cap_973dcca1f89d"
+          },
+          {
+            "index": 11,
+            "text": "**Tests**",
+            "unit_id": "cap_f6d829db0594"
+          },
+          {
+            "index": 12,
+            "text": "Ran (passed): `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (32 tests OK).",
+            "unit_id": "cap_5fa28641d5cd"
+          },
+          {
+            "index": 13,
+            "text": "**Montana-trip PDFs**",
+            "unit_id": "cap_37dfd246b40d"
+          },
+          {
+            "index": 14,
+            "text": "Found 5 real `.pdf` files present under `/Users/kevinmattice/cce/workspaces/montana-trip/sources/` (filenames not repeated here).",
+            "unit_id": "cap_ef75bd3fd7bc"
+          },
+          {
+            "index": 15,
+            "text": "Updated `/Users/kevinmattice/cce/workspaces/montana-trip/workspace.toml` to declare them (kept existing `.md` sources).",
+            "unit_id": "cap_20f4cdac09f6"
+          },
+          {
+            "index": 16,
+            "text": "Declared PDF `source_id`s:",
+            "unit_id": "cap_18164d918dcb"
+          },
+          {
+            "index": 17,
+            "text": "`aa_trip_confirmation`",
+            "unit_id": "cap_0d70b7442d29"
+          },
+          {
+            "index": 18,
+            "text": "`guided_fishing_trip_confirmation`",
+            "unit_id": "cap_1963269393e7"
+          },
+          {
+            "index": 19,
+            "text": "`sportsmans_lodge_confirmation_a`",
+            "unit_id": "cap_5d941895fc43"
+          },
+          {
+            "index": 20,
+            "text": "`sportsmans_lodge_confirmation_b`",
+            "unit_id": "cap_009bfe0ac2b7"
+          },
+          {
+            "index": 21,
+            "text": "`travel_insurance_plan`",
+            "unit_id": "cap_646a3544c608"
+          },
+          {
+            "index": 22,
+            "text": "Re-ran tests after manifest update (still OK).",
+            "unit_id": "cap_64fc9a228041"
+          },
+          {
+            "index": 23,
+            "text": "**Gateway start (blocked)**",
+            "unit_id": "cap_10df1ea18f53"
+          },
+          {
+            "index": 24,
+            "text": "Attempted: `.venv/bin/python -m gateway.runtime --config config/cce.json`",
+            "unit_id": "cap_8fa7aa7e61cd"
+          },
+          {
+            "index": 25,
+            "text": "Result: gateway immediately halted with `401 M_UNKNOWN_TOKEN` during Matrix sync (`Matrix API GET /_matrix/client/v3/sync failed: 401 M_UNKNOWN_TOKEN`).",
+            "unit_id": "cap_4efd8ea62631"
+          },
+          {
+            "index": 26,
+            "text": "I\u2019m not ready for Element live testing yet because the gateway won\u2019t stay up with the current `config/cce.json` token.",
+            "unit_id": "cap_f94ead1618a8"
+          },
+          {
+            "index": 27,
+            "text": "Once you update/fix the token, tell me and I\u2019ll restart the gateway in `~/cce` and confirm it\u2019s staying in the listener loop.",
+            "unit_id": "cap_e55ea25a9bfb"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-05-29T15:25:14Z",
+        "turn_id": "turn_d5047db565b74af693cd09b8f8938f47",
+        "unit_count": 37,
+        "units": [
+          {
+            "index": 1,
+            "text": "**Path / scope**",
+            "unit_id": "cap_0d904eb8b93f"
+          },
+          {
+            "index": 2,
+            "text": "Worked only in `/Users/kevinmattice/cce` (Colossus).",
+            "unit_id": "cap_d5a91967b058"
+          },
+          {
+            "index": 3,
+            "text": "**What I inspected**",
+            "unit_id": "cap_35fb6bbe2734"
+          },
+          {
+            "index": 4,
+            "text": "Auth/client code: `/Users/kevinmattice/cce/matrix/client.py`",
+            "unit_id": "cap_0c93a57b3fd0"
+          },
+          {
+            "index": 5,
+            "text": "Runtime/config handling: `/Users/kevinmattice/cce/gateway/runtime.py`",
+            "unit_id": "cap_bfefc9734b66"
+          },
+          {
+            "index": 6,
+            "text": "Config docs: `/Users/kevinmattice/cce/config/README.md`",
+            "unit_id": "cap_908a84ae7de4"
+          },
+          {
+            "index": 7,
+            "text": "Auth hardening docs: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`",
+            "unit_id": "cap_64ee30d41820"
+          },
+          {
+            "index": 8,
+            "text": "Token/config shape (without printing token): `/Users/kevinmattice/cce/config/cce.json`",
+            "unit_id": "cap_58f69e9b74ee"
+          },
+          {
+            "index": 9,
+            "text": "**How the token is obtained/stored today**",
+            "unit_id": "cap_b4396f3cf2f4"
+          },
+          {
+            "index": 10,
+            "text": "`config/cce.json` stores a single `access_token` string (manually populated; no automated login/refresh path in code).",
+            "unit_id": "cap_d878e179d5b1"
+          },
+          {
+            "index": 11,
+            "text": "Config does not include `device_id`, `refresh_token`, `expires_in_ms`, or any provenance fields (confirmed by parsing keys; token value not printed).",
+            "unit_id": "cap_25c2f16b2897"
+          },
+          {
+            "index": 12,
+            "text": "**Direct evidence of the failure**",
+            "unit_id": "cap_9f1c66fcc237"
+          },
+          {
+            "index": 13,
+            "text": "Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):",
+            "unit_id": "cap_6992eb161460"
+          },
+          {
+            "index": 14,
+            "text": "Command: `.venv/bin/python -m gateway.runtime --config config/cce.json --check-connection`",
+            "unit_id": "cap_efe177a3d519"
+          },
+          {
+            "index": 15,
+            "text": "Output includes: `token rejected: M_UNKNOWN_TOKEN (401)` (no token printed).",
+            "unit_id": "cap_5ad8e740db0b"
+          },
+          {
+            "index": 16,
+            "text": "**Likely root cause (most plausible)**",
+            "unit_id": "cap_f9df9a78b534"
+          },
+          {
+            "index": 17,
+            "text": "The access token being used is effectively \u201csession-owned\u201d (e.g., copied from an Element/session context) and gets revoked/invalidated when that session/device is logged out/deleted or otherwise rotated server-side.",
+            "unit_id": "cap_a94b0a0b01d6"
+          },
+          {
+            "index": 18,
+            "text": "CCE has no refresh/login lifecycle, so any revocation immediately bricks the gateway until manual replacement.",
+            "unit_id": "cap_6492661c7cfb"
+          },
+          {
+            "index": 19,
+            "text": "**What remains unknown**",
+            "unit_id": "cap_f7cb3411cc9c"
+          },
+          {
+            "index": 20,
+            "text": "Whether `matrix-client.matrix.org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability).",
+            "unit_id": "cap_595e281f0139"
+          },
+          {
+            "index": 21,
+            "text": "Which device/session the token corresponds to (no `device_id` captured).",
+            "unit_id": "cap_0522819128b0"
+          },
+          {
+            "index": 22,
+            "text": "**Smallest reliable fix (recommended, not implemented)**",
+            "unit_id": "cap_45a59bc22342"
+          },
+          {
+            "index": 23,
+            "text": "Keep the current manual-token model, but make it stable operationally:",
+            "unit_id": "cap_6165a99c8e5a"
+          },
+          {
+            "index": 24,
+            "text": "Use a dedicated bot account/session/device and do not log out/delete that device.",
+            "unit_id": "cap_e7070a268d5c"
+          },
+          {
+            "index": 25,
+            "text": "Record non-secret provenance fields locally in `config/cce.json` (token source note, obtained time, device_id if known).",
+            "unit_id": "cap_23ed625856cd"
+          },
+          {
+            "index": 26,
+            "text": "If that still isn\u2019t stable, next step is a *CCE-owned login flow* (username/password) and possibly refresh token support, but that\u2019s code work and out of scope for this pause.",
+            "unit_id": "cap_250454a14385"
+          },
+          {
+            "index": 27,
+            "text": "**Docs/diagnostics changes made (no new CCE features, no PDF changes)**",
+            "unit_id": "cap_88923211ea93"
+          },
+          {
+            "index": 28,
+            "text": "Created: `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`",
+            "unit_id": "cap_1c23cfa6cb76"
+          },
+          {
+            "index": 29,
+            "text": "Updated: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md` (added \u201cToken Provenance (recommended)\u201d section)",
+            "unit_id": "cap_839c353963d7"
+          },
+          {
+            "index": 30,
+            "text": "Updated: `/Users/kevinmattice/cce/config/README.md` (points to the new root-cause doc)",
+            "unit_id": "cap_dfc574d1c195"
+          },
+          {
+            "index": 31,
+            "text": "Updated: `/Users/kevinmattice/cce/config/cce.example.json` (added optional metadata fields: `token_source_note`, `token_obtained_at`, `device_id`, plus placeholders for `refresh_token`, `expires_in_ms`, `login_method`)",
+            "unit_id": "cap_8c95ea7dbfb7"
+          },
+          {
+            "index": 32,
+            "text": "Updated: `/Users/kevinmattice/cce/docs/decision-log.md` (added Phase 5 decision D-028 re: token provenance + fixed Phase 5 numbering to avoid a D-020 collision)",
+            "unit_id": "cap_4d43bfa277c4"
+          },
+          {
+            "index": 33,
+            "text": "**Exact next implementation prompt (when you want code)**",
+            "unit_id": "cap_00dcee4d3ef9"
+          },
+          {
+            "index": 34,
+            "text": "\u201cImplement an optional `login` mode in `gateway/runtime.py` that can obtain an access token via Matrix `/login` at startup using locally-stored bot credentials (no secret manager), store token only in memory, and optionally persist *only* non-secret provenance fields; keep the existing static-token mode as default.\u201d",
+            "unit_id": "cap_8c4c47f5f92d"
+          },
+          {
+            "index": 35,
+            "text": "**Risks**",
+            "unit_id": "cap_03cfa7a19709"
+          },
+          {
+            "index": 36,
+            "text": "Live PDF testing remains blocked until `config/cce.json` contains an active token (or until a login/refresh lifecycle exists).",
+            "unit_id": "cap_1160ee3ece0b"
+          },
+          {
+            "index": 37,
+            "text": "Operational risk if tokens continue to be sourced from an interactive client session that gets logged out/rotated.",
+            "unit_id": "cap_522ec6b4a560"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-05-29T17:32:17Z",
+        "turn_id": "turn_687c0286f87240c798e597e88888b54b",
+        "unit_count": 8,
+        "units": [
+          {
+            "index": 1,
+            "text": "Yes\u2014there was a real problem.",
+            "unit_id": "cap_f0028c67d204"
+          },
+          {
+            "index": 2,
+            "text": "While pushing the new `password_login` work over `ssh`, zsh brace-expansion/quoting issues caused several write attempts to fail.",
+            "unit_id": "cap_04c5b0169235"
+          },
+          {
+            "index": 3,
+            "text": "In the middle of that, I accidentally overwrote `/Users/kevinmattice/cce/gateway/runtime.py` with a 1-line placeholder (`X`), which then broke imports/tests.",
+            "unit_id": "cap_fe03736520d4"
+          },
+          {
+            "index": 4,
+            "text": "It\u2019s fixed now:",
+            "unit_id": "cap_3351659d053c"
+          },
+          {
+            "index": 5,
+            "text": "Restored `/Users/kevinmattice/cce/gateway/runtime.py` to the intended implementation (using an interactive SSH session to avoid local-shell brace expansion).",
+            "unit_id": "cap_28736757031b"
+          },
+          {
+            "index": 6,
+            "text": "Verified it compiles: `/opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py`",
+            "unit_id": "cap_ffa6ff6a0475"
+          },
+          {
+            "index": 7,
+            "text": "Full tests pass again: `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (38 tests OK)",
+            "unit_id": "cap_2a027e778941"
+          },
+          {
+            "index": 8,
+            "text": "No secrets were printed during this recovery.",
+            "unit_id": "cap_f3a576f1ee51"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-05-29T20:02:10Z",
+        "turn_id": "turn_5fc5290b74b741bba84a5328693dee8e",
+        "unit_count": 58,
+        "units": [
+          {
+            "index": 1,
+            "text": "**Summary of what I did (per your prompt)**",
+            "unit_id": "cap_54a127a884c4"
+          },
+          {
+            "index": 2,
+            "text": "Implemented an optional CCE-owned Matrix auth mode (`password_login`) while keeping the existing `static_token` mode working.",
+            "unit_id": "cap_e3c138b21872"
+          },
+          {
+            "index": 3,
+            "text": "Added minimal refresh support via Matrix `/refresh` when the homeserver provides both `refresh_token` and `expires_in_ms` from `/login`.",
+            "unit_id": "cap_c4b35bc28c54"
+          },
+          {
+            "index": 4,
+            "text": "Added an ignored runtime auth state file path (`runtime/matrix-auth-state.json`) for refresh-token persistence (only when refresh is supported).",
+            "unit_id": "cap_d1d79983dd90"
+          },
+          {
+            "index": 5,
+            "text": "Updated docs + examples and added unit tests with mocked Matrix API responses (no live login attempted).",
+            "unit_id": "cap_540653e5832b"
+          },
+          {
+            "index": 6,
+            "text": "**Files created**",
+            "unit_id": "cap_5c1504edb132"
+          },
+          {
+            "index": 7,
+            "text": "`/Users/kevinmattice/cce/gateway/matrix_auth_state.py`",
+            "unit_id": "cap_2d53f3263422"
+          },
+          {
+            "index": 8,
+            "text": "`/Users/kevinmattice/cce/tests/test_matrix_password_login.py`",
+            "unit_id": "cap_62bb3a566c20"
+          },
+          {
+            "index": 9,
+            "text": "`/Users/kevinmattice/cce/tests/test_matrix_refresh.py`",
+            "unit_id": "cap_e3e0361c1aeb"
+          },
+          {
+            "index": 10,
+            "text": "**Files modified**",
+            "unit_id": "cap_e407655a4e68"
+          },
+          {
+            "index": 11,
+            "text": "`/Users/kevinmattice/cce/gateway/runtime.py`",
+            "unit_id": "cap_23b154282c20"
+          },
+          {
+            "index": 12,
+            "text": "`/Users/kevinmattice/cce/matrix/client.py`",
+            "unit_id": "cap_9b9e8d64a930"
+          },
+          {
+            "index": 13,
+            "text": "`/Users/kevinmattice/cce/config/README.md`",
+            "unit_id": "cap_ff8b3e9fec60"
+          },
+          {
+            "index": 14,
+            "text": "`/Users/kevinmattice/cce/config/cce.example.json`",
+            "unit_id": "cap_ebf51dce64e1"
+          },
+          {
+            "index": 15,
+            "text": "`/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`",
+            "unit_id": "cap_7fd2cceae87c"
+          },
+          {
+            "index": 16,
+            "text": "`/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`",
+            "unit_id": "cap_7b59e01a7805"
+          },
+          {
+            "index": 17,
+            "text": "`/Users/kevinmattice/cce/docs/decision-log.md`",
+            "unit_id": "cap_d5b9a5ea2bd2"
+          },
+          {
+            "index": 18,
+            "text": "**Auth modes supported**",
+            "unit_id": "cap_d2bbb2e826e1"
+          },
+          {
+            "index": 19,
+            "text": "`static_token` (existing behavior): requires `access_token`.",
+            "unit_id": "cap_b9991ee50aa4"
+          },
+          {
+            "index": 20,
+            "text": "`password_login` (new): requires `password`; supports optional `device_id` and `initial_device_display_name`.",
+            "unit_id": "cap_556054136858"
+          },
+          {
+            "index": 21,
+            "text": "**Exact config fields required**",
+            "unit_id": "cap_d3392ab4cb3a"
+          },
+          {
+            "index": 22,
+            "text": "Common (both modes): `homeserver_url`, `user_id`, `room_id`, `matrix_auth_mode`",
+            "unit_id": "cap_7cf67fe8a875"
+          },
+          {
+            "index": 23,
+            "text": "`static_token`: `access_token`",
+            "unit_id": "cap_535b6e1fc1b3"
+          },
+          {
+            "index": 24,
+            "text": "`password_login`: `password`; optional `device_id`, optional `initial_device_display_name`",
+            "unit_id": "cap_ff6ed769e083"
+          },
+          {
+            "index": 25,
+            "text": "**Behavior changes**",
+            "unit_id": "cap_26ed5cc2d35c"
+          },
+          {
+            "index": 26,
+            "text": "`gateway.runtime.load_config()` now validates keys based on `matrix_auth_mode`.",
+            "unit_id": "cap_00ceb01d8255"
+          },
+          {
+            "index": 27,
+            "text": "Startup path now establishes an auth session first (static token or password login), then proceeds with existing connection checks and the main sync loop.",
+            "unit_id": "cap_dae47e47ae3b"
+          },
+          {
+            "index": 28,
+            "text": "`/login` behavior (password_login):",
+            "unit_id": "cap_da33e39075d7"
+          },
+          {
+            "index": 29,
+            "text": "Calls `POST /_matrix/client/v3/login` with `m.login.password`.",
+            "unit_id": "cap_1efe5fbda23a"
+          },
+          {
+            "index": 30,
+            "text": "Enforces `config user_id == login response user_id`.",
+            "unit_id": "cap_e9e0ad513272"
+          },
+          {
+            "index": 31,
+            "text": "Logs only non-secret diagnostics: mode, \u201clogin accepted\u201d, `device_id`, refresh support yes/no.",
+            "unit_id": "cap_cfd81a926358"
+          },
+          {
+            "index": 32,
+            "text": "Keeps `access_token` only in memory.",
+            "unit_id": "cap_7d65829445e5"
+          },
+          {
+            "index": 33,
+            "text": "Refresh behavior:",
+            "unit_id": "cap_0ddcc7880d1d"
+          },
+          {
+            "index": 34,
+            "text": "If `/login` returns both `refresh_token` and `expires_in_ms`, CCE marks refresh as supported and persists refresh token to `runtime/matrix-auth-state.json` (gitignored via existing `runtime/*.json` rule).",
+            "unit_id": "cap_94fe8136865e"
+          },
+          {
+            "index": 35,
+            "text": "On `401 M_UNKNOWN_TOKEN` during sync, CCE attempts `/refresh` once (password_login + refresh-supported only) and retries sync once; otherwise halts clearly.",
+            "unit_id": "cap_5252a7e995bd"
+          },
+          {
+            "index": 36,
+            "text": "**Diagnostics / secret handling**",
+            "unit_id": "cap_0d324f012888"
+          },
+          {
+            "index": 37,
+            "text": "No password/access_token/refresh_token printing added.",
+            "unit_id": "cap_097c2c3140f5"
+          },
+          {
+            "index": 38,
+            "text": "Tests include checks that secret strings don\u2019t show up in exception text for key failure paths.",
+            "unit_id": "cap_fda510ffbdbe"
+          },
+          {
+            "index": 39,
+            "text": "**Tests added (mocked Matrix API)**",
+            "unit_id": "cap_7335c1f82f20"
+          },
+          {
+            "index": 40,
+            "text": "password_login success (no refresh token)",
+            "unit_id": "cap_75c6f9b1a13b"
+          },
+          {
+            "index": 41,
+            "text": "password_login user_id mismatch (and secrets not echoed)",
+            "unit_id": "cap_288820720d80"
+          },
+          {
+            "index": 42,
+            "text": "password_login with refresh_token + expires_in_ms",
+            "unit_id": "cap_74f08d3b8b0f"
+          },
+          {
+            "index": 43,
+            "text": "static_token mode still works",
+            "unit_id": "cap_a297af457fed"
+          },
+          {
+            "index": 44,
+            "text": "refresh updates in-memory token + persists state",
+            "unit_id": "cap_2bddbb4aca9e"
+          },
+          {
+            "index": 45,
+            "text": "refresh failure does not echo refresh token",
+            "unit_id": "cap_a100ed9fb4c3"
+          },
+          {
+            "index": 46,
+            "text": "**Tests run (exact commands)**",
+            "unit_id": "cap_ab648d126ab6"
+          },
+          {
+            "index": 47,
+            "text": "`ssh colossus 'cd /Users/kevinmattice/cce && /opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py'`",
+            "unit_id": "cap_c4bdb5d74c82"
+          },
+          {
+            "index": 48,
+            "text": "`ssh colossus 'cd /Users/kevinmattice/cce && .venv/bin/python -m unittest discover -s tests -p \"test_*.py\" -q'` (passed: 38 tests)",
+            "unit_id": "cap_d64e49582a50"
+          },
+          {
+            "index": 49,
+            "text": "**What was verified**",
+            "unit_id": "cap_0f5a1ecc3287"
+          },
+          {
+            "index": 50,
+            "text": "Code compiles under the repo\u2019s Python (`/opt/homebrew/bin/python3.14`).",
+            "unit_id": "cap_5df38a21ad13"
+          },
+          {
+            "index": 51,
+            "text": "Full unit test suite passes using `.venv`.",
+            "unit_id": "cap_d13f14319da6"
+          },
+          {
+            "index": 52,
+            "text": "`--check-connection` path is exercised for password_login indirectly via tests (mocked); static-token path remains intact.",
+            "unit_id": "cap_2c92b4932fc8"
+          },
+          {
+            "index": 53,
+            "text": "**What remains unverified (by design / per your rule)**",
+            "unit_id": "cap_5d1fc2367c91"
+          },
+          {
+            "index": 54,
+            "text": "No live `/login` against the real bot account has been performed.",
+            "unit_id": "cap_4a5de294c5c6"
+          },
+          {
+            "index": 55,
+            "text": "No real `/refresh` behavior has been validated against matrix.org in this environment.",
+            "unit_id": "cap_a07d96ecc704"
+          },
+          {
+            "index": 56,
+            "text": "Therefore: Matrix auth is not claimed \u201cfixed live\u201d yet.",
+            "unit_id": "cap_c4c10cb2d739"
+          },
+          {
+            "index": 57,
+            "text": "**Incident during implementation (and how it was addressed)**",
+            "unit_id": "cap_6e4a09ff16cc"
+          },
+          {
+            "index": 58,
+            "text": "While rewriting `gateway/runt",
+            "unit_id": "cap_09acbb7619c1"
+          }
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim_a3669306df24",
+        "created_at": "2026-05-29T15:25:14Z",
+        "elevated_from_candidate_ids": [
+          "cand_3fae34313ad8"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_bff811196eaf",
+          "task_d3533f8b8647"
+        ],
+        "fingerprint": "a203c04bb01462a2",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-05-29T15:25:14Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-05-29T15:25:14Z",
+        "text": "- Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):",
+        "updated_at": "2026-05-29T15:25:14Z",
+        "verification_plan_id": "plan_a3669306df24"
+      },
+      {
+        "claim_id": "claim_542055aa1aff",
+        "created_at": "2026-05-29T15:25:14Z",
+        "elevated_from_candidate_ids": [
+          "cand_9f5fc435200f"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_1a0860a98ed7",
+          "task_afecfb25ceaa"
+        ],
+        "fingerprint": "0b4f90c085d31681",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-05-29T15:25:14Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-05-29T15:25:14Z",
+        "text": "org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability)",
+        "updated_at": "2026-05-29T15:25:14Z",
+        "verification_plan_id": "plan_542055aa1aff"
+      },
+      {
+        "claim_id": "claim_e861c1387a53",
+        "created_at": "2026-05-29T20:02:10Z",
+        "elevated_from_candidate_ids": [
+          "cand_57ce6ca83cb5"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_93b8824f09c3",
+          "task_c81374af6e28"
+        ],
+        "fingerprint": "1e86792f8e9514e2",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-05-29T20:02:10Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-05-29T20:02:10Z",
+        "text": "- `static_token` (existing behavior): requires `access_token`",
+        "updated_at": "2026-05-29T20:02:10Z",
+        "verification_plan_id": "plan_e861c1387a53"
+      },
+      {
+        "claim_id": "claim_dadd25ca6378",
+        "created_at": "2026-05-29T20:02:10Z",
+        "elevated_from_candidate_ids": [
+          "cand_a09c5be4666d"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_8df9e2095707",
+          "task_cc2c65553fc8"
+        ],
+        "fingerprint": "897ccc649505b439",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-05-29T20:02:10Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-05-29T20:02:10Z",
+        "text": "- `password_login` (new): requires `password`",
+        "updated_at": "2026-05-29T20:02:10Z",
+        "verification_plan_id": "plan_dadd25ca6378"
+      }
+    ],
+    "evidence_artifacts": [],
+    "evidence_tasks": [
+      {
+        "claim_fingerprint": "a203c04bb01462a2",
+        "claim_id": "claim_a3669306df24",
+        "created_at": "2026-05-29T15:25:14Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):",
+        "task_id": "task_bff811196eaf",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "a203c04bb01462a2",
+        "claim_id": "claim_a3669306df24",
+        "created_at": "2026-05-29T15:25:14Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_d3533f8b8647",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "0b4f90c085d31681",
+        "claim_id": "claim_542055aa1aff",
+        "created_at": "2026-05-29T15:25:14Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability)",
+        "task_id": "task_1a0860a98ed7",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "0b4f90c085d31681",
+        "claim_id": "claim_542055aa1aff",
+        "created_at": "2026-05-29T15:25:14Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_afecfb25ceaa",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "1e86792f8e9514e2",
+        "claim_id": "claim_e861c1387a53",
+        "created_at": "2026-05-29T20:02:10Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - `static_token` (existing behavior): requires `access_token`",
+        "task_id": "task_93b8824f09c3",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "1e86792f8e9514e2",
+        "claim_id": "claim_e861c1387a53",
+        "created_at": "2026-05-29T20:02:10Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_c81374af6e28",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "897ccc649505b439",
+        "claim_id": "claim_dadd25ca6378",
+        "created_at": "2026-05-29T20:02:10Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - `password_login` (new): requires `password`",
+        "task_id": "task_8df9e2095707",
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "897ccc649505b439",
+        "claim_id": "claim_dadd25ca6378",
+        "created_at": "2026-05-29T20:02:10Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_cc2c65553fc8",
+        "updated_at": "2026-05-29T20:02:10Z"
+      }
+    ],
+    "exploratory_structures": {
+      "assumptions": [],
+      "competing_interpretations": [
+        "Treat /Volumes/kevinmattice/cce as a superseded/confusing path unless you prove it is the same repository",
+        "Provide a forensic report: - confirmed project path - venv/dependency status - tests run - PDF sources declared - live read result status, without exposing sensitive contents - live grounded QA result status - any PDFs that produced no text - any errors or caveats Completion rule: Do not claim live PDF support is verified unless a real declared PDF is read through Element and/or used in grounded QA through Element",
+        "Preferred options to evaluate: A",
+        "**Path / scope**",
+        "no automated login/refresh path in code)",
+        "json` (added optional metadata fields: `token_source_note`, `token_obtained_at`, `device_id`, plus placeholders for `refresh_token`, `expires_in_ms`, `login_method`)",
+        "- \u201cImplement an optional `login` mode in `gateway/runtime",
+        "py` that can obtain an access token via Matrix `/login` at startup using locally-stored bot credentials (no secret manager), store token only in memory, and optionally persist *only* non-secret provenance fields",
+        "- Implemented an optional CCE-owned Matrix auth mode (`password_login`) while keeping the existing `static_token` mode working",
+        "- Added an ignored runtime auth state file path (`runtime/matrix-auth-state",
+        "supports optional `device_id` and `initial_device_display_name`",
+        "optional `device_id`, optional `initial_device_display_name`",
+        "- Startup path now establishes an auth session first (static token or password login), then proceeds with existing connection checks and the main sync loop",
+        "- Tests include checks that secret strings don\u2019t show up in exception text for key failure paths",
+        "- `--check-connection` path is exercised for password_login indirectly via tests (mocked)",
+        "static-token path remains intact"
+      ],
+      "open_questions": [],
+      "operational_constraints": [
+        "Install dependencies into the venv:",
+        "Provide a forensic report: - confirmed project path - venv/dependency status - tests run - PDF sources declared - live read result status, without exposing sensitive contents - live grounded QA result status - any PDFs that produced no text - any errors or caveats Completion rule: Do not claim live PDF support is verified unless a real declared PDF is read through Element and/or used in grounded QA through Element",
+        "- Keep the current manual-token model, but make it stable operationally:",
+        "- Operational risk if tokens continue to be sourced from an interactive client session that gets logged out/rotated"
+      ],
+      "provisional_conclusions": [
+        "If the PDF support changes are not present in /Users/kevinmattice/cce, stop and report",
+        "Update the montana-trip manifest to declare the PDF sources if they are not already declared",
+        "Provide a forensic report: - likely root cause - evidence observed - what remains unknown - recommended fix - risks - exact next implementation prompt if needed Completion rule: Do not proceed with PDF live testing until Matrix auth is stable enough for a full gateway session",
+        "- If that still isn\u2019t stable, next step is a *CCE-owned login flow* (username/password) and possibly refresh token support, but that\u2019s code work and out of scope for this pause"
+      ],
+      "tensions": [
+        "- Confirmed runtime supports PDFs: `SUPPORTED_READ_EXTENSIONS = {\""
+      ]
+    },
+    "knowledge_candidates": [
+      {
+        "candidate_id": "cand_fc9909ed960d",
+        "fingerprint": "0f68199547bdf4be",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": "**How the token is obtained/stored today**"
+      },
+      {
+        "candidate_id": "cand_60f425a1fb68",
+        "fingerprint": "4e3c2bd5893c0f15",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": "**Likely root cause (most plausible)**"
+      },
+      {
+        "candidate_id": "cand_5d2f8990323e",
+        "fingerprint": "747252ccffc5ba79",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": "The access token being used is effectively \u201csession-owned\u201d (e"
+      },
+      {
+        "candidate_id": "cand_82424570114a",
+        "fingerprint": "1d45a3d337a3038f",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": ", copied from an Element/session context) and gets revoked/invalidated when that session/device is logged out/deleted or otherwise rotated server-side"
+      },
+      {
+        "candidate_id": "cand_fc7d1456bf92",
+        "fingerprint": "e419dcf9e0af93d4",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": "json` (token source note, obtained time, device_id if known)"
+      },
+      {
+        "candidate_id": "cand_af5e64a9aaf2",
+        "fingerprint": "28dbad44feb927c4",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": "If that still isn\u2019t stable, next step is a *CCE-owned login flow* (username/password) and possibly refresh token support, but that\u2019s code work and out of scope for this pause"
+      },
+      {
+        "candidate_id": "cand_903d08fd35d2",
+        "fingerprint": "557e097b0606f965",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Candidate",
+        "text": "Operational risk if tokens continue to be sourced from an interactive client session that gets logged out/rotated"
+      },
+      {
+        "candidate_id": "cand_3fae34313ad8",
+        "elevated_claim_id": "claim_a3669306df24",
+        "fingerprint": "a203c04bb01462a2",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Elevated",
+        "text": "- Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):"
+      },
+      {
+        "candidate_id": "cand_9f5fc435200f",
+        "elevated_claim_id": "claim_542055aa1aff",
+        "fingerprint": "0b4f90c085d31681",
+        "first_seen_at": "2026-05-29T15:25:14Z",
+        "last_seen_at": "2026-05-29T15:25:14Z",
+        "status": "Elevated",
+        "text": "org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability)"
+      },
+      {
+        "candidate_id": "cand_f819e4a5e2e0",
+        "fingerprint": "6054fa87abbb24d4",
+        "first_seen_at": "2026-05-29T20:02:10Z",
+        "last_seen_at": "2026-05-29T20:02:10Z",
+        "status": "Candidate",
+        "text": "json`) for refresh-token persistence (only when refresh is supported)"
+      },
+      {
+        "candidate_id": "cand_08806c8ed526",
+        "fingerprint": "62cb745262a004b4",
+        "first_seen_at": "2026-05-29T20:02:10Z",
+        "last_seen_at": "2026-05-29T20:02:10Z",
+        "status": "Candidate",
+        "text": "If `/login` returns both `refresh_token` and `expires_in_ms`, CCE marks refresh as supported and persists refresh token to `runtime/matrix-auth-state"
+      },
+      {
+        "candidate_id": "cand_0c40f1867434",
+        "fingerprint": "a6725fa9d60c40cc",
+        "first_seen_at": "2026-05-29T20:02:10Z",
+        "last_seen_at": "2026-05-29T20:02:10Z",
+        "status": "Candidate",
+        "text": "`--check-connection` path is exercised for password_login indirectly via tests (mocked)"
+      },
+      {
+        "candidate_id": "cand_367b3e819004",
+        "fingerprint": "868d8c095cba981b",
+        "first_seen_at": "2026-05-29T20:02:10Z",
+        "last_seen_at": "2026-05-29T20:02:10Z",
+        "status": "Candidate",
+        "text": "Therefore: Matrix auth is not claimed \u201cfixed live\u201d yet"
+      },
+      {
+        "candidate_id": "cand_57ce6ca83cb5",
+        "elevated_claim_id": "claim_e861c1387a53",
+        "fingerprint": "1e86792f8e9514e2",
+        "first_seen_at": "2026-05-29T20:02:10Z",
+        "last_seen_at": "2026-05-29T20:02:10Z",
+        "status": "Elevated",
+        "text": "- `static_token` (existing behavior): requires `access_token`"
+      },
+      {
+        "candidate_id": "cand_a09c5be4666d",
+        "elevated_claim_id": "claim_dadd25ca6378",
+        "fingerprint": "897ccc649505b439",
+        "first_seen_at": "2026-05-29T20:02:10Z",
+        "last_seen_at": "2026-05-29T20:02:10Z",
+        "status": "Elevated",
+        "text": "- `password_login` (new): requires `password`"
+      }
+    ],
+    "soft_warnings": [
+      {
+        "claim_id": "claim_a3669306df24",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Continue in /Users/kevinmattice/cce. We are paus",
+        "ts": "2026-05-29T15:25:14Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_29a5ace2eeff"
+      },
+      {
+        "claim_id": "claim_542055aa1aff",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Continue in /Users/kevinmattice/cce. We are paus",
+        "ts": "2026-05-29T15:25:14Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_ac4a046d9cff"
+      },
+      {
+        "claim_id": "claim_a3669306df24",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Is there a problem?",
+        "ts": "2026-05-29T17:32:17Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_385bd1502507"
+      },
+      {
+        "claim_id": "claim_542055aa1aff",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Is there a problem?",
+        "ts": "2026-05-29T17:32:17Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_fa3d2cb7ccae"
+      },
+      {
+        "claim_id": "claim_a3669306df24",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me a report detailing how you addres",
+        "ts": "2026-05-29T20:02:10Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3bbc2d83793c"
+      },
+      {
+        "claim_id": "claim_542055aa1aff",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me a report detailing how you addres",
+        "ts": "2026-05-29T20:02:10Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_6ddf4ff3cd2e"
+      },
+      {
+        "claim_id": "claim_e861c1387a53",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me a report detailing how you addres",
+        "ts": "2026-05-29T20:02:10Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_fbc99cb54a8b"
+      },
+      {
+        "claim_id": "claim_dadd25ca6378",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me a report detailing how you addres",
+        "ts": "2026-05-29T20:02:10Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_ef8a3ee83cf8"
+      }
+    ],
+    "verification_plans": [
+      {
+        "claim_fingerprint": "a203c04bb01462a2",
+        "claim_id": "claim_a3669306df24",
+        "created_at": "2026-05-29T15:25:14Z",
+        "plan_id": "plan_a3669306df24",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "0b4f90c085d31681",
+        "claim_id": "claim_542055aa1aff",
+        "created_at": "2026-05-29T15:25:14Z",
+        "plan_id": "plan_542055aa1aff",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability)",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "1e86792f8e9514e2",
+        "claim_id": "claim_e861c1387a53",
+        "created_at": "2026-05-29T20:02:10Z",
+        "plan_id": "plan_e861c1387a53",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - `static_token` (existing behavior): requires `access_token`",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-05-29T20:02:10Z"
+      },
+      {
+        "claim_fingerprint": "897ccc649505b439",
+        "claim_id": "claim_dadd25ca6378",
+        "created_at": "2026-05-29T20:02:10Z",
+        "plan_id": "plan_dadd25ca6378",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - `password_login` (new): requires `password`",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-05-29T20:02:10Z"
+      }
+    ]
+  },
+  "epistemic_health": {
+    "consecutive_unverified_turns": 4,
+    "health_state": "thin",
+    "last_warning": {
+      "evidence_count": 0,
+      "message": "Epistemic state remained thin for 3 consecutive turns.",
+      "q": "Is there a problem?",
+      "ts": "2026-05-29T17:32:17Z",
+      "type": "thin_epistemic_state",
+      "verified_claims": 0
+    },
+    "warnings": [
+      {
+        "evidence_count": 0,
+        "message": "Epistemic state remained thin for 3 consecutive turns.",
+        "q": "Is there a problem?",
+        "ts": "2026-05-29T17:32:17Z",
+        "type": "thin_epistemic_state",
+        "verified_claims": 0
+      }
+    ]
+  },
+  "epistemic_posture": {
+    "candidate_count": 15,
+    "claim_count": 4,
+    "evidence_count_metric": 0,
+    "exploratory_signal_count": 2,
+    "exploratory_signals": [
+      "exploratory_marker",
+      "uncertainty_marker"
+    ],
+    "health_state": "thin",
+    "implementation_signal_count": 2,
+    "implementation_signals": [
+      "implementation_marker",
+      "test_or_repro_marker"
+    ],
+    "inferred_posture": "mixed",
+    "pending_claim_count": 4,
+    "snapshot_at": "2026-05-29T20:02:10Z",
+    "turn_mode": "normal",
+    "verified_claim_count": 0,
+    "verified_claims_metric": 0
+  },
+  "epistemics": {
+    "evidence_count": 0,
+    "verified_claims": 0
+  },
+  "finalization": {
+    "turns": [
+      {
+        "answer": "**Verification (Colossus)**\n- Confirmed CWD: `/Users/kevinmattice/cce` via `pwd`.\n- Confirmed Phase 5.1 files exist in this repo:\n  - `/Users/kevinmattice/cce/workspace_runtime/pdf_reader.py`\n  - `/Users/kevinmattice/cce/requirements.txt`\n  - `/Users/kevinmattice/cce/tests/test_pdf_source_support.py`\n- Confirmed runtime supports PDFs: `SUPPORTED_READ_EXTENSIONS = {\".md\", \".txt\", \".pdf\"}` in `/Users/kevinmattice/cce/workspace_runtime/runtime.py`.\n\n**Venv / deps**\n- Created project-local venv: `/Users/kevinmattice/cce/.venv` (using `/opt/homebrew/bin/python3.14` so `tomllib` exists).\n- Installed deps: `pypdf` into `.venv`.\n\n**Tests**\n- Ran (passed): `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (32 tests OK).\n\n**Montana-trip PDFs**\n- Found 5 real `.pdf` files present under `/Users/kevinmattice/cce/workspaces/montana-trip/sources/` (filenames not repeated here).\n- Updated `/Users/kevinmattice/cce/workspaces/montana-trip/workspace.toml` to declare them (kept existing `.md` sources). Declared PDF `source_id`s:\n  - `aa_trip_confirmation`\n  - `guided_fishing_trip_confirmation`\n  - `sportsmans_lodge_confirmation_a`\n  - `sportsmans_lodge_confirmation_b`\n  - `travel_insurance_plan`\n- Re-ran tests after manifest update (still OK).\n\n**Gateway start (blocked)**\n- Attempted: `.venv/bin/python -m gateway.runtime --config config/cce.json`\n- Result: gateway immediately halted with `401 M_UNKNOWN_TOKEN` during Matrix sync (`Matrix API GET /_matrix/client/v3/sync failed: 401 M_UNKNOWN_TOKEN`).\n\nI\u2019m not ready for Element live testing yet because the gateway won\u2019t stay up with the current `config/cce.json` token. Once you update/fix the token, tell me and I\u2019ll restart the gateway in `~/cce` and confirm it\u2019s staying in the listener loop.",
+        "created_at": "2026-05-29T15:15:33Z",
+        "error": null,
+        "finalized_at": "2026-05-29T15:15:34Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Verification (Colossus)**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_309fa3c12ae64d1e835c87c39d9ab553",
+        "updated_at": "2026-05-29T15:15:34Z"
+      },
+      {
+        "answer": "**Path / scope**\n- Worked only in `/Users/kevinmattice/cce` (Colossus).\n\n**What I inspected**\n- Auth/client code: `/Users/kevinmattice/cce/matrix/client.py`\n- Runtime/config handling: `/Users/kevinmattice/cce/gateway/runtime.py`\n- Config docs: `/Users/kevinmattice/cce/config/README.md`\n- Auth hardening docs: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- Token/config shape (without printing token): `/Users/kevinmattice/cce/config/cce.json`\n\n**How the token is obtained/stored today**\n- `config/cce.json` stores a single `access_token` string (manually populated; no automated login/refresh path in code).\n- Config does not include `device_id`, `refresh_token`, `expires_in_ms`, or any provenance fields (confirmed by parsing keys; token value not printed).\n\n**Direct evidence of the failure**\n- Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):\n  - Command: `.venv/bin/python -m gateway.runtime --config config/cce.json --check-connection`\n  - Output includes: `token rejected: M_UNKNOWN_TOKEN (401)` (no token printed).\n\n**Likely root cause (most plausible)**\n- The access token being used is effectively \u201csession-owned\u201d (e.g., copied from an Element/session context) and gets revoked/invalidated when that session/device is logged out/deleted or otherwise rotated server-side.\n- CCE has no refresh/login lifecycle, so any revocation immediately bricks the gateway until manual replacement.\n\n**What remains unknown**\n- Whether `matrix-client.matrix.org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability).\n- Which device/session the token corresponds to (no `device_id` captured).\n\n**Smallest reliable fix (recommended, not implemented)**\n- Keep the current manual-token model, but make it stable operationally:\n  - Use a dedicated bot account/session/device and do not log out/delete that device.\n  - Record non-secret provenance fields locally in `config/cce.json` (token source note, obtained time, device_id if known).\n- If that still isn\u2019t stable, next step is a *CCE-owned login flow* (username/password) and possibly refresh token support, but that\u2019s code work and out of scope for this pause.\n\n**Docs/diagnostics changes made (no new CCE features, no PDF changes)**\n- Created: `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- Updated: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md` (added \u201cToken Provenance (recommended)\u201d section)\n- Updated: `/Users/kevinmattice/cce/config/README.md` (points to the new root-cause doc)\n- Updated: `/Users/kevinmattice/cce/config/cce.example.json` (added optional metadata fields: `token_source_note`, `token_obtained_at`, `device_id`, plus placeholders for `refresh_token`, `expires_in_ms`, `login_method`)\n- Updated: `/Users/kevinmattice/cce/docs/decision-log.md` (added Phase 5 decision D-028 re: token provenance + fixed Phase 5 numbering to avoid a D-020 collision)\n\n**Exact next implementation prompt (when you want code)**\n- \u201cImplement an optional `login` mode in `gateway/runtime.py` that can obtain an access token via Matrix `/login` at startup using locally-stored bot credentials (no secret manager), store token only in memory, and optionally persist *only* non-secret provenance fields; keep the existing static-token mode as default.\u201d\n\n**Risks**\n- Live PDF testing remains blocked until `config/cce.json` contains an active token (or until a login/refresh lifecycle exists).\n- Operational risk if tokens continue to be sourced from an interactive client session that gets logged out/rotated.",
+        "created_at": "2026-05-29T15:25:14Z",
+        "error": null,
+        "finalized_at": "2026-05-29T15:25:14Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Verification (Colossus)**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_d5047db565b74af693cd09b8f8938f47",
+        "updated_at": "2026-05-29T15:25:14Z"
+      },
+      {
+        "answer": "Yes\u2014there was a real problem.\n\n- While pushing the new `password_login` work over `ssh`, zsh brace-expansion/quoting issues caused several write attempts to fail.\n- In the middle of that, I accidentally overwrote `/Users/kevinmattice/cce/gateway/runtime.py` with a 1-line placeholder (`X`), which then broke imports/tests.\n\nIt\u2019s fixed now:\n- Restored `/Users/kevinmattice/cce/gateway/runtime.py` to the intended implementation (using an interactive SSH session to avoid local-shell brace expansion).\n- Verified it compiles: `/opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py`\n- Full tests pass again: `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (38 tests OK)\n\nNo secrets were printed during this recovery.",
+        "created_at": "2026-05-29T17:32:17Z",
+        "error": null,
+        "finalized_at": "2026-05-29T17:32:17Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Verification (Colossus)**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_687c0286f87240c798e597e88888b54b",
+        "updated_at": "2026-05-29T17:32:17Z"
+      },
+      {
+        "answer": "**Summary of what I did (per your prompt)**\n- Implemented an optional CCE-owned Matrix auth mode (`password_login`) while keeping the existing `static_token` mode working.\n- Added minimal refresh support via Matrix `/refresh` when the homeserver provides both `refresh_token` and `expires_in_ms` from `/login`.\n- Added an ignored runtime auth state file path (`runtime/matrix-auth-state.json`) for refresh-token persistence (only when refresh is supported).\n- Updated docs + examples and added unit tests with mocked Matrix API responses (no live login attempted).\n\n**Files created**\n- `/Users/kevinmattice/cce/gateway/matrix_auth_state.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_password_login.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_refresh.py`\n\n**Files modified**\n- `/Users/kevinmattice/cce/gateway/runtime.py`\n- `/Users/kevinmattice/cce/matrix/client.py`\n- `/Users/kevinmattice/cce/config/README.md`\n- `/Users/kevinmattice/cce/config/cce.example.json`\n- `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- `/Users/kevinmattice/cce/docs/decision-log.md`\n\n**Auth modes supported**\n- `static_token` (existing behavior): requires `access_token`.\n- `password_login` (new): requires `password`; supports optional `device_id` and `initial_device_display_name`.\n\n**Exact config fields required**\n- Common (both modes): `homeserver_url`, `user_id`, `room_id`, `matrix_auth_mode`\n- `static_token`: `access_token`\n- `password_login`: `password`; optional `device_id`, optional `initial_device_display_name`\n\n**Behavior changes**\n- `gateway.runtime.load_config()` now validates keys based on `matrix_auth_mode`.\n- Startup path now establishes an auth session first (static token or password login), then proceeds with existing connection checks and the main sync loop.\n- `/login` behavior (password_login):\n  - Calls `POST /_matrix/client/v3/login` with `m.login.password`.\n  - Enforces `config user_id == login response user_id`.\n  - Logs only non-secret diagnostics: mode, \u201clogin accepted\u201d, `device_id`, refresh support yes/no.\n  - Keeps `access_token` only in memory.\n- Refresh behavior:\n  - If `/login` returns both `refresh_token` and `expires_in_ms`, CCE marks refresh as supported and persists refresh token to `runtime/matrix-auth-state.json` (gitignored via existing `runtime/*.json` rule).\n  - On `401 M_UNKNOWN_TOKEN` during sync, CCE attempts `/refresh` once (password_login + refresh-supported only) and retries sync once; otherwise halts clearly.\n\n**Diagnostics / secret handling**\n- No password/access_token/refresh_token printing added.\n- Tests include checks that secret strings don\u2019t show up in exception text for key failure paths.\n\n**Tests added (mocked Matrix API)**\n- password_login success (no refresh token)\n- password_login user_id mismatch (and secrets not echoed)\n- password_login with refresh_token + expires_in_ms\n- static_token mode still works\n- refresh updates in-memory token + persists state\n- refresh failure does not echo refresh token\n\n**Tests run (exact commands)**\n- `ssh colossus 'cd /Users/kevinmattice/cce && /opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py'`\n- `ssh colossus 'cd /Users/kevinmattice/cce && .venv/bin/python -m unittest discover -s tests -p \"test_*.py\" -q'` (passed: 38 tests)\n\n**What was verified**\n- Code compiles under the repo\u2019s Python (`/opt/homebrew/bin/python3.14`).\n- Full unit test suite passes using `.venv`.\n- `--check-connection` path is exercised for password_login indirectly via tests (mocked); static-token path remains intact.\n\n**What remains unverified (by design / per your rule)**\n- No live `/login` against the real bot account has been performed.\n- No real `/refresh` behavior has been validated against matrix.org in this environment.\n- Therefore: Matrix auth is not claimed \u201cfixed live\u201d yet.\n\n**Incident during implementation (and how it was addressed)**\n- While rewriting `gateway/runt",
+        "created_at": "2026-05-29T20:02:10Z",
+        "error": null,
+        "finalized_at": "2026-05-29T20:02:10Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Verification (Colossus)**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_5fc5290b74b741bba84a5328693dee8e",
+        "updated_at": "2026-05-29T20:02:10Z"
+      }
+    ]
+  },
+  "hash_length": 10,
+  "history": [
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Verification (Colossus)**",
+      "options": [],
+      "outcome": "**Verification (Colossus)**\n- Confirmed CWD: `/Users/kevinmattice/cce` via `pwd`.\n- Confirmed Phase 5.1 files exist in this repo:\n  - `/Users/kevinmattice/cce/workspace_runtime/pdf_reader.py`\n  - `/Users/kevinmattice/cce/requirements.txt`\n  - `/Users/kevinmattice/cce/tests/test_pdf_source_support.py`\n- Confirmed runtime supports PDFs: `SUPPORTED_READ_EXTENSIONS = {\".md\", \".txt\", \".pdf\"}` in `/Users/kevinmattice/cce/workspace_runtime/runtime.py`.\n\n**Venv / deps**\n- Created project-local venv: `/Users/kevinmattice/cce/.venv` (using `/opt/homebrew/bin/python3.14` so `tomllib` exists).\n- Installed deps: `pypdf` into `.venv`.\n\n**Tests**\n- Ran (passed): `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (32 tests OK).\n\n**Montana-trip PDFs**\n- Found 5 real `.pdf` files present under `/Users/kevinmattice/cce/workspaces/montana-trip/sources/` (filenames not repeated here).\n- Updated `/Users/kevinmattice/cce/workspaces/montana-trip/workspace.toml` to declare them (kept existing `.md` sources). Declared PDF `source_id`s:\n  - `aa_trip_confirmation`\n  - `guided_fishing_trip_confirmation`\n  - `sportsmans_lodge_confirmation_a`\n  - `sportsmans_lodge_confirmation_b`\n  - `travel_insurance_plan`\n- Re-ran tests after manifest update (still OK).\n\n**Gateway start (blocked)**\n- Attempted: `.venv/bin/python -m gateway.runtime --config config/cce.json`\n- Result: gateway immediately halted with `401 M_UNKNOWN_TOKEN` during Matrix sync (`Matrix API GET /_matrix/client/v3/sync failed: 401 M_UNKNOWN_TOKEN`).\n\nI\u2019m not ready for Element live testing yet because the gateway won\u2019t stay up with the current `config/cce.json` token. Once you update/fix the token, tell me and I\u2019ll restart the gateway in `~/cce` and confirm it\u2019s staying in the listener loop.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-05-29T15:15:34Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Verification (Colossus)**",
+      "options": [],
+      "outcome": "**Path / scope**\n- Worked only in `/Users/kevinmattice/cce` (Colossus).\n\n**What I inspected**\n- Auth/client code: `/Users/kevinmattice/cce/matrix/client.py`\n- Runtime/config handling: `/Users/kevinmattice/cce/gateway/runtime.py`\n- Config docs: `/Users/kevinmattice/cce/config/README.md`\n- Auth hardening docs: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- Token/config shape (without printing token): `/Users/kevinmattice/cce/config/cce.json`\n\n**How the token is obtained/stored today**\n- `config/cce.json` stores a single `access_token` string (manually populated; no automated login/refresh path in code).\n- Config does not include `device_id`, `refresh_token`, `expires_in_ms`, or any provenance fields (confirmed by parsing keys; token value not printed).\n\n**Direct evidence of the failure**\n- Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):\n  - Command: `.venv/bin/python -m gateway.runtime --config config/cce.json --check-connection`\n  - Output includes: `token rejected: M_UNKNOWN_TOKEN (401)` (no token printed).\n\n**Likely root cause (most plausible)**\n- The access token being used is effectively \u201csession-owned\u201d (e.g., copied from an Element/session context) and gets revoked/invalidated when that session/device is logged out/deleted or otherwise rotated server-side.\n- CCE has no refresh/login lifecycle, so any revocation immediately bricks the gateway until manual replacement.\n\n**What remains unknown**\n- Whether `matrix-client.matrix.org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability).\n- Which device/session the token corresponds to (no `device_id` captured).\n\n**Smallest reliable fix (recommended, not implemented)**\n- Keep the current manual-token model, but make it stable operationally:\n  - Use a dedicated bot account/session/device and do not log out/delete that device.\n  - Record non-secret provenance fields locally in `config/cce.json` (token source note, obtained time, device_id if known).\n- If that still isn\u2019t stable, next step is a *CCE-owned login flow* (username/password) and possibly refresh token support, but that\u2019s code work and out of scope for this pause.\n\n**Docs/diagnostics changes made (no new CCE features, no PDF changes)**\n- Created: `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- Updated: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md` (added \u201cToken Provenance (recommended)\u201d section)\n- Updated: `/Users/kevinmattice/cce/config/README.md` (points to the new root-cause doc)\n- Updated: `/Users/kevinmattice/cce/config/cce.example.json` (added optional metadata fields: `token_source_note`, `token_obtained_at`, `device_id`, plus placeholders for `refresh_token`, `expires_in_ms`, `login_method`)\n- Updated: `/Users/kevinmattice/cce/docs/decision-log.md` (added Phase 5 decision D-028 re: token provenance + fixed Phase 5 numbering to avoid a D-020 collision)\n\n**Exact next implementation prompt (when you want code)**\n- \u201cImplement an optional `login` mode in `gateway/runtime.py` that can obtain an access token via Matrix `/login` at startup using locally-stored bot credentials (no secret manager), store token only in memory, and optionally persist *only* non-secret provenance fields; keep the existing static-token mode as default.\u201d\n\n**Risks**\n- Live PDF testing remains blocked until `config/cce.json` contains an active token (or until a login/refresh lifecycle exists).\n- Operational risk if tokens continue to be sourced from an interactive client session that gets logged out/rotated.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-05-29T15:25:14Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Verification (Colossus)**",
+      "options": [],
+      "outcome": "Yes\u2014there was a real problem.\n\n- While pushing the new `password_login` work over `ssh`, zsh brace-expansion/quoting issues caused several write attempts to fail.\n- In the middle of that, I accidentally overwrote `/Users/kevinmattice/cce/gateway/runtime.py` with a 1-line placeholder (`X`), which then broke imports/tests.\n\nIt\u2019s fixed now:\n- Restored `/Users/kevinmattice/cce/gateway/runtime.py` to the intended implementation (using an interactive SSH session to avoid local-shell brace expansion).\n- Verified it compiles: `/opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py`\n- Full tests pass again: `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (38 tests OK)\n\nNo secrets were printed during this recovery.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-05-29T17:32:17Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Verification (Colossus)**",
+      "options": [],
+      "outcome": "**Summary of what I did (per your prompt)**\n- Implemented an optional CCE-owned Matrix auth mode (`password_login`) while keeping the existing `static_token` mode working.\n- Added minimal refresh support via Matrix `/refresh` when the homeserver provides both `refresh_token` and `expires_in_ms` from `/login`.\n- Added an ignored runtime auth state file path (`runtime/matrix-auth-state.json`) for refresh-token persistence (only when refresh is supported).\n- Updated docs + examples and added unit tests with mocked Matrix API responses (no live login attempted).\n\n**Files created**\n- `/Users/kevinmattice/cce/gateway/matrix_auth_state.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_password_login.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_refresh.py`\n\n**Files modified**\n- `/Users/kevinmattice/cce/gateway/runtime.py`\n- `/Users/kevinmattice/cce/matrix/client.py`\n- `/Users/kevinmattice/cce/config/README.md`\n- `/Users/kevinmattice/cce/config/cce.example.json`\n- `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- `/Users/kevinmattice/cce/docs/decision-log.md`\n\n**Auth modes supported**\n- `static_token` (existing behavior): requires `access_token`.\n- `password_login` (new): requires `password`; supports optional `device_id` and `initial_device_display_name`.\n\n**Exact config fields required**\n- Common (both modes): `homeserver_url`, `user_id`, `room_id`, `matrix_auth_mode`\n- `static_token`: `access_token`\n- `password_login`: `password`; optional `device_id`, optional `initial_device_display_name`\n\n**Behavior changes**\n- `gateway.runtime.load_config()` now validates keys based on `matrix_auth_mode`.\n- Startup path now establishes an auth session first (static token or password login), then proceeds with existing connection checks and the main sync loop.\n- `/login` behavior (password_login):\n  - Calls `POST /_matrix/client/v3/login` with `m.login.password`.\n  - Enforces `config user_id == login response user_id`.\n  - Logs only non-secret diagnostics: mode, \u201clogin accepted\u201d, `device_id`, refresh support yes/no.\n  - Keeps `access_token` only in memory.\n- Refresh behavior:\n  - If `/login` returns both `refresh_token` and `expires_in_ms`, CCE marks refresh as supported and persists refresh token to `runtime/matrix-auth-state.json` (gitignored via existing `runtime/*.json` rule).\n  - On `401 M_UNKNOWN_TOKEN` during sync, CCE attempts `/refresh` once (password_login + refresh-supported only) and retries sync once; otherwise halts clearly.\n\n**Diagnostics / secret handling**\n- No password/access_token/refresh_token printing added.\n- Tests include checks that secret strings don\u2019t show up in exception text for key failure paths.\n\n**Tests added (mocked Matrix API)**\n- password_login success (no refresh token)\n- password_login user_id mismatch (and secrets not echoed)\n- password_login with refresh_token + expires_in_ms\n- static_token mode still works\n- refresh updates in-memory token + persists state\n- refresh failure does not echo refresh token\n\n**Tests run (exact commands)**\n- `ssh colossus 'cd /Users/kevinmattice/cce && /opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py'`\n- `ssh colossus 'cd /Users/kevinmattice/cce && .venv/bin/python -m unittest discover -s tests -p \"test_*.py\" -q'` (passed: 38 tests)\n\n**What was verified**\n- Code compiles under the repo\u2019s Python (`/opt/homebrew/bin/python3.14`).\n- Full unit test suite passes using `.venv`.\n- `--check-connection` path is exercised for password_login indirectly via tests (mocked); static-token path remains intact.\n\n**What remains unverified (by design / per your rule)**\n- No live `/login` against the real bot account has been performed.\n- No real `/refresh` behavior has been validated against matrix.org in this environment.\n- Therefore: Matrix auth is not claimed \u201cfixed live\u201d yet.\n\n**Incident during implementation (and how it was addressed)**\n- While rewriting `gateway/runt",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-05-29T20:02:10Z"
+    }
+  ],
+  "initial_subject": "**Verification (Colossus)**",
+  "intake_question": "Please give me a report detailing how you addressed the issue contained in the prompt.",
+  "mode": {
+    "case_hash_length": 10,
+    "llm_mode": "openai",
+    "llm_model": "gpt-4o-mini",
+    "response_format": "json_schema",
+    "storage_mode": "standalone",
+    "storage_root": "/Volumes/kevinmattice/cce"
+  },
+  "privacy_mode": "public_slug",
+  "projection": {
+    "hash": "733bf99fd790"
+  },
+  "question": "**Verification (Colossus)**",
+  "routing": {
+    "history": [
+      {
+        "active_marker": "in element",
+        "incoming_marker": "confirmed cwd",
+        "matched_case_ids": [],
+        "previous_case_id": "sent.case.lhhqlocyuh",
+        "routing_decision": "new_case",
+        "routing_reason": "explicit_marker_mismatch",
+        "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=27",
+          "active_unit_count=774",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=in element",
+          "incoming_marker=confirmed cwd",
+          "prior_match_source=recent_cases",
+          "prior_match_count=0"
+        ],
+        "ts": "2026-05-29T15:15:33Z"
+      },
+      {
+        "active_marker": "confirmed cwd",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=37",
+          "active_unit_count=27",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=confirmed cwd",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-05-29T15:25:14Z"
+      },
+      {
+        "active_marker": "confirmed cwd",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=8",
+          "active_unit_count=64",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=confirmed cwd",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-05-29T17:32:17Z"
+      },
+      {
+        "active_marker": "confirmed cwd",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=58",
+          "active_unit_count=72",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=confirmed cwd",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-05-29T20:02:10Z"
+      }
+    ],
+    "last": {
+      "active_marker": "confirmed cwd",
+      "incoming_marker": null,
+      "matched_case_ids": [],
+      "previous_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+      "routing_decision": "preserve_current_behavior",
+      "routing_reason": "incoming_marker_missing",
+      "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+      "signals_used": [
+        "candidate_source=discussion_anchor",
+        "incoming_unit_count=58",
+        "active_unit_count=72",
+        "active_marker_source=committed_capture_units",
+        "incoming_marker_source=incoming_capture_units",
+        "active_marker=confirmed cwd",
+        "incoming_marker=none"
+      ],
+      "ts": "2026-05-29T20:02:10Z"
+    }
+  },
+  "seed_namespace": "pem",
+  "seed_version": "v1",
+  "slug": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t",
+  "state": {
+    "plan": {
+      "current": [],
+      "history": []
+    },
+    "skeptic": {
+      "current": [],
+      "history": []
+    },
+    "status": "active",
+    "summary": "**Summary of what I did (per your prompt)**\n- Implemented an optional CCE-owned Matrix auth mode (`password_login`) while keeping the existing `static_token` mode working.\n- Added minimal refresh support via Matrix `/refresh` when the homeserver provides both `refresh_token` and `expires_in_ms` from `/login`.\n- Added an ignored runtime auth state file path (`runtime/matrix-auth-state.json`) for refresh-token persistence (only when refresh is supported).\n- Updated docs + examples and added unit tests with mocked Matrix API responses (no live login attempted).\n\n**Files created**\n- `/Users/kevinmattice/cce/gateway/matrix_auth_state.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_password_login.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_refresh.py`\n\n**Files modified**\n- `/Users/kevinmattice/cce/gateway/runtime.py`\n- `/Users/kevinmattice/cce/matrix/client.py`\n- `/Users/kevinmattice/cce/config/README.md`\n- `/Users/kevinmattice/cce/config/cce.example.json`\n- `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- `/Users/kevinmattice/cce/docs/decision-log.md`\n\n**Auth modes supported**\n- `static_token` (existing behavior): requires `access_token`.\n- `password_login` (new): requires `password`; supports optional `device_id` and `initial_device_display_name`.\n\n**Exact config fields required**\n- Common (both modes): `homeserver_url`, `user_id`, `room_id`, `matrix_auth_mode`\n- `static_token`: `access_token`\n- `password_login`: `password`; optional `device_id`, optional `initial_device_display_name`\n\n**Behavior changes**\n- `gateway.runtime.load_config()` now validates keys based on `matrix_auth_mode`.\n- Startup path now establishes an auth session first (static token or password login), then proceeds with existing connection checks and the main sync loop.\n- `/login` behavior (password_login):\n  - Calls `POST /_matrix/client/v3/login` with `m.login.password`.\n  - Enforces `config user_id == login response user_id`.\n  - Logs only non-secret diagnostics: mode, \u201clogin accepted\u201d, `device_id`, refresh support yes/no.\n  - Keeps `access_token` only in memory.\n- Refresh behavior:\n  - If `/login` returns both `refresh_token` and `expires_in_ms`, CCE marks refresh as supported and persists refresh token to `runtime/matrix-auth-state.json` (gitignored via existing `runtime/*.json` rule).\n  - On `401 M_UNKNOWN_TOKEN` during sync, CCE attempts `/refresh` once (password_login + refresh-supported only) and retries sync once; otherwise halts clearly.\n\n**Diagnostics / secret handling**\n- No password/access_token/refresh_token printing added.\n- Tests include checks that secret strings don\u2019t show up in exception text for key failure paths.\n\n**Tests added (mocked Matrix API)**\n- password_login success (no refresh token)\n- password_login user_id mismatch (and secrets not echoed)\n- password_login with refresh_token + expires_in_ms\n- static_token mode still works\n- refresh updates in-memory token + persists state\n- refresh failure does not echo refresh token\n\n**Tests run (exact commands)**\n- `ssh colossus 'cd /Users/kevinmattice/cce && /opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py'`\n- `ssh colossus 'cd /Users/kevinmattice/cce && .venv/bin/python -m unittest discover -s tests -p \"test_*.py\" -q'` (passed: 38 tests)\n\n**What was verified**\n- Code compiles under the repo\u2019s Python (`/opt/homebrew/bin/python3.14`).\n- Full unit test suite passes using `.venv`.\n- `--check-connection` path is exercised for password_login indirectly via tests (mocked); static-token path remains intact.\n\n**What remains unverified (by design / per your rule)**\n- No live `/login` against the real bot account has been performed.\n- No real `/refresh` behavior has been validated against matrix.org in this environment.\n- Therefore: Matrix auth is not claimed \u201cfixed live\u201d yet.\n\n**Incident during implementation (and how it was addressed)**\n- While rewriting `gateway/runt"
+  },
+  "topic_hash": "tcqthdkncd",
+  "turns": [
+    {
+      "answer": "**Verification (Colossus)**\n- Confirmed CWD: `/Users/kevinmattice/cce` via `pwd`.\n- Confirmed Phase 5.1 files exist in this repo:\n  - `/Users/kevinmattice/cce/workspace_runtime/pdf_reader.py`\n  - `/Users/kevinmattice/cce/requirements.txt`\n  - `/Users/kevinmattice/cce/tests/test_pdf_source_support.py`\n- Confirmed runtime supports PDFs: `SUPPORTED_READ_EXTENSIONS = {\".md\", \".txt\", \".pdf\"}` in `/Users/kevinmattice/cce/workspace_runtime/runtime.py`.\n\n**Venv / deps**\n- Created project-local venv: `/Users/kevinmattice/cce/.venv` (using `/opt/homebrew/bin/python3.14` so `tomllib` exists).\n- Installed deps: `pypdf` into `.venv`.\n\n**Tests**\n- Ran (passed): `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (32 tests OK).\n\n**Montana-trip PDFs**\n- Found 5 real `.pdf` files present under `/Users/kevinmattice/cce/workspaces/montana-trip/sources/` (filenames not repeated here).\n- Updated `/Users/kevinmattice/cce/workspaces/montana-trip/workspace.toml` to declare them (kept existing `.md` sources). Declared PDF `source_id`s:\n  - `aa_trip_confirmation`\n  - `guided_fishing_trip_confirmation`\n  - `sportsmans_lodge_confirmation_a`\n  - `sportsmans_lodge_confirmation_b`\n  - `travel_insurance_plan`\n- Re-ran tests after manifest update (still OK).\n\n**Gateway start (blocked)**\n- Attempted: `.venv/bin/python -m gateway.runtime --config config/cce.json`\n- Result: gateway immediately halted with `401 M_UNKNOWN_TOKEN` during Matrix sync (`Matrix API GET /_matrix/client/v3/sync failed: 401 M_UNKNOWN_TOKEN`).\n\nI\u2019m not ready for Element live testing yet because the gateway won\u2019t stay up with the current `config/cce.json` token. Once you update/fix the token, tell me and I\u2019ll restart the gateway in `~/cce` and confirm it\u2019s staying in the listener loop.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "40f4d72d0a3b",
+      "q": "**Verification (Colossus)**",
+      "ts": "2026-05-29T15:15:34Z",
+      "turn_id": "turn_309fa3c12ae64d1e835c87c39d9ab553",
+      "verified_claims": 0
+    },
+    {
+      "answer": "**Path / scope**\n- Worked only in `/Users/kevinmattice/cce` (Colossus).\n\n**What I inspected**\n- Auth/client code: `/Users/kevinmattice/cce/matrix/client.py`\n- Runtime/config handling: `/Users/kevinmattice/cce/gateway/runtime.py`\n- Config docs: `/Users/kevinmattice/cce/config/README.md`\n- Auth hardening docs: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- Token/config shape (without printing token): `/Users/kevinmattice/cce/config/cce.json`\n\n**How the token is obtained/stored today**\n- `config/cce.json` stores a single `access_token` string (manually populated; no automated login/refresh path in code).\n- Config does not include `device_id`, `refresh_token`, `expires_in_ms`, or any provenance fields (confirmed by parsing keys; token value not printed).\n\n**Direct evidence of the failure**\n- Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):\n  - Command: `.venv/bin/python -m gateway.runtime --config config/cce.json --check-connection`\n  - Output includes: `token rejected: M_UNKNOWN_TOKEN (401)` (no token printed).\n\n**Likely root cause (most plausible)**\n- The access token being used is effectively \u201csession-owned\u201d (e.g., copied from an Element/session context) and gets revoked/invalidated when that session/device is logged out/deleted or otherwise rotated server-side.\n- CCE has no refresh/login lifecycle, so any revocation immediately bricks the gateway until manual replacement.\n\n**What remains unknown**\n- Whether `matrix-client.matrix.org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability).\n- Which device/session the token corresponds to (no `device_id` captured).\n\n**Smallest reliable fix (recommended, not implemented)**\n- Keep the current manual-token model, but make it stable operationally:\n  - Use a dedicated bot account/session/device and do not log out/delete that device.\n  - Record non-secret provenance fields locally in `config/cce.json` (token source note, obtained time, device_id if known).\n- If that still isn\u2019t stable, next step is a *CCE-owned login flow* (username/password) and possibly refresh token support, but that\u2019s code work and out of scope for this pause.\n\n**Docs/diagnostics changes made (no new CCE features, no PDF changes)**\n- Created: `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- Updated: `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md` (added \u201cToken Provenance (recommended)\u201d section)\n- Updated: `/Users/kevinmattice/cce/config/README.md` (points to the new root-cause doc)\n- Updated: `/Users/kevinmattice/cce/config/cce.example.json` (added optional metadata fields: `token_source_note`, `token_obtained_at`, `device_id`, plus placeholders for `refresh_token`, `expires_in_ms`, `login_method`)\n- Updated: `/Users/kevinmattice/cce/docs/decision-log.md` (added Phase 5 decision D-028 re: token provenance + fixed Phase 5 numbering to avoid a D-020 collision)\n\n**Exact next implementation prompt (when you want code)**\n- \u201cImplement an optional `login` mode in `gateway/runtime.py` that can obtain an access token via Matrix `/login` at startup using locally-stored bot credentials (no secret manager), store token only in memory, and optionally persist *only* non-secret provenance fields; keep the existing static-token mode as default.\u201d\n\n**Risks**\n- Live PDF testing remains blocked until `config/cce.json` contains an active token (or until a login/refresh lifecycle exists).\n- Operational risk if tokens continue to be sourced from an interactive client session that gets logged out/rotated.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "27a338404183",
+      "q": "**Verification (Colossus)**",
+      "ts": "2026-05-29T15:25:14Z",
+      "turn_id": "turn_d5047db565b74af693cd09b8f8938f47",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Yes\u2014there was a real problem.\n\n- While pushing the new `password_login` work over `ssh`, zsh brace-expansion/quoting issues caused several write attempts to fail.\n- In the middle of that, I accidentally overwrote `/Users/kevinmattice/cce/gateway/runtime.py` with a 1-line placeholder (`X`), which then broke imports/tests.\n\nIt\u2019s fixed now:\n- Restored `/Users/kevinmattice/cce/gateway/runtime.py` to the intended implementation (using an interactive SSH session to avoid local-shell brace expansion).\n- Verified it compiles: `/opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py`\n- Full tests pass again: `.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q` (38 tests OK)\n\nNo secrets were printed during this recovery.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "d50709054656",
+      "q": "**Verification (Colossus)**",
+      "ts": "2026-05-29T17:32:17Z",
+      "turn_id": "turn_687c0286f87240c798e597e88888b54b",
+      "verified_claims": 0
+    },
+    {
+      "answer": "**Summary of what I did (per your prompt)**\n- Implemented an optional CCE-owned Matrix auth mode (`password_login`) while keeping the existing `static_token` mode working.\n- Added minimal refresh support via Matrix `/refresh` when the homeserver provides both `refresh_token` and `expires_in_ms` from `/login`.\n- Added an ignored runtime auth state file path (`runtime/matrix-auth-state.json`) for refresh-token persistence (only when refresh is supported).\n- Updated docs + examples and added unit tests with mocked Matrix API responses (no live login attempted).\n\n**Files created**\n- `/Users/kevinmattice/cce/gateway/matrix_auth_state.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_password_login.py`\n- `/Users/kevinmattice/cce/tests/test_matrix_refresh.py`\n\n**Files modified**\n- `/Users/kevinmattice/cce/gateway/runtime.py`\n- `/Users/kevinmattice/cce/matrix/client.py`\n- `/Users/kevinmattice/cce/config/README.md`\n- `/Users/kevinmattice/cce/config/cce.example.json`\n- `/Users/kevinmattice/cce/docs/matrix-auth-hardening.md`\n- `/Users/kevinmattice/cce/docs/matrix-token-root-cause.md`\n- `/Users/kevinmattice/cce/docs/decision-log.md`\n\n**Auth modes supported**\n- `static_token` (existing behavior): requires `access_token`.\n- `password_login` (new): requires `password`; supports optional `device_id` and `initial_device_display_name`.\n\n**Exact config fields required**\n- Common (both modes): `homeserver_url`, `user_id`, `room_id`, `matrix_auth_mode`\n- `static_token`: `access_token`\n- `password_login`: `password`; optional `device_id`, optional `initial_device_display_name`\n\n**Behavior changes**\n- `gateway.runtime.load_config()` now validates keys based on `matrix_auth_mode`.\n- Startup path now establishes an auth session first (static token or password login), then proceeds with existing connection checks and the main sync loop.\n- `/login` behavior (password_login):\n  - Calls `POST /_matrix/client/v3/login` with `m.login.password`.\n  - Enforces `config user_id == login response user_id`.\n  - Logs only non-secret diagnostics: mode, \u201clogin accepted\u201d, `device_id`, refresh support yes/no.\n  - Keeps `access_token` only in memory.\n- Refresh behavior:\n  - If `/login` returns both `refresh_token` and `expires_in_ms`, CCE marks refresh as supported and persists refresh token to `runtime/matrix-auth-state.json` (gitignored via existing `runtime/*.json` rule).\n  - On `401 M_UNKNOWN_TOKEN` during sync, CCE attempts `/refresh` once (password_login + refresh-supported only) and retries sync once; otherwise halts clearly.\n\n**Diagnostics / secret handling**\n- No password/access_token/refresh_token printing added.\n- Tests include checks that secret strings don\u2019t show up in exception text for key failure paths.\n\n**Tests added (mocked Matrix API)**\n- password_login success (no refresh token)\n- password_login user_id mismatch (and secrets not echoed)\n- password_login with refresh_token + expires_in_ms\n- static_token mode still works\n- refresh updates in-memory token + persists state\n- refresh failure does not echo refresh token\n\n**Tests run (exact commands)**\n- `ssh colossus 'cd /Users/kevinmattice/cce && /opt/homebrew/bin/python3.14 -m py_compile gateway/runtime.py matrix/client.py gateway/matrix_auth_state.py'`\n- `ssh colossus 'cd /Users/kevinmattice/cce && .venv/bin/python -m unittest discover -s tests -p \"test_*.py\" -q'` (passed: 38 tests)\n\n**What was verified**\n- Code compiles under the repo\u2019s Python (`/opt/homebrew/bin/python3.14`).\n- Full unit test suite passes using `.venv`.\n- `--check-connection` path is exercised for password_login indirectly via tests (mocked); static-token path remains intact.\n\n**What remains unverified (by design / per your rule)**\n- No live `/login` against the real bot account has been performed.\n- No real `/refresh` behavior has been validated against matrix.org in this environment.\n- Therefore: Matrix auth is not claimed \u201cfixed live\u201d yet.\n\n**Incident during implementation (and how it was addressed)**\n- While rewriting `gateway/runt",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "733bf99fd790",
+      "q": "**Verification (Colossus)**",
+      "ts": "2026-05-29T20:02:10Z",
+      "turn_id": "turn_5fc5290b74b741bba84a5328693dee8e",
+      "verified_claims": 0
+    }
+  ],
+  "updated_at": "2026-05-29T20:02:10Z"
+}

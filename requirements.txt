@@ -1,0 +1,2 @@
+# Phase 5.1: Declared PDF Source Support (text extraction only)
+pypdf

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colossus Cognitive Environment (CCE)</title>
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --panel: #101826;
+        --text: #e8eef6;
+        --muted: #a7b4c6;
+        --accent: #7dd3fc;
+        --border: rgba(255, 255, 255, 0.12);
+        --codebg: rgba(255, 255, 255, 0.06);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: radial-gradient(1200px 800px at 20% 0%, rgba(125, 211, 252, 0.10), transparent 55%),
+                    radial-gradient(1100px 700px at 80% 20%, rgba(167, 139, 250, 0.08), transparent 60%),
+                    var(--bg);
+        color: var(--text);
+        font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 18px 56px;
+      }
+      header {
+        padding: 22px 18px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: linear-gradient(180deg, rgba(16, 24, 38, 0.90), rgba(16, 24, 38, 0.60));
+        backdrop-filter: blur(6px);
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 28px;
+        letter-spacing: 0.2px;
+      }
+      .lede {
+        margin: 0;
+        color: var(--muted);
+        max-width: 78ch;
+      }
+      nav {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      nav a {
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+      }
+      nav a:hover { border-color: rgba(125, 211, 252, 0.6); }
+      main {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      section {
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(16, 24, 38, 0.55);
+      }
+      h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+      ul { margin: 10px 0 0 20px; padding: 0; }
+      li { margin: 6px 0; }
+      code, pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      }
+      pre {
+        margin: 10px 0 0;
+        padding: 12px 12px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--codebg);
+        overflow: auto;
+      }
+      .k {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 860px) {
+        main { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
+        .grid2 { grid-template-columns: 1fr 1fr; }
+      }
+      footer {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Colossus Cognitive Environment (CCE)</h1>
+        <p class="lede">
+          CCE is a private, bounded operational substrate for a Matrix/Element-to-Colossus channel. Its purpose is not to
+          automate broadly; its purpose is to reduce cognitive friction with explicit interfaces, inspectable state, and
+          verifiable completion.
+        </p>
+        <p class="lede">
+          This repository does not define a general autonomous agent. Phase 1 established the foundation; Phase 2 adds the
+          smallest possible verified Matrix round-trip runtime through a narrow gateway boundary.
+        </p>
+        <nav>
+          <a href="#target">June 18 Target</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#non-goals">Non-Goals</a>
+          <a href="#runtime">Runtime</a>
+          <a href="#workspaces">Workspaces</a>
+          <a href="#model">Local Model Boundary</a>
+          <a href="#evaluation">Evaluation</a>
+        </nav>
+      </header>
+
+      <main>
+        <div>
+          <section id="target">
+            <h2>June 18, 2026 target</h2>
+            <p>
+              By June 18, 2026, this repository should support evaluation of whether the project foundation is ready for a
+              narrow implementation phase centered on a reliable Matrix round-trip path, a local model invocation boundary,
+              deterministic bounded tools, and PEM-backed continuity/governance.
+            </p>
+          </section>
+
+          <section id="architecture">
+            <h2>Current architecture</h2>
+            <ul>
+              <li><code>matrix/</code>: communication-layer boundary for Matrix/Element integration</li>
+              <li><code>models/</code>: local reasoning-layer invocation boundary</li>
+              <li><code>tools/</code>: deterministic bounded operational tools</li>
+              <li><code>pem/</code>: epistemic governance and continuity integration boundary</li>
+              <li><code>workspaces/</code>: durable bounded truth containers defined by manifests</li>
+              <li><code>gateway/</code>: narrow orchestration layer tying the boundaries together</li>
+              <li><code>cases/</code>: PEM-backed continuity and forensic case records</li>
+              <li><code>scratch/</code>: non-authoritative ephemeral working area</li>
+              <li><code>pem.initialized</code>: explicit PEM initialization marker</li>
+              <li><code>docs/</code>: explicit architecture, scope, contracts, and decisions</li>
+            </ul>
+            <p class="lede" style="margin-top: 10px">
+              Hermes is treated as a prototype and lesson source, not as the foundation of CCE.
+            </p>
+          </section>
+
+          <section id="non-goals">
+            <h2>What CCE is not</h2>
+            <ul>
+              <li>Not a broad autonomous agent</li>
+              <li>Not a hidden-memory system</li>
+              <li>Not a vector-database or embeddings project</li>
+              <li>Not a broad shell or filesystem access layer</li>
+              <li>Not a Docker orchestration expansion</li>
+              <li>Not a multi-agent framework</li>
+            </ul>
+          </section>
+
+          <section id="runtime">
+            <h2>Phase 2 runtime</h2>
+            <p>Phase 2 provides a minimal Matrix listener/replier with one safe command:</p>
+            <ul>
+              <li><code>status</code></li>
+            </ul>
+            <p style="margin-top: 10px">The runtime:</p>
+            <ul>
+              <li>listens in one configured Matrix room</li>
+              <li>ignores its own messages</li>
+              <li>replies to <code>status</code> with a verified state snapshot</li>
+              <li>replies to unknown commands with <code>Unknown command. Supported commands: status</code></li>
+            </ul>
+            <p class="lede" style="margin-top: 10px">
+              The runtime does not add model invocation, PEM calls, document reading, shell execution, broad filesystem
+              access, or hidden memory.
+            </p>
+          </section>
+
+          <section id="workspaces">
+            <h2>Phase 3 workspace runtime</h2>
+            <p>Phase 3 adds a deterministic workspace runtime with explicit manifests and explicit sources.</p>
+            <p class="k">Gateway commands</p>
+            <ul>
+              <li><code>workspace list</code></li>
+              <li><code>workspace open &lt;id&gt;</code></li>
+              <li><code>workspace status</code></li>
+              <li><code>sources</code></li>
+              <li><code>read &lt;source&gt;</code></li>
+            </ul>
+            <p class="lede" style="margin-top: 10px">
+              Only <code>.md</code> and <code>.txt</code> sources are readable, and only if explicitly declared in the active
+              workspace manifest.
+            </p>
+            <p class="lede">
+              Phase 3.1 persists the active workspace selection across manual gateway restarts in
+              <code>runtime/workspace-state.json</code> (gitignored, human-inspectable operational state).
+            </p>
+          </section>
+
+          <section id="model">
+            <h2>Phase 4 local model boundary</h2>
+            <p>
+              Phase 4 adds a bounded <code>ask &lt;question&gt;</code> command. The model sees only declared readable sources
+              from the active workspace (<code>.md</code>/<code>.txt</code>), assembled deterministically with explicit byte
+              limits and a timeout.
+            </p>
+            <p class="lede">This is not web browsing, retrieval, memory, or autonomous behavior.</p>
+            <p class="lede">
+              Phase 4.1 routes ordinary non-command questions to the same grounded QA path when an active workspace is open.
+            </p>
+            <p class="lede">Phase 4.2 hardens Matrix auth failures; see <a href="docs/matrix-auth-hardening.md">docs/matrix-auth-hardening.md</a>.</p>
+          </section>
+
+          <section id="evaluation">
+            <h2>Phase evaluation</h2>
+            <p>Current repository evaluation should check whether it provides:</p>
+            <ol>
+              <li>A clear, boring project structure with named operational boundaries</li>
+              <li>Explicit written contracts for gateway, workspace manifests, PEM role, and completion semantics</li>
+              <li>A narrow runtime that proves Matrix ingress and egress without broadening scope</li>
+              <li>Explicit documentation of first-class state surfaces, including case records and PEM initialization state</li>
+              <li>A documented list of non-goals and deferred work</li>
+              <li>A decision log and target document that make tradeoffs inspectable</li>
+            </ol>
+            <p style="margin-top: 10px">
+              See <a href="docs/phase1-scope.md">docs/phase1-scope.md</a>,
+              <a href="docs/architecture.md">docs/architecture.md</a>,
+              <a href="docs/state-surfaces.md">docs/state-surfaces.md</a>,
+              and <a href="docs/june18-target.md">docs/june18-target.md</a> for the authoritative Phase 1 foundation.
+            </p>
+          </section>
+        </div>
+
+        <div>
+          <section id="config">
+            <h2>Configuration</h2>
+            <p>Create <code>config/cce.json</code> from <a href="config/cce.example.json">config/cce.example.json</a> and provide:</p>
+            <ul>
+              <li><code>homeserver_url</code></li>
+              <li><code>access_token</code></li>
+              <li><code>user_id</code></li>
+              <li><code>room_id</code></li>
+            </ul>
+            <p class="lede">Real credentials are ignored by git.</p>
+          </section>
+
+          <section id="run">
+            <h2>Run</h2>
+            <p class="k">Config check</p>
+            <pre><code>python3 -m gateway.runtime --config config/cce.json --check-config</code></pre>
+
+            <p class="k" style="margin-top: 12px">Matrix connectivity check</p>
+            <pre><code>python3 -m gateway.runtime --config config/cce.json --check-connection</code></pre>
+
+            <p class="k" style="margin-top: 12px">Optional: override Matrix cursor state path</p>
+            <pre><code>python3 -m gateway.runtime --config config/cce.json --state-path runtime/matrix-sync-state.json</code></pre>
+
+            <p class="k" style="margin-top: 12px">Listener runtime</p>
+            <pre><code>python3 -m gateway.runtime --config config/cce.json</code></pre>
+          </section>
+
+          <section id="test">
+            <h2>Test</h2>
+            <pre><code>python3 -m unittest tests.test_gateway_status</code></pre>
+            <p style="margin-top: 10px">Live verification checklist: <a href="docs/phase2-live-verification.md">docs/phase2-live-verification.md</a></p>
+            <p>Workspace runtime docs: <a href="docs/workspace-runtime.md">docs/workspace-runtime.md</a></p>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          This README is intentionally boring: it is meant to be inspectable, operationally useful, and aligned with CCE’s
+          explicit boundary-and-contract design.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+

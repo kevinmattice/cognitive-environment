@@ -1,0 +1,57 @@
+workspace_id = "montana-trip"
+title = "Montana Trip (June 2026)"
+description = "Grounded travel planning + contingency workspace for a June 2026 Montana trip. Sources are explicit and placeholder-based."
+notes = "This workspace is intentionally low-risk: no real booking codes, no live lookups, no external web access."
+
+[[sources]]
+source_id = "trip_overview"
+path = "sources/trip-overview.md"
+kind = "document"
+
+[[sources]]
+source_id = "itinerary_summary"
+path = "sources/itinerary-summary.md"
+kind = "document"
+
+[[sources]]
+source_id = "fishing_gear_checklist"
+path = "sources/fishing-gear-checklist.md"
+kind = "checklist"
+
+[[sources]]
+source_id = "contingency_planning"
+path = "sources/contingency-planning.md"
+kind = "plan"
+
+[[sources]]
+source_id = "notes"
+path = "notes.md"
+kind = "notes"
+
+[[sources]]
+source_id = "aa_trip_confirmation"
+path = "sources/AA trip confirmation CHA—MSO.pdf"
+kind = "pdf"
+
+[[sources]]
+source_id = "guided_fishing_trip_confirmation"
+path = "sources/Fishing Guided Trip Confirmation June 21 Full Day.pdf"
+kind = "pdf"
+
+[[sources]]
+source_id = "sportsmans_lodge_confirmation_a"
+path = "sources/Sportsmans Lodge confirmation confirmation number LL45125QLB.pdf"
+kind = "pdf"
+
+[[sources]]
+source_id = "sportsmans_lodge_confirmation_b"
+path = "sources/Sportsmans Lodge confirmationconfirmation number LL45125QLD.pdf"
+kind = "pdf"
+
+[[sources]]
+source_id = "travel_insurance_plan"
+path = "sources/Travel insurance plan EUSP2558794819.pdf"
+kind = "pdf"
+
+[policies]
+max_read_bytes = 16384

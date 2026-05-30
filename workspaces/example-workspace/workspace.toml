@@ -1,0 +1,17 @@
+workspace_id = "example-workspace"
+title = "Example Workspace"
+description = "Minimal example workspace for Phase 3 workspace runtime foundations."
+notes = "This workspace demonstrates declared sources and bounded reading."
+
+[[sources]]
+source_id = "readme"
+path = "sources/sample.md"
+kind = "document"
+
+[[sources]]
+source_id = "notes"
+path = "notes.md"
+kind = "notes"
+
+[policies]
+max_read_bytes = 8192
