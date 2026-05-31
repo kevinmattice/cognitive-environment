@@ -2,8 +2,8 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
-    "projection_hash": "548fcf6ac111",
-    "q": "PLEASE IMPLEMENT THIS PLAN: # Phase: Private Mat",
+    "projection_hash": "2181e5260076",
+    "q": "Approved. 1. Revert the modified case file to HE",
     "reused_active_case": true
   },
   "canonical_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
@@ -60,7 +60,7 @@
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-05-31T14:36:14Z",
+  "canonical_subject_updated_at": "2026-05-31T14:58:21Z",
   "case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -5356,6 +5356,50 @@
             "unit_id": "cap_b2f7adfff984"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-05-31T14:58:21Z",
+        "turn_id": "turn_28a3e5cf4df1433ab030db1d58b5b5b7",
+        "unit_count": 7,
+        "units": [
+          {
+            "index": 1,
+            "text": "Reverted `cases/continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd.json` back to `HEAD`.",
+            "unit_id": "cap_b753a594eaca"
+          },
+          {
+            "index": 2,
+            "text": "Updated `infra/matrix/.gitignore` to include `compose.yaml` (so operator-local compose doesn\u2019t show up as untracked).",
+            "unit_id": "cap_e82fcc96cb8d"
+          },
+          {
+            "index": 3,
+            "text": "Final `git status --short`:",
+            "unit_id": "cap_a370b26c8ae9"
+          },
+          {
+            "index": 4,
+            "text": "` M infra/matrix/.gitignore`",
+            "unit_id": "cap_37f5be44df32"
+          },
+          {
+            "index": 5,
+            "text": "Repo cleanliness assessment:",
+            "unit_id": "cap_082355d6e52e"
+          },
+          {
+            "index": 6,
+            "text": "Not fully clean yet (one intentional modification to `infra/matrix/.gitignore` pending).",
+            "unit_id": "cap_205a088d186a"
+          },
+          {
+            "index": 7,
+            "text": "Clean enough to proceed to the next Synapse gate if you explicitly accept this small outstanding change (or we commit it later); no secrets involved, and no containers were started.",
+            "unit_id": "cap_8ef7b860478e"
+          }
+        ]
       }
     ],
     "claims": [
@@ -5444,7 +5488,7 @@
             "claim_id": "claim_e861c1387a53",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           },
           {
             "authoritative": false,
@@ -5453,7 +5497,7 @@
             "claim_id": "claim_e861c1387a53",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -5491,7 +5535,7 @@
             "claim_id": "claim_dadd25ca6378",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           },
           {
             "authoritative": false,
@@ -5500,7 +5544,7 @@
             "claim_id": "claim_dadd25ca6378",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -5538,7 +5582,7 @@
             "claim_id": "claim_442eac5eef82",
             "method": "token_jaccard_v1",
             "score": 0.5,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -5576,7 +5620,7 @@
             "claim_id": "claim_3c5ac40a75a1",
             "method": "token_jaccard_v1",
             "score": 0.5,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -5614,7 +5658,7 @@
             "claim_id": "claim_5621d70a1124",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           },
           {
             "authoritative": false,
@@ -5623,7 +5667,7 @@
             "claim_id": "claim_5621d70a1124",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -5661,7 +5705,7 @@
             "claim_id": "claim_9064f6489e16",
             "method": "token_jaccard_v1",
             "score": 0.2308,
-            "updated_at": "2026-05-31T14:36:14Z"
+            "updated_at": "2026-05-31T14:58:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -5681,7 +5725,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - Running connectivity check fails at `whoami` with `401 M_UNKNOWN_TOKEN` (token is inactive/revoked):",
         "task_id": "task_bff811196eaf",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "a203c04bb01462a2",
@@ -5691,7 +5735,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_d3533f8b8647",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "0b4f90c085d31681",
@@ -5701,7 +5745,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: org` is configured for short-lived tokens / rotation for this account (CCE doesn\u2019t record expiry or refresh capability)",
         "task_id": "task_1a0860a98ed7",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "0b4f90c085d31681",
@@ -5711,7 +5755,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_afecfb25ceaa",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "1e86792f8e9514e2",
@@ -5721,7 +5765,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - `static_token` (existing behavior): requires `access_token`",
         "task_id": "task_93b8824f09c3",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "1e86792f8e9514e2",
@@ -5731,7 +5775,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c81374af6e28",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "897ccc649505b439",
@@ -5741,7 +5785,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - `password_login` (new): requires `password`",
         "task_id": "task_8df9e2095707",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "897ccc649505b439",
@@ -5751,7 +5795,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_cc2c65553fc8",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "022d2e03805bb6fd",
@@ -5761,7 +5805,7 @@
         "status": "Pending",
         "task": "Store direct evidence artifact for: Python requires an indented block after `if:`",
         "task_id": "task_53c292baff1c",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "022d2e03805bb6fd",
@@ -5771,7 +5815,7 @@
         "status": "Pending",
         "task": "Store falsification attempt evidence artifact.",
         "task_id": "task_83757837b4df",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "daa49394ac234615",
@@ -5781,7 +5825,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: Python requires indentation after `if:`",
         "task_id": "task_50bd7e0f47da",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "daa49394ac234615",
@@ -5791,7 +5835,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_72c8076f3989",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "4447db717258641a",
@@ -5801,7 +5845,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: The smallest next diagnostic (non-secret) is to confirm whether the existing `access_token` in `config/cce",
         "task_id": "task_0172bf8eb5bd",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "4447db717258641a",
@@ -5811,7 +5855,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_6774a3464d7b",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "3ee2d2c847c833ea",
@@ -5821,7 +5865,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - This means the old copied Element token is dead and cannot be used to confirm identity via `whoami`",
         "task_id": "task_25faa5dc17c9",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "3ee2d2c847c833ea",
@@ -5831,7 +5875,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_0996727573c5",
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       }
     ],
     "exploratory_structures": {
@@ -6729,6 +6773,14 @@
         "last_seen_at": "2026-05-31T14:36:14Z",
         "status": "Candidate",
         "text": "Tailnet HTTPS/TLS expectations, mobile reachability, backups deferred, push notifications possibly absent, federation disabled"
+      },
+      {
+        "candidate_id": "cand_d1607174871d",
+        "fingerprint": "270b3f7e2171831e",
+        "first_seen_at": "2026-05-31T14:58:21Z",
+        "last_seen_at": "2026-05-31T14:58:21Z",
+        "status": "Candidate",
+        "text": "Clean enough to proceed to the next Synapse gate if you explicitly accept this small outstanding change (or we commit it later)"
       }
     ],
     "soft_warnings": [
@@ -7379,6 +7431,70 @@
         "ts": "2026-05-31T14:36:14Z",
         "type": "unverified_claim_drives_implementation",
         "warning_id": "warn_0dcee7085a23"
+      },
+      {
+        "claim_id": "claim_a3669306df24",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_ccbab5a98956"
+      },
+      {
+        "claim_id": "claim_542055aa1aff",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_d788687de4e1"
+      },
+      {
+        "claim_id": "claim_e861c1387a53",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_a3cb1f9f5c77"
+      },
+      {
+        "claim_id": "claim_dadd25ca6378",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_b56b2e7530dc"
+      },
+      {
+        "claim_id": "claim_442eac5eef82",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_397a173e24aa"
+      },
+      {
+        "claim_id": "claim_3c5ac40a75a1",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_ba0bdc107b06"
+      },
+      {
+        "claim_id": "claim_5621d70a1124",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_0d10f5622f95"
+      },
+      {
+        "claim_id": "claim_9064f6489e16",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Approved. 1. Revert the modified case file to HE",
+        "ts": "2026-05-31T14:58:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_b5bcc08ea728"
       }
     ],
     "verification_plans": [
@@ -7393,7 +7509,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "0b4f90c085d31681",
@@ -7406,7 +7522,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "1e86792f8e9514e2",
@@ -7419,7 +7535,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "897ccc649505b439",
@@ -7432,7 +7548,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "022d2e03805bb6fd",
@@ -7445,7 +7561,7 @@
           "Record at least one counterexample search result.",
           "Mark verification status explicitly with rationale."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "daa49394ac234615",
@@ -7458,7 +7574,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "4447db717258641a",
@@ -7471,7 +7587,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       },
       {
         "claim_fingerprint": "3ee2d2c847c833ea",
@@ -7484,12 +7600,12 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-05-31T14:36:14Z"
+        "updated_at": "2026-05-31T14:58:21Z"
       }
     ]
   },
   "epistemic_health": {
-    "consecutive_unverified_turns": 26,
+    "consecutive_unverified_turns": 27,
     "health_state": "thin",
     "last_warning": {
       "evidence_count": 0,
@@ -7511,14 +7627,11 @@
     ]
   },
   "epistemic_posture": {
-    "candidate_count": 101,
+    "candidate_count": 102,
     "claim_count": 8,
     "evidence_count_metric": 0,
-    "exploratory_signal_count": 4,
+    "exploratory_signal_count": 1,
     "exploratory_signals": [
-      "assumption_marker",
-      "exploratory_marker",
-      "operational_constraint_marker",
       "uncertainty_marker"
     ],
     "health_state": "thin",
@@ -7528,7 +7641,7 @@
     ],
     "inferred_posture": "mixed",
     "pending_claim_count": 8,
-    "snapshot_at": "2026-05-31T14:36:14Z",
+    "snapshot_at": "2026-05-31T14:58:21Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -8203,6 +8316,32 @@
         ],
         "turn_id": "turn_c8b0c5e0a3fb48ea8d6a4874ab493c66",
         "updated_at": "2026-05-31T14:36:14Z"
+      },
+      {
+        "answer": "- Reverted `cases/continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd.json` back to `HEAD`.\n- Updated `infra/matrix/.gitignore` to include `compose.yaml` (so operator-local compose doesn\u2019t show up as untracked).\n\nFinal `git status --short`:\n- ` M infra/matrix/.gitignore`\n\nRepo cleanliness assessment:\n- Not fully clean yet (one intentional modification to `infra/matrix/.gitignore` pending).\n- Clean enough to proceed to the next Synapse gate if you explicitly accept this small outstanding change (or we commit it later); no secrets involved, and no containers were started.",
+        "created_at": "2026-05-31T14:58:21Z",
+        "error": null,
+        "finalized_at": "2026-05-31T14:58:21Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Verification (Colossus)**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_28a3e5cf4df1433ab030db1d58b5b5b7",
+        "updated_at": "2026-05-31T14:58:21Z"
       }
     ]
   },
@@ -8649,10 +8788,27 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-05-31T14:36:14Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Verification (Colossus)**",
+      "options": [],
+      "outcome": "- Reverted `cases/continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd.json` back to `HEAD`.\n- Updated `infra/matrix/.gitignore` to include `compose.yaml` (so operator-local compose doesn\u2019t show up as untracked).\n\nFinal `git status --short`:\n- ` M infra/matrix/.gitignore`\n\nRepo cleanliness assessment:\n- Not fully clean yet (one intentional modification to `infra/matrix/.gitignore` pending).\n- Clean enough to proceed to the next Synapse gate if you explicitly accept this small outstanding change (or we commit it later); no secrets involved, and no containers were started.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-05-31T14:58:21Z"
     }
   ],
   "initial_subject": "**Verification (Colossus)**",
-  "intake_question": "PLEASE IMPLEMENT THIS PLAN:\n# Phase: Private Matrix Homeserver (Synapse + Postgres) on Colossus \u2014 Docs + Scaffolding\n\n## Summary\n- Replace matrix.org as CCE transport with a tiny, private, non-federating Synapse homeserver on Colossus.\n- Tailnet-only access using Docker Compose (Synapse + Postgres).\n- This phase produces docs and repo scaffolding only; no containers are started.\n\n## Key Correction (Hostname/Base URL)\n- Do not assume `matrix.cce.colossus`.\n- Docs must instruct the operator to **choose and verify the actual reachable Tailscale Serve HTTPS hostname first**, then set Synapse `server_name`/`public_baseurl` and client configs consistently.\n- Use a placeholder like `<TAILNET_HS_HOST>` throughout docs/templates.\n\n## Deliverables (Docs + Scaffolding)\n1. Docs\n- Add `docs/private-matrix-homeserver.md`\n- Scope: private CCE transport only; no federation, bridges, Element Web, TURN, SSO/MAS, or public services.\n- Explain the \u201cchoose hostname first\u201d rule and consistency constraints (`server_name`, `public_baseurl`, client `homeserver_url`).\n- Define state locations and what is gitignored.\n- Exact operator runbook steps (generate config, start containers later, create users, create room, invite bot, update CCE config, run `--check-connection`).\n- \u201cDone\u201d checklist and risks/caveats (TLS expectations, mobile reachability, no backups yet, no push).\n\n- Add `infra/matrix/README.md`\n- Operator-centric quickstart with the same placeholders and ordered steps.\n\n2. Scaffolding files (placeholders/templates only)\n- Add `infra/matrix/env/.env.example` (no secrets; placeholders)\n- Add `infra/matrix/compose.yaml.template` (Synapse + Postgres compose template using placeholders and local-only port binds)\n- Add `infra/matrix/.gitignore` or root `.gitignore` entries to ignore:\n- `infra/matrix/state/**`\n- `infra/matrix/env/.env`\n\n3. Update existing docs\n- Update `docs/near-term-architecture.md` to note matrix.org auth/MAS/OIDC instability as a transport reliability blocker and that private Synapse is the chosen transport plan (without changing substrate invariants).\n- Update `docs/decision-log.md` with a short decision entry: adopt private, non-federated Synapse over tailnet for reliable bot credentials.\n- Update `README.md` with a pointer to `docs/private-matrix-homeserver.md` under Operational boundaries/transport.\n\n## Deployment Shape (Under `infra/matrix/`)\n- `infra/matrix/README.md`\n- `infra/matrix/compose.yaml.template`\n- `infra/matrix/env/.env.example`\n- `infra/matrix/state/` (documented; created by operator later; gitignored)\n\n## Compose Template Requirements (Synapse + Postgres)\n- Services:\n- `postgres` (`postgres:16`), persistent volume under `infra/matrix/state/postgres/`\n- `synapse` (`matrixdotorg/synapse`), persistent volume under `infra/matrix/state/synapse/`\n- Synapse binds client API locally only (example): `127.0.0.1:8008:8008`\n- No reverse proxy container; TLS is provided by Tailscale Serve (documented as the chosen access mechanism).\n- No federation:\n- `federation_enabled: false`\n- No need to expose `8448` externally.\n- Registration disabled after bootstrap:\n- Runbook includes temporary enabling only long enough to create the two accounts, then turn it off.\n\n## Operator Runbook (What Docs Must Include)\n- Choose/verify HTTPS hostname via Tailscale Serve first, record as `<TAILNET_HS_HOST>`.\n- Generate Synapse config into `infra/matrix/state/synapse/` with chosen `server_name`, then set `public_baseurl` to `https://<TAILNET_HS_HOST>/`.\n- Configure Postgres in `homeserver.yaml` (no SQLite).\n- Start containers (explicit commands in docs, but clearly labeled \u201clater; do not run in this phase\u201d).\n- Create two users (Kevin + bot) via Synapse admin register tool.\n- Create one private room, invite bot, ensure bot joins.\n- Update `config/cce.json` locally to point to `https://<TAILNET_HS_HOST>` and use `password_login`.\n- Verify with `--check-connection`, then a m",
+  "intake_question": "Approved.\n\n1. Revert the modified case file to HEAD:\ncases/continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd.json\n\n2. Add `compose.yaml` to `infra/matrix/.gitignore` so the operator-local compose file does not keep appearing as untracked.\n\n3. Do not print secrets.\n4. Do not start containers.\n5. Show final `git status --short`.\n\nAfter that, report whether the repo is clean enough to proceed to the next Synapse gate.",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -8663,7 +8819,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "548fcf6ac111"
+    "hash": "2181e5260076"
   },
   "question": "**Verification (Colossus)**",
   "routing": {
@@ -9163,6 +9319,25 @@
           "incoming_marker=none"
         ],
         "ts": "2026-05-31T14:36:14Z"
+      },
+      {
+        "active_marker": "confirmed cwd",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=7",
+          "active_unit_count=1006",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=confirmed cwd",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-05-31T14:58:21Z"
       }
     ],
     "last": {
@@ -9175,14 +9350,14 @@
       "selected_case_id": "continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd",
       "signals_used": [
         "candidate_source=discussion_anchor",
-        "incoming_unit_count=27",
-        "active_unit_count=979",
+        "incoming_unit_count=7",
+        "active_unit_count=1006",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=confirmed cwd",
         "incoming_marker=none"
       ],
-      "ts": "2026-05-31T14:36:14Z"
+      "ts": "2026-05-31T14:58:21Z"
     }
   },
   "seed_namespace": "pem",
@@ -9198,7 +9373,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "**Implemented (Docs + Scaffolding Only)**\n- Added private Synapse homeserver plan with the \u201cchoose/verify Tailscale HTTPS hostname first\u201d rule and consistent placeholders (`<TAILNET_HS_HOST>`, `<SERVER_NAME>`).\n- Added `infra/matrix/` scaffolding (templates + gitignore). No containers started.\n\n**Files Created**\n- `/Users/kevinmattice/cce/docs/private-matrix-homeserver.md`\n- `/Users/kevinmattice/cce/infra/matrix/README.md`\n- `/Users/kevinmattice/cce/infra/matrix/compose.yaml.template`\n- `/Users/kevinmattice/cce/infra/matrix/env/.env.example`\n- `/Users/kevinmattice/cce/infra/matrix/.gitignore`\n\n**Files Modified**\n- `/Users/kevinmattice/cce/README.md` (adds pointer to private homeserver doc)\n- `/Users/kevinmattice/cce/docs/near-term-architecture.md` (notes matrix.org MAS/OIDC transport blocker; private Synapse plan)\n- `/Users/kevinmattice/cce/docs/decision-log.md` (adds D-030 decision for private Synapse transport)\n\n**Deployment Shape (Proposed)**\n- `infra/matrix/compose.yaml` (operator-local; created by copying template)\n- `infra/matrix/env/.env` (operator-local; gitignored)\n- `infra/matrix/state/synapse/` + `infra/matrix/state/postgres/` (operator-created; gitignored)\n- Synapse client API bound to `127.0.0.1:8008`, TLS provided by Tailscale Serve at `https://<TAILNET_HS_HOST>`.\n\n**Exact Next Implementation Prompt**\n- \u201cExecute the runbook in `docs/private-matrix-homeserver.md` on Colossus: choose/verify `<TAILNET_HS_HOST>` first, generate Synapse config with `<SERVER_NAME>`, configure Postgres, bring up compose, create Kevin + bot users, disable registration, create private room, invite/join bot, point CCE `homeserver_url` at `https://<TAILNET_HS_HOST>`, then run `--check-connection` and a `status` test from Element.\u201d\n\n**Risks / Caveats Captured**\n- Tailnet HTTPS/TLS expectations, mobile reachability, backups deferred, push notifications possibly absent, federation disabled.\n\n**Commands Run (Non-destructive)**\n- `ssh colossus` reads (`ls`, `sed`, `cat`, `grep`, `git status`) to verify edits.\n\n**Notes**\n- `git status` shows pre-existing unrelated modified files (`gateway/runtime.py`, a `cases/...json`) from earlier work; I did not change or revert them in this phase."
+    "summary": "- Reverted `cases/continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd.json` back to `HEAD`.\n- Updated `infra/matrix/.gitignore` to include `compose.yaml` (so operator-local compose doesn\u2019t show up as untracked).\n\nFinal `git status --short`:\n- ` M infra/matrix/.gitignore`\n\nRepo cleanliness assessment:\n- Not fully clean yet (one intentional modification to `infra/matrix/.gitignore` pending).\n- Clean enough to proceed to the next Synapse gate if you explicitly accept this small outstanding change (or we commit it later); no secrets involved, and no containers were started."
   },
   "topic_hash": "tcqthdkncd",
   "turns": [
@@ -9788,7 +9963,30 @@
       "ts": "2026-05-31T14:36:14Z",
       "turn_id": "turn_c8b0c5e0a3fb48ea8d6a4874ab493c66",
       "verified_claims": 0
+    },
+    {
+      "answer": "- Reverted `cases/continue-on-colossus-in-users-kevinmattice-cce-before-live-pdf-t.case.tcqthdkncd.json` back to `HEAD`.\n- Updated `infra/matrix/.gitignore` to include `compose.yaml` (so operator-local compose doesn\u2019t show up as untracked).\n\nFinal `git status --short`:\n- ` M infra/matrix/.gitignore`\n\nRepo cleanliness assessment:\n- Not fully clean yet (one intentional modification to `infra/matrix/.gitignore` pending).\n- Clean enough to proceed to the next Synapse gate if you explicitly accept this small outstanding change (or we commit it later); no secrets involved, and no containers were started.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "2181e5260076",
+      "q": "**Verification (Colossus)**",
+      "ts": "2026-05-31T14:58:21Z",
+      "turn_id": "turn_28a3e5cf4df1433ab030db1d58b5b5b7",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-05-31T14:36:14Z"
+  "updated_at": "2026-05-31T14:58:21Z"
 }
