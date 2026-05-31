@@ -23,6 +23,7 @@ CCE is a private, low-friction, inspectable operating channel between a human-fa
 - Grounded QA: `docs/grounded-question-answering.md`
 - Model boundary: `docs/model-boundary.md`
 - Matrix auth hardening: `docs/matrix-auth-hardening.md`
+- Private Matrix homeserver plan (Synapse, tailnet-only): `docs/private-matrix-homeserver.md`
 
 ## Dependencies
 

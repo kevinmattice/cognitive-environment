@@ -1,0 +1,3 @@
+# Runtime state and secrets for private Synapse homeserver
+/state/
+/env/.env

@@ -129,3 +129,7 @@ Recurring 401 M_UNKNOWN_TOKEN failures indicate the configured token is not acti
 ### D-029: Add optional password_login Matrix auth mode
 
 To improve Matrix auth reliability, CCE supports an optional password-based login mode that performs /login at startup and keeps access tokens in memory. Static access_token mode remains supported as fallback.
+
+### D-030: Adopt private non-federated Synapse for CCE transport
+
+Matrix.org auth (MAS/OIDC) has not provided a reliable boring bot credential path for CCE. CCE transport will move to a private Synapse homeserver on Colossus (tailnet-only, federation disabled) so the gateway can use password login reliably for a small fixed set of users/rooms.

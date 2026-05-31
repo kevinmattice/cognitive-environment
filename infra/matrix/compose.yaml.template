@@ -1,0 +1,34 @@
+# Template only. Copy to infra/matrix/compose.yaml locally.
+# Do not commit secrets. Do not start containers in the docs/scaffolding phase.
+#
+# Placeholders:
+# - <SYNAPSE_UID_GID> (optional; e.g. "1000:1000")
+# - <SERVER_NAME> (Matrix server_name, e.g. "matrix.example.tailnet")
+#
+# Synapse is bound to localhost only; TLS is expected to be provided by Tailscale Serve.
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: cce_matrix_postgres
+    restart: unless-stopped
+    env_file:
+      - ./env/.env
+    volumes:
+      - ./state/postgres:/var/lib/postgresql/data
+
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: cce_matrix_synapse
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      - SYNAPSE_SERVER_NAME=<SERVER_NAME>
+      - SYNAPSE_REPORT_STATS=no
+    # If you want Synapse to write as your local user, uncomment and set:
+    # user: "<SYNAPSE_UID_GID>"
+    volumes:
+      - ./state/synapse:/data
+    ports:
+      - "127.0.0.1:8008:8008"

@@ -96,6 +96,7 @@ See also `docs/non-goals.md`.
 - **Mobile reliability is fragile in Element**; interface reliability is an operational risk surface.
 - Front-end reliability failures must be treated as first-class signals (friction, interruption, reconnection, habit formation, trust failures).
 - “Works on desktop” is not a proxy for dependable mobile continuity.
+- Matrix.org auth (MAS/OIDC) has blocked simple bot credential stability; near-term transport plan is a private, non-federated Synapse homeserver over tailnet HTTPS.
 
 ## What must remain invariant across front ends
 
@@ -129,4 +130,3 @@ When an adapter is built (later), it should preserve:
 - `docs/model-boundary.md`
 - `docs/matrix-auth-hardening.md`
 - `docs/june18-target.md`
-

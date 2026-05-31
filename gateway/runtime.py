@@ -207,8 +207,15 @@ def establish_matrix_auth_session(config: dict, *, auth_state_path: Path) -> Mat
         room_id=config["room_id"],
     )
 
+    def _mxid_localpart(mxid_or_user: str) -> str:
+        value = mxid_or_user.strip()
+        if value.startswith("@") and ":" in value:
+            return value[1 : value.index(":")]
+        return value
+
+    login_identifier_user = _mxid_localpart(config["user_id"])
     login = client.login_password(
-        user_id=config["user_id"],
+        user_id=login_identifier_user,
         password=config["password"],
         device_id=requested_device_id,
         initial_device_display_name=initial_name,
