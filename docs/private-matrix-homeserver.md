@@ -121,6 +121,23 @@ Then verify:
 - `.venv/bin/python -m gateway.runtime --config config/cce.json --check-connection`
 - Start the gateway and verify `status` in Element (exactly one reply, no loops/flood)
 
+## Execution Gates (Observed)
+
+- Gate 1 (services up): **passed**
+  - Postgres running
+  - Synapse running
+  - Client API reachable at http://127.0.0.1:8008/_matrix/client/versions
+
+- Gate 2 (accounts + password login): **passed**
+  - Created @kevin:<SERVER_NAME>
+  - Created @cce-bot-colossus:<SERVER_NAME>
+  - Verified m.login.password succeeds for both accounts via the client API (no Element).
+
+### Gate Notes
+
+- Postgres locale/collation check: Synapse required a Postgres locale of C. For the minimal private prototype, allow_unsafe_locale: true was set under the Synapse database config.
+- Listener correction: Synapse initially returned 404 for /_matrix/client/versions due to malformed listener indentation; the listener stanza was rewritten so the client resource is enabled.
+
 ## “Done” Checklist
 
 - Synapse starts and stays healthy (Synapse + Postgres)

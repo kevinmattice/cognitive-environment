@@ -133,3 +133,11 @@ To improve Matrix auth reliability, CCE supports an optional password-based logi
 ### D-030: Adopt private non-federated Synapse for CCE transport
 
 Matrix.org auth (MAS/OIDC) has not provided a reliable boring bot credential path for CCE. CCE transport will move to a private Synapse homeserver on Colossus (tailnet-only, federation disabled) so the gateway can use password login reliably for a small fixed set of users/rooms.
+
+### D-031: Private Synapse gates 1-2 verified
+
+Gate 1: Postgres and Synapse start successfully and the client API responds at /_matrix/client/versions on localhost.
+
+Gate 2: Local accounts were created (Kevin + cce-bot-colossus) and m.login.password works via the client API (no Element, no matrix.org dependency).
+
+Notes: Synapse required allow_unsafe_locale: true for the local Postgres locale, and the listeners stanza was corrected so the client resource is served.
