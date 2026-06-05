@@ -6,6 +6,10 @@
 .AppleDouble
 .LSOverride
 
+# Windows
+Thumbs.db
+Desktop.ini
+
 # Thumbnails
 ._*
 
@@ -14,3 +18,4 @@
 .idea/
 *.swp
 *.swo
+*~
