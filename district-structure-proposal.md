@@ -1,20 +1,15 @@
 ---
 type: Note
+status: Proposal
+related_to:
+  - "[[CCE]]"
+  - "[[Atlas]]"
+  - "[[PEM]]"
+  - "[[Matrix]]"
+  - "[[Tolaria]]"
+  - "[[Codex]]"
 ---
 # District Structure Proposal
-
-type: Note\
-status: Proposal\
-related_to:
-
-- "[[CCE]]"
-- "[[Atlas]]"
-- "[[PEM]]"
-- "[[Matrix]]"
-- "[[Tolaria]]"
-- "[[Codex]]"
-
-***
 
 This note proposes a minimal three-district layer under [[CCE]] to reduce graph flatness without changing any existing entity types or moving any notes.
 
