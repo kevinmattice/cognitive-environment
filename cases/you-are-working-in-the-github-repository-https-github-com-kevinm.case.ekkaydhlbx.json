@@ -2,15 +2,21 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
-    "projection_hash": "1382ac9fc189",
-    "q": "You are working in the GitHub repository: https:",
-    "reused_active_case": false
+    "projection_hash": "fc2eefdfb4eb",
+    "q": "Proceed with the proposed structure. Please make",
+    "reused_active_case": true
   },
   "canonical_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
-  "canonical_subject": "**Proposed Work Report**",
+  "canonical_subject": "Type, entities, and environment behavior",
+  "canonical_subject_history": [
+    {
+      "updated_at": "2026-06-06T13:21:30Z",
+      "value": "**Proposed Work Report**"
+    }
+  ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-06T13:17:54Z",
+  "canonical_subject_updated_at": "2026-06-06T13:21:30Z",
   "case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -411,19 +417,190 @@
             "unit_id": "cap_c3fb24c44358"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T13:21:30Z",
+        "turn_id": "turn_ab66de5702fb4402b921cd58d9e52e1b",
+        "unit_count": 22,
+        "units": [
+          {
+            "index": 1,
+            "text": "Created a small Tolaria-compatible atlas seed in the repo and kept it intentionally narrow.",
+            "unit_id": "cap_5de8d9ce6a21"
+          },
+          {
+            "index": 2,
+            "text": "I added [README.md](/Users/kevinmattice/cognitive-environment/README.md), the charter note [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md), the vocabulary/rules notes [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md) and [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md), 11 type notes in [`types/`](/Users/kevinmattice/cognitive-environment/types), and 16 seed entity notes in [`entities/`](/Users/kevinmattice/cognitive-environment/entities).",
+            "unit_id": "cap_2a3b48d04777"
+          },
+          {
+            "index": 3,
+            "text": "The main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin.md](/Users/kevinmattice/cognitive-environment/entities/kevin.md) is extremely minimal and only describes stewardship/ownership.",
+            "unit_id": "cap_a5e7d7a84739"
+          },
+          {
+            "index": 4,
+            "text": "I also preserved the vault conventions from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): first H1 title, `type:` frontmatter, kebab-case filenames, and wikilink relationships.",
+            "unit_id": "cap_2afe4b311499"
+          },
+          {
+            "index": 5,
+            "text": "Assumptions I made:",
+            "unit_id": "cap_96ecdcb400dd"
+          },
+          {
+            "index": 6,
+            "text": "`CCE` is the top-level `Environment`.",
+            "unit_id": "cap_4c5a59aa16e2"
+          },
+          {
+            "index": 7,
+            "text": "`PEM` and `Matrix` are best treated as `System` seeds for now.",
+            "unit_id": "cap_1c70937c3d00"
+          },
+          {
+            "index": 8,
+            "text": "`Colossus` and `Element` are better modeled as `Infrastructure`.",
+            "unit_id": "cap_a14f100d287c"
+          },
+          {
+            "index": 9,
+            "text": "`Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes.",
+            "unit_id": "cap_a00fd77dedd6"
+          },
+          {
+            "index": 10,
+            "text": "`Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type.",
+            "unit_id": "cap_84df1cd81601"
+          },
+          {
+            "index": 11,
+            "text": "Questions for Kevin:",
+            "unit_id": "cap_a0348552ad83"
+          },
+          {
+            "index": 12,
+            "text": "Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now?",
+            "unit_id": "cap_574308b1c441"
+          },
+          {
+            "index": 13,
+            "text": "Should `Codex` and `ChatGPT` remain `Interface` notes, or do you want one or both reframed later as `System` notes?",
+            "unit_id": "cap_07609cdea3b6"
+          },
+          {
+            "index": 14,
+            "text": "Diff summary for the atlas seed:",
+            "unit_id": "cap_9a75d53a9ce2"
+          },
+          {
+            "index": 15,
+            "text": "31 new Markdown files",
+            "unit_id": "cap_8dbc0c859f65"
+          },
+          {
+            "index": 16,
+            "text": "550 total inserted lines",
+            "unit_id": "cap_68c68cccafbf"
+          },
+          {
+            "index": 17,
+            "text": "New roots: `README.md`, `cognitive-environment-atlas.md`, `relationship-vocabulary.md`, `contribution-rules.md`",
+            "unit_id": "cap_d5a9bf0c96b1"
+          },
+          {
+            "index": 18,
+            "text": "New folders: `types/`, `entities/`",
+            "unit_id": "cap_d6f1bac38f70"
+          },
+          {
+            "index": 19,
+            "text": "Git/worktree notes:",
+            "unit_id": "cap_2bc6929e0071"
+          },
+          {
+            "index": 20,
+            "text": "I did not touch unrelated untracked items already present in the repo: `GEMINI.md`, `cases/`, and `pem.initialized`.",
+            "unit_id": "cap_93ab2da1ba18"
+          },
+          {
+            "index": 21,
+            "text": "I did not stage or commit anything.",
+            "unit_id": "cap_aa984a8db01b"
+          },
+          {
+            "index": 22,
+            "text": "If you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files.",
+            "unit_id": "cap_5171fb515de2"
+          }
+        ]
       }
     ],
-    "claims": [],
+    "claims": [
+      {
+        "claim_id": "claim_ee8677ca49b1",
+        "created_at": "2026-06-06T13:21:30Z",
+        "elevated_from_candidate_ids": [
+          "cand_6ba3d93b09b0"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_806e1d6e0c69",
+          "task_10902977ea78"
+        ],
+        "fingerprint": "f49270fb4594d997",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-06-06T13:21:30Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-06-06T13:21:30Z",
+        "text": "- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes",
+        "updated_at": "2026-06-06T13:21:30Z",
+        "verification_plan_id": "plan_ee8677ca49b1"
+      }
+    ],
     "evidence_artifacts": [],
-    "evidence_tasks": [],
+    "evidence_tasks": [
+      {
+        "claim_fingerprint": "f49270fb4594d997",
+        "claim_id": "claim_ee8677ca49b1",
+        "created_at": "2026-06-06T13:21:30Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes",
+        "task_id": "task_806e1d6e0c69",
+        "updated_at": "2026-06-06T13:21:30Z"
+      },
+      {
+        "claim_fingerprint": "f49270fb4594d997",
+        "claim_id": "claim_ee8677ca49b1",
+        "created_at": "2026-06-06T13:21:30Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_10902977ea78",
+        "updated_at": "2026-06-06T13:21:30Z"
+      }
+    ],
     "exploratory_structures": {
       "assumptions": [
         "After making changes, provide: - a concise summary of files created - any assumptions you made - any questions for Kevin - the exact git diff or a summary of the diff Important constraints: - Keep this small",
-        "**Assumptions I\u2019d use unless you want changes**"
+        "**Assumptions I\u2019d use unless you want changes**",
+        "Assumptions I made:"
       ],
       "competing_interpretations": [
         "Before writing anything to either the local or remote repo, provide a report showing your proposed work",
-        "**Content approach**"
+        "**Content approach**",
+        "Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value"
       ],
       "open_questions": [],
       "operational_constraints": [
@@ -433,7 +610,11 @@
         "- Do not install dependencies",
         "- Tools and platforms like `Codex`, `ChatGPT`, `GitHub`, and `Tolaria` will be described neutrally and minimally, without operational details or secrets"
       ],
-      "provisional_conclusions": [],
+      "provisional_conclusions": [
+        "Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value",
+        "- `PEM` and `Matrix` are best treated as `System` seeds for now",
+        "- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now"
+      ],
       "tensions": []
     },
     "knowledge_candidates": [
@@ -556,25 +737,112 @@
         "last_seen_at": "2026-06-06T13:17:54Z",
         "status": "Candidate",
         "text": "If you want, I can proceed with this exact structure next and then give you the resulting diff summary plus the exact `git diff` output"
+      },
+      {
+        "candidate_id": "cand_d6d847acd04d",
+        "fingerprint": "a002853e539e471d",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "The main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin"
+      },
+      {
+        "candidate_id": "cand_fdf6bfa366ae",
+        "fingerprint": "f62c4c1ce64ef395",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "md) is extremely minimal and only describes stewardship/ownership"
+      },
+      {
+        "candidate_id": "cand_47da3bd12c32",
+        "fingerprint": "d29db9dfb9d38897",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "`CCE` is the top-level `Environment`"
+      },
+      {
+        "candidate_id": "cand_bad31439334a",
+        "fingerprint": "4c4a95d2966332d7",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "`PEM` and `Matrix` are best treated as `System` seeds for now"
+      },
+      {
+        "candidate_id": "cand_6b9c1ef8d2a1",
+        "fingerprint": "68da0006dea9ae49",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "`Colossus` and `Element` are better modeled as `Infrastructure`"
+      },
+      {
+        "candidate_id": "cand_03f605a76f46",
+        "fingerprint": "a6adbd6cd46fff92",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "`Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type"
+      },
+      {
+        "candidate_id": "cand_786905b9b465",
+        "fingerprint": "e12ee6f5f72f8f6d",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Candidate",
+        "text": "If you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files"
+      },
+      {
+        "candidate_id": "cand_6ba3d93b09b0",
+        "elevated_claim_id": "claim_ee8677ca49b1",
+        "fingerprint": "f49270fb4594d997",
+        "first_seen_at": "2026-06-06T13:21:30Z",
+        "last_seen_at": "2026-06-06T13:21:30Z",
+        "status": "Elevated",
+        "text": "- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes"
       }
     ],
-    "soft_warnings": [],
-    "verification_plans": []
+    "soft_warnings": [
+      {
+        "claim_id": "claim_ee8677ca49b1",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Proceed with the proposed structure. Please make",
+        "ts": "2026-06-06T13:21:30Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_17f9b15fa01c"
+      }
+    ],
+    "verification_plans": [
+      {
+        "claim_fingerprint": "f49270fb4594d997",
+        "claim_id": "claim_ee8677ca49b1",
+        "created_at": "2026-06-06T13:21:30Z",
+        "plan_id": "plan_ee8677ca49b1",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-06-06T13:21:30Z"
+      }
+    ]
   },
   "epistemic_health": {
-    "consecutive_unverified_turns": 1,
+    "consecutive_unverified_turns": 2,
     "health_state": "thin",
     "warnings": []
   },
   "epistemic_posture": {
-    "candidate_count": 15,
-    "claim_count": 0,
+    "candidate_count": 23,
+    "claim_count": 1,
     "evidence_count_metric": 0,
-    "exploratory_signal_count": 4,
+    "exploratory_signal_count": 3,
     "exploratory_signals": [
       "assumption_marker",
       "exploratory_marker",
-      "operational_constraint_marker",
       "uncertainty_marker"
     ],
     "health_state": "thin",
@@ -584,8 +852,8 @@
       "test_or_repro_marker"
     ],
     "inferred_posture": "mixed",
-    "pending_claim_count": 0,
-    "snapshot_at": "2026-06-06T13:17:54Z",
+    "pending_claim_count": 1,
+    "snapshot_at": "2026-06-06T13:21:30Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -621,6 +889,32 @@
         ],
         "turn_id": "turn_8c5ac3eee99b4422ac97181e3c8eca73",
         "updated_at": "2026-06-06T13:17:54Z"
+      },
+      {
+        "answer": "Created a small Tolaria-compatible atlas seed in the repo and kept it intentionally narrow. I added [README.md](/Users/kevinmattice/cognitive-environment/README.md), the charter note [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md), the vocabulary/rules notes [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md) and [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md), 11 type notes in [`types/`](/Users/kevinmattice/cognitive-environment/types), and 16 seed entity notes in [`entities/`](/Users/kevinmattice/cognitive-environment/entities).\n\nThe main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin.md](/Users/kevinmattice/cognitive-environment/entities/kevin.md) is extremely minimal and only describes stewardship/ownership. I also preserved the vault conventions from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): first H1 title, `type:` frontmatter, kebab-case filenames, and wikilink relationships.\n\nAssumptions I made:\n- `CCE` is the top-level `Environment`.\n- `PEM` and `Matrix` are best treated as `System` seeds for now.\n- `Colossus` and `Element` are better modeled as `Infrastructure`.\n- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes.\n- `Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type.\n\nQuestions for Kevin:\n- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now?\n- Should `Codex` and `ChatGPT` remain `Interface` notes, or do you want one or both reframed later as `System` notes?\n\nDiff summary for the atlas seed:\n- 31 new Markdown files\n- 550 total inserted lines\n- New roots: `README.md`, `cognitive-environment-atlas.md`, `relationship-vocabulary.md`, `contribution-rules.md`\n- New folders: `types/`, `entities/`\n\nGit/worktree notes:\n- I did not touch unrelated untracked items already present in the repo: `GEMINI.md`, `cases/`, and `pem.initialized`.\n- I did not stage or commit anything.\n\nIf you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files.",
+        "created_at": "2026-06-06T13:21:30Z",
+        "error": null,
+        "finalized_at": "2026-06-06T13:21:30Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_ab66de5702fb4402b921cd58d9e52e1b",
+        "updated_at": "2026-06-06T13:21:30Z"
       }
     ]
   },
@@ -642,10 +936,27 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-06T13:17:54Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "Created a small Tolaria-compatible atlas seed in the repo and kept it intentionally narrow. I added [README.md](/Users/kevinmattice/cognitive-environment/README.md), the charter note [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md), the vocabulary/rules notes [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md) and [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md), 11 type notes in [`types/`](/Users/kevinmattice/cognitive-environment/types), and 16 seed entity notes in [`entities/`](/Users/kevinmattice/cognitive-environment/entities).\n\nThe main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin.md](/Users/kevinmattice/cognitive-environment/entities/kevin.md) is extremely minimal and only describes stewardship/ownership. I also preserved the vault conventions from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): first H1 title, `type:` frontmatter, kebab-case filenames, and wikilink relationships.\n\nAssumptions I made:\n- `CCE` is the top-level `Environment`.\n- `PEM` and `Matrix` are best treated as `System` seeds for now.\n- `Colossus` and `Element` are better modeled as `Infrastructure`.\n- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes.\n- `Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type.\n\nQuestions for Kevin:\n- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now?\n- Should `Codex` and `ChatGPT` remain `Interface` notes, or do you want one or both reframed later as `System` notes?\n\nDiff summary for the atlas seed:\n- 31 new Markdown files\n- 550 total inserted lines\n- New roots: `README.md`, `cognitive-environment-atlas.md`, `relationship-vocabulary.md`, `contribution-rules.md`\n- New folders: `types/`, `entities/`\n\nGit/worktree notes:\n- I did not touch unrelated untracked items already present in the repo: `GEMINI.md`, `cases/`, and `pem.initialized`.\n- I did not stage or commit anything.\n\nIf you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T13:21:30Z"
     }
   ],
   "initial_subject": "**Proposed Work Report**",
-  "intake_question": "You are working in the GitHub repository:\n\nhttps://github.com/kevinmattice/cognitive-environment\n\nThe local repo is located in Users/kevinmattice/cognitive-environment\n\nGoal:\nCreate the first tiny seed of the Cognitive Environment Atlas in Tolaria-compatible Markdown. Do not import existing archives or create a large structure. This is a small ontology experiment.\n\nContext:\nThis repository is intended to become a shared human/AI atlas for Kevin\u2019s Cognitive Computing Environment. It should help humans and AI agents understand what exists, how things relate, what status each thing has, and where future work belongs.\n\nDo not treat this as a normal software repo. Treat it as a world-model / architecture atlas.\n\nTasks:\n\n1. Inspect the existing repository structure before making changes.\n\n2. Create a small, clean starting structure using Markdown files only. Prefer obvious folders and filenames.\n\n3. Create a top-level README.md that explains:\n- what the Cognitive Environment Atlas is\n- that this is an experimental public starter vault\n- that it is not the full private production atlas\n- that the goal is to model entities, relationships, status, and future work\n- that the first priority is structure, not bulk content\n\n4. Create a note called something like \u201cCognitive Environment Atlas\u201d or \u201cAtlas Charter\u201d that defines the initial ontology.\n\n5. Define these initial object types:\n- Environment\n- System\n- Infrastructure\n- Capability\n- Interface\n- Project\n- Artifact\n- Person\n- Idea\n- Decision\n- Task\n\nFor each type, include:\n- plain-English definition\n- when to use it\n- examples\n- what it should not be confused with\n\n6. Create seed entity notes for:\n- CCE\n- PEM\n- Colossus\n- Matrix\n- Element\n- Tolaria\n- GitHub\n- Memory\n- Cognitive Registry\n- Atlas\n- Corpus\n- Provenance\n- Browser Agents\n- Codex\n- ChatGPT\n- Kevin\n\n7. Each entity note should be short. Use a consistent frontmatter or metadata style compatible with Tolaria if the repo already suggests one. If not, use simple YAML frontmatter like:\n\n---\ntype:\nstatus:\nbelongs_to:\nrelated_to:\nhas:\nsupports:\n---\n\nThen add a short prose description.\n\n8. Do not over-design. Keep relationships sparse and obvious. This first pass should create a navigable seed, not a comprehensive model.\n\n9. Add one document called \u201cRelationship Vocabulary\u201d defining the first relationship labels:\n- belongs_to\n- contains\n- supports\n- uses\n- depends_on\n- governs\n- represents\n- related_to\n- replaces\n- feeds\n\n10. Add one document called \u201cContribution Rules\u201d explaining how Kevin, ChatGPT, Codex, and future CCE components should contribute:\n- small changes\n- explicit relationships\n- no bulk imports without review\n- prefer clarity over cleverness\n- every new entity should have a type and status\n- uncertain ideas should be marked as Idea or Proposal, not treated as operational fact\n\n11. After making changes, provide:\n- a concise summary of files created\n- any assumptions you made\n- any questions for Kevin\n- the exact git diff or a summary of the diff\n\nImportant constraints:\n- Keep this small.\n- Do not invent personal details.\n- Do not add credentials or operational secrets.\n- Do not create automation.\n- Do not install dependencies.\n- Do not build software.\n- Do not import old Markdown archives.\n- This is an ontology and atlas seed only.\n\nBefore writing anything to either the local or remote repo, provide a report showing your proposed work.",
+  "intake_question": "Proceed with the proposed structure.\n\nPlease make these small adjustments:\n\n1. Treat \u201cAtlas\u201d as an Artifact unless you are referring specifically to the work of building it, in which case that work can be represented as a Project later.\n\n2. Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value. We need a safe way to represent ideas that are not yet accepted architecture.\n\n3. Keep the Kevin note extremely minimal. In this public lab repo, Kevin should only be represented as the project steward/owner. Do not include personal details.\n\nOtherwise, follow the plan as written. Keep the seed small, use Tolaria-compatible Markdown, preserve the repo conventions from AGENTS.md, and provide the diff summary afterward.",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -656,7 +967,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "1382ac9fc189"
+    "hash": "fc2eefdfb4eb"
   },
   "question": "**Proposed Work Report**",
   "routing": {
@@ -673,20 +984,45 @@
           "candidate_source=none"
         ],
         "ts": "2026-06-06T13:17:54Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=22",
+          "active_unit_count=72",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T13:21:30Z"
       }
     ],
     "last": {
       "active_marker": null,
       "incoming_marker": null,
       "matched_case_ids": [],
-      "previous_case_id": null,
+      "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
       "routing_decision": "preserve_current_behavior",
-      "routing_reason": "no_active_case",
+      "routing_reason": "incoming_marker_missing",
       "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
       "signals_used": [
-        "candidate_source=none"
+        "candidate_source=discussion_anchor",
+        "incoming_unit_count=22",
+        "active_unit_count=72",
+        "active_marker_source=committed_capture_units",
+        "incoming_marker_source=incoming_capture_units",
+        "active_marker=none",
+        "incoming_marker=none"
       ],
-      "ts": "2026-06-06T13:17:54Z"
+      "ts": "2026-06-06T13:21:30Z"
     }
   },
   "seed_namespace": "pem",
@@ -702,7 +1038,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "**Proposed Work Report**\n\nI inspected the local repo first. Right now it\u2019s intentionally tiny: [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md), [CLAUDE.md](/Users/kevinmattice/cognitive-environment/CLAUDE.md), [type.md](/Users/kevinmattice/cognitive-environment/type.md), and [note.md](/Users/kevinmattice/cognitive-environment/note.md). The working tree is clean on `main`.\n\nThe vault conventions are clear from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): Tolaria-compatible Markdown notes, first H1 as title, `type:` in frontmatter, kebab-case filenames, and relationships expressed with wikilinks. I\u2019ll follow that exactly and keep the ontology seed intentionally small.\n\n**What I propose to create**\n\nAt the repo root:\n- [README.md](/Users/kevinmattice/cognitive-environment/README.md)\n- [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md)\n- [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md)\n- [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md)\n\nA small `types/` folder for the initial ontology:\n- `types/environment.md`\n- `types/system.md`\n- `types/infrastructure.md`\n- `types/capability.md`\n- `types/interface.md`\n- `types/project.md`\n- `types/artifact.md`\n- `types/person.md`\n- `types/idea.md`\n- `types/decision.md`\n- `types/task.md`\n\nA small `entities/` folder for the seed entity notes:\n- `entities/cce.md`\n- `entities/pem.md`\n- `entities/colossus.md`\n- `entities/matrix.md`\n- `entities/element.md`\n- `entities/tolaria.md`\n- `entities/github.md`\n- `entities/memory.md`\n- `entities/cognitive-registry.md`\n- `entities/atlas.md`\n- `entities/corpus.md`\n- `entities/provenance.md`\n- `entities/browser-agents.md`\n- `entities/codex.md`\n- `entities/chatgpt.md`\n- `entities/kevin.md`\n\n**Content approach**\n\n- `README.md` will explain the atlas, that this repo is an experimental public starter vault, that it is not the full private production atlas, and that the priority is structure over bulk content.\n- `cognitive-environment-atlas.md` will serve as the initial charter and ontology note, linking to the type notes and a few seed entities.\n- Each type note will be `type: Type` and include:\n  - plain-English definition\n  - when to use it\n  - examples\n  - what it should not be confused with\n- Each entity note will stay short and use simple frontmatter like:\n```yaml\n---\ntype: System\nstatus: Seed\nbelongs_to: \"[[CCE]]\"\nrelated_to:\n  - \"[[Atlas]]\"\n---\n```\n- Relationships will stay sparse and obvious. I\u2019ll avoid speculative links unless they\u2019re clearly implied by the names and your prompt.\n\n**Assumptions I\u2019d use unless you want changes**\n\n- `CCE` is the umbrella environment and should be typed as `Environment`.\n- `Atlas` is a project/artifact about modeling the environment, not the whole environment itself.\n- `Kevin` will be represented only as a minimal `Person` note with no personal details beyond authorship/stewardship context.\n- Tools and platforms like `Codex`, `ChatGPT`, `GitHub`, and `Tolaria` will be described neutrally and minimally, without operational details or secrets.\n- The folder structure is just for readability; the ontology meaning will live in types and relationships, per the vault rules.\n\n**One thing I want to sanity-check before writing**\n\nThere\u2019s one naming choice with non-obvious consequences: for Tolaria, type names often appear as literal `type:` values. I\u2019m planning to set entity notes to values like `type: Environment`, `type: System`, etc., and make the corresponding type documents have matching H1 titles. That fits Tolaria cleanly.\n\nIf you want, I can proceed with this exact structure next and then give you the resulting diff summary plus the exact `git diff` output."
+    "summary": "Created a small Tolaria-compatible atlas seed in the repo and kept it intentionally narrow. I added [README.md](/Users/kevinmattice/cognitive-environment/README.md), the charter note [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md), the vocabulary/rules notes [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md) and [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md), 11 type notes in [`types/`](/Users/kevinmattice/cognitive-environment/types), and 16 seed entity notes in [`entities/`](/Users/kevinmattice/cognitive-environment/entities).\n\nThe main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin.md](/Users/kevinmattice/cognitive-environment/entities/kevin.md) is extremely minimal and only describes stewardship/ownership. I also preserved the vault conventions from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): first H1 title, `type:` frontmatter, kebab-case filenames, and wikilink relationships.\n\nAssumptions I made:\n- `CCE` is the top-level `Environment`.\n- `PEM` and `Matrix` are best treated as `System` seeds for now.\n- `Colossus` and `Element` are better modeled as `Infrastructure`.\n- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes.\n- `Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type.\n\nQuestions for Kevin:\n- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now?\n- Should `Codex` and `ChatGPT` remain `Interface` notes, or do you want one or both reframed later as `System` notes?\n\nDiff summary for the atlas seed:\n- 31 new Markdown files\n- 550 total inserted lines\n- New roots: `README.md`, `cognitive-environment-atlas.md`, `relationship-vocabulary.md`, `contribution-rules.md`\n- New folders: `types/`, `entities/`\n\nGit/worktree notes:\n- I did not touch unrelated untracked items already present in the repo: `GEMINI.md`, `cases/`, and `pem.initialized`.\n- I did not stage or commit anything.\n\nIf you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files."
   },
   "topic_hash": "ekkaydhlbx",
   "turns": [
@@ -728,7 +1064,30 @@
       "ts": "2026-06-06T13:17:54Z",
       "turn_id": "turn_8c5ac3eee99b4422ac97181e3c8eca73",
       "verified_claims": 0
+    },
+    {
+      "answer": "Created a small Tolaria-compatible atlas seed in the repo and kept it intentionally narrow. I added [README.md](/Users/kevinmattice/cognitive-environment/README.md), the charter note [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md), the vocabulary/rules notes [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md) and [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md), 11 type notes in [`types/`](/Users/kevinmattice/cognitive-environment/types), and 16 seed entity notes in [`entities/`](/Users/kevinmattice/cognitive-environment/entities).\n\nThe main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin.md](/Users/kevinmattice/cognitive-environment/entities/kevin.md) is extremely minimal and only describes stewardship/ownership. I also preserved the vault conventions from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): first H1 title, `type:` frontmatter, kebab-case filenames, and wikilink relationships.\n\nAssumptions I made:\n- `CCE` is the top-level `Environment`.\n- `PEM` and `Matrix` are best treated as `System` seeds for now.\n- `Colossus` and `Element` are better modeled as `Infrastructure`.\n- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes.\n- `Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type.\n\nQuestions for Kevin:\n- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now?\n- Should `Codex` and `ChatGPT` remain `Interface` notes, or do you want one or both reframed later as `System` notes?\n\nDiff summary for the atlas seed:\n- 31 new Markdown files\n- 550 total inserted lines\n- New roots: `README.md`, `cognitive-environment-atlas.md`, `relationship-vocabulary.md`, `contribution-rules.md`\n- New folders: `types/`, `entities/`\n\nGit/worktree notes:\n- I did not touch unrelated untracked items already present in the repo: `GEMINI.md`, `cases/`, and `pem.initialized`.\n- I did not stage or commit anything.\n\nIf you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "fc2eefdfb4eb",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T13:21:30Z",
+      "turn_id": "turn_ab66de5702fb4402b921cd58d9e52e1b",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-06T13:17:54Z"
+  "updated_at": "2026-06-06T13:21:30Z"
 }
