@@ -1,13 +1,17 @@
 ---
-type: Note
+type: Idea
+status: Concept
+belongs_to: "[[CCE]]"
+related_to:
+  - "[[PEM]]"
+  - "[[Kevin]]"
+  - "[[Colossus]]"
 ---
 # Cognitive Ergonomics Layer for Local AI Systems
 
-**Status:** Concept / Future Exploration\
-\
-**Date:** June 2026\
-\
-**Context:** Discussion arising from local AI use on Colossus and observations from Gemma-3-12B behavior.
+Date: June 2026
+
+Context: Discussion arising from local AI use on [[Colossus]] and observations from Gemma-3-12B behavior.
 
 ***
 

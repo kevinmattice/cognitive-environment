@@ -1,5 +1,11 @@
 ---
 type: Note
+status: Active
+belongs_to: "[[Cognitive Environment Atlas]]"
+related_to:
+  - "[[Workshop Laws]]"
+  - "[[Contribution Rules]]"
+  - "[[CCE]]"
 ---
 # The Workshop Manifesto
 
