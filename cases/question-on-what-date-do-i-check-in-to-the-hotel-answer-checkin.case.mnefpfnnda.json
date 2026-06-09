@@ -2,8 +2,8 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
-    "projection_hash": "e614befe7125",
-    "q": "Good. Proceed with the smoke-harness-only fix. C",
+    "projection_hash": "5448abdbe32b",
+    "q": "Please set PEM_LLM_TIMEOUT_SECONDS=180. Local mo",
     "reused_active_case": true
   },
   "canonical_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
@@ -80,7 +80,7 @@
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-09T21:41:36Z",
+  "canonical_subject_updated_at": "2026-06-09T23:05:08Z",
   "case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -9257,6 +9257,992 @@
             "unit_id": "cap_033c133309eb"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T22:04:20Z",
+        "turn_id": "turn_2adff1ed73b44f33bd4be4721c648da9",
+        "unit_count": 50,
+        "units": [
+          {
+            "index": 1,
+            "text": "**Architecture Assessment**",
+            "unit_id": "cap_2941dce0fefb"
+          },
+          {
+            "index": 2,
+            "text": "PEM\u2019s active LLM boundary is already narrow enough that Ollama should fit behind it without changing PEM\u2019s higher-level behavior.",
+            "unit_id": "cap_293376409067"
+          },
+          {
+            "index": 3,
+            "text": "The current live path is centered on [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py).",
+            "unit_id": "cap_4b24046c35c0"
+          },
+          {
+            "index": 4,
+            "text": "That module owns the actual model call contract used by the server: `generate_json(system_prompt, user_prompt, timeout_seconds, max_output_tokens)`.",
+            "unit_id": "cap_9e4893992fd6"
+          },
+          {
+            "index": 5,
+            "text": "It currently reads `PEM_LLM_MODE`, `OPENAI_API_KEY`, `PEM_LLM_MODEL`, `PEM_LLM_TIMEOUT_SECONDS`, and `PEM_LLM_RESPONSE_FORMAT`, then returns a provider-neutral envelope with `ok`, `result.payload`, `result.raw_text`, `result.usage`, or a structured `error`.",
+            "unit_id": "cap_ca5674d3e5bc"
+          },
+          {
+            "index": 6,
+            "text": "The PEM reasoning and tool behavior live in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py), which imports `generate_json(...)` and uses it inside the PEM tools and workflow logic.",
+            "unit_id": "cap_dafddd446ba1"
+          },
+          {
+            "index": 7,
+            "text": "That means `server.py` mostly treats the model layer as a JSON-producing service, not as OpenAI specifically.",
+            "unit_id": "cap_509bf77e1938"
+          },
+          {
+            "index": 8,
+            "text": "There is also [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py), which looks like a more formal adapter layer, but it is not the main active entry point today.",
+            "unit_id": "cap_33ba149c17ba"
+          },
+          {
+            "index": 9,
+            "text": "So the real transport boundary is `llm_client.py`, not the adapter file.",
+            "unit_id": "cap_2eb943c0cd6a"
+          },
+          {
+            "index": 10,
+            "text": "That\u2019s good news for this task: the cleanest path is to introduce Ollama behind `generate_json(...)` while preserving the same returned envelope and leaving PEM reasoning, MCP tools, case schema, and storage untouched.",
+            "unit_id": "cap_2ce7a954fb6d"
+          },
+          {
+            "index": 11,
+            "text": "**Can Ollama fit behind the existing abstraction?**",
+            "unit_id": "cap_e988349cb208"
+          },
+          {
+            "index": 12,
+            "text": "Yes, probably with minimal surface change.",
+            "unit_id": "cap_fa6d9ef29ba3"
+          },
+          {
+            "index": 13,
+            "text": "The rest of PEM only really needs:",
+            "unit_id": "cap_714d12d5db2f"
+          },
+          {
+            "index": 14,
+            "text": "`generate_json(...)`",
+            "unit_id": "cap_797f730203a3"
+          },
+          {
+            "index": 15,
+            "text": "stable structured success/error output",
+            "unit_id": "cap_a3340ba56947"
+          },
+          {
+            "index": 16,
+            "text": "normalized JSON payloads",
+            "unit_id": "cap_13e6b99f1afe"
+          },
+          {
+            "index": 17,
+            "text": "no provider-specific branching in the PEM logic",
+            "unit_id": "cap_0f1313e4fb76"
+          },
+          {
+            "index": 18,
+            "text": "So the proposed mode expansion is:",
+            "unit_id": "cap_e7d97a8cbfa3"
+          },
+          {
+            "index": 19,
+            "text": "`PEM_LLM_MODE=openai`",
+            "unit_id": "cap_b95cc1b727ae"
+          },
+          {
+            "index": 20,
+            "text": "`PEM_LLM_MODE=ollama`",
+            "unit_id": "cap_76c34dd34149"
+          },
+          {
+            "index": 21,
+            "text": "`PEM_OLLAMA_BASE_URL`",
+            "unit_id": "cap_dca9dc3d3022"
+          },
+          {
+            "index": 22,
+            "text": "`PEM_OLLAMA_MODEL`",
+            "unit_id": "cap_c9c784b819e8"
+          },
+          {
+            "index": 23,
+            "text": "The goal would be:",
+            "unit_id": "cap_6eb353a05d01"
+          },
+          {
+            "index": 24,
+            "text": "`server.py` still calls `generate_json(...)`",
+            "unit_id": "cap_00078fccf481"
+          },
+          {
+            "index": 25,
+            "text": "`generate_json(...)` dispatches by mode",
+            "unit_id": "cap_aaaa5b19ca28"
+          },
+          {
+            "index": 26,
+            "text": "both backends return the same PEM envelope",
+            "unit_id": "cap_c5db7229d789"
+          },
+          {
+            "index": 27,
+            "text": "One compatibility caveat matters: PEM currently leans on OpenAI-style structured response support, including `json_schema`/`json_object` behavior and retry-on-parse-failure.",
+            "unit_id": "cap_f03b95207cd7"
+          },
+          {
+            "index": 28,
+            "text": "Ollama may not match the OpenAI Responses API feature-for-feature, especially around strict schema enforcement.",
+            "unit_id": "cap_077017f4bd1a"
+          },
+          {
+            "index": 29,
+            "text": "So the initial Ollama implementation should preserve PEM\u2019s contract by normalizing the output behind the transport layer, even if Ollama has to use a slightly less strict JSON mode internally.",
+            "unit_id": "cap_07ff0dfeee9c"
+          },
+          {
+            "index": 30,
+            "text": "**Proposed Implementation Plan**",
+            "unit_id": "cap_f47b582cbba9"
+          },
+          {
+            "index": 31,
+            "text": "Files likely needing modification:",
+            "unit_id": "cap_943682cb0b55"
+          },
+          {
+            "index": 32,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)",
+            "unit_id": "cap_2b30f3d15c38"
+          },
+          {
+            "index": 33,
+            "text": "likely a new backend module such as `/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`",
+            "unit_id": "cap_b8d5827c3fa0"
+          },
+          {
+            "index": 34,
+            "text": "possibly a very small change in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py) if `_llm_enabled()` is currently hardcoded to only recognize `openai`",
+            "unit_id": "cap_103032df69f1"
+          },
+          {
+            "index": 35,
+            "text": "Files that should remain untouched:",
+            "unit_id": "cap_8a6ba66210b3"
+          },
+          {
+            "index": 36,
+            "text": "PEM case schema and artifact logic",
+            "unit_id": "cap_545f0bbe1a85"
+          },
+          {
+            "index": 37,
+            "text": "PEM storage semantics",
+            "unit_id": "cap_310b9f16a6be"
+          },
+          {
+            "index": 38,
+            "text": "PEM MCP tool behavior",
+            "unit_id": "cap_ce0b3922e9f6"
+          },
+          {
+            "index": 39,
+            "text": "project-root and initialization logic",
+            "unit_id": "cap_0aab8306d464"
+          },
+          {
+            "index": 40,
+            "text": "smoke harnesses unless later extended for Ollama-specific validation",
+            "unit_id": "cap_a09726d0c3c7"
+          },
+          {
+            "index": 41,
+            "text": "Tests that must be added:",
+            "unit_id": "cap_d2060f0eba2d"
+          },
+          {
+            "index": 42,
+            "text": "Ollama-mode unit tests for `generate_json(...)`",
+            "unit_id": "cap_7a79949f4cbb"
+          },
+          {
+            "index": 43,
+            "text": "config/env parsing tests for `PEM_LLM_MODE=ollama`",
+            "unit_id": "cap_5ead3d765044"
+          },
+          {
+            "index": 44,
+            "text": "response normalization tests proving Ollama returns the same contract shape as OpenAI mode",
+            "unit_id": "cap_54cb92882f35"
+          },
+          {
+            "index": 45,
+            "text": "failure-path tests for unreachable Ollama, malformed JSON, and model-not-found behavior",
+            "unit_id": "cap_b71e84cdbca9"
+          },
+          {
+            "index": 46,
+            "text": "Existing tests that should keep passing unchanged:",
+            "unit_id": "cap_231bf933182d"
+          },
+          {
+            "index": 47,
+            "text": "current OpenAI-mode tests in [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)",
+            "unit_id": "cap_0e3cbbff5938"
+          },
+          {
+            "index": 48,
+            "text": "the 176-test validation slice",
+            "unit_id": "cap_7f38d106f7bb"
+          },
+          {
+            "index": 49,
+            "text": "deployment preflight and phase-1 smoke",
+            "unit_id": "cap_324fc185cbb7"
+          },
+          {
+            "index": 50,
+            "text": "anything unrelated to mo",
+            "unit_id": "cap_8eec947fcba5"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T22:23:11Z",
+        "turn_id": "turn_8e0e28b8a72040288f217b8caa29e31e",
+        "unit_count": 80,
+        "units": [
+          {
+            "index": 1,
+            "text": "Native Ollama support is implemented locally in the real PEM source tree, with PEM\u2019s MCP/runtime shape left intact.",
+            "unit_id": "cap_733a19d4f64a"
+          },
+          {
+            "index": 2,
+            "text": "Changed files:",
+            "unit_id": "cap_1d2e6f5b8522"
+          },
+          {
+            "index": 3,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)",
+            "unit_id": "cap_f2b4bd5e9d2b"
+          },
+          {
+            "index": 4,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)",
+            "unit_id": "cap_378c247cbdf0"
+          },
+          {
+            "index": 5,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)",
+            "unit_id": "cap_dbef646bd695"
+          },
+          {
+            "index": 6,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)",
+            "unit_id": "cap_2761920617bd"
+          },
+          {
+            "index": 7,
+            "text": "What changed:",
+            "unit_id": "cap_e6465a4756bb"
+          },
+          {
+            "index": 8,
+            "text": "Added `PEM_LLM_MODE=ollama` dispatch behind the existing `generate_json(...)` boundary.",
+            "unit_id": "cap_de02a8af8985"
+          },
+          {
+            "index": 9,
+            "text": "Added `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`.",
+            "unit_id": "cap_68eb2c02212e"
+          },
+          {
+            "index": 10,
+            "text": "Added `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL` and no hardcoded model default.",
+            "unit_id": "cap_246fcc6c10b9"
+          },
+          {
+            "index": 11,
+            "text": "Preserved the existing normalized PEM envelope shape for success and failure.",
+            "unit_id": "cap_b1e441ae1ec8"
+          },
+          {
+            "index": 12,
+            "text": "Added structured Ollama error handling for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON/model-prose output.",
+            "unit_id": "cap_cd56328f3c69"
+          },
+          {
+            "index": 13,
+            "text": "Kept `src/server.py` changes minimal: LLM gating now recognizes `ollama`, and model reporting reflects the active backend.",
+            "unit_id": "cap_607236948972"
+          },
+          {
+            "index": 14,
+            "text": "Local validation is green:",
+            "unit_id": "cap_7c3d468b67a4"
+          },
+          {
+            "index": 15,
+            "text": "`tests.test_llm_client`: `OK` (`14` tests)",
+            "unit_id": "cap_f1fb038ecf96"
+          },
+          {
+            "index": 16,
+            "text": "PEM validation slice: `OK` (`176` tests)",
+            "unit_id": "cap_e1bff0e2c36f"
+          },
+          {
+            "index": 17,
+            "text": "deployment-style [`scripts/preflight_stdio_attach.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/preflight_stdio_attach.py): `OK`",
+            "unit_id": "cap_187af37e03b4"
+          },
+          {
+            "index": 18,
+            "text": "phase-1 smoke [`scripts/smoke_mcp_phase1.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/smoke_mcp_phase1.py): `PASS`",
+            "unit_id": "cap_03d503dced5e"
+          },
+          {
+            "index": 19,
+            "text": "The one thing I could not complete is the Colossus sync and live Ollama validation, because Colossus is unreachable from this session right now:",
+            "unit_id": "cap_386164aa6577"
+          },
+          {
+            "index": 20,
+            "text": "`ssh colossus` fails on DNS resolution for `colossus.bobcat-paradise.ts.net`",
+            "unit_id": "cap_db7abf8fbf4e"
+          },
+          {
+            "index": 21,
+            "text": "direct private-IP attempts timed out",
+            "unit_id": "cap_dc7eda4feb73"
+          },
+          {
+            "index": 22,
+            "text": "So the implementation work is done and locally validated, but the remote acceptance leg is blocked by connectivity, not by PEM.",
+            "unit_id": "cap_de5df734b521"
+          },
+          {
+            "index": 23,
+            "text": "When Colossus is reachable again, these are the next commands I\u2019d run:",
+            "unit_id": "cap_cc333a8833af"
+          },
+          {
+            "index": 24,
+            "text": "```bash",
+            "unit_id": "cap_1b60ebdd2182"
+          },
+          {
+            "index": 25,
+            "text": "rsync -av --delete \\",
+            "unit_id": "cap_e76ec044b5c3"
+          },
+          {
+            "index": 26,
+            "text": "--exclude '.git/' \\",
+            "unit_id": "cap_0847f7658cdd"
+          },
+          {
+            "index": 27,
+            "text": "--exclude '.venv/' \\",
+            "unit_id": "cap_b139c1a59cac"
+          },
+          {
+            "index": 28,
+            "text": "--exclude '.pytest_cache/' \\",
+            "unit_id": "cap_4755b65ae53c"
+          },
+          {
+            "index": 29,
+            "text": "--exclude '.worktrees/' \\",
+            "unit_id": "cap_a422ae825d64"
+          },
+          {
+            "index": 30,
+            "text": "--exclude '__pycache__/' \\",
+            "unit_id": "cap_9791ed1d7a83"
+          },
+          {
+            "index": 31,
+            "text": "--exclude '*.pyc' \\",
+            "unit_id": "cap_3a2a1d416873"
+          },
+          {
+            "index": 32,
+            "text": "--exclude '.DS_Store' \\",
+            "unit_id": "cap_05e7a127049a"
+          },
+          {
+            "index": 33,
+            "text": "--exclude '.env' \\",
+            "unit_id": "cap_a60ec46c3eb1"
+          },
+          {
+            "index": 34,
+            "text": "--exclude 'cases/' \\",
+            "unit_id": "cap_50cd9012e738"
+          },
+          {
+            "index": 35,
+            "text": "--exclude 'scratch/' \\",
+            "unit_id": "cap_9e09583bc3a6"
+          },
+          {
+            "index": 36,
+            "text": "--exclude 'stories/' \\",
+            "unit_id": "cap_6ba7ad3b808b"
+          },
+          {
+            "index": 37,
+            "text": "--exclude 'tickets/' \\",
+            "unit_id": "cap_98fcba9e62fc"
+          },
+          {
+            "index": 38,
+            "text": "--exclude 'pem.initialized' \\",
+            "unit_id": "cap_cf40697e1310"
+          },
+          {
+            "index": 39,
+            "text": "--exclude 'pem-touchid/.build/' \\",
+            "unit_id": "cap_3744be3d7fc7"
+          },
+          {
+            "index": 40,
+            "text": "--exclude 'pem-conversion-test' \\",
+            "unit_id": "cap_1f0a72f4ece3"
+          },
+          {
+            "index": 41,
+            "text": "/Users/kevinmattice/dev/anon/pem-mcp/ \\",
+            "unit_id": "cap_61b0aebad128"
+          },
+          {
+            "index": 42,
+            "text": "colossus:/Users/kevinmattice/pem-mcp/",
+            "unit_id": "cap_c6d1c9eb0280"
+          },
+          {
+            "index": 43,
+            "text": "```",
+            "unit_id": "cap_786ae23dfef4"
+          },
+          {
+            "index": 44,
+            "text": "```bash",
+            "unit_id": "cap_ebf6fdd6bffd"
+          },
+          {
+            "index": 45,
+            "text": "cd /Users/kevinmattice/pem-mcp",
+            "unit_id": "cap_ce5396ea4e39"
+          },
+          {
+            "index": 46,
+            "text": ".",
+            "unit_id": "cap_dd6e979ca242"
+          },
+          {
+            "index": 47,
+            "text": ".venv/bin/activate",
+            "unit_id": "cap_7c4e6880d153"
+          },
+          {
+            "index": 48,
+            "text": "PEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\",
+            "unit_id": "cap_737f1e2dc0e2"
+          },
+          {
+            "index": 49,
+            "text": "PEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\",
+            "unit_id": "cap_7352bf9289ef"
+          },
+          {
+            "index": 50,
+            "text": "python scripts/preflight_stdio_attach.py",
+            "unit_id": "cap_aafad35ce86e"
+          },
+          {
+            "index": 51,
+            "text": "```",
+            "unit_id": "cap_0361039acb36"
+          },
+          {
+            "index": 52,
+            "text": "```bash",
+            "unit_id": "cap_0fe7ad8ccb8c"
+          },
+          {
+            "index": 53,
+            "text": "cd /Users/kevinmattice/pem-mcp",
+            "unit_id": "cap_1b0477d2198b"
+          },
+          {
+            "index": 54,
+            "text": ".",
+            "unit_id": "cap_834e93546130"
+          },
+          {
+            "index": 55,
+            "text": ".venv/bin/activate",
+            "unit_id": "cap_95ce35ced6aa"
+          },
+          {
+            "index": 56,
+            "text": "PEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\",
+            "unit_id": "cap_1a32bb974728"
+          },
+          {
+            "index": 57,
+            "text": "PEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\",
+            "unit_id": "cap_7a708ca1f770"
+          },
+          {
+            "index": 58,
+            "text": "PEM_KERNEL_PATH=/Users/kevinmattice/pem-conversion-test \\",
+            "unit_id": "cap_2395d9b60da5"
+          },
+          {
+            "index": 59,
+            "text": "python scripts/smoke_mcp_phase1.py",
+            "unit_id": "cap_2028cfe42212"
+          },
+          {
+            "index": 60,
+            "text": "```",
+            "unit_id": "cap_abcdec453463"
+          },
+          {
+            "index": 61,
+            "text": "```bash",
+            "unit_id": "cap_10ccc2cde4c6"
+          },
+          {
+            "index": 62,
+            "text": "cd /Users/kevinmattice/pem-mcp",
+            "unit_id": "cap_cf51784a0fc6"
+          },
+          {
+            "index": 63,
+            "text": ".",
+            "unit_id": "cap_03d8aeead590"
+          },
+          {
+            "index": 64,
+            "text": ".venv/bin/activate",
+            "unit_id": "cap_63580b332eec"
+          },
+          {
+            "index": 65,
+            "text": "PEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\",
+            "unit_id": "cap_627010af5752"
+          },
+          {
+            "index": 66,
+            "text": "PEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\",
+            "unit_id": "cap_03bb8391b1a3"
+          },
+          {
+            "index": 67,
+            "text": "PEM_LLM_MODE=ollama \\",
+            "unit_id": "cap_50baf442e075"
+          },
+          {
+            "index": 68,
+            "text": "PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1 \\",
+            "unit_id": "cap_bc62663780c3"
+          },
+          {
+            "index": 69,
+            "text": "PEM_OLLAMA_MODEL=qwen3.6:35b \\",
+            "unit_id": "cap_650d7fae7f21"
+          },
+          {
+            "index": 70,
+            "text": "PEM_SMOKE_Q1='What is 2+2?'",
+            "unit_id": "cap_0210d0e9617d"
+          },
+          {
+            "index": 71,
+            "text": "\\",
+            "unit_id": "cap_c9a8f4ce3664"
+          },
+          {
+            "index": 72,
+            "text": "PEM_SMOKE_Q2='Why is 2+2 equal to 4?'",
+            "unit_id": "cap_653169fc7757"
+          },
+          {
+            "index": 73,
+            "text": "\\",
+            "unit_id": "cap_dec3623b4100"
+          },
+          {
+            "index": 74,
+            "text": "python scripts/smoke_pem_ask_quiet.py",
+            "unit_id": "cap_005da5bd3923"
+          },
+          {
+            "index": 75,
+            "text": "```",
+            "unit_id": "cap_d3dddd8b52c8"
+          },
+          {
+            "index": 76,
+            "text": "So the current status is:",
+            "unit_id": "cap_b61b7b4011c0"
+          },
+          {
+            "index": 77,
+            "text": "implementation: complete",
+            "unit_id": "cap_bfb20ec208fc"
+          },
+          {
+            "index": 78,
+            "text": "local regression/testing: complete",
+            "unit_id": "cap_ee105920cc84"
+          },
+          {
+            "index": 79,
+            "text": "Colossus sync/live validation: blocked by connectivity",
+            "unit_id": "cap_2ed310c579fc"
+          },
+          {
+            "index": 80,
+            "text": "If you restore Colossus reachability, I can finish the remote validation leg immediately.",
+            "unit_id": "cap_2a4a29aeb16b"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T22:55:08Z",
+        "turn_id": "turn_33a0254bfa0f459d87ff1c0b4b06215b",
+        "unit_count": 45,
+        "units": [
+          {
+            "index": 1,
+            "text": "Native Ollama support is in place behind PEM\u2019s existing LLM boundary.",
+            "unit_id": "cap_8857b5c51446"
+          },
+          {
+            "index": 2,
+            "text": "Changed files:",
+            "unit_id": "cap_febaa13b0274"
+          },
+          {
+            "index": 3,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)",
+            "unit_id": "cap_0841ab01ce0f"
+          },
+          {
+            "index": 4,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)",
+            "unit_id": "cap_205152e5cec2"
+          },
+          {
+            "index": 5,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)",
+            "unit_id": "cap_e9b3adfe02ac"
+          },
+          {
+            "index": 6,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)",
+            "unit_id": "cap_89d5871fb4ce"
+          },
+          {
+            "index": 7,
+            "text": "What it does:",
+            "unit_id": "cap_d08f027b6f62"
+          },
+          {
+            "index": 8,
+            "text": "adds `PEM_LLM_MODE=ollama`",
+            "unit_id": "cap_2151930b50a1"
+          },
+          {
+            "index": 9,
+            "text": "adds `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`",
+            "unit_id": "cap_ef75933588b3"
+          },
+          {
+            "index": 10,
+            "text": "adds `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL`",
+            "unit_id": "cap_d2cbd8945aa6"
+          },
+          {
+            "index": 11,
+            "text": "keeps the existing `generate_json(...)` contract and normalized PEM envelope",
+            "unit_id": "cap_5692bef38466"
+          },
+          {
+            "index": 12,
+            "text": "preserves OpenAI mode unchanged",
+            "unit_id": "cap_36eec84c95a0"
+          },
+          {
+            "index": 13,
+            "text": "returns structured Ollama errors for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON output",
+            "unit_id": "cap_dfb8023c9d2e"
+          },
+          {
+            "index": 14,
+            "text": "Validation:",
+            "unit_id": "cap_a9770cbcd3c4"
+          },
+          {
+            "index": 15,
+            "text": "local `tests.test_llm_client`: `OK` (`14` tests)",
+            "unit_id": "cap_e40ff57291c0"
+          },
+          {
+            "index": 16,
+            "text": "local PEM validation slice: `OK` (`176` tests)",
+            "unit_id": "cap_7bab99e72bf6"
+          },
+          {
+            "index": 17,
+            "text": "Colossus `tests.test_llm_client`: `OK`",
+            "unit_id": "cap_fedd68e7951e"
+          },
+          {
+            "index": 18,
+            "text": "Colossus PEM validation slice: `OK`",
+            "unit_id": "cap_9fd5a4e57c5e"
+          },
+          {
+            "index": 19,
+            "text": "Colossus deployment preflight: `OK`",
+            "unit_id": "cap_cca2920bafe3"
+          },
+          {
+            "index": 20,
+            "text": "Colossus phase-1 MCP smoke: `PASS`",
+            "unit_id": "cap_eb8f6ad066bc"
+          },
+          {
+            "index": 21,
+            "text": "Live Colossus Ollama validation:",
+            "unit_id": "cap_08f935ee06eb"
+          },
+          {
+            "index": 22,
+            "text": "available model confirmed: `qwen3.6:35b`",
+            "unit_id": "cap_c6029626f8e2"
+          },
+          {
+            "index": 23,
+            "text": "first live `pem_ask` smoke timed out at the default timeout",
+            "unit_id": "cap_d5ddd36aeb1b"
+          },
+          {
+            "index": 24,
+            "text": "retry succeeded with:",
+            "unit_id": "cap_e7bd4acb2e08"
+          },
+          {
+            "index": 25,
+            "text": "`PEM_LLM_MODE=ollama`",
+            "unit_id": "cap_eac25d7fcad0"
+          },
+          {
+            "index": 26,
+            "text": "`PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`",
+            "unit_id": "cap_a4315cbcdd00"
+          },
+          {
+            "index": 27,
+            "text": "`PEM_OLLAMA_MODEL=qwen3.6:35b`",
+            "unit_id": "cap_e2e7c2da6116"
+          },
+          {
+            "index": 28,
+            "text": "`PEM_LLM_TIMEOUT_SECONDS=180`",
+            "unit_id": "cap_57e1449d4305"
+          },
+          {
+            "index": 29,
+            "text": "`PEM_LLM_MAX_OUTPUT_TOKENS=300`",
+            "unit_id": "cap_6af8870f358e"
+          },
+          {
+            "index": 30,
+            "text": "Successful live output was:",
+            "unit_id": "cap_04a1fb5cd6d9"
+          },
+          {
+            "index": 31,
+            "text": "```text",
+            "unit_id": "cap_cc52b033bf63"
+          },
+          {
+            "index": 32,
+            "text": "4",
+            "unit_id": "cap_31c888b6e5a0"
+          },
+          {
+            "index": 33,
+            "text": "PEM: case=what-is-2-plus-2.case.dxhedwjucx hash=97254aaa8559 q=\"What is 2 plus 2?\"",
+            "unit_id": "cap_bc73afefa5e6"
+          },
+          {
+            "index": 34,
+            "text": "4",
+            "unit_id": "cap_da0020f00cba"
+          },
+          {
+            "index": 35,
+            "text": "PEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"",
+            "unit_id": "cap_1fd6dc68d4dd"
+          },
+          {
+            "index": 36,
+            "text": "```",
+            "unit_id": "cap_47632ea94954"
+          },
+          {
+            "index": 37,
+            "text": "So the acceptance standard is met:",
+            "unit_id": "cap_432c28da2a09"
+          },
+          {
+            "index": 38,
+            "text": "PEM runs with `PEM_LLM_MODE=ollama`",
+            "unit_id": "cap_c7d1df3f5f57"
+          },
+          {
+            "index": 39,
+            "text": "OpenAI mode remains intact",
+            "unit_id": "cap_ef485f173ab8"
+          },
+          {
+            "index": 40,
+            "text": "existing tests stayed green",
+            "unit_id": "cap_30a62f3d2766"
+          },
+          {
+            "index": 41,
+            "text": "Ollama unit tests pass",
+            "unit_id": "cap_31375ee25aef"
+          },
+          {
+            "index": 42,
+            "text": "preflight and smoke still pass",
+            "unit_id": "cap_8a33d3ea04d3"
+          },
+          {
+            "index": 43,
+            "text": "at least one focused PEM LLM path succeeded live on Colossus",
+            "unit_id": "cap_bde9590b5ba1"
+          },
+          {
+            "index": 44,
+            "text": "One operational note: `qwen3.6:35b` may want a longer PEM timeout than the old default for some prompts.",
+            "unit_id": "cap_c523cd6d626d"
+          },
+          {
+            "index": 45,
+            "text": "That\u2019s a tuning issue, not an architecture issue.",
+            "unit_id": "cap_426592fce745"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:05:08Z",
+        "turn_id": "turn_9a0e03cf8387431685ee071c4bcd4481",
+        "unit_count": 15,
+        "units": [
+          {
+            "index": 1,
+            "text": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`.",
+            "unit_id": "cap_25970c1ea9ce"
+          },
+          {
+            "index": 2,
+            "text": "Updated files:",
+            "unit_id": "cap_11b9c0f15e19"
+          },
+          {
+            "index": 3,
+            "text": "[`/Users/kevinmattice/dev/anon/pem-mcp/.env.example`](/Users/kevinmattice/dev/anon/pem-mcp/.env.example)",
+            "unit_id": "cap_11385a3f9c6e"
+          },
+          {
+            "index": 4,
+            "text": "local PEM `.env` in the real source tree",
+            "unit_id": "cap_4fd700bed747"
+          },
+          {
+            "index": 5,
+            "text": "Colossus deployment `.env` at `/Users/kevinmattice/pem-mcp/.env`",
+            "unit_id": "cap_6521809ac9c7"
+          },
+          {
+            "index": 6,
+            "text": "I also verified the live effect on Colossus by rerunning the PEM Ollama quiet-ask smoke without an explicit timeout override.",
+            "unit_id": "cap_da77401bf03d"
+          },
+          {
+            "index": 7,
+            "text": "It succeeded against `qwen3.6:35b`, so the new default is doing its job.",
+            "unit_id": "cap_eb9e39fb3717"
+          },
+          {
+            "index": 8,
+            "text": "Live result:",
+            "unit_id": "cap_94b3ba8b7c07"
+          },
+          {
+            "index": 9,
+            "text": "```text",
+            "unit_id": "cap_3f0a3f6b80ec"
+          },
+          {
+            "index": 10,
+            "text": "4",
+            "unit_id": "cap_4e5a78da21f4"
+          },
+          {
+            "index": 11,
+            "text": "PEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"",
+            "unit_id": "cap_b3f0f5c3c3b0"
+          },
+          {
+            "index": 12,
+            "text": "4",
+            "unit_id": "cap_2e9b79ebd495"
+          },
+          {
+            "index": 13,
+            "text": "PEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"",
+            "unit_id": "cap_4285db8e8672"
+          },
+          {
+            "index": 14,
+            "text": "```",
+            "unit_id": "cap_94bc93426031"
+          },
+          {
+            "index": 15,
+            "text": "So the longer timeout is now the normal PEM default, and the live Ollama path still works.",
+            "unit_id": "cap_7b16850282dd"
+          }
+        ]
       }
     ],
     "claims": [
@@ -9345,7 +10331,7 @@
             "claim_id": "claim_9b0bb2304273",
             "method": "token_jaccard_v1",
             "score": 0.3636,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9354,7 +10340,7 @@
             "claim_id": "claim_9b0bb2304273",
             "method": "token_jaccard_v1",
             "score": 0.3333,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9363,7 +10349,7 @@
             "claim_id": "claim_9b0bb2304273",
             "method": "token_jaccard_v1",
             "score": 0.2727,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9401,7 +10387,7 @@
             "claim_id": "claim_c8266dbe4963",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9410,7 +10396,7 @@
             "claim_id": "claim_c8266dbe4963",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9419,7 +10405,7 @@
             "claim_id": "claim_c8266dbe4963",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9457,7 +10443,7 @@
             "claim_id": "claim_e6deba31e580",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9495,7 +10481,7 @@
             "claim_id": "claim_ed75263d8801",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9504,7 +10490,7 @@
             "claim_id": "claim_ed75263d8801",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9513,7 +10499,7 @@
             "claim_id": "claim_ed75263d8801",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9607,7 +10593,7 @@
             "claim_id": "claim_3c84e34b9732",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9616,7 +10602,7 @@
             "claim_id": "claim_3c84e34b9732",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9625,7 +10611,7 @@
             "claim_id": "claim_3c84e34b9732",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9663,7 +10649,7 @@
             "claim_id": "claim_e67a9b702fb6",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9729,7 +10715,7 @@
             "claim_id": "claim_6f3b6a0750d1",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9738,7 +10724,7 @@
             "claim_id": "claim_6f3b6a0750d1",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9747,7 +10733,7 @@
             "claim_id": "claim_6f3b6a0750d1",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9785,7 +10771,7 @@
             "claim_id": "claim_73c551f422c2",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9794,7 +10780,7 @@
             "claim_id": "claim_73c551f422c2",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           },
           {
             "authoritative": false,
@@ -9803,7 +10789,7 @@
             "claim_id": "claim_73c551f422c2",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T21:41:36Z"
+            "updated_at": "2026-06-09T23:05:08Z"
           }
         ],
         "state": "Pending Verification",
@@ -9867,6 +10853,62 @@
         "text": "- requires baseline phase-1 tools as a subset, not an exact set",
         "updated_at": "2026-06-09T21:41:36Z",
         "verification_plan_id": "plan_fa20dbe0e5cc"
+      },
+      {
+        "claim_id": "claim_ae67d009ad0e",
+        "created_at": "2026-06-09T22:23:11Z",
+        "elevated_from_candidate_ids": [
+          "cand_0ee7ac584499"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_ee1f29107aa8",
+          "task_86974119326b"
+        ],
+        "fingerprint": "5c29fb56d8184d31",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-06-09T22:23:11Z"
+          }
+        ],
+        "similarity_links": [
+          {
+            "authoritative": false,
+            "candidate_fingerprint": "5b3f21c63351a02c",
+            "candidate_id": "cand_3296e3fcfa83",
+            "claim_id": "claim_ae67d009ad0e",
+            "method": "token_jaccard_v1",
+            "score": 0.4,
+            "updated_at": "2026-06-09T23:05:08Z"
+          },
+          {
+            "authoritative": false,
+            "candidate_fingerprint": "45f8cbb45cf556c9",
+            "candidate_id": "cand_e7eb58e2ec32",
+            "claim_id": "claim_ae67d009ad0e",
+            "method": "token_jaccard_v1",
+            "score": 0.2857,
+            "updated_at": "2026-06-09T23:05:08Z"
+          },
+          {
+            "authoritative": false,
+            "candidate_fingerprint": "2e97f49ef5b87aeb",
+            "candidate_id": "cand_52930647993b",
+            "claim_id": "claim_ae67d009ad0e",
+            "method": "token_jaccard_v1",
+            "score": 0.25,
+            "updated_at": "2026-06-09T23:05:08Z"
+          }
+        ],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-06-09T22:23:11Z",
+        "text": "PEM_SMOKE_Q2='Why is 2+2 equal to 4",
+        "updated_at": "2026-06-09T22:23:11Z",
+        "verification_plan_id": "plan_ae67d009ad0e"
       }
     ],
     "evidence_artifacts": [
@@ -9900,7 +10942,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - shows whether this repo already knows where GitHub is",
         "task_id": "task_8e6ffb90c575",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "f359b8e550478277",
@@ -9910,7 +10952,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c65eab730b15",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "b24a4fdd09917a8c",
@@ -9920,7 +10962,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: My blunt take: PEM is currently more of an architectural idea and provenance surface than a required runtime dependency for the working Colossus loop",
         "task_id": "task_15dc9dcddf90",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "b24a4fdd09917a8c",
@@ -9930,7 +10972,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_405bfc972601",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "a74fc760743c2b9c",
@@ -9940,7 +10982,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: What Local-Model Support Is Required From Colossus**",
         "task_id": "task_89ac5c46a757",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "a74fc760743c2b9c",
@@ -9950,7 +10992,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_20de6df9e6fc",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "787b2204eda15fcd",
@@ -9960,7 +11002,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - no frontier dependency required",
         "task_id": "task_cdf115d0115f",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "787b2204eda15fcd",
@@ -9970,7 +11012,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_1502b5a5654f",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "13264abd160d4e0c",
@@ -9980,7 +11022,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - the model should assist, not be required for basic governance",
         "task_id": "task_a0ac64cf1be8",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "13264abd160d4e0c",
@@ -9990,7 +11032,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_67d75ddbbf48",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "2357c74d8a3d71fd",
@@ -10000,7 +11042,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: Not required initially:",
         "task_id": "task_6df23035f246",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "2357c74d8a3d71fd",
@@ -10010,7 +11052,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_774ae4ae0c11",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "8f0bcf7b5501ae86",
@@ -10020,7 +11062,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - or `PEM startup preflight failed: initialize succeeded but required tool pem_record is missing",
         "task_id": "task_6e6350719939",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "8f0bcf7b5501ae86",
@@ -10030,7 +11072,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_2ba1f179c79f",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "aa86c6852b9551c2",
@@ -10040,7 +11082,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: ERROR: Ignored the following versions that require a different python version:",
         "task_id": "task_64fb9a41c0e4",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "aa86c6852b9551c2",
@@ -10050,7 +11092,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c8634da97792",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "e946d3ec393ad6e2",
@@ -10060,7 +11102,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - PEM requires `mcp==1",
         "task_id": "task_326c898fc41e",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "e946d3ec393ad6e2",
@@ -10070,7 +11112,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c726ca0cf3fe",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "0e5adb580a4c2309",
@@ -10080,7 +11122,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - that package requires Python `>= 3",
         "task_id": "task_13532809769e",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "0e5adb580a4c2309",
@@ -10090,7 +11132,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_a15e21f905af",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "ebd540fb83d42f89",
@@ -10100,7 +11142,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: **Separate real code/test incompatibilities that still fail even when env is clean**",
         "task_id": "task_26bd4da6b7c2",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "ebd540fb83d42f89",
@@ -10110,7 +11152,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_5a5fc7c66fc3",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "5e925d19fb5f0c31",
@@ -10120,7 +11162,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: The narrow validation hardening pass is complete, and I did not change PEM runtime architecture or invariants",
         "task_id": "task_9fee590e13e0",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "5e925d19fb5f0c31",
@@ -10130,7 +11172,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_48703434cf28",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "b6da885bb2169eab",
@@ -10140,7 +11182,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: that still requires a durable PEM action, not just preflight",
         "task_id": "task_f94b991fc540",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "b6da885bb2169eab",
@@ -10150,7 +11192,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_7866572f1634",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "116700c0b28d00d3",
@@ -10160,7 +11202,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: It is to audit whether the smoke contract should accept a superset tool surface or whether the server/tool contract is supposed to remain phase-1 narrow",
         "task_id": "task_538729c1cf7e",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "116700c0b28d00d3",
@@ -10170,7 +11212,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_bb489821d087",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "0c5b58001f6db689",
@@ -10180,7 +11222,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - requires baseline phase-1 tools as a subset, not an exact set",
         "task_id": "task_24e4f0502c4e",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "0c5b58001f6db689",
@@ -10190,7 +11232,27 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_81eee3d343bd",
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
+      },
+      {
+        "claim_fingerprint": "5c29fb56d8184d31",
+        "claim_id": "claim_ae67d009ad0e",
+        "created_at": "2026-06-09T22:23:11Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: PEM_SMOKE_Q2='Why is 2+2 equal to 4",
+        "task_id": "task_ee1f29107aa8",
+        "updated_at": "2026-06-09T23:05:08Z"
+      },
+      {
+        "claim_fingerprint": "5c29fb56d8184d31",
+        "claim_id": "claim_ae67d009ad0e",
+        "created_at": "2026-06-09T22:23:11Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_86974119326b",
+        "updated_at": "2026-06-09T23:05:08Z"
       }
     ],
     "exploratory_structures": {
@@ -10207,7 +11269,8 @@
         "test_pem_case` genuinely depends on that environment",
         "- The next blocker is a **path/root assumption mismatch inside the smoke flow**, not a server startup failure",
         "Whether this failure indicates stale smoke assumptions or a real PEM path-resolution defect",
-        "- That pulled PEM into standalone config behavior and also assumed older MCP reply shapes"
+        "- That pulled PEM into standalone config behavior and also assumed older MCP reply shapes",
+        "1:11434/v1 - PEM_OLLAMA_MODEL, with no hardcoded assumption if env/config provides one Use the existing `generate_json(system_prompt, user_prompt, timeout_seconds, max_output_tokens)` contract as the boundary"
       ],
       "competing_interpretations": [
         "- print the path if it exists",
@@ -10283,7 +11346,14 @@
         "- `PEM_KERNEL_PATH=<temp kernel>`",
         "build_env()` and/or the server params env, so the spawned server: - unsets or overrides deployment/root/config env that would force standalone/deployment behavior - sets `PEM_STORAGE_MODE=legacy_kernel` - sets `PEM_KERNEL_PATH` to the smoke\u2019s temporary kernel checkout - avoids repo `",
         "env` influence if necessary - optionally sets `PEM_ALLOW_GLOBAL_CONFIG=false` 2",
-        "- forces `PEM_KERNEL_PATH` to the temporary copied kernel"
+        "- forces `PEM_KERNEL_PATH` to the temporary copied kernel",
+        "The current live path is centered on [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client",
+        "That\u2019s good news for this task: the cleanest path is to introduce Ollama behind `generate_json(",
+        "- failure-path tests for unreachable Ollama, malformed JSON, and model-not-found behavior",
+        "Prove failure paths are structured and do not crash PEM",
+        "- At least one focused PEM LLM path succeeds against live Ollama on Colossus",
+        "- at least one focused PEM LLM path succeeded live on Colossus",
+        "So the longer timeout is now the normal PEM default, and the live Ollama path still works"
       ],
       "open_questions": [
         "How should it be synchronized to Colossus",
@@ -10316,7 +11386,9 @@
         "0` and the rest of the PEM dependencies installed successfully under Python 3",
         "- dependency install: **Passed**",
         "- PEM MCP server dependencies installed on Colossus",
-        "Constraints remain: - Do not redesign PEM"
+        "Constraints remain: - Do not redesign PEM",
+        "Constraints: - Do not redesign PEM",
+        "One operational note: `qwen3"
       ],
       "provisional_conclusions": [
         "If you want, we can do one more polish pass later to make the bullets slightly more conversational, but the core behavior is working",
@@ -10352,7 +11424,9 @@
         "If you want, the next step is for me to audit that path-resolution mismatch in `smoke_mcp_phase1",
         "The smallest safe fix, if any, limited to the smoke harness or test invocation unless runtime behavior is clearly wrong",
         "If the fix is smoke-only, apply it and rerun: - `scripts/smoke_mcp_phase1",
-        "Report: - whether the smoke now passes - whether preflight still passes - whether the 176-test slice still passes - whether any governed-root state was created - whether first deployment acceptance is now met If the smoke reveals a real runtime defect after the harness context is corrected, stop and report the exact failure before changing anything else"
+        "Report: - whether the smoke now passes - whether preflight still passes - whether the 176-test slice still passes - whether any governed-root state was created - whether first deployment acceptance is now met If the smoke reveals a real runtime defect after the harness context is corrected, stop and report the exact failure before changing anything else",
+        "py) if `_llm_enabled()` is currently hardcoded to only recognize `openai`",
+        "The one thing I could not complete is the Colossus sync and live Ollama validation, because Colossus is unreachable from this session right now:"
       ],
       "tensions": [
         "Next task: diagnose the failing unittest slice as a validation-environment issue versus a real PEM runtime defect",
@@ -12345,6 +13419,215 @@
         "last_seen_at": "2026-06-09T21:41:36Z",
         "status": "Elevated",
         "text": "- requires baseline phase-1 tools as a subset, not an exact set"
+      },
+      {
+        "candidate_id": "cand_131cc23f8fd9",
+        "fingerprint": "5d1c7d4976968e17",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "PEM\u2019s active LLM boundary is already narrow enough that Ollama should fit behind it without changing PEM\u2019s higher-level behavior"
+      },
+      {
+        "candidate_id": "cand_1173d6c6f424",
+        "fingerprint": "6b6ed22bd655fe48",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "The current live path is centered on [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client"
+      },
+      {
+        "candidate_id": "cand_9eb7aa875bd3",
+        "fingerprint": "ae939716824e4d34",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "There is also [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai"
+      },
+      {
+        "candidate_id": "cand_d034e92fb3ba",
+        "fingerprint": "3e79b8dffa8bb84b",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "py), which looks like a more formal adapter layer, but it is not the main active entry point today"
+      },
+      {
+        "candidate_id": "cand_7b9a512ba235",
+        "fingerprint": "609c10c28deae6ff",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "So the real transport boundary is `llm_client"
+      },
+      {
+        "candidate_id": "cand_092f54b0d9c3",
+        "fingerprint": "f11b5a64dc05812e",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "That\u2019s good news for this task: the cleanest path is to introduce Ollama behind `generate_json("
+      },
+      {
+        "candidate_id": "cand_54e6766e09a8",
+        "fingerprint": "1d2f9287a610dc97",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "Yes, probably with minimal surface change"
+      },
+      {
+        "candidate_id": "cand_0b4ffb618429",
+        "fingerprint": "05d1ee6275d8bb4f",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "So the initial Ollama implementation should preserve PEM\u2019s contract by normalizing the output behind the transport layer, even if Ollama has to use a slightly less strict JSON mode internally"
+      },
+      {
+        "candidate_id": "cand_368577e606a0",
+        "fingerprint": "f31d1bffeeecec4c",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "possibly a very small change in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server"
+      },
+      {
+        "candidate_id": "cand_375b464b2f64",
+        "fingerprint": "e332ca177331f405",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "py) if `_llm_enabled()` is currently hardcoded to only recognize `openai`"
+      },
+      {
+        "candidate_id": "cand_fd640f4e718b",
+        "fingerprint": "07aa48030264ed7a",
+        "first_seen_at": "2026-06-09T22:04:20Z",
+        "last_seen_at": "2026-06-09T22:04:20Z",
+        "status": "Candidate",
+        "text": "Tests that must be added:"
+      },
+      {
+        "candidate_id": "cand_7af640e99118",
+        "fingerprint": "eb037c165d778f43",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "Native Ollama support is implemented locally in the real PEM source tree, with PEM\u2019s MCP/runtime shape left intact"
+      },
+      {
+        "candidate_id": "cand_35da2d59bef8",
+        "fingerprint": "4f593260a19c9009",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "Local validation is green:"
+      },
+      {
+        "candidate_id": "cand_daa96b668c93",
+        "fingerprint": "b6ad0c53aa5d8b6e",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "The one thing I could not complete is the Colossus sync and live Ollama validation, because Colossus is unreachable from this session right now:"
+      },
+      {
+        "candidate_id": "cand_791e10a41c0e",
+        "fingerprint": "c2160f66fbde4e65",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "So the implementation work is done and locally validated, but the remote acceptance leg is blocked by connectivity, not by PEM"
+      },
+      {
+        "candidate_id": "cand_cb09e6caaee4",
+        "fingerprint": "6efe5513a2f530f2",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "When Colossus is reachable again, these are the next commands I\u2019d run:"
+      },
+      {
+        "candidate_id": "cand_3296e3fcfa83",
+        "fingerprint": "5b3f21c63351a02c",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "PEM_SMOKE_Q1='What is 2+2"
+      },
+      {
+        "candidate_id": "cand_f84b81943997",
+        "fingerprint": "ef08aafaf5b38808",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Candidate",
+        "text": "If you restore Colossus reachability, I can finish the remote validation leg immediately"
+      },
+      {
+        "candidate_id": "cand_0ee7ac584499",
+        "elevated_claim_id": "claim_ae67d009ad0e",
+        "fingerprint": "5c29fb56d8184d31",
+        "first_seen_at": "2026-06-09T22:23:11Z",
+        "last_seen_at": "2026-06-09T22:23:11Z",
+        "status": "Elevated",
+        "text": "PEM_SMOKE_Q2='Why is 2+2 equal to 4"
+      },
+      {
+        "candidate_id": "cand_6107aaaaf1a0",
+        "fingerprint": "5bdc6d97e0798364",
+        "first_seen_at": "2026-06-09T22:55:08Z",
+        "last_seen_at": "2026-06-09T22:55:08Z",
+        "status": "Candidate",
+        "text": "Native Ollama support is in place behind PEM\u2019s existing LLM boundary"
+      },
+      {
+        "candidate_id": "cand_3208e60e241c",
+        "fingerprint": "621058cb83cdbbce",
+        "first_seen_at": "2026-06-09T22:55:08Z",
+        "last_seen_at": "2026-06-09T22:55:08Z",
+        "status": "Candidate",
+        "text": "dxhedwjucx hash=97254aaa8559 q=\"What is 2 plus 2"
+      },
+      {
+        "candidate_id": "cand_3bd9e5b6428f",
+        "fingerprint": "7e64dfb96b751148",
+        "first_seen_at": "2026-06-09T22:55:08Z",
+        "last_seen_at": "2026-06-09T22:55:08Z",
+        "status": "Candidate",
+        "text": "So the acceptance standard is met:"
+      },
+      {
+        "candidate_id": "cand_073266821ba5",
+        "fingerprint": "4dced35214196e92",
+        "first_seen_at": "2026-06-09T23:05:08Z",
+        "last_seen_at": "2026-06-09T23:05:08Z",
+        "status": "Candidate",
+        "text": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`"
+      },
+      {
+        "candidate_id": "cand_9d0cb0fcc2dd",
+        "fingerprint": "837bc13d2038022b",
+        "first_seen_at": "2026-06-09T23:05:08Z",
+        "last_seen_at": "2026-06-09T23:05:08Z",
+        "status": "Candidate",
+        "text": "6:35b`, so the new default is doing its job"
+      },
+      {
+        "candidate_id": "cand_84435887ad6a",
+        "fingerprint": "2f9bd0cc7b564fb6",
+        "first_seen_at": "2026-06-09T23:05:08Z",
+        "last_seen_at": "2026-06-09T23:05:08Z",
+        "status": "Candidate",
+        "text": "dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2"
+      },
+      {
+        "candidate_id": "cand_166ee8ffef9f",
+        "fingerprint": "73abd502278f2a86",
+        "first_seen_at": "2026-06-09T23:05:08Z",
+        "last_seen_at": "2026-06-09T23:05:08Z",
+        "status": "Candidate",
+        "text": "So the longer timeout is now the normal PEM default, and the live Ollama path still works"
       }
     ],
     "soft_warnings": [
@@ -13395,6 +14678,254 @@
         "ts": "2026-06-09T21:41:36Z",
         "type": "unverified_claim_drives_implementation",
         "warning_id": "warn_4272883f80ac"
+      },
+      {
+        "claim_id": "claim_b0dfc918ce16",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_79b9da5e0e6a"
+      },
+      {
+        "claim_id": "claim_47b815d43d22",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_fbf141d28c32"
+      },
+      {
+        "claim_id": "claim_9b0bb2304273",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_15ec3eefef8a"
+      },
+      {
+        "claim_id": "claim_c8266dbe4963",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_b6d4026a3b6d"
+      },
+      {
+        "claim_id": "claim_e6deba31e580",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3973c83bcb28"
+      },
+      {
+        "claim_id": "claim_ed75263d8801",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_789f17bb039e"
+      },
+      {
+        "claim_id": "claim_3ab41a90525b",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_314290c5b34b"
+      },
+      {
+        "claim_id": "claim_fe4441083213",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_04106c07880c"
+      },
+      {
+        "claim_id": "claim_3c84e34b9732",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_6d18dbba9662"
+      },
+      {
+        "claim_id": "claim_e67a9b702fb6",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_af291ba42856"
+      },
+      {
+        "claim_id": "claim_12a3655d846d",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_0473b43a4e7b"
+      },
+      {
+        "claim_id": "claim_6f3b6a0750d1",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3906ec9c59f9"
+      },
+      {
+        "claim_id": "claim_73c551f422c2",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_1ea75c2b880b"
+      },
+      {
+        "claim_id": "claim_65c9c00215c6",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_6e0bce04ff12"
+      },
+      {
+        "claim_id": "claim_fa20dbe0e5cc",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Please give me your output again\u2014it got cut off.",
+        "ts": "2026-06-09T22:04:20Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_2dbcd172080d"
+      },
+      {
+        "claim_id": "claim_b0dfc918ce16",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_c4800a87a901"
+      },
+      {
+        "claim_id": "claim_47b815d43d22",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_53785fee2400"
+      },
+      {
+        "claim_id": "claim_9b0bb2304273",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_e34402998f48"
+      },
+      {
+        "claim_id": "claim_c8266dbe4963",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_6339d0a194b4"
+      },
+      {
+        "claim_id": "claim_e6deba31e580",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_ee2e31e237e3"
+      },
+      {
+        "claim_id": "claim_ed75263d8801",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_d9a20f173a20"
+      },
+      {
+        "claim_id": "claim_3ab41a90525b",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_fc9935a39953"
+      },
+      {
+        "claim_id": "claim_fe4441083213",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_0ff732f16cce"
+      },
+      {
+        "claim_id": "claim_3c84e34b9732",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_f084ff69ca96"
+      },
+      {
+        "claim_id": "claim_e67a9b702fb6",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_0036e40e5d78"
+      },
+      {
+        "claim_id": "claim_12a3655d846d",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_d3e473dd87d9"
+      },
+      {
+        "claim_id": "claim_6f3b6a0750d1",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_7be01caec08a"
+      },
+      {
+        "claim_id": "claim_73c551f422c2",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_4a6f5e7d53cd"
+      },
+      {
+        "claim_id": "claim_65c9c00215c6",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_87f2e75abc55"
+      },
+      {
+        "claim_id": "claim_fa20dbe0e5cc",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_855c17c0ac56"
+      },
+      {
+        "claim_id": "claim_ae67d009ad0e",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with implementing native Ollama su",
+        "ts": "2026-06-09T22:23:11Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_ccc289143143"
       }
     ],
     "verification_plans": [
@@ -13409,7 +14940,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "b24a4fdd09917a8c",
@@ -13422,7 +14953,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "a74fc760743c2b9c",
@@ -13435,7 +14966,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "787b2204eda15fcd",
@@ -13448,7 +14979,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "13264abd160d4e0c",
@@ -13461,7 +14992,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "2357c74d8a3d71fd",
@@ -13474,7 +15005,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "8f0bcf7b5501ae86",
@@ -13487,7 +15018,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "aa86c6852b9551c2",
@@ -13500,7 +15031,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "e946d3ec393ad6e2",
@@ -13513,7 +15044,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "0e5adb580a4c2309",
@@ -13526,7 +15057,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "ebd540fb83d42f89",
@@ -13539,7 +15070,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "5e925d19fb5f0c31",
@@ -13552,7 +15083,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "b6da885bb2169eab",
@@ -13565,7 +15096,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "116700c0b28d00d3",
@@ -13578,7 +15109,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
       },
       {
         "claim_fingerprint": "0c5b58001f6db689",
@@ -13591,7 +15122,20 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T21:41:36Z"
+        "updated_at": "2026-06-09T23:05:08Z"
+      },
+      {
+        "claim_fingerprint": "5c29fb56d8184d31",
+        "claim_id": "claim_ae67d009ad0e",
+        "created_at": "2026-06-09T22:23:11Z",
+        "plan_id": "plan_ae67d009ad0e",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: PEM_SMOKE_Q2='Why is 2+2 equal to 4",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-06-09T23:05:08Z"
       }
     ]
   },
@@ -13601,25 +15145,17 @@
     "warnings": []
   },
   "epistemic_posture": {
-    "candidate_count": 246,
-    "claim_count": 15,
+    "candidate_count": 272,
+    "claim_count": 16,
     "evidence_count_metric": 2,
-    "exploratory_signal_count": 4,
-    "exploratory_signals": [
-      "assumption_marker",
-      "exploratory_marker",
-      "operational_constraint_marker",
-      "uncertainty_marker"
-    ],
+    "exploratory_signal_count": 0,
+    "exploratory_signals": [],
     "health_state": "mixed",
-    "implementation_signal_count": 2,
-    "implementation_signals": [
-      "implementation_marker",
-      "test_or_repro_marker"
-    ],
+    "implementation_signal_count": 0,
+    "implementation_signals": [],
     "inferred_posture": "mixed",
-    "pending_claim_count": 15,
-    "snapshot_at": "2026-06-09T21:41:36Z",
+    "pending_claim_count": 16,
+    "snapshot_at": "2026-06-09T23:05:08Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -14656,6 +16192,107 @@
         ],
         "turn_id": "turn_4d6c4be4d3984be5a3299ef1bd5553e2",
         "updated_at": "2026-06-09T21:41:36Z"
+      },
+      {
+        "answer": "**Architecture Assessment**\n\nPEM\u2019s active LLM boundary is already narrow enough that Ollama should fit behind it without changing PEM\u2019s higher-level behavior.\n\nThe current live path is centered on [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py). That module owns the actual model call contract used by the server: `generate_json(system_prompt, user_prompt, timeout_seconds, max_output_tokens)`. It currently reads `PEM_LLM_MODE`, `OPENAI_API_KEY`, `PEM_LLM_MODEL`, `PEM_LLM_TIMEOUT_SECONDS`, and `PEM_LLM_RESPONSE_FORMAT`, then returns a provider-neutral envelope with `ok`, `result.payload`, `result.raw_text`, `result.usage`, or a structured `error`. The PEM reasoning and tool behavior live in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py), which imports `generate_json(...)` and uses it inside the PEM tools and workflow logic. That means `server.py` mostly treats the model layer as a JSON-producing service, not as OpenAI specifically.\n\nThere is also [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py), which looks like a more formal adapter layer, but it is not the main active entry point today. So the real transport boundary is `llm_client.py`, not the adapter file. That\u2019s good news for this task: the cleanest path is to introduce Ollama behind `generate_json(...)` while preserving the same returned envelope and leaving PEM reasoning, MCP tools, case schema, and storage untouched.\n\n**Can Ollama fit behind the existing abstraction?**\n\nYes, probably with minimal surface change.\n\nThe rest of PEM only really needs:\n- `generate_json(...)`\n- stable structured success/error output\n- normalized JSON payloads\n- no provider-specific branching in the PEM logic\n\nSo the proposed mode expansion is:\n\n- `PEM_LLM_MODE=openai`\n- `PEM_LLM_MODE=ollama`\n- `PEM_OLLAMA_BASE_URL`\n- `PEM_OLLAMA_MODEL`\n\nThe goal would be:\n- `server.py` still calls `generate_json(...)`\n- `generate_json(...)` dispatches by mode\n- both backends return the same PEM envelope\n\nOne compatibility caveat matters: PEM currently leans on OpenAI-style structured response support, including `json_schema`/`json_object` behavior and retry-on-parse-failure. Ollama may not match the OpenAI Responses API feature-for-feature, especially around strict schema enforcement. So the initial Ollama implementation should preserve PEM\u2019s contract by normalizing the output behind the transport layer, even if Ollama has to use a slightly less strict JSON mode internally.\n\n**Proposed Implementation Plan**\n\nFiles likely needing modification:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- likely a new backend module such as `/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`\n- possibly a very small change in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py) if `_llm_enabled()` is currently hardcoded to only recognize `openai`\n\nFiles that should remain untouched:\n- PEM case schema and artifact logic\n- PEM storage semantics\n- PEM MCP tool behavior\n- project-root and initialization logic\n- smoke harnesses unless later extended for Ollama-specific validation\n\nTests that must be added:\n- Ollama-mode unit tests for `generate_json(...)`\n- config/env parsing tests for `PEM_LLM_MODE=ollama`\n- response normalization tests proving Ollama returns the same contract shape as OpenAI mode\n- failure-path tests for unreachable Ollama, malformed JSON, and model-not-found behavior\n\nExisting tests that should keep passing unchanged:\n- current OpenAI-mode tests in [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n- the 176-test validation slice\n- deployment preflight and phase-1 smoke\n- anything unrelated to mo",
+        "created_at": "2026-06-09T22:04:20Z",
+        "error": null,
+        "finalized_at": "2026-06-09T22:04:20Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_2adff1ed73b44f33bd4be4721c648da9",
+        "updated_at": "2026-06-09T22:04:20Z"
+      },
+      {
+        "answer": "Native Ollama support is implemented locally in the real PEM source tree, with PEM\u2019s MCP/runtime shape left intact.\n\nChanged files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n\nWhat changed:\n- Added `PEM_LLM_MODE=ollama` dispatch behind the existing `generate_json(...)` boundary.\n- Added `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`.\n- Added `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL` and no hardcoded model default.\n- Preserved the existing normalized PEM envelope shape for success and failure.\n- Added structured Ollama error handling for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON/model-prose output.\n- Kept `src/server.py` changes minimal: LLM gating now recognizes `ollama`, and model reporting reflects the active backend.\n\nLocal validation is green:\n- `tests.test_llm_client`: `OK` (`14` tests)\n- PEM validation slice: `OK` (`176` tests)\n- deployment-style [`scripts/preflight_stdio_attach.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/preflight_stdio_attach.py): `OK`\n- phase-1 smoke [`scripts/smoke_mcp_phase1.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/smoke_mcp_phase1.py): `PASS`\n\nThe one thing I could not complete is the Colossus sync and live Ollama validation, because Colossus is unreachable from this session right now:\n- `ssh colossus` fails on DNS resolution for `colossus.bobcat-paradise.ts.net`\n- direct private-IP attempts timed out\n\nSo the implementation work is done and locally validated, but the remote acceptance leg is blocked by connectivity, not by PEM.\n\nWhen Colossus is reachable again, these are the next commands I\u2019d run:\n\n```bash\nrsync -av --delete \\\n  --exclude '.git/' \\\n  --exclude '.venv/' \\\n  --exclude '.pytest_cache/' \\\n  --exclude '.worktrees/' \\\n  --exclude '__pycache__/' \\\n  --exclude '*.pyc' \\\n  --exclude '.DS_Store' \\\n  --exclude '.env' \\\n  --exclude 'cases/' \\\n  --exclude 'scratch/' \\\n  --exclude 'stories/' \\\n  --exclude 'tickets/' \\\n  --exclude 'pem.initialized' \\\n  --exclude 'pem-touchid/.build/' \\\n  --exclude 'pem-conversion-test' \\\n  /Users/kevinmattice/dev/anon/pem-mcp/ \\\n  colossus:/Users/kevinmattice/pem-mcp/\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\npython scripts/preflight_stdio_attach.py\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_KERNEL_PATH=/Users/kevinmattice/pem-conversion-test \\\npython scripts/smoke_mcp_phase1.py\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_LLM_MODE=ollama \\\nPEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1 \\\nPEM_OLLAMA_MODEL=qwen3.6:35b \\\nPEM_SMOKE_Q1='What is 2+2?' \\\nPEM_SMOKE_Q2='Why is 2+2 equal to 4?' \\\npython scripts/smoke_pem_ask_quiet.py\n```\n\nSo the current status is:\n- implementation: complete\n- local regression/testing: complete\n- Colossus sync/live validation: blocked by connectivity\n\nIf you restore Colossus reachability, I can finish the remote validation leg immediately.",
+        "created_at": "2026-06-09T22:23:11Z",
+        "error": null,
+        "finalized_at": "2026-06-09T22:23:11Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_8e0e28b8a72040288f217b8caa29e31e",
+        "updated_at": "2026-06-09T22:23:11Z"
+      },
+      {
+        "answer": "Native Ollama support is in place behind PEM\u2019s existing LLM boundary.\n\nChanged files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n\nWhat it does:\n- adds `PEM_LLM_MODE=ollama`\n- adds `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`\n- adds `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL`\n- keeps the existing `generate_json(...)` contract and normalized PEM envelope\n- preserves OpenAI mode unchanged\n- returns structured Ollama errors for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON output\n\nValidation:\n- local `tests.test_llm_client`: `OK` (`14` tests)\n- local PEM validation slice: `OK` (`176` tests)\n- Colossus `tests.test_llm_client`: `OK`\n- Colossus PEM validation slice: `OK`\n- Colossus deployment preflight: `OK`\n- Colossus phase-1 MCP smoke: `PASS`\n\nLive Colossus Ollama validation:\n- available model confirmed: `qwen3.6:35b`\n- first live `pem_ask` smoke timed out at the default timeout\n- retry succeeded with:\n  - `PEM_LLM_MODE=ollama`\n  - `PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`\n  - `PEM_OLLAMA_MODEL=qwen3.6:35b`\n  - `PEM_LLM_TIMEOUT_SECONDS=180`\n  - `PEM_LLM_MAX_OUTPUT_TOKENS=300`\n\nSuccessful live output was:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=97254aaa8559 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the acceptance standard is met:\n- PEM runs with `PEM_LLM_MODE=ollama`\n- OpenAI mode remains intact\n- existing tests stayed green\n- Ollama unit tests pass\n- preflight and smoke still pass\n- at least one focused PEM LLM path succeeded live on Colossus\n\nOne operational note: `qwen3.6:35b` may want a longer PEM timeout than the old default for some prompts. That\u2019s a tuning issue, not an architecture issue.",
+        "created_at": "2026-06-09T22:55:07Z",
+        "error": null,
+        "finalized_at": "2026-06-09T22:55:08Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_33a0254bfa0f459d87ff1c0b4b06215b",
+        "updated_at": "2026-06-09T22:55:08Z"
+      },
+      {
+        "answer": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`.\n\nUpdated files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/.env.example`](/Users/kevinmattice/dev/anon/pem-mcp/.env.example)\n- local PEM `.env` in the real source tree\n- Colossus deployment `.env` at `/Users/kevinmattice/pem-mcp/.env`\n\nI also verified the live effect on Colossus by rerunning the PEM Ollama quiet-ask smoke without an explicit timeout override. It succeeded against `qwen3.6:35b`, so the new default is doing its job.\n\nLive result:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the longer timeout is now the normal PEM default, and the live Ollama path still works.",
+        "created_at": "2026-06-09T23:05:08Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:05:08Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_9a0e03cf8387431685ee071c4bcd4481",
+        "updated_at": "2026-06-09T23:05:08Z"
       }
     ]
   },
@@ -15340,10 +16977,78 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-09T21:41:36Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "**Architecture Assessment**\n\nPEM\u2019s active LLM boundary is already narrow enough that Ollama should fit behind it without changing PEM\u2019s higher-level behavior.\n\nThe current live path is centered on [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py). That module owns the actual model call contract used by the server: `generate_json(system_prompt, user_prompt, timeout_seconds, max_output_tokens)`. It currently reads `PEM_LLM_MODE`, `OPENAI_API_KEY`, `PEM_LLM_MODEL`, `PEM_LLM_TIMEOUT_SECONDS`, and `PEM_LLM_RESPONSE_FORMAT`, then returns a provider-neutral envelope with `ok`, `result.payload`, `result.raw_text`, `result.usage`, or a structured `error`. The PEM reasoning and tool behavior live in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py), which imports `generate_json(...)` and uses it inside the PEM tools and workflow logic. That means `server.py` mostly treats the model layer as a JSON-producing service, not as OpenAI specifically.\n\nThere is also [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py), which looks like a more formal adapter layer, but it is not the main active entry point today. So the real transport boundary is `llm_client.py`, not the adapter file. That\u2019s good news for this task: the cleanest path is to introduce Ollama behind `generate_json(...)` while preserving the same returned envelope and leaving PEM reasoning, MCP tools, case schema, and storage untouched.\n\n**Can Ollama fit behind the existing abstraction?**\n\nYes, probably with minimal surface change.\n\nThe rest of PEM only really needs:\n- `generate_json(...)`\n- stable structured success/error output\n- normalized JSON payloads\n- no provider-specific branching in the PEM logic\n\nSo the proposed mode expansion is:\n\n- `PEM_LLM_MODE=openai`\n- `PEM_LLM_MODE=ollama`\n- `PEM_OLLAMA_BASE_URL`\n- `PEM_OLLAMA_MODEL`\n\nThe goal would be:\n- `server.py` still calls `generate_json(...)`\n- `generate_json(...)` dispatches by mode\n- both backends return the same PEM envelope\n\nOne compatibility caveat matters: PEM currently leans on OpenAI-style structured response support, including `json_schema`/`json_object` behavior and retry-on-parse-failure. Ollama may not match the OpenAI Responses API feature-for-feature, especially around strict schema enforcement. So the initial Ollama implementation should preserve PEM\u2019s contract by normalizing the output behind the transport layer, even if Ollama has to use a slightly less strict JSON mode internally.\n\n**Proposed Implementation Plan**\n\nFiles likely needing modification:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- likely a new backend module such as `/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`\n- possibly a very small change in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py) if `_llm_enabled()` is currently hardcoded to only recognize `openai`\n\nFiles that should remain untouched:\n- PEM case schema and artifact logic\n- PEM storage semantics\n- PEM MCP tool behavior\n- project-root and initialization logic\n- smoke harnesses unless later extended for Ollama-specific validation\n\nTests that must be added:\n- Ollama-mode unit tests for `generate_json(...)`\n- config/env parsing tests for `PEM_LLM_MODE=ollama`\n- response normalization tests proving Ollama returns the same contract shape as OpenAI mode\n- failure-path tests for unreachable Ollama, malformed JSON, and model-not-found behavior\n\nExisting tests that should keep passing unchanged:\n- current OpenAI-mode tests in [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n- the 176-test validation slice\n- deployment preflight and phase-1 smoke\n- anything unrelated to mo",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T22:04:20Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "Native Ollama support is implemented locally in the real PEM source tree, with PEM\u2019s MCP/runtime shape left intact.\n\nChanged files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n\nWhat changed:\n- Added `PEM_LLM_MODE=ollama` dispatch behind the existing `generate_json(...)` boundary.\n- Added `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`.\n- Added `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL` and no hardcoded model default.\n- Preserved the existing normalized PEM envelope shape for success and failure.\n- Added structured Ollama error handling for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON/model-prose output.\n- Kept `src/server.py` changes minimal: LLM gating now recognizes `ollama`, and model reporting reflects the active backend.\n\nLocal validation is green:\n- `tests.test_llm_client`: `OK` (`14` tests)\n- PEM validation slice: `OK` (`176` tests)\n- deployment-style [`scripts/preflight_stdio_attach.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/preflight_stdio_attach.py): `OK`\n- phase-1 smoke [`scripts/smoke_mcp_phase1.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/smoke_mcp_phase1.py): `PASS`\n\nThe one thing I could not complete is the Colossus sync and live Ollama validation, because Colossus is unreachable from this session right now:\n- `ssh colossus` fails on DNS resolution for `colossus.bobcat-paradise.ts.net`\n- direct private-IP attempts timed out\n\nSo the implementation work is done and locally validated, but the remote acceptance leg is blocked by connectivity, not by PEM.\n\nWhen Colossus is reachable again, these are the next commands I\u2019d run:\n\n```bash\nrsync -av --delete \\\n  --exclude '.git/' \\\n  --exclude '.venv/' \\\n  --exclude '.pytest_cache/' \\\n  --exclude '.worktrees/' \\\n  --exclude '__pycache__/' \\\n  --exclude '*.pyc' \\\n  --exclude '.DS_Store' \\\n  --exclude '.env' \\\n  --exclude 'cases/' \\\n  --exclude 'scratch/' \\\n  --exclude 'stories/' \\\n  --exclude 'tickets/' \\\n  --exclude 'pem.initialized' \\\n  --exclude 'pem-touchid/.build/' \\\n  --exclude 'pem-conversion-test' \\\n  /Users/kevinmattice/dev/anon/pem-mcp/ \\\n  colossus:/Users/kevinmattice/pem-mcp/\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\npython scripts/preflight_stdio_attach.py\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_KERNEL_PATH=/Users/kevinmattice/pem-conversion-test \\\npython scripts/smoke_mcp_phase1.py\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_LLM_MODE=ollama \\\nPEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1 \\\nPEM_OLLAMA_MODEL=qwen3.6:35b \\\nPEM_SMOKE_Q1='What is 2+2?' \\\nPEM_SMOKE_Q2='Why is 2+2 equal to 4?' \\\npython scripts/smoke_pem_ask_quiet.py\n```\n\nSo the current status is:\n- implementation: complete\n- local regression/testing: complete\n- Colossus sync/live validation: blocked by connectivity\n\nIf you restore Colossus reachability, I can finish the remote validation leg immediately.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T22:23:11Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "Native Ollama support is in place behind PEM\u2019s existing LLM boundary.\n\nChanged files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n\nWhat it does:\n- adds `PEM_LLM_MODE=ollama`\n- adds `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`\n- adds `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL`\n- keeps the existing `generate_json(...)` contract and normalized PEM envelope\n- preserves OpenAI mode unchanged\n- returns structured Ollama errors for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON output\n\nValidation:\n- local `tests.test_llm_client`: `OK` (`14` tests)\n- local PEM validation slice: `OK` (`176` tests)\n- Colossus `tests.test_llm_client`: `OK`\n- Colossus PEM validation slice: `OK`\n- Colossus deployment preflight: `OK`\n- Colossus phase-1 MCP smoke: `PASS`\n\nLive Colossus Ollama validation:\n- available model confirmed: `qwen3.6:35b`\n- first live `pem_ask` smoke timed out at the default timeout\n- retry succeeded with:\n  - `PEM_LLM_MODE=ollama`\n  - `PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`\n  - `PEM_OLLAMA_MODEL=qwen3.6:35b`\n  - `PEM_LLM_TIMEOUT_SECONDS=180`\n  - `PEM_LLM_MAX_OUTPUT_TOKENS=300`\n\nSuccessful live output was:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=97254aaa8559 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the acceptance standard is met:\n- PEM runs with `PEM_LLM_MODE=ollama`\n- OpenAI mode remains intact\n- existing tests stayed green\n- Ollama unit tests pass\n- preflight and smoke still pass\n- at least one focused PEM LLM path succeeded live on Colossus\n\nOne operational note: `qwen3.6:35b` may want a longer PEM timeout than the old default for some prompts. That\u2019s a tuning issue, not an architecture issue.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T22:55:08Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`.\n\nUpdated files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/.env.example`](/Users/kevinmattice/dev/anon/pem-mcp/.env.example)\n- local PEM `.env` in the real source tree\n- Colossus deployment `.env` at `/Users/kevinmattice/pem-mcp/.env`\n\nI also verified the live effect on Colossus by rerunning the PEM Ollama quiet-ask smoke without an explicit timeout override. It succeeded against `qwen3.6:35b`, so the new default is doing its job.\n\nLive result:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the longer timeout is now the normal PEM default, and the live Ollama path still works.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:05:08Z"
     }
   ],
   "initial_subject": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
-  "intake_question": "Good. Proceed with the smoke-harness-only fix.\n\nConstraints remain:\n\n- Do not redesign PEM.\n- Do not reduce PEM.\n- Do not change PEM runtime behavior or architecture.\n- Do not alter PEM invariants.\n- Do not integrate PEM into CCE.\n- Do not implement Ollama support yet.\n\nThe diagnosis is accepted: `scripts/smoke_mcp_phase1.py` is a fixture/kernel semantic replay harness and should not run with deployment-mode or repo-standalone config semantics.\n\nPlease update only the smoke harness so that its spawned PEM server process runs in a scrubbed legacy-kernel replay context.\n\nSpecifically:\n\n1. In `scripts/smoke_mcp_phase1.py`, update the relevant server env construction, likely `WorkingKernel.build_env()` and/or the server params env, so the spawned server:\n- unsets or overrides deployment/root/config env that would force standalone/deployment behavior\n- sets `PEM_STORAGE_MODE=legacy_kernel`\n- sets `PEM_KERNEL_PATH` to the smoke\u2019s temporary kernel checkout\n- avoids repo `.env` influence if necessary\n- optionally sets `PEM_ALLOW_GLOBAL_CONFIG=false`\n\n2. Do not change PEM runtime code.\n\n3. Do not change `pem.toml` deployment semantics.\n\n4. After the smoke-only fix, rerun:\n- `scripts/smoke_mcp_phase1.py`\n- deployment-mode `scripts/preflight_stdio_attach.py`\n- the 176-test validation slice\n\n5. Report:\n- whether the smoke now passes\n- whether preflight still passes\n- whether the 176-test slice still passes\n- whether any governed-root state was created\n- whether first deployment acceptance is now met\n\nIf the smoke reveals a real runtime defect after the harness context is corrected, stop and report the exact failure before changing anything else.",
+  "intake_question": "Please set PEM_LLM_TIMEOUT_SECONDS=180. Local models sometimes need a little breathing room.",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -15354,7 +17059,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "e614befe7125"
+    "hash": "5448abdbe32b"
   },
   "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
   "routing": {
@@ -16120,6 +17825,82 @@
           "incoming_marker=none"
         ],
         "ts": "2026-06-09T21:41:36Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=50",
+          "active_unit_count=1757",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T22:04:20Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=80",
+          "active_unit_count=1807",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T22:23:11Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=45",
+          "active_unit_count=1887",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T22:55:07Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=15",
+          "active_unit_count=1932",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:05:08Z"
       }
     ],
     "last": {
@@ -16132,14 +17913,14 @@
       "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
       "signals_used": [
         "candidate_source=discussion_anchor",
-        "incoming_unit_count=78",
-        "active_unit_count=1679",
+        "incoming_unit_count=15",
+        "active_unit_count=1932",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=checkin date",
         "incoming_marker=none"
       ],
-      "ts": "2026-06-09T21:41:36Z"
+      "ts": "2026-06-09T23:05:08Z"
     }
   },
   "seed_namespace": "pem",
@@ -16155,7 +17936,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "The smoke-harness-only fix worked.\n\nWhat I changed:\n- I updated [`/Users/kevinmattice/dev/anon/pem-mcp/scripts/smoke_mcp_phase1.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/smoke_mcp_phase1.py) only.\n- No PEM runtime code changed.\n- No `pem.toml` deployment semantics changed.\n- No architecture or invariant changes were made.\n\nWhat the smoke was doing wrong\n- It was replaying legacy kernel fixtures while letting the spawned PEM server inherit repo/deployment semantics.\n- That pulled PEM into standalone config behavior and also assumed older MCP reply shapes.\n- The harness now correctly:\n  - requires baseline phase-1 tools as a subset, not an exact set\n  - reads the current standardized MCP envelopes under `result`\n  - spawns the PEM server in a scrubbed legacy-kernel replay context\n  - writes its own temporary `pem.toml` for replay\n  - forces `PEM_STORAGE_MODE=legacy_kernel`\n  - forces `PEM_KERNEL_PATH` to the temporary copied kernel\n  - blocks deployment/root/config leakage from the spawned smoke server\n\nResults after the smoke-only fix:\n\n1. `scripts/smoke_mcp_phase1.py`\n- **Passed**\n- Final output included:\n```text\nPASS: MCP fa\u00e7ade matches kernel semantics (tools, activation, harness, summaries).\n```\n\n2. Deployment-mode `scripts/preflight_stdio_attach.py`\n- **Passed**\n\n3. 176-test validation slice\n- **Passed**\n- `Ran 176 tests in ...`\n- `OK`\n\nGoverned-root state\n- `/Users/kevinmattice/pem-governed-root` remained clean\n- only `pem.toml` is present\n- no `cases/`, `stories/`, `tickets/`, or `scratch/` were created by the fixture replay smoke\n\nThat is actually the right outcome:\n- deployment health check and fixture semantic replay are now properly separated\n- fixture replay stayed isolated from the real governed deployment root\n\n**Acceptance**\n\nYes. I would now call the first PEM-on-Colossus deployment **accepted**.\n\nAccepted scope:\n- PEM installs on Colossus\n- PEM MCP stdio startup works\n- deployment-mode preflight passes\n- full 176-test validation slice passes\n- phase-1 kernel semantic replay smoke passes\n- PEM architecture and invariants were preserved\n\nExplicit caveat, as agreed:\n- **native Ollama support is still the next implementation bridge**\n- it is **not** part of this acceptance milestone\n\nRecommended commands going forward:\n\nDeployment health check:\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\npython scripts/preflight_stdio_attach.py\n```\n\nFixture/kernel semantic replay:\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_KERNEL_PATH=/Users/kevinmattice/pem-conversion-test \\\npython scripts/smoke_mcp_phase1.py\n```\n\nEven though that second command includes deployment vars from the caller, the harness now scrubs and overrides the spawned server context correctly.\n\nUpdated future PEM rsync exclusions should remain:\n\n- `pem-touchid/.build/`\n- `pem-conversion-test`\n\nSo the Colossus milestone is in good shape now."
+    "summary": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`.\n\nUpdated files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/.env.example`](/Users/kevinmattice/dev/anon/pem-mcp/.env.example)\n- local PEM `.env` in the real source tree\n- Colossus deployment `.env` at `/Users/kevinmattice/pem-mcp/.env`\n\nI also verified the live effect on Colossus by rerunning the PEM Ollama quiet-ask smoke without an explicit timeout override. It succeeded against `qwen3.6:35b`, so the new default is doing its job.\n\nLive result:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the longer timeout is now the normal PEM default, and the live Ollama path still works."
   },
   "topic_hash": "mnefpfnnda",
   "turns": [
@@ -17065,7 +18846,96 @@
       "ts": "2026-06-09T21:41:36Z",
       "turn_id": "turn_4d6c4be4d3984be5a3299ef1bd5553e2",
       "verified_claims": 0
+    },
+    {
+      "answer": "**Architecture Assessment**\n\nPEM\u2019s active LLM boundary is already narrow enough that Ollama should fit behind it without changing PEM\u2019s higher-level behavior.\n\nThe current live path is centered on [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py). That module owns the actual model call contract used by the server: `generate_json(system_prompt, user_prompt, timeout_seconds, max_output_tokens)`. It currently reads `PEM_LLM_MODE`, `OPENAI_API_KEY`, `PEM_LLM_MODEL`, `PEM_LLM_TIMEOUT_SECONDS`, and `PEM_LLM_RESPONSE_FORMAT`, then returns a provider-neutral envelope with `ok`, `result.payload`, `result.raw_text`, `result.usage`, or a structured `error`. The PEM reasoning and tool behavior live in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py), which imports `generate_json(...)` and uses it inside the PEM tools and workflow logic. That means `server.py` mostly treats the model layer as a JSON-producing service, not as OpenAI specifically.\n\nThere is also [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_openai.py), which looks like a more formal adapter layer, but it is not the main active entry point today. So the real transport boundary is `llm_client.py`, not the adapter file. That\u2019s good news for this task: the cleanest path is to introduce Ollama behind `generate_json(...)` while preserving the same returned envelope and leaving PEM reasoning, MCP tools, case schema, and storage untouched.\n\n**Can Ollama fit behind the existing abstraction?**\n\nYes, probably with minimal surface change.\n\nThe rest of PEM only really needs:\n- `generate_json(...)`\n- stable structured success/error output\n- normalized JSON payloads\n- no provider-specific branching in the PEM logic\n\nSo the proposed mode expansion is:\n\n- `PEM_LLM_MODE=openai`\n- `PEM_LLM_MODE=ollama`\n- `PEM_OLLAMA_BASE_URL`\n- `PEM_OLLAMA_MODEL`\n\nThe goal would be:\n- `server.py` still calls `generate_json(...)`\n- `generate_json(...)` dispatches by mode\n- both backends return the same PEM envelope\n\nOne compatibility caveat matters: PEM currently leans on OpenAI-style structured response support, including `json_schema`/`json_object` behavior and retry-on-parse-failure. Ollama may not match the OpenAI Responses API feature-for-feature, especially around strict schema enforcement. So the initial Ollama implementation should preserve PEM\u2019s contract by normalizing the output behind the transport layer, even if Ollama has to use a slightly less strict JSON mode internally.\n\n**Proposed Implementation Plan**\n\nFiles likely needing modification:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- likely a new backend module such as `/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`\n- possibly a very small change in [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py) if `_llm_enabled()` is currently hardcoded to only recognize `openai`\n\nFiles that should remain untouched:\n- PEM case schema and artifact logic\n- PEM storage semantics\n- PEM MCP tool behavior\n- project-root and initialization logic\n- smoke harnesses unless later extended for Ollama-specific validation\n\nTests that must be added:\n- Ollama-mode unit tests for `generate_json(...)`\n- config/env parsing tests for `PEM_LLM_MODE=ollama`\n- response normalization tests proving Ollama returns the same contract shape as OpenAI mode\n- failure-path tests for unreachable Ollama, malformed JSON, and model-not-found behavior\n\nExisting tests that should keep passing unchanged:\n- current OpenAI-mode tests in [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n- the 176-test validation slice\n- deployment preflight and phase-1 smoke\n- anything unrelated to mo",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 2,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "e3ec25fc2167",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T22:04:20Z",
+      "turn_id": "turn_2adff1ed73b44f33bd4be4721c648da9",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Native Ollama support is implemented locally in the real PEM source tree, with PEM\u2019s MCP/runtime shape left intact.\n\nChanged files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n\nWhat changed:\n- Added `PEM_LLM_MODE=ollama` dispatch behind the existing `generate_json(...)` boundary.\n- Added `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`.\n- Added `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL` and no hardcoded model default.\n- Preserved the existing normalized PEM envelope shape for success and failure.\n- Added structured Ollama error handling for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON/model-prose output.\n- Kept `src/server.py` changes minimal: LLM gating now recognizes `ollama`, and model reporting reflects the active backend.\n\nLocal validation is green:\n- `tests.test_llm_client`: `OK` (`14` tests)\n- PEM validation slice: `OK` (`176` tests)\n- deployment-style [`scripts/preflight_stdio_attach.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/preflight_stdio_attach.py): `OK`\n- phase-1 smoke [`scripts/smoke_mcp_phase1.py`](/Users/kevinmattice/dev/anon/pem-mcp/scripts/smoke_mcp_phase1.py): `PASS`\n\nThe one thing I could not complete is the Colossus sync and live Ollama validation, because Colossus is unreachable from this session right now:\n- `ssh colossus` fails on DNS resolution for `colossus.bobcat-paradise.ts.net`\n- direct private-IP attempts timed out\n\nSo the implementation work is done and locally validated, but the remote acceptance leg is blocked by connectivity, not by PEM.\n\nWhen Colossus is reachable again, these are the next commands I\u2019d run:\n\n```bash\nrsync -av --delete \\\n  --exclude '.git/' \\\n  --exclude '.venv/' \\\n  --exclude '.pytest_cache/' \\\n  --exclude '.worktrees/' \\\n  --exclude '__pycache__/' \\\n  --exclude '*.pyc' \\\n  --exclude '.DS_Store' \\\n  --exclude '.env' \\\n  --exclude 'cases/' \\\n  --exclude 'scratch/' \\\n  --exclude 'stories/' \\\n  --exclude 'tickets/' \\\n  --exclude 'pem.initialized' \\\n  --exclude 'pem-touchid/.build/' \\\n  --exclude 'pem-conversion-test' \\\n  /Users/kevinmattice/dev/anon/pem-mcp/ \\\n  colossus:/Users/kevinmattice/pem-mcp/\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\npython scripts/preflight_stdio_attach.py\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_KERNEL_PATH=/Users/kevinmattice/pem-conversion-test \\\npython scripts/smoke_mcp_phase1.py\n```\n\n```bash\ncd /Users/kevinmattice/pem-mcp\n. .venv/bin/activate\nPEM_PROJECT_ROOT=/Users/kevinmattice/pem-governed-root \\\nPEM_CONFIG_PATH=/Users/kevinmattice/pem-governed-root/pem.toml \\\nPEM_LLM_MODE=ollama \\\nPEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1 \\\nPEM_OLLAMA_MODEL=qwen3.6:35b \\\nPEM_SMOKE_Q1='What is 2+2?' \\\nPEM_SMOKE_Q2='Why is 2+2 equal to 4?' \\\npython scripts/smoke_pem_ask_quiet.py\n```\n\nSo the current status is:\n- implementation: complete\n- local regression/testing: complete\n- Colossus sync/live validation: blocked by connectivity\n\nIf you restore Colossus reachability, I can finish the remote validation leg immediately.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 2,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "498988ff7de9",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T22:23:11Z",
+      "turn_id": "turn_8e0e28b8a72040288f217b8caa29e31e",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Native Ollama support is in place behind PEM\u2019s existing LLM boundary.\n\nChanged files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_client.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/llm_adapter_ollama.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/src/server.py`](/Users/kevinmattice/dev/anon/pem-mcp/src/server.py)\n- [`/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py`](/Users/kevinmattice/dev/anon/pem-mcp/tests/test_llm_client.py)\n\nWhat it does:\n- adds `PEM_LLM_MODE=ollama`\n- adds `PEM_OLLAMA_BASE_URL` with default `http://127.0.0.1:11434/v1`\n- adds `PEM_OLLAMA_MODEL`, with fallback to `PEM_LLM_MODEL`\n- keeps the existing `generate_json(...)` contract and normalized PEM envelope\n- preserves OpenAI mode unchanged\n- returns structured Ollama errors for unavailable service, model-not-found, timeout, malformed response envelope, and non-JSON output\n\nValidation:\n- local `tests.test_llm_client`: `OK` (`14` tests)\n- local PEM validation slice: `OK` (`176` tests)\n- Colossus `tests.test_llm_client`: `OK`\n- Colossus PEM validation slice: `OK`\n- Colossus deployment preflight: `OK`\n- Colossus phase-1 MCP smoke: `PASS`\n\nLive Colossus Ollama validation:\n- available model confirmed: `qwen3.6:35b`\n- first live `pem_ask` smoke timed out at the default timeout\n- retry succeeded with:\n  - `PEM_LLM_MODE=ollama`\n  - `PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`\n  - `PEM_OLLAMA_MODEL=qwen3.6:35b`\n  - `PEM_LLM_TIMEOUT_SECONDS=180`\n  - `PEM_LLM_MAX_OUTPUT_TOKENS=300`\n\nSuccessful live output was:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=97254aaa8559 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the acceptance standard is met:\n- PEM runs with `PEM_LLM_MODE=ollama`\n- OpenAI mode remains intact\n- existing tests stayed green\n- Ollama unit tests pass\n- preflight and smoke still pass\n- at least one focused PEM LLM path succeeded live on Colossus\n\nOne operational note: `qwen3.6:35b` may want a longer PEM timeout than the old default for some prompts. That\u2019s a tuning issue, not an architecture issue.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 2,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "184fd31b1272",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T22:55:08Z",
+      "turn_id": "turn_33a0254bfa0f459d87ff1c0b4b06215b",
+      "verified_claims": 0
+    },
+    {
+      "answer": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`.\n\nUpdated files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/.env.example`](/Users/kevinmattice/dev/anon/pem-mcp/.env.example)\n- local PEM `.env` in the real source tree\n- Colossus deployment `.env` at `/Users/kevinmattice/pem-mcp/.env`\n\nI also verified the live effect on Colossus by rerunning the PEM Ollama quiet-ask smoke without an explicit timeout override. It succeeded against `qwen3.6:35b`, so the new default is doing its job.\n\nLive result:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the longer timeout is now the normal PEM default, and the live Ollama path still works.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 2,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "5448abdbe32b",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T23:05:08Z",
+      "turn_id": "turn_9a0e03cf8387431685ee071c4bcd4481",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-09T21:41:36Z"
+  "updated_at": "2026-06-09T23:05:08Z"
 }
