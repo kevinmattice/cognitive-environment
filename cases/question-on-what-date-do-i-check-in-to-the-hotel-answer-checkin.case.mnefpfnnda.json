@@ -2,8 +2,8 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
-    "projection_hash": "1a61883d6929",
-    "q": "Agree with your recommendations: Create a branch",
+    "projection_hash": "44d954d5fcb8",
+    "q": "Let's take case of the `/cases` stuff, please.",
     "reused_active_case": true
   },
   "canonical_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
@@ -44,7 +44,7 @@
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-09T14:08:15Z",
+  "canonical_subject_updated_at": "2026-06-09T14:10:11Z",
   "case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -2950,6 +2950,125 @@
             "unit_id": "cap_196c57096b86"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T14:10:11Z",
+        "turn_id": "turn_5f4153a382214c40986c88a167aba43d",
+        "unit_count": 22,
+        "units": [
+          {
+            "index": 1,
+            "text": "`/cases` is taken care of.",
+            "unit_id": "cap_097ee76657d9"
+          },
+          {
+            "index": 2,
+            "text": "I followed the repo\u2019s own intent for that directory: since `cases/` is documented as a first-class forensic/state surface, I preserved the new case artifacts instead of hiding or deleting them.",
+            "unit_id": "cap_b1221e155fad"
+          },
+          {
+            "index": 3,
+            "text": "I committed:",
+            "unit_id": "cap_e91213a4a606"
+          },
+          {
+            "index": 4,
+            "text": "`777dd2c` `Record recent CCE case artifacts`",
+            "unit_id": "cap_3e7c4845f1d8"
+          },
+          {
+            "index": 5,
+            "text": "That commit includes:",
+            "unit_id": "cap_cf117b65992b"
+          },
+          {
+            "index": 6,
+            "text": "[`/Volumes/kevinmattice/cce/cases/.discussion_case_id`](/Volumes/kevinmattice/cce/cases/.discussion_case_id)",
+            "unit_id": "cap_3dbfcf1bb142"
+          },
+          {
+            "index": 7,
+            "text": "the three new `cases/*.json` files",
+            "unit_id": "cap_1a2a115c9893"
+          },
+          {
+            "index": 8,
+            "text": "Current state:",
+            "unit_id": "cap_753aa7dfb18f"
+          },
+          {
+            "index": 9,
+            "text": "branch: `cce-runtime-routing-cleanup`",
+            "unit_id": "cap_99a31ebdab34"
+          },
+          {
+            "index": 10,
+            "text": "working tree: clean",
+            "unit_id": "cap_d0b6310748ec"
+          },
+          {
+            "index": 11,
+            "text": "recent commits:",
+            "unit_id": "cap_dc2b2767f453"
+          },
+          {
+            "index": 12,
+            "text": "`777dd2c` `Record recent CCE case artifacts`",
+            "unit_id": "cap_a0ac22a2ec0f"
+          },
+          {
+            "index": 13,
+            "text": "`68ba871` `Document conversational workflow and Colossus helpers`",
+            "unit_id": "cap_e25fc2b9f7ce"
+          },
+          {
+            "index": 14,
+            "text": "`8b9a96d` `Add workspace-aware conversational routing`",
+            "unit_id": "cap_4725246e6f09"
+          },
+          {
+            "index": 15,
+            "text": "`992d153` `Hide Qwen reasoning in Ollama`",
+            "unit_id": "cap_ce1fb914ed5b"
+          },
+          {
+            "index": 16,
+            "text": "`ef4f7c0` `Harden Matrix runtime login flow`",
+            "unit_id": "cap_151178e4300f"
+          },
+          {
+            "index": 17,
+            "text": "So yes: the repo is now in a much safer place.",
+            "unit_id": "cap_cafa9c2c91f0"
+          },
+          {
+            "index": 18,
+            "text": "The important work is committed, the helper scripts are preserved, and `git status` is clean.",
+            "unit_id": "cap_0ac88eadcdf5"
+          },
+          {
+            "index": 19,
+            "text": "If you want, the next natural step is:",
+            "unit_id": "cap_002602254060"
+          },
+          {
+            "index": 20,
+            "text": "sync this branch to Colossus, or",
+            "unit_id": "cap_d914e85ab2da"
+          },
+          {
+            "index": 21,
+            "text": "push this branch to GitHub, or",
+            "unit_id": "cap_2b1e16acfc38"
+          },
+          {
+            "index": 22,
+            "text": "merge it back into `master` carefully.",
+            "unit_id": "cap_2979214439ea"
+          }
+        ]
       }
     ],
     "claims": [],
@@ -3677,6 +3796,46 @@
         "last_seen_at": "2026-06-09T14:08:15Z",
         "status": "Candidate",
         "text": "stop here, since the important work is protected, or"
+      },
+      {
+        "candidate_id": "cand_8356422d9c16",
+        "fingerprint": "368fd99f5f9f7771",
+        "first_seen_at": "2026-06-09T14:10:11Z",
+        "last_seen_at": "2026-06-09T14:10:11Z",
+        "status": "Candidate",
+        "text": "`/cases` is taken care of"
+      },
+      {
+        "candidate_id": "cand_d7ec9e2968f1",
+        "fingerprint": "8c1d18c16f83f6a9",
+        "first_seen_at": "2026-06-09T14:10:11Z",
+        "last_seen_at": "2026-06-09T14:10:11Z",
+        "status": "Candidate",
+        "text": "I followed the repo\u2019s own intent for that directory: since `cases/` is documented as a first-class forensic/state surface, I preserved the new case artifacts instead of hiding or deleting them"
+      },
+      {
+        "candidate_id": "cand_cfaa1cf45ee6",
+        "fingerprint": "32d5843c663ce139",
+        "first_seen_at": "2026-06-09T14:10:11Z",
+        "last_seen_at": "2026-06-09T14:10:11Z",
+        "status": "Candidate",
+        "text": "So yes: the repo is now in a much safer place"
+      },
+      {
+        "candidate_id": "cand_3e281451725e",
+        "fingerprint": "ddc76682e3c19a54",
+        "first_seen_at": "2026-06-09T14:10:11Z",
+        "last_seen_at": "2026-06-09T14:10:11Z",
+        "status": "Candidate",
+        "text": "The important work is committed, the helper scripts are preserved, and `git status` is clean"
+      },
+      {
+        "candidate_id": "cand_ace4288e7f9b",
+        "fingerprint": "8604aaf94aa8d2ca",
+        "first_seen_at": "2026-06-09T14:10:11Z",
+        "last_seen_at": "2026-06-09T14:10:11Z",
+        "status": "Candidate",
+        "text": "If you want, the next natural step is:"
       }
     ],
     "soft_warnings": [],
@@ -3688,12 +3847,11 @@
     "warnings": []
   },
   "epistemic_posture": {
-    "candidate_count": 86,
+    "candidate_count": 91,
     "claim_count": 0,
     "evidence_count_metric": 1,
-    "exploratory_signal_count": 2,
+    "exploratory_signal_count": 1,
     "exploratory_signals": [
-      "exploratory_marker",
       "uncertainty_marker"
     ],
     "health_state": "mixed",
@@ -3701,7 +3859,7 @@
     "implementation_signals": [],
     "inferred_posture": "exploratory_planning",
     "pending_claim_count": 0,
-    "snapshot_at": "2026-06-09T14:08:15Z",
+    "snapshot_at": "2026-06-09T14:10:11Z",
     "turn_mode": "brainstorming",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -4249,6 +4407,31 @@
         ],
         "turn_id": "turn_96626c0039d54635a9f27e6ac3adc640",
         "updated_at": "2026-06-09T14:08:15Z"
+      },
+      {
+        "answer": "`/cases` is taken care of.\n\nI followed the repo\u2019s own intent for that directory: since `cases/` is documented as a first-class forensic/state surface, I preserved the new case artifacts instead of hiding or deleting them. I committed:\n\n- `777dd2c` `Record recent CCE case artifacts`\n\nThat commit includes:\n- [`/Volumes/kevinmattice/cce/cases/.discussion_case_id`](/Volumes/kevinmattice/cce/cases/.discussion_case_id)\n- the three new `cases/*.json` files\n\nCurrent state:\n- branch: `cce-runtime-routing-cleanup`\n- working tree: clean\n- recent commits:\n  - `777dd2c` `Record recent CCE case artifacts`\n  - `68ba871` `Document conversational workflow and Colossus helpers`\n  - `8b9a96d` `Add workspace-aware conversational routing`\n  - `992d153` `Hide Qwen reasoning in Ollama`\n  - `ef4f7c0` `Harden Matrix runtime login flow`\n\nSo yes: the repo is now in a much safer place. The important work is committed, the helper scripts are preserved, and `git status` is clean.\n\nIf you want, the next natural step is:\n- sync this branch to Colossus, or\n- push this branch to GitHub, or\n- merge it back into `master` carefully.",
+        "created_at": "2026-06-09T14:10:11Z",
+        "error": null,
+        "finalized_at": "2026-06-09T14:10:11Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_5f4153a382214c40986c88a167aba43d",
+        "updated_at": "2026-06-09T14:10:11Z"
       }
     ]
   },
@@ -4610,10 +4793,27 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-09T14:08:15Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "`/cases` is taken care of.\n\nI followed the repo\u2019s own intent for that directory: since `cases/` is documented as a first-class forensic/state surface, I preserved the new case artifacts instead of hiding or deleting them. I committed:\n\n- `777dd2c` `Record recent CCE case artifacts`\n\nThat commit includes:\n- [`/Volumes/kevinmattice/cce/cases/.discussion_case_id`](/Volumes/kevinmattice/cce/cases/.discussion_case_id)\n- the three new `cases/*.json` files\n\nCurrent state:\n- branch: `cce-runtime-routing-cleanup`\n- working tree: clean\n- recent commits:\n  - `777dd2c` `Record recent CCE case artifacts`\n  - `68ba871` `Document conversational workflow and Colossus helpers`\n  - `8b9a96d` `Add workspace-aware conversational routing`\n  - `992d153` `Hide Qwen reasoning in Ollama`\n  - `ef4f7c0` `Harden Matrix runtime login flow`\n\nSo yes: the repo is now in a much safer place. The important work is committed, the helper scripts are preserved, and `git status` is clean.\n\nIf you want, the next natural step is:\n- sync this branch to Colossus, or\n- push this branch to GitHub, or\n- merge it back into `master` carefully.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T14:10:11Z"
     }
   ],
   "initial_subject": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
-  "intake_question": "Agree with your recommendations:\n\nCreate a branch off master\nSplit the work into a few sensible commits\nLeave the ambiguous cases/ artifacts out unless you intentionally want them\n\nAlso agree with your commit plan.\n\nAgree with your plan for `/cases`.\n\nPlease proceed with your plan for next safe cleanup pass.",
+  "intake_question": "Let's take case of the `/cases` stuff, please.",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -4624,7 +4824,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "1a61883d6929"
+    "hash": "44d954d5fcb8"
   },
   "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
   "routing": {
@@ -5029,6 +5229,25 @@
           "incoming_marker=none"
         ],
         "ts": "2026-06-09T14:08:15Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=22",
+          "active_unit_count=537",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T14:10:11Z"
       }
     ],
     "last": {
@@ -5041,14 +5260,14 @@
       "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
       "signals_used": [
         "candidate_source=discussion_anchor",
-        "incoming_unit_count=21",
-        "active_unit_count=516",
+        "incoming_unit_count=22",
+        "active_unit_count=537",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=checkin date",
         "incoming_marker=none"
       ],
-      "ts": "2026-06-09T14:08:15Z"
+      "ts": "2026-06-09T14:10:11Z"
     }
   },
   "seed_namespace": "pem",
@@ -5064,7 +5283,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "Much better now.\n\nYou\u2019re on a dedicated branch, [`cce-runtime-routing-cleanup`](/Volumes/kevinmattice/cce), and the real work is safely preserved in four commits:\n\n- `ef4f7c0` `Harden Matrix runtime login flow`\n- `992d153` `Hide Qwen reasoning in Ollama`\n- `8b9a96d` `Add workspace-aware conversational routing`\n- `68ba871` `Document conversational workflow and Colossus helpers`\n\nThat means the important code, tests, docs, and the two helper scripts are now properly committed in Git.\n\nWhat\u2019s still left out, intentionally:\n- [`/Volumes/kevinmattice/cce/cases/.discussion_case_id`](/Volumes/kevinmattice/cce/cases/.discussion_case_id)\n- three untracked `cases/*.json` artifacts\n\nThat matches the plan we agreed on: keep the ambiguous `cases/` artifacts out unless we decide on them deliberately later.\n\nSo the repo is not perfectly clean yet, but it is now **Git-safe in the important way**:\n- real work is committed\n- helper scripts are preserved\n- cleanup happened on a separate branch\n- only the intentionally-excluded `cases/` artifacts remain\n\nIf you want, the next safe step is either:\n1. stop here, since the important work is protected, or\n2. do one final tiny cleanup pass for `cases/` so `git status` becomes clean too."
+    "summary": "`/cases` is taken care of.\n\nI followed the repo\u2019s own intent for that directory: since `cases/` is documented as a first-class forensic/state surface, I preserved the new case artifacts instead of hiding or deleting them. I committed:\n\n- `777dd2c` `Record recent CCE case artifacts`\n\nThat commit includes:\n- [`/Volumes/kevinmattice/cce/cases/.discussion_case_id`](/Volumes/kevinmattice/cce/cases/.discussion_case_id)\n- the three new `cases/*.json` files\n\nCurrent state:\n- branch: `cce-runtime-routing-cleanup`\n- working tree: clean\n- recent commits:\n  - `777dd2c` `Record recent CCE case artifacts`\n  - `68ba871` `Document conversational workflow and Colossus helpers`\n  - `8b9a96d` `Add workspace-aware conversational routing`\n  - `992d153` `Hide Qwen reasoning in Ollama`\n  - `ef4f7c0` `Harden Matrix runtime login flow`\n\nSo yes: the repo is now in a much safer place. The important work is committed, the helper scripts are preserved, and `git status` is clean.\n\nIf you want, the next natural step is:\n- sync this branch to Colossus, or\n- push this branch to GitHub, or\n- merge it back into `master` carefully."
   },
   "topic_hash": "mnefpfnnda",
   "turns": [
@@ -5542,7 +5761,29 @@
       "ts": "2026-06-09T14:08:15Z",
       "turn_id": "turn_96626c0039d54635a9f27e6ac3adc640",
       "verified_claims": 0
+    },
+    {
+      "answer": "`/cases` is taken care of.\n\nI followed the repo\u2019s own intent for that directory: since `cases/` is documented as a first-class forensic/state surface, I preserved the new case artifacts instead of hiding or deleting them. I committed:\n\n- `777dd2c` `Record recent CCE case artifacts`\n\nThat commit includes:\n- [`/Volumes/kevinmattice/cce/cases/.discussion_case_id`](/Volumes/kevinmattice/cce/cases/.discussion_case_id)\n- the three new `cases/*.json` files\n\nCurrent state:\n- branch: `cce-runtime-routing-cleanup`\n- working tree: clean\n- recent commits:\n  - `777dd2c` `Record recent CCE case artifacts`\n  - `68ba871` `Document conversational workflow and Colossus helpers`\n  - `8b9a96d` `Add workspace-aware conversational routing`\n  - `992d153` `Hide Qwen reasoning in Ollama`\n  - `ef4f7c0` `Harden Matrix runtime login flow`\n\nSo yes: the repo is now in a much safer place. The important work is committed, the helper scripts are preserved, and `git status` is clean.\n\nIf you want, the next natural step is:\n- sync this branch to Colossus, or\n- push this branch to GitHub, or\n- merge it back into `master` carefully.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 1,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "44d954d5fcb8",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T14:10:11Z",
+      "turn_id": "turn_5f4153a382214c40986c88a167aba43d",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-09T14:08:15Z"
+  "updated_at": "2026-06-09T14:10:11Z"
 }
