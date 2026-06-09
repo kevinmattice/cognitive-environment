@@ -25,6 +25,11 @@ class SourceInfo:
     abs_path: Path
     exists: bool
     supported_type: bool
+    display_name: str | None = None
+    kind: str | None = None
+    category: str | None = None
+    keywords: tuple[str, ...] = ()
+    aliases: tuple[str, ...] = ()
 
 
 class WorkspaceRuntime:
@@ -91,6 +96,11 @@ class WorkspaceRuntime:
                     abs_path=abs_path,
                     exists=exists,
                     supported_type=supported,
+                    display_name=decl.display_name,
+                    kind=decl.kind,
+                    category=decl.category,
+                    keywords=decl.keywords,
+                    aliases=decl.aliases,
                 )
             )
         return infos
@@ -115,8 +125,13 @@ class WorkspaceRuntime:
             raise SourceError(f"unsupported source type: {source_id} -> {decl.path} ({ext})")
 
         data = abs_path.read_bytes()
-        if len(data) > manifest.policies.max_read_bytes:
-            raise SourceError(f"source too large: {source_id} ({len(data)} bytes > max_read_bytes {manifest.policies.max_read_bytes})")
+        # Preserve existing behavior for plain text sources: refuse to read files
+        # that exceed max_read_bytes. For PDFs, max_read_bytes is applied to the
+        # extracted text output (see below) rather than the raw PDF file size.
+        if ext != ".pdf" and len(data) > manifest.policies.max_read_bytes:
+            raise SourceError(
+                f"source too large: {source_id} ({len(data)} bytes > max_read_bytes {manifest.policies.max_read_bytes})"
+            )
 
         if ext == ".pdf":
             try:

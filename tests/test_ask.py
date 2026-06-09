@@ -24,6 +24,23 @@ class AskTests(unittest.TestCase):
         resp = answer_question(question="what is this", workspace=rt, model=model, cfg=cfg)
         self.assertIn("Ask error:", resp)
 
+    def test_general_fallback_answers_without_workspace(self) -> None:
+        rt = WorkspaceRuntime(Path("workspaces"))
+        model = FakeModel()
+        cfg = AskConfig(provider="ollama", model_name="x", max_context_bytes=1000, timeout_s=1)
+        resp = answer_question(
+            question="How do you think the CCE project is going?",
+            workspace=rt,
+            model=model,
+            cfg=cfg,
+            force_grounded=False,
+        )
+        self.assertIn("OK", resp)
+        self.assertNotIn("Sources:", resp)
+        self.assertIsNotNone(model.last_request)
+        assert model.last_request is not None
+        self.assertIn("warm and helpful conversational assistant", model.last_request.system_prompt)
+
     def test_build_context_uses_declared_readable_sources_only(self) -> None:
         rt = WorkspaceRuntime(Path("workspaces"))
         rt.open("example-workspace")
@@ -45,8 +62,42 @@ class AskTests(unittest.TestCase):
         model = FakeModel()
         cfg = AskConfig(provider="ollama", model_name="x", max_context_bytes=10000, timeout_s=1)
         resp = answer_question(question="what is in the workspace", workspace=rt, model=model, cfg=cfg)
-        self.assertIn("Answer:", resp)
+        self.assertIn("OK", resp)
+        self.assertNotIn("Answer:", resp)
+        self.assertNotIn("Sources:", resp)
         self.assertIsNotNone(model.last_request)
         assert model.last_request is not None
         self.assertIn("Sources:", model.last_request.user_prompt)
 
+    def test_no_match_general_fallback_with_active_workspace(self) -> None:
+        rt = WorkspaceRuntime(Path("workspaces"))
+        rt.open("example-workspace")
+        model = FakeModel()
+        cfg = AskConfig(provider="ollama", model_name="x", max_context_bytes=10000, timeout_s=1)
+        resp = answer_question(
+            question="What happens if my checked bag disappears in Dallas?",
+            workspace=rt,
+            model=model,
+            cfg=cfg,
+            force_grounded=False,
+        )
+        self.assertIn("OK", resp)
+        self.assertNotIn("Sources:", resp)
+        self.assertIsNotNone(model.last_request)
+        assert model.last_request is not None
+        self.assertIn("warm and helpful conversational assistant", model.last_request.system_prompt)
+
+    def test_ask_guides_itemized_answers_for_list_questions(self) -> None:
+        rt = WorkspaceRuntime(Path("workspaces"))
+        rt.open("example-workspace")
+        model = FakeModel()
+        cfg = AskConfig(provider="ollama", model_name="x", max_context_bytes=10000, timeout_s=1)
+        answer_question(
+            question="Please provide all the departure times for all my flights.",
+            workspace=rt,
+            model=model,
+            cfg=cfg,
+        )
+        assert model.last_request is not None
+        self.assertIn("bullet list", model.last_request.user_prompt)
+        self.assertIn("flight number", model.last_request.user_prompt)

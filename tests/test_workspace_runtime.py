@@ -1,8 +1,10 @@
 import unittest
+import tempfile
 from pathlib import Path
 
 from workspace_runtime.errors import SourceError
 from workspace_runtime.runtime import WorkspaceRuntime
+from workspace_runtime.manifest import load_manifest
 
 
 class WorkspaceRuntimeTests(unittest.TestCase):
@@ -29,3 +31,34 @@ class WorkspaceRuntimeTests(unittest.TestCase):
         rt.open("example-workspace")
         with self.assertRaises(SourceError):
             rt.read_source("nope")
+
+    def test_manifest_source_metadata_is_exposed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            ws_dir = Path(tmp) / "meta-workspace"
+            ws_dir.mkdir()
+            (ws_dir / "workspace.toml").write_text(
+                "\n".join(
+                    [
+                        'workspace_id = "meta-workspace"',
+                        'title = "Meta Workspace"',
+                        "",
+                        "[[sources]]",
+                        'source_id = "aa_trip_confirmation"',
+                        'path = "sources/AA trip confirmation CHA—MSO.pdf"',
+                        'display_name = "AA Trip Confirmation"',
+                        'kind = "pdf"',
+                        'category = "flight"',
+                        'keywords = ["flight", "dfw"]',
+                        'aliases = ["aa confirmation"]',
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            manifest = load_manifest(ws_dir / "workspace.toml")
+
+        src = manifest.sources[0]
+        self.assertEqual(src.display_name, "AA Trip Confirmation")
+        self.assertEqual(src.category, "flight")
+        self.assertEqual(src.keywords, ("flight", "dfw"))
+        self.assertEqual(src.aliases, ("aa confirmation",))

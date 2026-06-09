@@ -28,6 +28,7 @@ COMMAND_LIKE_PREFIXES = {
 class RouteDecision:
     action: str  # "ignore" | "command" | "ask" | "help"
     question: str | None = None
+    force_grounded: bool = False
 
 
 def decide_route(message: str, *, has_active_workspace: bool) -> RouteDecision:
@@ -41,7 +42,7 @@ def decide_route(message: str, *, has_active_workspace: bool) -> RouteDecision:
     if lowered == "ask":
         return RouteDecision(action="command")
     if lowered.startswith("ask "):
-        return RouteDecision(action="ask", question=text[4:].strip())
+        return RouteDecision(action="ask", question=text[4:].strip(), force_grounded=True)
 
     # Known commands stay commands.
     if lowered == "status":
@@ -58,8 +59,7 @@ def decide_route(message: str, *, has_active_workspace: bool) -> RouteDecision:
     if first in COMMAND_LIKE_PREFIXES:
         return RouteDecision(action="help")
 
-    # Ordinary text: route to grounded QA only if a workspace is active.
-    if has_active_workspace:
-        return RouteDecision(action="ask", question=text)
-    return RouteDecision(action="help")
+    # Ordinary text routes to the model. The runtime decides whether to use
+    # grounded QA or conversational fallback.
+    return RouteDecision(action="ask", question=text, force_grounded=False)
 

@@ -225,5 +225,6 @@ class PdfSourceSupportTests(unittest.TestCase):
 
             rt = WorkspaceRuntime(workspaces_dir)
             rt.open("pdf-ws")
-            with self.assertRaises(SourceError):
-                rt.read_source("doc")
+            text = rt.read_source("doc")
+            self.assertTrue(text)
+            self.assertLessEqual(len(text.encode("utf-8")), 200)

@@ -3,55 +3,119 @@ title = "Montana Trip (June 2026)"
 description = "Grounded travel planning + contingency workspace for a June 2026 Montana trip. Sources are explicit and placeholder-based."
 notes = "This workspace is intentionally low-risk: no real booking codes, no live lookups, no external web access."
 
+[intent]
+domains = ["travel", "itinerary", "logistics"]
+keywords = [
+  "flight",
+  "layover",
+  "connection",
+  "airport",
+  "departure",
+  "arrival",
+  "return",
+  "outbound",
+  "inbound",
+  "leave",
+  "trip",
+  "itinerary",
+  "fragile",
+  "risk",
+  "backup",
+  "contingency",
+  "lodging",
+  "insurance",
+]
+entities = ["dallas", "dfw", "chattanooga", "missoula", "montana"]
+
 [[sources]]
 source_id = "trip_overview"
 path = "sources/trip-overview.md"
+display_name = "Trip Overview"
 kind = "document"
+category = "trip"
+keywords = ["montana", "trip", "overview", "plan", "dates", "itinerary"]
+aliases = ["montana trip overview", "trip overview"]
 
 [[sources]]
 source_id = "itinerary_summary"
 path = "sources/itinerary-summary.md"
+display_name = "Itinerary Summary"
 kind = "document"
+category = "itinerary"
+keywords = ["itinerary", "schedule", "timeline", "daily", "plan"]
+aliases = ["itinerary summary"]
 
 [[sources]]
 source_id = "fishing_gear_checklist"
 path = "sources/fishing-gear-checklist.md"
+display_name = "Fishing Gear Checklist"
 kind = "checklist"
+category = "fishing"
+keywords = ["fishing", "gear", "checklist", "packing", "waders", "flies", "rod", "tackle"]
+aliases = ["gear checklist", "fishing checklist"]
 
 [[sources]]
 source_id = "contingency_planning"
 path = "sources/contingency-planning.md"
+display_name = "Contingency Planning"
 kind = "plan"
+category = "contingency"
+keywords = ["contingency", "backup", "weather", "delay", "cancellation", "alternate"]
+aliases = ["backup plan", "plan b"]
 
 [[sources]]
 source_id = "notes"
 path = "notes.md"
+display_name = "Workspace Notes"
 kind = "notes"
+category = "notes"
+keywords = ["notes", "reminders", "misc", "scratch", "draft"]
+aliases = ["workspace notes"]
 
 [[sources]]
 source_id = "aa_trip_confirmation"
 path = "sources/AA trip confirmation CHA—MSO.pdf"
+display_name = "AA Trip Confirmation"
 kind = "pdf"
+category = "flight"
+keywords = ["flight", "airline", "american", "aa", "dfw", "cha", "mso", "departure", "arrival", "boarding", "return", "leave"]
+aliases = ["aa confirmation", "flight confirmation", "american airlines", "return flight"]
 
 [[sources]]
 source_id = "guided_fishing_trip_confirmation"
 path = "sources/Fishing Guided Trip Confirmation June 21 Full Day.pdf"
+display_name = "Guided Fishing Trip Confirmation"
 kind = "pdf"
+category = "fishing"
+keywords = ["fishing", "guided", "guide", "trip", "reservation", "full day", "trout", "river"]
+aliases = ["fishing confirmation", "guided fishing trip"]
 
 [[sources]]
 source_id = "sportsmans_lodge_confirmation_a"
 path = "sources/Sportsmans Lodge confirmation confirmation number LL45125QLB.pdf"
+display_name = "Sportsman's Lodge Confirmation"
 kind = "pdf"
+category = "lodging"
+keywords = ["lodge", "lodging", "hotel", "reservation", "check-in", "check out", "room", "stay", "arrival", "departure"]
+aliases = ["lodge confirmation", "sportsmans lodge", "lodging confirmation"]
 
 [[sources]]
 source_id = "sportsmans_lodge_confirmation_b"
 path = "sources/Sportsmans Lodge confirmationconfirmation number LL45125QLD.pdf"
+display_name = "Sportsman's Lodge Confirmation"
 kind = "pdf"
+category = "lodging"
+keywords = ["lodge", "lodging", "hotel", "reservation", "check-in", "check out", "room", "stay", "arrival", "departure"]
+aliases = ["lodge confirmation", "sportsmans lodge", "lodging confirmation"]
 
 [[sources]]
 source_id = "travel_insurance_plan"
 path = "sources/Travel insurance plan EUSP2558794819.pdf"
+display_name = "Travel Insurance Plan"
 kind = "pdf"
+category = "insurance"
+keywords = ["insurance", "policy", "coverage", "trip protection", "medical", "reimbursement", "cancel"]
+aliases = ["insurance plan", "travel insurance"]
 
 [policies]
 max_read_bytes = 16384

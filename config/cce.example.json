@@ -25,5 +25,6 @@
   "model_provider": "ollama",
   "model_name": "llama3.1",
   "model_max_context_bytes": 24000,
-  "model_timeout_s": 30
+  "model_timeout_s": 30,
+  "conversational_fallback_enabled": true
 }

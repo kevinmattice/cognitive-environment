@@ -11,6 +11,7 @@ class RoutingTests(unittest.TestCase):
         d = decide_route("ask what", has_active_workspace=False)
         self.assertEqual(d.action, "ask")
         self.assertEqual(d.question, "what")
+        self.assertTrue(d.force_grounded)
 
     def test_known_commands_route_to_command(self) -> None:
         for msg in ["status", "workspace list", "workspace open x", "workspace status", "sources", "read readme"]:
@@ -20,7 +21,8 @@ class RoutingTests(unittest.TestCase):
         for msg in ["delete everything", "shell ls", "exec whoami", "pem show", "model pick"]:
             self.assertEqual(decide_route(msg, has_active_workspace=True).action, "help")
 
-    def test_ordinary_text_routes_to_ask_only_when_workspace_active(self) -> None:
+    def test_ordinary_text_routes_to_ask_regardless_of_workspace_state(self) -> None:
         self.assertEqual(decide_route("what is in this workspace?", has_active_workspace=True).action, "ask")
-        self.assertEqual(decide_route("what is in this workspace?", has_active_workspace=False).action, "help")
+        self.assertEqual(decide_route("what is in this workspace?", has_active_workspace=False).action, "ask")
+        self.assertFalse(decide_route("what is in this workspace?", has_active_workspace=False).force_grounded)
 
