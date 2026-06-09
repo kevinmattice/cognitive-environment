@@ -25,6 +25,15 @@ Reading is bounded and deterministic:
 - path traversal is rejected explicitly
 - when PDFs are supported, they are treated as text-only sources via deterministic extraction (no OCR)
 
+## Principle: Workspace-Authored Librarian Hints
+
+Optional source metadata in a workspace manifest (`display_name`, `category`, `keywords`, `aliases`) may be used to deterministically narrow the declared-source set before model invocation and present human-readable provenance labels.
+
+- The metadata is authored in the workspace manifest, not inferred or learned.
+- The model does not participate in source selection.
+- Existing workspaces without metadata continue to behave as they did before.
+- Selection remains inspectable and bounded to declared sources only.
+
 ## Non-Goals
 
 This phase does not include:

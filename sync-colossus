@@ -1,0 +1,26 @@
+#!/bin/sh
+set -eu
+
+REMOTE="${CCE_REMOTE:-colossus:/Users/kevinmattice/cce/}"
+LOCAL_DIR="$(CDPATH= cd -- "$(dirname "$0")" && pwd)/"
+
+MODE="${1:-}"
+if [ "$MODE" = "--dry-run" ]; then
+  EXTRA_FLAGS="--dry-run"
+elif [ -n "$MODE" ]; then
+  echo "Usage: ./sync-colossus [--dry-run]"
+  exit 1
+else
+  EXTRA_FLAGS=""
+fi
+
+echo "Syncing:"
+echo "  from: $LOCAL_DIR"
+echo "  to:   $REMOTE"
+
+exec rsync -av --delete $EXTRA_FLAGS \
+  --exclude 'runtime/' \
+  --exclude 'infra/matrix/state/' \
+  --exclude '.git/' \
+  "$LOCAL_DIR" \
+  "$REMOTE"

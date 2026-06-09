@@ -70,6 +70,17 @@ Sources:
   - `source_id` (string, unique within the workspace)
   - `path` (string, workspace-relative path)
   - `kind` (string, optional)
+  - `category` (string, optional)
+  - `keywords` (list of strings, optional)
+  - `aliases` (list of strings, optional)
+
+Optional source metadata is workspace-authored and deterministic. It does not enable automatic ingestion or semantic retrieval; it only helps the gateway choose a smaller declared-source subset before model invocation.
+
+Optional source presentation metadata:
+
+- `display_name` (string, optional)
+
+`display_name` is a human-readable label for the source. When present, the gateway can show it in answer provenance bullets instead of the raw file name.
 
 Policies:
 
@@ -86,6 +97,19 @@ Policies:
   - Text extraction only (no OCR, rendering, image extraction, or table extraction).
   - If extraction yields no text, the runtime returns: `PDF text extraction produced no text; OCR is not supported.`
   - Encrypted/unreadable PDFs fail explicitly and safely.
+
+## Deterministic Librarian Narrowing
+
+When the gateway builds grounded QA context, it may use optional source metadata from `workspace.toml` to select a small deterministic subset of declared sources before model invocation.
+
+Rules:
+
+- Explicit source IDs or declared paths in the question remain an escape hatch.
+- Otherwise, source selection uses only workspace-authored metadata (`category`, `keywords`, `aliases`).
+- The model does not participate in source selection.
+- Selection is deterministic and visible in the answer provenance bullets while tuning.
+- If the question is clearly single-fact and multiple sources tie for the best score, the gateway may ask a clarification question instead of guessing.
+- Existing workspaces without metadata continue to work unchanged.
 
 ## Gateway Commands
 

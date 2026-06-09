@@ -141,3 +141,35 @@ Gate 1: Postgres and Synapse start successfully and the client API responds at /
 Gate 2: Local accounts were created (Kevin + cce-bot-colossus) and m.login.password works via the client API (no Element, no matrix.org dependency).
 
 Notes: Synapse required allow_unsafe_locale: true for the local Postgres locale, and the listeners stanza was corrected so the client resource is served.
+
+### D-032: Tailscale Serve port 443 is already in use on Colossus
+
+Gate 3 requires exposing Synapse over tailnet HTTPS on the Colossus hostname. Colossus already has a Tailscale Serve HTTPS listener on port 443 for other paths, and the current `tailscale serve` command refuses to add another handler with `listener already exists for port 443`.
+
+This implies Gate 3 must either (a) use a dedicated tailnet hostname for Matrix, (b) use a different HTTPS port, or (c) deliberately manage a merged Serve configuration that routes multiple paths on port 443.
+
+### D-033: Merge Tailscale Serve routing for Synapse on 443
+
+To keep the existing `/retirement` handler on `https://colossus.bobcat-paradise.ts.net` while exposing Synapse, the Serve configuration was merged on port 443 to add `/_matrix` (and optionally `/_synapse`) routes pointing at Synapse on localhost:8008. The merged Serve config was applied with `tailscale serve set-raw`.
+
+### D-034: Gate 3 verified (Element login over tailnet HTTPS)
+
+Kevin successfully logged into the private Synapse homeserver from Element using `https://colossus.bobcat-paradise.ts.net` over tailnet HTTPS, with Tailscale Serve routing `/_matrix` to Synapse on localhost.
+
+### D-035: Deterministic librarian metadata narrows grounded QA
+
+CCE may use workspace-authored `category`, `keywords`, and `aliases` metadata to deterministically narrow grounded QA context to a small declared-source subset before model invocation.
+
+This is an explicit librarian behavior, not retrieval: no embeddings, no vector DB, no semantic search, and no model-based source selection. Explicit source IDs and declared paths remain an escape hatch, and ambiguous single-fact ties may still request clarification.
+
+### D-036: Human-readable source labels improve grounded QA UX
+
+Workspace manifests may also provide optional `display_name` labels for declared sources. When present, grounded QA can show these labels in the answer provenance bullets instead of raw filenames or internal source IDs.
+
+### D-037: Grounded QA answer cleanup is deterministic
+
+CCE may normalize grounded QA output after model generation to remove duplicated adjacent words, repair simple wrapped time fragments, and preserve a concise readable shape. This is a deterministic presentation pass, not hidden reasoning or retrieval.
+
+### D-038: Conversational fallback is explicit and bounded
+
+CCE may fall back to a general local-model answer when a natural question has no relevant workspace source selection or no workspace is active. This is a conversational convenience layer, not PEM, not retrieval, and not hidden state.

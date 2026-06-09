@@ -138,6 +138,34 @@ Then verify:
 - Postgres locale/collation check: Synapse required a Postgres locale of C. For the minimal private prototype, allow_unsafe_locale: true was set under the Synapse database config.
 - Listener correction: Synapse initially returned 404 for /_matrix/client/versions due to malformed listener indentation; the listener stanza was rewritten so the client resource is enabled.
 
+## Gate 3 Note (Tailscale Serve)
+
+Gate 3 intends to expose Synapse (localhost:8008) as HTTPS on the tailnet hostname.
+
+Observed constraint on Colossus: Tailscale Serve already has an HTTPS listener on port 443 for `https://colossus.bobcat-paradise.ts.net` (for `/retirement`). Attempts to add a second handler via `tailscale serve --https 443 ...` fail with `listener already exists for port 443`.
+
+Options:
+
+- Use a dedicated tailnet hostname for Matrix (preferred if available), then set `<TAILNET_HS_HOST>`/`public_baseurl` to that hostname.
+- Use a different HTTPS port for Synapse via Tailscale Serve (Element must be configured with an explicit port).
+- Replace/merge the existing port 443 Serve configuration to route both `/retirement` and `/_matrix` (requires deliberate Serve config management).
+
+### Gate 3 Implementation (Merged Routing on 443)
+
+Colossus already used Tailscale Serve on 443 for `/retirement`. To preserve it and add Synapse, Serve routing was merged so that:
+
+- `/retirement` continues to proxy to `http://127.0.0.1:8501/retirement`
+- `/_matrix` proxies to `http://127.0.0.1:8008/_matrix`
+- `/_synapse` proxies to `http://127.0.0.1:8008/_synapse` (optional; not required for Element login)
+
+This was applied using the (undocumented) command `tailscale serve set-raw` with a JSON document based on `tailscale serve status --json`.
+
+Verification:
+
+- `https://colossus.bobcat-paradise.ts.net/_matrix/client/versions` returns HTTP 200 (tailnet only).
+
+Gate 3 status: **passed** (Element login succeeded using `https://colossus.bobcat-paradise.ts.net`).
+
 ## “Done” Checklist
 
 - Synapse starts and stays healthy (Synapse + Postgres)
