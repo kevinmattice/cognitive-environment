@@ -2,21 +2,33 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
-    "projection_hash": "fc2eefdfb4eb",
-    "q": "Proceed with the proposed structure. Please make",
+    "projection_hash": "61f8d70d0a33",
+    "q": "Now let's switch gears. Create image similar to ",
     "reused_active_case": true
   },
   "canonical_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
-  "canonical_subject": "Type, entities, and environment behavior",
+  "canonical_subject": "Types, atlas, and entities behavior",
   "canonical_subject_history": [
     {
       "updated_at": "2026-06-06T13:21:30Z",
       "value": "**Proposed Work Report**"
+    },
+    {
+      "updated_at": "2026-06-06T15:11:51Z",
+      "value": "Type, entities, and environment behavior"
+    },
+    {
+      "updated_at": "2026-06-06T17:36:17Z",
+      "value": "Type, entities, and atlas behavior"
+    },
+    {
+      "updated_at": "2026-06-06T17:42:12Z",
+      "value": "Types, entities, and atlas behavior"
     }
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-06T13:21:30Z",
+  "canonical_subject_updated_at": "2026-06-06T17:42:12Z",
   "case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -536,6 +548,419 @@
             "unit_id": "cap_5171fb515de2"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T14:57:20Z",
+        "turn_id": "turn_d7a97e6e20c8407b8bb724686dcff733",
+        "unit_count": 8,
+        "units": [
+          {
+            "index": 1,
+            "text": "Yes.",
+            "unit_id": "cap_4c2b6cddefa2"
+          },
+          {
+            "index": 2,
+            "text": "I came up with a seed-ontology graphic that matches the atlas as it exists now: CCE at the center, grouped rings for systems, infrastructure, interfaces, capabilities, artifacts, and a minimal steward node for Kevin.",
+            "unit_id": "cap_1d5010191fb0"
+          },
+          {
+            "index": 3,
+            "text": "`Atlas` is emphasized as the key artifact, and `Browser Agents` is visually marked as a proposal.",
+            "unit_id": "cap_917402e010a8"
+          },
+          {
+            "index": 4,
+            "text": "If you want, I can do either of these next:",
+            "unit_id": "cap_90d6ae51f99c"
+          },
+          {
+            "index": 5,
+            "text": "1.",
+            "unit_id": "cap_4c8f02a3de41"
+          },
+          {
+            "index": 6,
+            "text": "Generate a second version that feels more like a map and less like a systems diagram.",
+            "unit_id": "cap_5d103cb9983b"
+          },
+          {
+            "index": 7,
+            "text": "2.",
+            "unit_id": "cap_28ee8f7868ff"
+          },
+          {
+            "index": 8,
+            "text": "Create a cleaner export tailored for the repo README, with wider layout and fewer labels.",
+            "unit_id": "cap_6c8391944024"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T15:03:10Z",
+        "turn_id": "turn_f297cf4e0643437f821bedcbca310687",
+        "unit_count": 9,
+        "units": [
+          {
+            "index": 1,
+            "text": "Here\u2019s the second version, reworked as an isometric map-city of the atlas.",
+            "unit_id": "cap_c7af276520ee"
+          },
+          {
+            "index": 2,
+            "text": "It treats `CCE` as the enclosing environment, makes `Atlas` the central civic landmark, turns the ontology into districts, and keeps `Browser Agents` visibly tentative as a proposal site.",
+            "unit_id": "cap_18278c5e9c71"
+          },
+          {
+            "index": 3,
+            "text": "If you want, I can next make one of these refinements:",
+            "unit_id": "cap_7e2f4e96342e"
+          },
+          {
+            "index": 4,
+            "text": "1.",
+            "unit_id": "cap_7765e075668a"
+          },
+          {
+            "index": 5,
+            "text": "A cleaner poster version with fewer labels and stronger visual hierarchy.",
+            "unit_id": "cap_c579987d1dc4"
+          },
+          {
+            "index": 6,
+            "text": "2.",
+            "unit_id": "cap_b3efbdf91792"
+          },
+          {
+            "index": 7,
+            "text": "A repo-friendly diagram version sized for `README.md` headers and previews.",
+            "unit_id": "cap_396e96910cf4"
+          },
+          {
+            "index": 8,
+            "text": "3.",
+            "unit_id": "cap_cfaa5c32d979"
+          },
+          {
+            "index": 9,
+            "text": "A third variant that feels more like a fantasy atlas plate and less like an urban planning map.",
+            "unit_id": "cap_1749a29e8654"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T15:11:51Z",
+        "turn_id": "turn_07c390cb8e094fcfae93160ef5a40ce9",
+        "unit_count": 9,
+        "units": [
+          {
+            "index": 1,
+            "text": "Here\u2019s the modernized isometric city version.",
+            "unit_id": "cap_bc45ba1db017"
+          },
+          {
+            "index": 2,
+            "text": "It keeps the atlas-as-place idea, but uses contemporary urban symbology and architecture so it reads more like a present-day civic district map.",
+            "unit_id": "cap_5f4b6cfbd4bf"
+          },
+          {
+            "index": 3,
+            "text": "If you want, I can take it one step further in one of these directions:",
+            "unit_id": "cap_e7a45865d06c"
+          },
+          {
+            "index": 4,
+            "text": "1.",
+            "unit_id": "cap_1c8acac39fd1"
+          },
+          {
+            "index": 5,
+            "text": "More minimalist and Apple-like: fewer labels, cleaner blocks, stronger white space.",
+            "unit_id": "cap_1762221b6555"
+          },
+          {
+            "index": 6,
+            "text": "2.",
+            "unit_id": "cap_0c5e2a2fef63"
+          },
+          {
+            "index": 7,
+            "text": "More urban-planning board: zoning colors, street names, sharper legend, less illustrative texture.",
+            "unit_id": "cap_68293ccc63e2"
+          },
+          {
+            "index": 8,
+            "text": "3.",
+            "unit_id": "cap_8e932c8f21a9"
+          },
+          {
+            "index": 9,
+            "text": "More polished for publication: same composition, but tuned as a repo hero image or presentation slide.",
+            "unit_id": "cap_4111c3a0fe12"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T15:42:17Z",
+        "turn_id": "turn_61723d73f23943c79b42a7936a5c5f32",
+        "unit_count": 8,
+        "units": [
+          {
+            "index": 1,
+            "text": "I made both variants.",
+            "unit_id": "cap_9596091404e3"
+          },
+          {
+            "index": 2,
+            "text": "The first is the minimalist Apple-like version: fewer labels, cleaner massing, stronger white space, and a calmer product-design feel.",
+            "unit_id": "cap_076afee529db"
+          },
+          {
+            "index": 3,
+            "text": "The second is the urban-planning board version: zoning colors, street naming, sharper legends, and more explicit district structure.",
+            "unit_id": "cap_e7fa2febdc3f"
+          },
+          {
+            "index": 4,
+            "text": "If you want, I can now help you choose one as the \u201cofficial\u201d visual direction and then do a final polished pass for one specific use:",
+            "unit_id": "cap_0cf4f61a1f8d"
+          },
+          {
+            "index": 5,
+            "text": "`README` hero image",
+            "unit_id": "cap_180666985171"
+          },
+          {
+            "index": 6,
+            "text": "slide/presentation cover",
+            "unit_id": "cap_269d797ed249"
+          },
+          {
+            "index": 7,
+            "text": "poster-style atlas plate",
+            "unit_id": "cap_b45dcbede2cd"
+          },
+          {
+            "index": 8,
+            "text": "Tolaria vault splash image",
+            "unit_id": "cap_fa849252161a"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T15:52:28Z",
+        "turn_id": "turn_416ad869e2604c1fa8aa0e0f3bb8700e",
+        "unit_count": 12,
+        "units": [
+          {
+            "index": 1,
+            "text": "This version fixes the self-reference problem nicely.",
+            "unit_id": "cap_e626a8c43384"
+          },
+          {
+            "index": 2,
+            "text": "The atlas is now the view itself, with the center handled as a civic commons instead of an in-world `Atlas` building, and the districts have more visible color separation.",
+            "unit_id": "cap_db21cda758e3"
+          },
+          {
+            "index": 3,
+            "text": "Two things I think are working especially well now:",
+            "unit_id": "cap_f94bb69d9d53"
+          },
+          {
+            "index": 4,
+            "text": "The central open square gives the map a real civic center without implying \u201cthe map is inside the map.\u201d",
+            "unit_id": "cap_2f43731afd15"
+          },
+          {
+            "index": 5,
+            "text": "The stronger zoning contrast makes the ontology easier to scan without losing the modern planning-board feel.",
+            "unit_id": "cap_99e8de9a648d"
+          },
+          {
+            "index": 6,
+            "text": "If you want, I can do one more refinement pass focused on either:",
+            "unit_id": "cap_f2cb27a1a50c"
+          },
+          {
+            "index": 7,
+            "text": "1.",
+            "unit_id": "cap_c4dc7b0eb7b5"
+          },
+          {
+            "index": 8,
+            "text": "Making it even more minimal and polished.",
+            "unit_id": "cap_796169930d88"
+          },
+          {
+            "index": 9,
+            "text": "2.",
+            "unit_id": "cap_153b603178b8"
+          },
+          {
+            "index": 10,
+            "text": "Making the street names and district labels semantically sharper to match your actual ontology language.",
+            "unit_id": "cap_1cb6445942f9"
+          },
+          {
+            "index": 11,
+            "text": "3.",
+            "unit_id": "cap_5fd7527741e2"
+          },
+          {
+            "index": 12,
+            "text": "Producing a final export optimized for the repo `README`.",
+            "unit_id": "cap_2324dff2914c"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T17:36:17Z",
+        "turn_id": "turn_574faf8eec35468a8b173b9983403f48",
+        "unit_count": 11,
+        "units": [
+          {
+            "index": 1,
+            "text": "This revision is much closer.",
+            "unit_id": "cap_7d01708d9df2"
+          },
+          {
+            "index": 2,
+            "text": "The zones now separate more cleanly, the center reads as shared space instead of a named object, and the legend is more abstract and map-appropriate.",
+            "unit_id": "cap_5b3db259bd9f"
+          },
+          {
+            "index": 3,
+            "text": "One thing I still notice, in case you want another pass: the left legend text still names relationship types fairly explicitly.",
+            "unit_id": "cap_fd614bb5bbe6"
+          },
+          {
+            "index": 4,
+            "text": "That may be fine, but if you want it even more diagram-neutral, I can reduce it further to visual classes like `primary link`, `support link`, `adjacent link`, `feed link`, and `reference link` without the ontology terms in parentheses.",
+            "unit_id": "cap_255c3850ca57"
+          },
+          {
+            "index": 5,
+            "text": "If you want, I can do one final cleanup pass with:",
+            "unit_id": "cap_c477f600bf7e"
+          },
+          {
+            "index": 6,
+            "text": "1.",
+            "unit_id": "cap_d42da1c3233e"
+          },
+          {
+            "index": 7,
+            "text": "Even stronger district contrast.",
+            "unit_id": "cap_737bdbcee5db"
+          },
+          {
+            "index": 8,
+            "text": "2.",
+            "unit_id": "cap_c75ffe488075"
+          },
+          {
+            "index": 9,
+            "text": "A more minimal relationship legend.",
+            "unit_id": "cap_80ae5a690628"
+          },
+          {
+            "index": 10,
+            "text": "3.",
+            "unit_id": "cap_364845731b69"
+          },
+          {
+            "index": 11,
+            "text": "Slightly less visual weight on the left-side info panels so the map itself dominates.",
+            "unit_id": "cap_d063a0cc68e1"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-06T17:42:12Z",
+        "turn_id": "turn_2f524115161a4560b54eb2413c1b1e2b",
+        "unit_count": 13,
+        "units": [
+          {
+            "index": 1,
+            "text": "This version shifts back toward the software-architecture feel while keeping the isometric depth.",
+            "unit_id": "cap_34162ecf5c3f"
+          },
+          {
+            "index": 2,
+            "text": "It treats `CCE` as the core platform, groups the ontology into modular planes, and avoids the \u201catlas inside the atlas\u201d issue by making the diagram itself the atlas view.",
+            "unit_id": "cap_e5d37ead2350"
+          },
+          {
+            "index": 3,
+            "text": "A few things are working especially well here:",
+            "unit_id": "cap_c73f85af1662"
+          },
+          {
+            "index": 4,
+            "text": "The grouped isometric platforms preserve the ontology cleanly without turning into a city.",
+            "unit_id": "cap_835fa3aea240"
+          },
+          {
+            "index": 5,
+            "text": "`Browser Agents` reads clearly as tentative because it sits as a lighter proposal module.",
+            "unit_id": "cap_35948116a822"
+          },
+          {
+            "index": 6,
+            "text": "`Kevin` stays peripheral and minimal, which matches the public-lab framing.",
+            "unit_id": "cap_c1be20bf5a20"
+          },
+          {
+            "index": 7,
+            "text": "If you want, I can refine this exact direction with one more pass:",
+            "unit_id": "cap_9f9bef6c076c"
+          },
+          {
+            "index": 8,
+            "text": "1.",
+            "unit_id": "cap_60b395591997"
+          },
+          {
+            "index": 9,
+            "text": "More minimal and abstract, with less text inside each block.",
+            "unit_id": "cap_762384347dec"
+          },
+          {
+            "index": 10,
+            "text": "2.",
+            "unit_id": "cap_38314343e6c6"
+          },
+          {
+            "index": 11,
+            "text": "More technically precise, with cleaner relationship semantics and less decorative labeling.",
+            "unit_id": "cap_9b54814dccfc"
+          },
+          {
+            "index": 12,
+            "text": "3.",
+            "unit_id": "cap_61a7da7363aa"
+          },
+          {
+            "index": 13,
+            "text": "Dark-background presentation version for slides.",
+            "unit_id": "cap_6da7d8a68c4b"
+          }
+        ]
       }
     ],
     "claims": [
@@ -578,7 +1003,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes",
         "task_id": "task_806e1d6e0c69",
-        "updated_at": "2026-06-06T13:21:30Z"
+        "updated_at": "2026-06-06T17:42:12Z"
       },
       {
         "claim_fingerprint": "f49270fb4594d997",
@@ -588,7 +1013,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_10902977ea78",
-        "updated_at": "2026-06-06T13:21:30Z"
+        "updated_at": "2026-06-06T17:42:12Z"
       }
     ],
     "exploratory_structures": {
@@ -600,7 +1025,9 @@
       "competing_interpretations": [
         "Before writing anything to either the local or remote repo, provide a report showing your proposed work",
         "**Content approach**",
-        "Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value"
+        "Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value",
+        "If you want, I can do either of these next:",
+        "If you want, I can do one more refinement pass focused on either:"
       ],
       "open_questions": [],
       "operational_constraints": [
@@ -613,7 +1040,13 @@
       "provisional_conclusions": [
         "Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value",
         "- `PEM` and `Matrix` are best treated as `System` seeds for now",
-        "- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now"
+        "- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now",
+        "It treats `CCE` as the enclosing environment, makes `Atlas` the central civic landmark, turns the ontology into districts, and keeps `Browser Agents` visibly tentative as a proposal site",
+        "Although I understand that Atlas is actually an artifact within the Vault, I think of the Atlas as the map itself",
+        "When I see a representation of an Atlas building in the map, I think, \"The map is included in the map,\" and that's strange to me",
+        "If you're looking for an idea for what should go in the Atlas's place, perhaps Colossus is the thing to put there",
+        "Two things I think are working especially well now:",
+        "- `Browser Agents` reads clearly as tentative because it sits as a lighter proposal module"
       ],
       "tensions": []
     },
@@ -802,6 +1235,142 @@
         "last_seen_at": "2026-06-06T13:21:30Z",
         "status": "Elevated",
         "text": "- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes"
+      },
+      {
+        "candidate_id": "cand_2970d26190e2",
+        "fingerprint": "ad72b752195834d4",
+        "first_seen_at": "2026-06-06T14:57:20Z",
+        "last_seen_at": "2026-06-06T14:57:20Z",
+        "status": "Candidate",
+        "text": "`Atlas` is emphasized as the key artifact, and `Browser Agents` is visually marked as a proposal"
+      },
+      {
+        "candidate_id": "cand_8681cd1616a3",
+        "fingerprint": "4b9a15400f0dd26a",
+        "first_seen_at": "2026-06-06T14:57:20Z",
+        "last_seen_at": "2026-06-06T14:57:20Z",
+        "status": "Candidate",
+        "text": "If you want, I can do either of these next:"
+      },
+      {
+        "candidate_id": "cand_f48377d42eaa",
+        "fingerprint": "022c428a0759644b",
+        "first_seen_at": "2026-06-06T15:03:10Z",
+        "last_seen_at": "2026-06-06T15:03:10Z",
+        "status": "Candidate",
+        "text": "If you want, I can next make one of these refinements:"
+      },
+      {
+        "candidate_id": "cand_254e354fa216",
+        "fingerprint": "fef778764fb82198",
+        "first_seen_at": "2026-06-06T15:11:51Z",
+        "last_seen_at": "2026-06-06T15:11:51Z",
+        "status": "Candidate",
+        "text": "If you want, I can take it one step further in one of these directions:"
+      },
+      {
+        "candidate_id": "cand_f9e8ca7a2e96",
+        "fingerprint": "17dfed4e847b603b",
+        "first_seen_at": "2026-06-06T15:42:17Z",
+        "last_seen_at": "2026-06-06T15:42:17Z",
+        "status": "Candidate",
+        "text": "The first is the minimalist Apple-like version: fewer labels, cleaner massing, stronger white space, and a calmer product-design feel"
+      },
+      {
+        "candidate_id": "cand_1de6e73b4e40",
+        "fingerprint": "006379130bc744b2",
+        "first_seen_at": "2026-06-06T15:42:17Z",
+        "last_seen_at": "2026-06-06T15:42:17Z",
+        "status": "Candidate",
+        "text": "The second is the urban-planning board version: zoning colors, street naming, sharper legends, and more explicit district structure"
+      },
+      {
+        "candidate_id": "cand_e095311af752",
+        "fingerprint": "32e02ae1ef7dc6d1",
+        "first_seen_at": "2026-06-06T15:42:17Z",
+        "last_seen_at": "2026-06-06T15:42:17Z",
+        "status": "Candidate",
+        "text": "If you want, I can now help you choose one as the \u201cofficial\u201d visual direction and then do a final polished pass for one specific use:"
+      },
+      {
+        "candidate_id": "cand_982e0ee28cbc",
+        "fingerprint": "361ad6d27a5e9703",
+        "first_seen_at": "2026-06-06T15:52:28Z",
+        "last_seen_at": "2026-06-06T15:52:28Z",
+        "status": "Candidate",
+        "text": "The atlas is now the view itself, with the center handled as a civic commons instead of an in-world `Atlas` building, and the districts have more visible color separation"
+      },
+      {
+        "candidate_id": "cand_8823c68c3aee",
+        "fingerprint": "ee271b1594ef8813",
+        "first_seen_at": "2026-06-06T15:52:28Z",
+        "last_seen_at": "2026-06-06T15:52:28Z",
+        "status": "Candidate",
+        "text": "Two things I think are working especially well now:"
+      },
+      {
+        "candidate_id": "cand_4346c06dce4e",
+        "fingerprint": "5863d00749251570",
+        "first_seen_at": "2026-06-06T15:52:28Z",
+        "last_seen_at": "2026-06-06T15:52:28Z",
+        "status": "Candidate",
+        "text": "The central open square gives the map a real civic center without implying \u201cthe map is inside the map"
+      },
+      {
+        "candidate_id": "cand_1fd324a32b3b",
+        "fingerprint": "92afc1bc751936ce",
+        "first_seen_at": "2026-06-06T15:52:28Z",
+        "last_seen_at": "2026-06-06T15:52:28Z",
+        "status": "Candidate",
+        "text": "If you want, I can do one more refinement pass focused on either:"
+      },
+      {
+        "candidate_id": "cand_73522897142c",
+        "fingerprint": "a66c6a0c35bf5e15",
+        "first_seen_at": "2026-06-06T17:36:17Z",
+        "last_seen_at": "2026-06-06T17:36:17Z",
+        "status": "Candidate",
+        "text": "This revision is much closer"
+      },
+      {
+        "candidate_id": "cand_b97fbef87add",
+        "fingerprint": "066c1b5a934b5c4e",
+        "first_seen_at": "2026-06-06T17:36:17Z",
+        "last_seen_at": "2026-06-06T17:36:17Z",
+        "status": "Candidate",
+        "text": "The zones now separate more cleanly, the center reads as shared space instead of a named object, and the legend is more abstract and map-appropriate"
+      },
+      {
+        "candidate_id": "cand_bffe9ba07281",
+        "fingerprint": "ed1a909eacbb4588",
+        "first_seen_at": "2026-06-06T17:36:17Z",
+        "last_seen_at": "2026-06-06T17:36:17Z",
+        "status": "Candidate",
+        "text": "That may be fine, but if you want it even more diagram-neutral, I can reduce it further to visual classes like `primary link`, `support link`, `adjacent link`, `feed link`, and `reference link` without the ontology terms in parentheses"
+      },
+      {
+        "candidate_id": "cand_39d8a2fe3a91",
+        "fingerprint": "67eb80b122b02906",
+        "first_seen_at": "2026-06-06T17:36:17Z",
+        "last_seen_at": "2026-06-06T17:36:17Z",
+        "status": "Candidate",
+        "text": "If you want, I can do one final cleanup pass with:"
+      },
+      {
+        "candidate_id": "cand_6ef336c8b065",
+        "fingerprint": "e51977cafcbd00ea",
+        "first_seen_at": "2026-06-06T17:42:12Z",
+        "last_seen_at": "2026-06-06T17:42:12Z",
+        "status": "Candidate",
+        "text": "A few things are working especially well here:"
+      },
+      {
+        "candidate_id": "cand_4f93b36a82d1",
+        "fingerprint": "5609bd64b5be0f32",
+        "first_seen_at": "2026-06-06T17:42:12Z",
+        "last_seen_at": "2026-06-06T17:42:12Z",
+        "status": "Candidate",
+        "text": "If you want, I can refine this exact direction with one more pass:"
       }
     ],
     "soft_warnings": [
@@ -826,34 +1395,47 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-06T13:21:30Z"
+        "updated_at": "2026-06-06T17:42:12Z"
       }
     ]
   },
   "epistemic_health": {
-    "consecutive_unverified_turns": 2,
+    "consecutive_unverified_turns": 9,
     "health_state": "thin",
-    "warnings": []
+    "last_warning": {
+      "evidence_count": 0,
+      "message": "Epistemic state remained thin for 3 consecutive turns.",
+      "q": "Now that the atlas has been generally seated and",
+      "ts": "2026-06-06T14:57:20Z",
+      "type": "thin_epistemic_state",
+      "verified_claims": 0
+    },
+    "warnings": [
+      {
+        "evidence_count": 0,
+        "message": "Epistemic state remained thin for 3 consecutive turns.",
+        "q": "Now that the atlas has been generally seated and",
+        "ts": "2026-06-06T14:57:20Z",
+        "type": "thin_epistemic_state",
+        "verified_claims": 0
+      }
+    ]
   },
   "epistemic_posture": {
-    "candidate_count": 23,
+    "candidate_count": 40,
     "claim_count": 1,
     "evidence_count_metric": 0,
-    "exploratory_signal_count": 3,
+    "exploratory_signal_count": 2,
     "exploratory_signals": [
-      "assumption_marker",
       "exploratory_marker",
       "uncertainty_marker"
     ],
     "health_state": "thin",
-    "implementation_signal_count": 2,
-    "implementation_signals": [
-      "implementation_marker",
-      "test_or_repro_marker"
-    ],
-    "inferred_posture": "mixed",
+    "implementation_signal_count": 0,
+    "implementation_signals": [],
+    "inferred_posture": "exploratory_planning",
     "pending_claim_count": 1,
-    "snapshot_at": "2026-06-06T13:21:30Z",
+    "snapshot_at": "2026-06-06T17:42:12Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -915,6 +1497,184 @@
         ],
         "turn_id": "turn_ab66de5702fb4402b921cd58d9e52e1b",
         "updated_at": "2026-06-06T13:21:30Z"
+      },
+      {
+        "answer": "Yes. I came up with a seed-ontology graphic that matches the atlas as it exists now: CCE at the center, grouped rings for systems, infrastructure, interfaces, capabilities, artifacts, and a minimal steward node for Kevin. `Atlas` is emphasized as the key artifact, and `Browser Agents` is visually marked as a proposal.\n\nIf you want, I can do either of these next:\n1. Generate a second version that feels more like a map and less like a systems diagram.\n2. Create a cleaner export tailored for the repo README, with wider layout and fewer labels.",
+        "created_at": "2026-06-06T14:57:20Z",
+        "error": null,
+        "finalized_at": "2026-06-06T14:57:20Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_d7a97e6e20c8407b8bb724686dcff733",
+        "updated_at": "2026-06-06T14:57:20Z"
+      },
+      {
+        "answer": "Here\u2019s the second version, reworked as an isometric map-city of the atlas. It treats `CCE` as the enclosing environment, makes `Atlas` the central civic landmark, turns the ontology into districts, and keeps `Browser Agents` visibly tentative as a proposal site.\n\nIf you want, I can next make one of these refinements:\n1. A cleaner poster version with fewer labels and stronger visual hierarchy.\n2. A repo-friendly diagram version sized for `README.md` headers and previews.\n3. A third variant that feels more like a fantasy atlas plate and less like an urban planning map.",
+        "created_at": "2026-06-06T15:03:10Z",
+        "error": null,
+        "finalized_at": "2026-06-06T15:03:10Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_f297cf4e0643437f821bedcbca310687",
+        "updated_at": "2026-06-06T15:03:10Z"
+      },
+      {
+        "answer": "Here\u2019s the modernized isometric city version. It keeps the atlas-as-place idea, but uses contemporary urban symbology and architecture so it reads more like a present-day civic district map.\n\nIf you want, I can take it one step further in one of these directions:\n1. More minimalist and Apple-like: fewer labels, cleaner blocks, stronger white space.\n2. More urban-planning board: zoning colors, street names, sharper legend, less illustrative texture.\n3. More polished for publication: same composition, but tuned as a repo hero image or presentation slide.",
+        "created_at": "2026-06-06T15:11:51Z",
+        "error": null,
+        "finalized_at": "2026-06-06T15:11:51Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_07c390cb8e094fcfae93160ef5a40ce9",
+        "updated_at": "2026-06-06T15:11:51Z"
+      },
+      {
+        "answer": "I made both variants.\n\nThe first is the minimalist Apple-like version: fewer labels, cleaner massing, stronger white space, and a calmer product-design feel. The second is the urban-planning board version: zoning colors, street naming, sharper legends, and more explicit district structure.\n\nIf you want, I can now help you choose one as the \u201cofficial\u201d visual direction and then do a final polished pass for one specific use:\n- `README` hero image\n- slide/presentation cover\n- poster-style atlas plate\n- Tolaria vault splash image",
+        "created_at": "2026-06-06T15:42:17Z",
+        "error": null,
+        "finalized_at": "2026-06-06T15:42:17Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_61723d73f23943c79b42a7936a5c5f32",
+        "updated_at": "2026-06-06T15:42:17Z"
+      },
+      {
+        "answer": "This version fixes the self-reference problem nicely. The atlas is now the view itself, with the center handled as a civic commons instead of an in-world `Atlas` building, and the districts have more visible color separation.\n\nTwo things I think are working especially well now:\n- The central open square gives the map a real civic center without implying \u201cthe map is inside the map.\u201d\n- The stronger zoning contrast makes the ontology easier to scan without losing the modern planning-board feel.\n\nIf you want, I can do one more refinement pass focused on either:\n1. Making it even more minimal and polished.\n2. Making the street names and district labels semantically sharper to match your actual ontology language.\n3. Producing a final export optimized for the repo `README`.",
+        "created_at": "2026-06-06T15:52:28Z",
+        "error": null,
+        "finalized_at": "2026-06-06T15:52:28Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_416ad869e2604c1fa8aa0e0f3bb8700e",
+        "updated_at": "2026-06-06T15:52:28Z"
+      },
+      {
+        "answer": "This revision is much closer. The zones now separate more cleanly, the center reads as shared space instead of a named object, and the legend is more abstract and map-appropriate.\n\nOne thing I still notice, in case you want another pass: the left legend text still names relationship types fairly explicitly. That may be fine, but if you want it even more diagram-neutral, I can reduce it further to visual classes like `primary link`, `support link`, `adjacent link`, `feed link`, and `reference link` without the ontology terms in parentheses.\n\nIf you want, I can do one final cleanup pass with:\n1. Even stronger district contrast.\n2. A more minimal relationship legend.\n3. Slightly less visual weight on the left-side info panels so the map itself dominates.",
+        "created_at": "2026-06-06T17:36:17Z",
+        "error": null,
+        "finalized_at": "2026-06-06T17:36:17Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_574faf8eec35468a8b173b9983403f48",
+        "updated_at": "2026-06-06T17:36:17Z"
+      },
+      {
+        "answer": "This version shifts back toward the software-architecture feel while keeping the isometric depth. It treats `CCE` as the core platform, groups the ontology into modular planes, and avoids the \u201catlas inside the atlas\u201d issue by making the diagram itself the atlas view.\n\nA few things are working especially well here:\n- The grouped isometric platforms preserve the ontology cleanly without turning into a city.\n- `Browser Agents` reads clearly as tentative because it sits as a lighter proposal module.\n- `Kevin` stays peripheral and minimal, which matches the public-lab framing.\n\nIf you want, I can refine this exact direction with one more pass:\n1. More minimal and abstract, with less text inside each block.\n2. More technically precise, with cleaner relationship semantics and less decorative labeling.\n3. Dark-background presentation version for slides.",
+        "created_at": "2026-06-06T17:42:12Z",
+        "error": null,
+        "finalized_at": "2026-06-06T17:42:12Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "**Proposed Work Report**",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_2f524115161a4560b54eb2413c1b1e2b",
+        "updated_at": "2026-06-06T17:42:12Z"
       }
     ]
   },
@@ -953,10 +1713,129 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-06T13:21:30Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "Yes. I came up with a seed-ontology graphic that matches the atlas as it exists now: CCE at the center, grouped rings for systems, infrastructure, interfaces, capabilities, artifacts, and a minimal steward node for Kevin. `Atlas` is emphasized as the key artifact, and `Browser Agents` is visually marked as a proposal.\n\nIf you want, I can do either of these next:\n1. Generate a second version that feels more like a map and less like a systems diagram.\n2. Create a cleaner export tailored for the repo README, with wider layout and fewer labels.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T14:57:20Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "Here\u2019s the second version, reworked as an isometric map-city of the atlas. It treats `CCE` as the enclosing environment, makes `Atlas` the central civic landmark, turns the ontology into districts, and keeps `Browser Agents` visibly tentative as a proposal site.\n\nIf you want, I can next make one of these refinements:\n1. A cleaner poster version with fewer labels and stronger visual hierarchy.\n2. A repo-friendly diagram version sized for `README.md` headers and previews.\n3. A third variant that feels more like a fantasy atlas plate and less like an urban planning map.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T15:03:10Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "Here\u2019s the modernized isometric city version. It keeps the atlas-as-place idea, but uses contemporary urban symbology and architecture so it reads more like a present-day civic district map.\n\nIf you want, I can take it one step further in one of these directions:\n1. More minimalist and Apple-like: fewer labels, cleaner blocks, stronger white space.\n2. More urban-planning board: zoning colors, street names, sharper legend, less illustrative texture.\n3. More polished for publication: same composition, but tuned as a repo hero image or presentation slide.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T15:11:51Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "I made both variants.\n\nThe first is the minimalist Apple-like version: fewer labels, cleaner massing, stronger white space, and a calmer product-design feel. The second is the urban-planning board version: zoning colors, street naming, sharper legends, and more explicit district structure.\n\nIf you want, I can now help you choose one as the \u201cofficial\u201d visual direction and then do a final polished pass for one specific use:\n- `README` hero image\n- slide/presentation cover\n- poster-style atlas plate\n- Tolaria vault splash image",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T15:42:17Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "This version fixes the self-reference problem nicely. The atlas is now the view itself, with the center handled as a civic commons instead of an in-world `Atlas` building, and the districts have more visible color separation.\n\nTwo things I think are working especially well now:\n- The central open square gives the map a real civic center without implying \u201cthe map is inside the map.\u201d\n- The stronger zoning contrast makes the ontology easier to scan without losing the modern planning-board feel.\n\nIf you want, I can do one more refinement pass focused on either:\n1. Making it even more minimal and polished.\n2. Making the street names and district labels semantically sharper to match your actual ontology language.\n3. Producing a final export optimized for the repo `README`.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T15:52:28Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "This revision is much closer. The zones now separate more cleanly, the center reads as shared space instead of a named object, and the legend is more abstract and map-appropriate.\n\nOne thing I still notice, in case you want another pass: the left legend text still names relationship types fairly explicitly. That may be fine, but if you want it even more diagram-neutral, I can reduce it further to visual classes like `primary link`, `support link`, `adjacent link`, `feed link`, and `reference link` without the ontology terms in parentheses.\n\nIf you want, I can do one final cleanup pass with:\n1. Even stronger district contrast.\n2. A more minimal relationship legend.\n3. Slightly less visual weight on the left-side info panels so the map itself dominates.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T17:36:17Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "**Proposed Work Report**",
+      "options": [],
+      "outcome": "This version shifts back toward the software-architecture feel while keeping the isometric depth. It treats `CCE` as the core platform, groups the ontology into modular planes, and avoids the \u201catlas inside the atlas\u201d issue by making the diagram itself the atlas view.\n\nA few things are working especially well here:\n- The grouped isometric platforms preserve the ontology cleanly without turning into a city.\n- `Browser Agents` reads clearly as tentative because it sits as a lighter proposal module.\n- `Kevin` stays peripheral and minimal, which matches the public-lab framing.\n\nIf you want, I can refine this exact direction with one more pass:\n1. More minimal and abstract, with less text inside each block.\n2. More technically precise, with cleaner relationship semantics and less decorative labeling.\n3. Dark-background presentation version for slides.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-06T17:42:12Z"
     }
   ],
   "initial_subject": "**Proposed Work Report**",
-  "intake_question": "Proceed with the proposed structure.\n\nPlease make these small adjustments:\n\n1. Treat \u201cAtlas\u201d as an Artifact unless you are referring specifically to the work of building it, in which case that work can be represented as a Project later.\n\n2. Add \u201cProposal\u201d either as a type or, preferably for now, as an allowed status value. We need a safe way to represent ideas that are not yet accepted architecture.\n\n3. Keep the Kevin note extremely minimal. In this public lab repo, Kevin should only be represented as the project steward/owner. Do not include personal details.\n\nOtherwise, follow the plan as written. Keep the seed small, use Tolaria-compatible Markdown, preserve the repo conventions from AGENTS.md, and provide the diff summary afterward.",
+  "intake_question": "Now let's switch gears. Create image similar to the first image you created, the one that looks like a software architect's diagram. However make the image isometric even though it is not depicting a city.",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -967,7 +1846,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "fc2eefdfb4eb"
+    "hash": "61f8d70d0a33"
   },
   "question": "**Proposed Work Report**",
   "routing": {
@@ -1003,6 +1882,139 @@
           "incoming_marker=none"
         ],
         "ts": "2026-06-06T13:21:30Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=8",
+          "active_unit_count=94",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T14:57:20Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=9",
+          "active_unit_count=102",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T15:03:10Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=9",
+          "active_unit_count=111",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T15:11:51Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=8",
+          "active_unit_count=120",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T15:42:17Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=12",
+          "active_unit_count=128",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T15:52:28Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=11",
+          "active_unit_count=140",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T17:36:17Z"
+      },
+      {
+        "active_marker": null,
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=13",
+          "active_unit_count=151",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=none",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-06T17:42:12Z"
       }
     ],
     "last": {
@@ -1015,14 +2027,14 @@
       "selected_case_id": "you-are-working-in-the-github-repository-https-github-com-kevinm.case.ekkaydhlbx",
       "signals_used": [
         "candidate_source=discussion_anchor",
-        "incoming_unit_count=22",
-        "active_unit_count=72",
+        "incoming_unit_count=13",
+        "active_unit_count=151",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=none",
         "incoming_marker=none"
       ],
-      "ts": "2026-06-06T13:21:30Z"
+      "ts": "2026-06-06T17:42:12Z"
     }
   },
   "seed_namespace": "pem",
@@ -1038,7 +2050,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "Created a small Tolaria-compatible atlas seed in the repo and kept it intentionally narrow. I added [README.md](/Users/kevinmattice/cognitive-environment/README.md), the charter note [cognitive-environment-atlas.md](/Users/kevinmattice/cognitive-environment/cognitive-environment-atlas.md), the vocabulary/rules notes [relationship-vocabulary.md](/Users/kevinmattice/cognitive-environment/relationship-vocabulary.md) and [contribution-rules.md](/Users/kevinmattice/cognitive-environment/contribution-rules.md), 11 type notes in [`types/`](/Users/kevinmattice/cognitive-environment/types), and 16 seed entity notes in [`entities/`](/Users/kevinmattice/cognitive-environment/entities).\n\nThe main adjustments you requested are reflected: `Atlas` is modeled as an `Artifact`, `Proposal` is used as a status value for uncertain architecture (`Browser Agents`), and [kevin.md](/Users/kevinmattice/cognitive-environment/entities/kevin.md) is extremely minimal and only describes stewardship/ownership. I also preserved the vault conventions from [AGENTS.md](/Users/kevinmattice/cognitive-environment/AGENTS.md): first H1 title, `type:` frontmatter, kebab-case filenames, and wikilink relationships.\n\nAssumptions I made:\n- `CCE` is the top-level `Environment`.\n- `PEM` and `Matrix` are best treated as `System` seeds for now.\n- `Colossus` and `Element` are better modeled as `Infrastructure`.\n- `Tolaria`, `GitHub`, `Codex`, and `ChatGPT` are most useful in this first pass as `Interface` notes.\n- `Browser Agents` is not yet accepted architecture, so I kept it as a normal entity note with status `Proposal` rather than inventing a new type.\n\nQuestions for Kevin:\n- Do you want the next pass to add a tiny set of saved views in `views/`, or keep the vault note-only for now?\n- Should `Codex` and `ChatGPT` remain `Interface` notes, or do you want one or both reframed later as `System` notes?\n\nDiff summary for the atlas seed:\n- 31 new Markdown files\n- 550 total inserted lines\n- New roots: `README.md`, `cognitive-environment-atlas.md`, `relationship-vocabulary.md`, `contribution-rules.md`\n- New folders: `types/`, `entities/`\n\nGit/worktree notes:\n- I did not touch unrelated untracked items already present in the repo: `GEMINI.md`, `cases/`, and `pem.initialized`.\n- I did not stage or commit anything.\n\nIf you want the exact patch next, I can generate and paste the full `git diff --no-index` style output for just these newly created atlas files."
+    "summary": "This version shifts back toward the software-architecture feel while keeping the isometric depth. It treats `CCE` as the core platform, groups the ontology into modular planes, and avoids the \u201catlas inside the atlas\u201d issue by making the diagram itself the atlas view.\n\nA few things are working especially well here:\n- The grouped isometric platforms preserve the ontology cleanly without turning into a city.\n- `Browser Agents` reads clearly as tentative because it sits as a lighter proposal module.\n- `Kevin` stays peripheral and minimal, which matches the public-lab framing.\n\nIf you want, I can refine this exact direction with one more pass:\n1. More minimal and abstract, with less text inside each block.\n2. More technically precise, with cleaner relationship semantics and less decorative labeling.\n3. Dark-background presentation version for slides."
   },
   "topic_hash": "ekkaydhlbx",
   "turns": [
@@ -1087,7 +2099,164 @@
       "ts": "2026-06-06T13:21:30Z",
       "turn_id": "turn_ab66de5702fb4402b921cd58d9e52e1b",
       "verified_claims": 0
+    },
+    {
+      "answer": "Yes. I came up with a seed-ontology graphic that matches the atlas as it exists now: CCE at the center, grouped rings for systems, infrastructure, interfaces, capabilities, artifacts, and a minimal steward node for Kevin. `Atlas` is emphasized as the key artifact, and `Browser Agents` is visually marked as a proposal.\n\nIf you want, I can do either of these next:\n1. Generate a second version that feels more like a map and less like a systems diagram.\n2. Create a cleaner export tailored for the repo README, with wider layout and fewer labels.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "a58f3e2bcda1",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T14:57:20Z",
+      "turn_id": "turn_d7a97e6e20c8407b8bb724686dcff733",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Here\u2019s the second version, reworked as an isometric map-city of the atlas. It treats `CCE` as the enclosing environment, makes `Atlas` the central civic landmark, turns the ontology into districts, and keeps `Browser Agents` visibly tentative as a proposal site.\n\nIf you want, I can next make one of these refinements:\n1. A cleaner poster version with fewer labels and stronger visual hierarchy.\n2. A repo-friendly diagram version sized for `README.md` headers and previews.\n3. A third variant that feels more like a fantasy atlas plate and less like an urban planning map.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "d1d571398df2",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T15:03:10Z",
+      "turn_id": "turn_f297cf4e0643437f821bedcbca310687",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Here\u2019s the modernized isometric city version. It keeps the atlas-as-place idea, but uses contemporary urban symbology and architecture so it reads more like a present-day civic district map.\n\nIf you want, I can take it one step further in one of these directions:\n1. More minimalist and Apple-like: fewer labels, cleaner blocks, stronger white space.\n2. More urban-planning board: zoning colors, street names, sharper legend, less illustrative texture.\n3. More polished for publication: same composition, but tuned as a repo hero image or presentation slide.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "db6ba987938f",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T15:11:51Z",
+      "turn_id": "turn_07c390cb8e094fcfae93160ef5a40ce9",
+      "verified_claims": 0
+    },
+    {
+      "answer": "I made both variants.\n\nThe first is the minimalist Apple-like version: fewer labels, cleaner massing, stronger white space, and a calmer product-design feel. The second is the urban-planning board version: zoning colors, street naming, sharper legends, and more explicit district structure.\n\nIf you want, I can now help you choose one as the \u201cofficial\u201d visual direction and then do a final polished pass for one specific use:\n- `README` hero image\n- slide/presentation cover\n- poster-style atlas plate\n- Tolaria vault splash image",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "0fc2ea9df464",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T15:42:17Z",
+      "turn_id": "turn_61723d73f23943c79b42a7936a5c5f32",
+      "verified_claims": 0
+    },
+    {
+      "answer": "This version fixes the self-reference problem nicely. The atlas is now the view itself, with the center handled as a civic commons instead of an in-world `Atlas` building, and the districts have more visible color separation.\n\nTwo things I think are working especially well now:\n- The central open square gives the map a real civic center without implying \u201cthe map is inside the map.\u201d\n- The stronger zoning contrast makes the ontology easier to scan without losing the modern planning-board feel.\n\nIf you want, I can do one more refinement pass focused on either:\n1. Making it even more minimal and polished.\n2. Making the street names and district labels semantically sharper to match your actual ontology language.\n3. Producing a final export optimized for the repo `README`.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "f5160f8f35e5",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T15:52:28Z",
+      "turn_id": "turn_416ad869e2604c1fa8aa0e0f3bb8700e",
+      "verified_claims": 0
+    },
+    {
+      "answer": "This revision is much closer. The zones now separate more cleanly, the center reads as shared space instead of a named object, and the legend is more abstract and map-appropriate.\n\nOne thing I still notice, in case you want another pass: the left legend text still names relationship types fairly explicitly. That may be fine, but if you want it even more diagram-neutral, I can reduce it further to visual classes like `primary link`, `support link`, `adjacent link`, `feed link`, and `reference link` without the ontology terms in parentheses.\n\nIf you want, I can do one final cleanup pass with:\n1. Even stronger district contrast.\n2. A more minimal relationship legend.\n3. Slightly less visual weight on the left-side info panels so the map itself dominates.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "7c9b523b6c43",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T17:36:17Z",
+      "turn_id": "turn_574faf8eec35468a8b173b9983403f48",
+      "verified_claims": 0
+    },
+    {
+      "answer": "This version shifts back toward the software-architecture feel while keeping the isometric depth. It treats `CCE` as the core platform, groups the ontology into modular planes, and avoids the \u201catlas inside the atlas\u201d issue by making the diagram itself the atlas view.\n\nA few things are working especially well here:\n- The grouped isometric platforms preserve the ontology cleanly without turning into a city.\n- `Browser Agents` reads clearly as tentative because it sits as a lighter proposal module.\n- `Kevin` stays peripheral and minimal, which matches the public-lab framing.\n\nIf you want, I can refine this exact direction with one more pass:\n1. More minimal and abstract, with less text inside each block.\n2. More technically precise, with cleaner relationship semantics and less decorative labeling.\n3. Dark-background presentation version for slides.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "61f8d70d0a33",
+      "q": "**Proposed Work Report**",
+      "ts": "2026-06-06T17:42:12Z",
+      "turn_id": "turn_2f524115161a4560b54eb2413c1b1e2b",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-06T13:21:30Z"
+  "updated_at": "2026-06-06T17:42:12Z"
 }

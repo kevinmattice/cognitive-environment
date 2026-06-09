@@ -1,0 +1,21 @@
+name: Current Environment
+icon: null
+color: null
+sort: "title:asc"
+filters:
+  all:
+    - field: type
+      op: any_of
+      value:
+        - Environment
+        - System
+        - Interface
+        - Infrastructure
+        - Capability
+        - Artifact
+        - Person
+    - field: status
+      op: any_of
+      value:
+        - Active
+        - Seed

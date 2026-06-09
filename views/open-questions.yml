@@ -1,0 +1,21 @@
+name: Open Questions
+icon: null
+color: null
+sort: "modified:desc"
+filters:
+  any:
+    - field: status
+      op: any_of
+      value:
+        - Concept
+        - Proposal
+        - Planned
+        - Experimental
+    - field: title
+      op: contains
+      value: "(?i)(question|proposal|candidate|ontology)"
+      regex: true
+    - field: body
+      op: contains
+      value: "(?i)(ambiguous|does not fit|not yet sharp)"
+      regex: true
