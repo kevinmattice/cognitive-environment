@@ -70,6 +70,7 @@ def load_config(config_path: Path) -> dict:
     config.setdefault("model_name", "llama3.1")
     config.setdefault("model_max_context_bytes", 24000)
     config.setdefault("model_timeout_s", 30)
+    config.setdefault("conversational_fallback_enabled", True)
     return config
 
 
@@ -118,7 +119,14 @@ def process_event(
         return None, workspace_persistence_state
     if decision.action == "ask":
         return (
-            answer_question(question=decision.question or "", workspace=workspace, model=model, cfg=ask_cfg),
+            answer_question(
+                question=decision.question or "",
+                workspace=workspace,
+                model=model,
+                cfg=ask_cfg,
+                force_grounded=decision.force_grounded,
+                conversational_fallback_enabled=bool(config.get("conversational_fallback_enabled", True)),
+            ),
             workspace_persistence_state,
         )
     if decision.action == "help":
@@ -309,11 +317,11 @@ def try_refresh_on_unknown_token(session: MatrixAuthSession, *, auth_state_path:
 def run_forever(
     config: dict,
     *,
+    session: MatrixAuthSession,
     state_path: Path,
     workspace_state_path: Path,
     auth_state_path: Path,
 ) -> int:
-    session = establish_matrix_auth_session(config, auth_state_path=auth_state_path)
     client = session.client
 
     workspace = WorkspaceRuntime(Path(config["workspaces_dir"]))
@@ -492,7 +500,18 @@ def main(argv: list[str] | None = None) -> int:
             check_config(config)
             return 0
 
-        session = establish_matrix_auth_session(config, auth_state_path=Path(args.auth_state_path))
+        try:
+            session = establish_matrix_auth_session(config, auth_state_path=Path(args.auth_state_path))
+        except MatrixApiError as exc:
+            if exc.http_status == 429 and exc.errcode == "M_LIMIT_EXCEEDED":
+                if isinstance(getattr(exc, "retry_after_ms", None), int) and exc.retry_after_ms is not None:
+                    seconds = max(1, int((exc.retry_after_ms + 999) / 1000))
+                    log("ERROR", f"rate limited by homeserver during login (M_LIMIT_EXCEEDED). wait ~{seconds}s then retry.")
+                else:
+                    log("ERROR", "rate limited by homeserver during login (M_LIMIT_EXCEEDED). wait then retry.")
+                return 1
+            raise
+
 
         if args.check_connection:
             log("INFO", f"matrix_auth_mode: {config.get('matrix_auth_mode')}")
@@ -516,12 +535,23 @@ def main(argv: list[str] | None = None) -> int:
                 log("ERROR", f"check-connection failed: {exc}")
                 return 1
 
-        return run_forever(
-            config,
-            state_path=Path(args.state_path),
-            workspace_state_path=Path(args.workspace_state_path),
-            auth_state_path=Path(args.auth_state_path),
-        )
+        try:
+            return run_forever(
+                config,
+                session=session,
+                state_path=Path(args.state_path),
+                workspace_state_path=Path(args.workspace_state_path),
+                auth_state_path=Path(args.auth_state_path),
+            )
+        except MatrixApiError as exc:
+            if exc.http_status == 429 and exc.errcode == "M_LIMIT_EXCEEDED":
+                if isinstance(getattr(exc, "retry_after_ms", None), int) and exc.retry_after_ms is not None:
+                    seconds = max(1, int((exc.retry_after_ms + 999) / 1000))
+                    log("ERROR", f"rate limited by homeserver (M_LIMIT_EXCEEDED). wait ~{seconds}s then retry.")
+                else:
+                    log("ERROR", "rate limited by homeserver (M_LIMIT_EXCEEDED). wait then retry.")
+                return 1
+            raise
     except (FileNotFoundError, ValueError, json.JSONDecodeError, MatrixClientError) as exc:
         log("ERROR", str(exc))
         return 1

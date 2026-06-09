@@ -12,10 +12,18 @@ class MatrixClientError(RuntimeError):
 
 
 class MatrixApiError(MatrixClientError):
-    def __init__(self, message: str, *, http_status: int | None = None, errcode: str | None = None) -> None:
+    def __init__(
+        self,
+        message: str,
+        *,
+        http_status: int | None = None,
+        errcode: str | None = None,
+        retry_after_ms: int | None = None,
+    ) -> None:
         super().__init__(message)
         self.http_status = http_status
         self.errcode = errcode
+        self.retry_after_ms = retry_after_ms
 
 
 class MatrixClient:
@@ -157,10 +165,13 @@ class MatrixClient:
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
             errcode = None
+            retry_after_ms = None
             try:
                 parsed = json.loads(detail)
                 if isinstance(parsed, dict):
                     errcode = parsed.get("errcode") if isinstance(parsed.get("errcode"), str) else None
+                    if isinstance(parsed.get("retry_after_ms"), int):
+                        retry_after_ms = parsed["retry_after_ms"]
             except Exception:
                 pass
             # Never include secrets; token is only in headers.
@@ -168,6 +179,7 @@ class MatrixClient:
                 f"Matrix API {method} {path} failed: {exc.code} {errcode or ""}".strip(),
                 http_status=exc.code,
                 errcode=errcode,
+                retry_after_ms=retry_after_ms,
             ) from exc
         except urllib.error.URLError as exc:
             raise MatrixClientError(f"Matrix API {method} {path} failed: {exc.reason}") from exc
