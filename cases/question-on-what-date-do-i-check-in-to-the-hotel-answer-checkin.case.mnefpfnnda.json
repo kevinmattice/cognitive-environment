@@ -2,8 +2,8 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
-    "projection_hash": "5448abdbe32b",
-    "q": "Please set PEM_LLM_TIMEOUT_SECONDS=180. Local mo",
+    "projection_hash": "1efb08c9f477",
+    "q": "And have you verified that cases are being prope",
     "reused_active_case": true
   },
   "canonical_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
@@ -80,7 +80,7 @@
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-09T23:05:08Z",
+  "canonical_subject_updated_at": "2026-06-09T23:08:07Z",
   "case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -10243,6 +10243,154 @@
             "unit_id": "cap_7b16850282dd"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:06:57Z",
+        "turn_id": "turn_1e622c455b884e5ba6a9bbd91d6ae36b",
+        "unit_count": 14,
+        "units": [
+          {
+            "index": 1,
+            "text": "Yes.",
+            "unit_id": "cap_9e4377931828"
+          },
+          {
+            "index": 2,
+            "text": "I validated PEM against the live local Ollama model on Colossus using PEM\u2019s own MCP path, not CCE.",
+            "unit_id": "cap_a90f5c7ce189"
+          },
+          {
+            "index": 3,
+            "text": "The successful live check was run through [`/Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py`](</Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py>), with PEM configured as:",
+            "unit_id": "cap_d7a5f1db45dd"
+          },
+          {
+            "index": 4,
+            "text": "`PEM_LLM_MODE=ollama`",
+            "unit_id": "cap_ef6c415ec865"
+          },
+          {
+            "index": 5,
+            "text": "`PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`",
+            "unit_id": "cap_4aad8c22ad50"
+          },
+          {
+            "index": 6,
+            "text": "`PEM_OLLAMA_MODEL=qwen3.6:35b`",
+            "unit_id": "cap_e04b92af5c2b"
+          },
+          {
+            "index": 7,
+            "text": "The model answered through PEM with:",
+            "unit_id": "cap_466127f0340e"
+          },
+          {
+            "index": 8,
+            "text": "```text",
+            "unit_id": "cap_c585565d49d6"
+          },
+          {
+            "index": 9,
+            "text": "4",
+            "unit_id": "cap_39ff6582e107"
+          },
+          {
+            "index": 10,
+            "text": "PEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"",
+            "unit_id": "cap_1b03cc5f6471"
+          },
+          {
+            "index": 11,
+            "text": "4",
+            "unit_id": "cap_137016c206a2"
+          },
+          {
+            "index": 12,
+            "text": "PEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"",
+            "unit_id": "cap_dbd8ad0b840e"
+          },
+          {
+            "index": 13,
+            "text": "```",
+            "unit_id": "cap_5839c12d0663"
+          },
+          {
+            "index": 14,
+            "text": "So yes: PEM has now queried the local model successfully through its own runtime.",
+            "unit_id": "cap_6bc6177b2cc6"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:08:07Z",
+        "turn_id": "turn_35eee6d81ecb40cd8e577b3dd1f7b592",
+        "unit_count": 12,
+        "units": [
+          {
+            "index": 1,
+            "text": "Yes.",
+            "unit_id": "cap_7fb54dfac4d7"
+          },
+          {
+            "index": 2,
+            "text": "I verified on Colossus that PEM is writing to the governed root you designated: `/Users/kevinmattice/pem-governed-root`.",
+            "unit_id": "cap_976c6d470ae3"
+          },
+          {
+            "index": 3,
+            "text": "What\u2019s present there now:",
+            "unit_id": "cap_48fad4c62993"
+          },
+          {
+            "index": 4,
+            "text": "`/Users/kevinmattice/pem-governed-root/cases`",
+            "unit_id": "cap_737b0acf64bd"
+          },
+          {
+            "index": 5,
+            "text": "`/Users/kevinmattice/pem-governed-root/scratch`",
+            "unit_id": "cap_f49fed1ec481"
+          },
+          {
+            "index": 6,
+            "text": "`/Users/kevinmattice/pem-governed-root/pem.initialized`",
+            "unit_id": "cap_0db08420abc2"
+          },
+          {
+            "index": 7,
+            "text": "`/Users/kevinmattice/pem-governed-root/pem.toml`",
+            "unit_id": "cap_115c887dd9f4"
+          },
+          {
+            "index": 8,
+            "text": "And the live Ollama-backed PEM run wrote its case file into the expected `cases/` directory:",
+            "unit_id": "cap_c3fbc4302e4d"
+          },
+          {
+            "index": 9,
+            "text": "[`/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json`](/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json)",
+            "unit_id": "cap_3652d49f7ace"
+          },
+          {
+            "index": 10,
+            "text": "I also confirmed the earlier timed-out live PEM run wrote here too:",
+            "unit_id": "cap_14f4893d0424"
+          },
+          {
+            "index": 11,
+            "text": "[`/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json`](/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json)",
+            "unit_id": "cap_a835c18e1240"
+          },
+          {
+            "index": 12,
+            "text": "So yes: cases are being written to the proper governed-root directory, not to the PEM code repo or the CCE repo.",
+            "unit_id": "cap_77e3c06ef934"
+          }
+        ]
       }
     ],
     "claims": [
@@ -10331,7 +10479,7 @@
             "claim_id": "claim_9b0bb2304273",
             "method": "token_jaccard_v1",
             "score": 0.3636,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10340,7 +10488,7 @@
             "claim_id": "claim_9b0bb2304273",
             "method": "token_jaccard_v1",
             "score": 0.3333,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10349,7 +10497,7 @@
             "claim_id": "claim_9b0bb2304273",
             "method": "token_jaccard_v1",
             "score": 0.2727,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10387,7 +10535,7 @@
             "claim_id": "claim_c8266dbe4963",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10396,7 +10544,7 @@
             "claim_id": "claim_c8266dbe4963",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10405,7 +10553,7 @@
             "claim_id": "claim_c8266dbe4963",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10443,7 +10591,7 @@
             "claim_id": "claim_e6deba31e580",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10481,7 +10629,7 @@
             "claim_id": "claim_ed75263d8801",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10490,7 +10638,7 @@
             "claim_id": "claim_ed75263d8801",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10499,7 +10647,7 @@
             "claim_id": "claim_ed75263d8801",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10593,7 +10741,7 @@
             "claim_id": "claim_3c84e34b9732",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10602,7 +10750,7 @@
             "claim_id": "claim_3c84e34b9732",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10611,7 +10759,7 @@
             "claim_id": "claim_3c84e34b9732",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10649,7 +10797,7 @@
             "claim_id": "claim_e67a9b702fb6",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10715,7 +10863,7 @@
             "claim_id": "claim_6f3b6a0750d1",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10724,7 +10872,7 @@
             "claim_id": "claim_6f3b6a0750d1",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10733,7 +10881,7 @@
             "claim_id": "claim_6f3b6a0750d1",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10771,7 +10919,7 @@
             "claim_id": "claim_73c551f422c2",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10780,7 +10928,7 @@
             "claim_id": "claim_73c551f422c2",
             "method": "token_jaccard_v1",
             "score": 0.2222,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10789,7 +10937,7 @@
             "claim_id": "claim_73c551f422c2",
             "method": "token_jaccard_v1",
             "score": 0.2,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10883,7 +11031,7 @@
             "claim_id": "claim_ae67d009ad0e",
             "method": "token_jaccard_v1",
             "score": 0.4,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10892,7 +11040,7 @@
             "claim_id": "claim_ae67d009ad0e",
             "method": "token_jaccard_v1",
             "score": 0.2857,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           },
           {
             "authoritative": false,
@@ -10901,7 +11049,7 @@
             "claim_id": "claim_ae67d009ad0e",
             "method": "token_jaccard_v1",
             "score": 0.25,
-            "updated_at": "2026-06-09T23:05:08Z"
+            "updated_at": "2026-06-09T23:08:07Z"
           }
         ],
         "state": "Pending Verification",
@@ -10942,7 +11090,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - shows whether this repo already knows where GitHub is",
         "task_id": "task_8e6ffb90c575",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "f359b8e550478277",
@@ -10952,7 +11100,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c65eab730b15",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "b24a4fdd09917a8c",
@@ -10962,7 +11110,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: My blunt take: PEM is currently more of an architectural idea and provenance surface than a required runtime dependency for the working Colossus loop",
         "task_id": "task_15dc9dcddf90",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "b24a4fdd09917a8c",
@@ -10972,7 +11120,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_405bfc972601",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "a74fc760743c2b9c",
@@ -10982,7 +11130,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: What Local-Model Support Is Required From Colossus**",
         "task_id": "task_89ac5c46a757",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "a74fc760743c2b9c",
@@ -10992,7 +11140,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_20de6df9e6fc",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "787b2204eda15fcd",
@@ -11002,7 +11150,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - no frontier dependency required",
         "task_id": "task_cdf115d0115f",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "787b2204eda15fcd",
@@ -11012,7 +11160,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_1502b5a5654f",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "13264abd160d4e0c",
@@ -11022,7 +11170,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - the model should assist, not be required for basic governance",
         "task_id": "task_a0ac64cf1be8",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "13264abd160d4e0c",
@@ -11032,7 +11180,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_67d75ddbbf48",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "2357c74d8a3d71fd",
@@ -11042,7 +11190,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: Not required initially:",
         "task_id": "task_6df23035f246",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "2357c74d8a3d71fd",
@@ -11052,7 +11200,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_774ae4ae0c11",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "8f0bcf7b5501ae86",
@@ -11062,7 +11210,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - or `PEM startup preflight failed: initialize succeeded but required tool pem_record is missing",
         "task_id": "task_6e6350719939",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "8f0bcf7b5501ae86",
@@ -11072,7 +11220,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_2ba1f179c79f",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "aa86c6852b9551c2",
@@ -11082,7 +11230,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: ERROR: Ignored the following versions that require a different python version:",
         "task_id": "task_64fb9a41c0e4",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "aa86c6852b9551c2",
@@ -11092,7 +11240,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c8634da97792",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "e946d3ec393ad6e2",
@@ -11102,7 +11250,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - PEM requires `mcp==1",
         "task_id": "task_326c898fc41e",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "e946d3ec393ad6e2",
@@ -11112,7 +11260,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_c726ca0cf3fe",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "0e5adb580a4c2309",
@@ -11122,7 +11270,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - that package requires Python `>= 3",
         "task_id": "task_13532809769e",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "0e5adb580a4c2309",
@@ -11132,7 +11280,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_a15e21f905af",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "ebd540fb83d42f89",
@@ -11142,7 +11290,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: **Separate real code/test incompatibilities that still fail even when env is clean**",
         "task_id": "task_26bd4da6b7c2",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "ebd540fb83d42f89",
@@ -11152,7 +11300,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_5a5fc7c66fc3",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "5e925d19fb5f0c31",
@@ -11162,7 +11310,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: The narrow validation hardening pass is complete, and I did not change PEM runtime architecture or invariants",
         "task_id": "task_9fee590e13e0",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "5e925d19fb5f0c31",
@@ -11172,7 +11320,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_48703434cf28",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "b6da885bb2169eab",
@@ -11182,7 +11330,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: that still requires a durable PEM action, not just preflight",
         "task_id": "task_f94b991fc540",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "b6da885bb2169eab",
@@ -11192,7 +11340,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_7866572f1634",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "116700c0b28d00d3",
@@ -11202,7 +11350,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: It is to audit whether the smoke contract should accept a superset tool surface or whether the server/tool contract is supposed to remain phase-1 narrow",
         "task_id": "task_538729c1cf7e",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "116700c0b28d00d3",
@@ -11212,7 +11360,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_bb489821d087",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "0c5b58001f6db689",
@@ -11222,7 +11370,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - requires baseline phase-1 tools as a subset, not an exact set",
         "task_id": "task_24e4f0502c4e",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "0c5b58001f6db689",
@@ -11232,7 +11380,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_81eee3d343bd",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "5c29fb56d8184d31",
@@ -11242,7 +11390,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: PEM_SMOKE_Q2='Why is 2+2 equal to 4",
         "task_id": "task_ee1f29107aa8",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "5c29fb56d8184d31",
@@ -11252,7 +11400,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_86974119326b",
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       }
     ],
     "exploratory_structures": {
@@ -11353,7 +11501,8 @@
         "Prove failure paths are structured and do not crash PEM",
         "- At least one focused PEM LLM path succeeds against live Ollama on Colossus",
         "- at least one focused PEM LLM path succeeded live on Colossus",
-        "So the longer timeout is now the normal PEM default, and the live Ollama path still works"
+        "So the longer timeout is now the normal PEM default, and the live Ollama path still works",
+        "I validated PEM against the live local Ollama model on Colossus using PEM\u2019s own MCP path, not CCE"
       ],
       "open_questions": [
         "How should it be synchronized to Colossus",
@@ -13617,7 +13766,7 @@
         "candidate_id": "cand_84435887ad6a",
         "fingerprint": "2f9bd0cc7b564fb6",
         "first_seen_at": "2026-06-09T23:05:08Z",
-        "last_seen_at": "2026-06-09T23:05:08Z",
+        "last_seen_at": "2026-06-09T23:06:57Z",
         "status": "Candidate",
         "text": "dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2"
       },
@@ -13628,6 +13777,22 @@
         "last_seen_at": "2026-06-09T23:05:08Z",
         "status": "Candidate",
         "text": "So the longer timeout is now the normal PEM default, and the live Ollama path still works"
+      },
+      {
+        "candidate_id": "cand_786dac7987ae",
+        "fingerprint": "58b8028702aa6b9c",
+        "first_seen_at": "2026-06-09T23:08:07Z",
+        "last_seen_at": "2026-06-09T23:08:07Z",
+        "status": "Candidate",
+        "text": "I verified on Colossus that PEM is writing to the governed root you designated: `/Users/kevinmattice/pem-governed-root`"
+      },
+      {
+        "candidate_id": "cand_96a6fa7fcf60",
+        "fingerprint": "7c344d36fb8c493f",
+        "first_seen_at": "2026-06-09T23:08:07Z",
+        "last_seen_at": "2026-06-09T23:08:07Z",
+        "status": "Candidate",
+        "text": "So yes: cases are being written to the proper governed-root directory, not to the PEM code repo or the CCE repo"
       }
     ],
     "soft_warnings": [
@@ -14926,6 +15091,134 @@
         "ts": "2026-06-09T22:23:11Z",
         "type": "unverified_claim_drives_implementation",
         "warning_id": "warn_ccc289143143"
+      },
+      {
+        "claim_id": "claim_b0dfc918ce16",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_2913e2e8516d"
+      },
+      {
+        "claim_id": "claim_47b815d43d22",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3e0a341b4ed8"
+      },
+      {
+        "claim_id": "claim_9b0bb2304273",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_359f5e4143f0"
+      },
+      {
+        "claim_id": "claim_c8266dbe4963",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3efcca24297a"
+      },
+      {
+        "claim_id": "claim_e6deba31e580",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_fe53efc9cb47"
+      },
+      {
+        "claim_id": "claim_ed75263d8801",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_0f854c734f9a"
+      },
+      {
+        "claim_id": "claim_3ab41a90525b",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_00f5cf5c3b9e"
+      },
+      {
+        "claim_id": "claim_fe4441083213",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_c955d301c39b"
+      },
+      {
+        "claim_id": "claim_3c84e34b9732",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3d60e2d72f4c"
+      },
+      {
+        "claim_id": "claim_e67a9b702fb6",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_42d22909847d"
+      },
+      {
+        "claim_id": "claim_12a3655d846d",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_93df64018214"
+      },
+      {
+        "claim_id": "claim_6f3b6a0750d1",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_0e92d294da63"
+      },
+      {
+        "claim_id": "claim_73c551f422c2",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_07e17988353b"
+      },
+      {
+        "claim_id": "claim_65c9c00215c6",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_3900c9211514"
+      },
+      {
+        "claim_id": "claim_fa20dbe0e5cc",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_20d52ba2a549"
+      },
+      {
+        "claim_id": "claim_ae67d009ad0e",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "And have you verified that cases are being prope",
+        "ts": "2026-06-09T23:08:07Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_25ef4e4c6195"
       }
     ],
     "verification_plans": [
@@ -14940,7 +15233,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "b24a4fdd09917a8c",
@@ -14953,7 +15246,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "a74fc760743c2b9c",
@@ -14966,7 +15259,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "787b2204eda15fcd",
@@ -14979,7 +15272,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "13264abd160d4e0c",
@@ -14992,7 +15285,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "2357c74d8a3d71fd",
@@ -15005,7 +15298,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "8f0bcf7b5501ae86",
@@ -15018,7 +15311,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "aa86c6852b9551c2",
@@ -15031,7 +15324,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "e946d3ec393ad6e2",
@@ -15044,7 +15337,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "0e5adb580a4c2309",
@@ -15057,7 +15350,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "ebd540fb83d42f89",
@@ -15070,7 +15363,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "5e925d19fb5f0c31",
@@ -15083,7 +15376,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "b6da885bb2169eab",
@@ -15096,7 +15389,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "116700c0b28d00d3",
@@ -15109,7 +15402,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "0c5b58001f6db689",
@@ -15122,7 +15415,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       },
       {
         "claim_fingerprint": "5c29fb56d8184d31",
@@ -15135,7 +15428,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:05:08Z"
+        "updated_at": "2026-06-09T23:08:07Z"
       }
     ]
   },
@@ -15145,17 +15438,19 @@
     "warnings": []
   },
   "epistemic_posture": {
-    "candidate_count": 272,
+    "candidate_count": 274,
     "claim_count": 16,
     "evidence_count_metric": 2,
     "exploratory_signal_count": 0,
     "exploratory_signals": [],
     "health_state": "mixed",
-    "implementation_signal_count": 0,
-    "implementation_signals": [],
-    "inferred_posture": "mixed",
+    "implementation_signal_count": 1,
+    "implementation_signals": [
+      "implementation_marker"
+    ],
+    "inferred_posture": "implementation_verification",
     "pending_claim_count": 16,
-    "snapshot_at": "2026-06-09T23:05:08Z",
+    "snapshot_at": "2026-06-09T23:08:07Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -16293,6 +16588,56 @@
         ],
         "turn_id": "turn_9a0e03cf8387431685ee071c4bcd4481",
         "updated_at": "2026-06-09T23:05:08Z"
+      },
+      {
+        "answer": "Yes.\n\nI validated PEM against the live local Ollama model on Colossus using PEM\u2019s own MCP path, not CCE. The successful live check was run through [`/Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py`](</Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py>), with PEM configured as:\n\n- `PEM_LLM_MODE=ollama`\n- `PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`\n- `PEM_OLLAMA_MODEL=qwen3.6:35b`\n\nThe model answered through PEM with:\n\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo yes: PEM has now queried the local model successfully through its own runtime.",
+        "created_at": "2026-06-09T23:06:57Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:06:57Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_1e622c455b884e5ba6a9bbd91d6ae36b",
+        "updated_at": "2026-06-09T23:06:57Z"
+      },
+      {
+        "answer": "Yes.\n\nI verified on Colossus that PEM is writing to the governed root you designated: `/Users/kevinmattice/pem-governed-root`.\n\nWhat\u2019s present there now:\n- `/Users/kevinmattice/pem-governed-root/cases`\n- `/Users/kevinmattice/pem-governed-root/scratch`\n- `/Users/kevinmattice/pem-governed-root/pem.initialized`\n- `/Users/kevinmattice/pem-governed-root/pem.toml`\n\nAnd the live Ollama-backed PEM run wrote its case file into the expected `cases/` directory:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json`](/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json)\n\nI also confirmed the earlier timed-out live PEM run wrote here too:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json`](/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json)\n\nSo yes: cases are being written to the proper governed-root directory, not to the PEM code repo or the CCE repo.",
+        "created_at": "2026-06-09T23:08:07Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:08:07Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_35eee6d81ecb40cd8e577b3dd1f7b592",
+        "updated_at": "2026-06-09T23:08:07Z"
       }
     ]
   },
@@ -17045,10 +17390,44 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-09T23:05:08Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "Yes.\n\nI validated PEM against the live local Ollama model on Colossus using PEM\u2019s own MCP path, not CCE. The successful live check was run through [`/Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py`](</Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py>), with PEM configured as:\n\n- `PEM_LLM_MODE=ollama`\n- `PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`\n- `PEM_OLLAMA_MODEL=qwen3.6:35b`\n\nThe model answered through PEM with:\n\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo yes: PEM has now queried the local model successfully through its own runtime.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:06:57Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "options": [],
+      "outcome": "Yes.\n\nI verified on Colossus that PEM is writing to the governed root you designated: `/Users/kevinmattice/pem-governed-root`.\n\nWhat\u2019s present there now:\n- `/Users/kevinmattice/pem-governed-root/cases`\n- `/Users/kevinmattice/pem-governed-root/scratch`\n- `/Users/kevinmattice/pem-governed-root/pem.initialized`\n- `/Users/kevinmattice/pem-governed-root/pem.toml`\n\nAnd the live Ollama-backed PEM run wrote its case file into the expected `cases/` directory:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json`](/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json)\n\nI also confirmed the earlier timed-out live PEM run wrote here too:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json`](/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json)\n\nSo yes: cases are being written to the proper governed-root directory, not to the PEM code repo or the CCE repo.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:08:07Z"
     }
   ],
   "initial_subject": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
-  "intake_question": "Please set PEM_LLM_TIMEOUT_SECONDS=180. Local models sometimes need a little breathing room.",
+  "intake_question": "And have you verified that cases are being properly written to the proper directory?",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -17059,7 +17438,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "5448abdbe32b"
+    "hash": "1efb08c9f477"
   },
   "question": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
   "routing": {
@@ -17901,6 +18280,44 @@
           "incoming_marker=none"
         ],
         "ts": "2026-06-09T23:05:08Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=14",
+          "active_unit_count=1947",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:06:57Z"
+      },
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=12",
+          "active_unit_count=1961",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:08:07Z"
       }
     ],
     "last": {
@@ -17913,14 +18330,14 @@
       "selected_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
       "signals_used": [
         "candidate_source=discussion_anchor",
-        "incoming_unit_count=15",
-        "active_unit_count=1932",
+        "incoming_unit_count=12",
+        "active_unit_count=1961",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=checkin date",
         "incoming_marker=none"
       ],
-      "ts": "2026-06-09T23:05:08Z"
+      "ts": "2026-06-09T23:08:07Z"
     }
   },
   "seed_namespace": "pem",
@@ -17936,7 +18353,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "`PEM_LLM_TIMEOUT_SECONDS` is now set to `180`.\n\nUpdated files:\n- [`/Users/kevinmattice/dev/anon/pem-mcp/.env.example`](/Users/kevinmattice/dev/anon/pem-mcp/.env.example)\n- local PEM `.env` in the real source tree\n- Colossus deployment `.env` at `/Users/kevinmattice/pem-mcp/.env`\n\nI also verified the live effect on Colossus by rerunning the PEM Ollama quiet-ask smoke without an explicit timeout override. It succeeded against `qwen3.6:35b`, so the new default is doing its job.\n\nLive result:\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo the longer timeout is now the normal PEM default, and the live Ollama path still works."
+    "summary": "Yes.\n\nI verified on Colossus that PEM is writing to the governed root you designated: `/Users/kevinmattice/pem-governed-root`.\n\nWhat\u2019s present there now:\n- `/Users/kevinmattice/pem-governed-root/cases`\n- `/Users/kevinmattice/pem-governed-root/scratch`\n- `/Users/kevinmattice/pem-governed-root/pem.initialized`\n- `/Users/kevinmattice/pem-governed-root/pem.toml`\n\nAnd the live Ollama-backed PEM run wrote its case file into the expected `cases/` directory:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json`](/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json)\n\nI also confirmed the earlier timed-out live PEM run wrote here too:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json`](/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json)\n\nSo yes: cases are being written to the proper governed-root directory, not to the PEM code repo or the CCE repo."
   },
   "topic_hash": "mnefpfnnda",
   "turns": [
@@ -18935,7 +19352,51 @@
       "ts": "2026-06-09T23:05:08Z",
       "turn_id": "turn_9a0e03cf8387431685ee071c4bcd4481",
       "verified_claims": 0
+    },
+    {
+      "answer": "Yes.\n\nI validated PEM against the live local Ollama model on Colossus using PEM\u2019s own MCP path, not CCE. The successful live check was run through [`/Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py`](</Users/kevinmattice/pem-mcp/scripts/smoke_pem_ask_quiet.py>), with PEM configured as:\n\n- `PEM_LLM_MODE=ollama`\n- `PEM_OLLAMA_BASE_URL=http://127.0.0.1:11434/v1`\n- `PEM_OLLAMA_MODEL=qwen3.6:35b`\n\nThe model answered through PEM with:\n\n```text\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=2294ea6a93f0 q=\"What is 2 plus 2?\"\n4\nPEM: case=what-is-2-plus-2.case.dxhedwjucx hash=aa789d50d100 q=\"Repeat the same answer briefly.\"\n```\n\nSo yes: PEM has now queried the local model successfully through its own runtime.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 2,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "f2f52049826b",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T23:06:57Z",
+      "turn_id": "turn_1e622c455b884e5ba6a9bbd91d6ae36b",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Yes.\n\nI verified on Colossus that PEM is writing to the governed root you designated: `/Users/kevinmattice/pem-governed-root`.\n\nWhat\u2019s present there now:\n- `/Users/kevinmattice/pem-governed-root/cases`\n- `/Users/kevinmattice/pem-governed-root/scratch`\n- `/Users/kevinmattice/pem-governed-root/pem.initialized`\n- `/Users/kevinmattice/pem-governed-root/pem.toml`\n\nAnd the live Ollama-backed PEM run wrote its case file into the expected `cases/` directory:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json`](/Users/kevinmattice/pem-governed-root/cases/what-is-2-plus-2.case.dxhedwjucx.json)\n\nI also confirmed the earlier timed-out live PEM run wrote here too:\n- [`/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json`](/Users/kevinmattice/pem-governed-root/cases/what-changed-in-quiet-strict-pem-mode.case.xecmbvwpnf.json)\n\nSo yes: cases are being written to the proper governed-root directory, not to the PEM code repo or the CCE repo.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 2,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "1efb08c9f477",
+      "q": "Yep \u2014 the date looks right, and the duplicate bullet is the thing to clean up next.",
+      "ts": "2026-06-09T23:08:07Z",
+      "turn_id": "turn_35eee6d81ecb40cd8e577b3dd1f7b592",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-09T23:05:08Z"
+  "updated_at": "2026-06-09T23:08:07Z"
 }

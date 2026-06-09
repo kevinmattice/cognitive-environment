@@ -10,6 +10,8 @@ from pathlib import Path
 from gateway.ask import AskConfig, answer_question
 from gateway.matrix_auth_state import save_auth_state
 from gateway.matrix_sync_state import load_cursor, save_cursor
+from gateway.pem_status import get_pem_status
+from gateway.policy import POLICY_PEM_REQUIRED, pem_required_message, pem_unavailable_message
 from gateway.routing import SAFE_COMMAND_HELP, decide_route
 from gateway.status import build_status_snapshot, handle_command, handle_workspace_command
 from gateway.workspace_state import load_workspace_state, save_workspace_state
@@ -118,6 +120,12 @@ def process_event(
     if decision.action == "ignore":
         return None, workspace_persistence_state
     if decision.action == "ask":
+        if decision.policy and decision.policy.state == POLICY_PEM_REQUIRED:
+            pem_status = get_pem_status()
+            if pem_status.active:
+                return pem_required_message(), workspace_persistence_state
+            if pem_status.state in {"unavailable", "ambiguous", "inactive"}:
+                return pem_unavailable_message(), workspace_persistence_state
         return (
             answer_question(
                 question=decision.question or "",

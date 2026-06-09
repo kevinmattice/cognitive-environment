@@ -1,0 +1,3439 @@
+{
+  "auth_events": [],
+  "breadcrumbs": {
+    "case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+    "projection_hash": "5b0b4fd53611",
+    "q": "Good. Add a short workflow note to the CCE repo ",
+    "reused_active_case": true
+  },
+  "canonical_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+  "canonical_subject": "Pem, cce, and kevinmattice behavior",
+  "canonical_subject_history": [
+    {
+      "updated_at": "2026-06-09T23:10:25Z",
+      "value": "Not on your local Mac from this workspace, no."
+    },
+    {
+      "updated_at": "2026-06-09T23:11:32Z",
+      "value": "Pem, colossus, and governed behavior"
+    },
+    {
+      "updated_at": "2026-06-09T23:19:17Z",
+      "value": "Pem, project, and governed behavior"
+    },
+    {
+      "updated_at": "2026-06-09T23:46:29Z",
+      "value": "Pem, cce, and project behavior"
+    }
+  ],
+  "canonical_subject_source": "derived_from_capture_units",
+  "canonical_subject_strategy": "deterministic_v1",
+  "canonical_subject_updated_at": "2026-06-09T23:46:29Z",
+  "case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+  "config": {
+    "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+    "path": "<env>",
+    "profile": "default",
+    "snapshot_sanitized": {
+      "profile": "default",
+      "settings": {
+        "auth_biometrics_only": false,
+        "auth_cmd": "",
+        "auth_mode": "off",
+        "auth_provider": "touchid",
+        "auth_timeout_ms": 30000,
+        "diagnostics_explicit_only": true,
+        "enable_project_init": true,
+        "enforce_in_path": false,
+        "kernel_path": null,
+        "record_after_answer": true,
+        "storage_mode": "standalone",
+        "storage_root": null
+      },
+      "source": "env"
+    }
+  },
+  "config_transitions": [],
+  "contract_check": {
+    "invalid_types": [],
+    "missing_keys": []
+  },
+  "created_at": "2026-06-09T23:09:18Z",
+  "epistemic_audit": {
+    "capture_turns": [
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:09:19Z",
+        "turn_id": "turn_a44d698045d64764846c7541938d3fd3",
+        "unit_count": 17,
+        "units": [
+          {
+            "index": 1,
+            "text": "Not on your local Mac from this workspace, no.",
+            "unit_id": "cap_707a9991d071"
+          },
+          {
+            "index": 2,
+            "text": "`/Users/kevinmattice/pem-governed-root` is on **Colossus**, not in your local filesystem under [`/Volumes/kevinmattice/cce`](/Volumes/kevinmattice/cce).",
+            "unit_id": "cap_55e5493f6b07"
+          },
+          {
+            "index": 3,
+            "text": "When I verified it, I verified it via `ssh colossus`.",
+            "unit_id": "cap_26f7fe9e2921"
+          },
+          {
+            "index": 4,
+            "text": "So there are two different places:",
+            "unit_id": "cap_f0f5452f4fa0"
+          },
+          {
+            "index": 5,
+            "text": "Local Mac: your editable PEM source is at [`/Users/kevinmattice/dev/anon/pem-mcp`](/Users/kevinmattice/dev/anon/pem-mcp)",
+            "unit_id": "cap_95362e85e501"
+          },
+          {
+            "index": 6,
+            "text": "Colossus: PEM\u2019s governed runtime root is `/Users/kevinmattice/pem-governed-root`",
+            "unit_id": "cap_df16fda56460"
+          },
+          {
+            "index": 7,
+            "text": "If you want to see it directly, run:",
+            "unit_id": "cap_42350454cda0"
+          },
+          {
+            "index": 8,
+            "text": "```bash",
+            "unit_id": "cap_3c1b5ba25d05"
+          },
+          {
+            "index": 9,
+            "text": "ssh colossus 'find /Users/kevinmattice/pem-governed-root -maxdepth 2 | sort'",
+            "unit_id": "cap_d5ede2854571"
+          },
+          {
+            "index": 10,
+            "text": "```",
+            "unit_id": "cap_e7dae6c6665b"
+          },
+          {
+            "index": 11,
+            "text": "Or open an interactive shell:",
+            "unit_id": "cap_c7da1ecd1638"
+          },
+          {
+            "index": 12,
+            "text": "```bash",
+            "unit_id": "cap_cef2f4bc22cd"
+          },
+          {
+            "index": 13,
+            "text": "ssh colossus",
+            "unit_id": "cap_667f893ea9f7"
+          },
+          {
+            "index": 14,
+            "text": "cd /Users/kevinmattice/pem-governed-root",
+            "unit_id": "cap_0edb107eb04a"
+          },
+          {
+            "index": 15,
+            "text": "ls -la",
+            "unit_id": "cap_feb55e009356"
+          },
+          {
+            "index": 16,
+            "text": "```",
+            "unit_id": "cap_bfec684300a0"
+          },
+          {
+            "index": 17,
+            "text": "So the short answer is: I do see it, but only on the remote machine, not as a local folder on Black Air.",
+            "unit_id": "cap_c80f0f30ffa8"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:10:25Z",
+        "turn_id": "turn_dcc446e0f0664e718865d4f53a50bb2b",
+        "unit_count": 10,
+        "units": [
+          {
+            "index": 1,
+            "text": "That\u2019s the easy kind of confusion.",
+            "unit_id": "cap_e04e9ef9fdf9"
+          },
+          {
+            "index": 2,
+            "text": "We\u2019re back in the familiar \u201ctwo houses\u201d situation:",
+            "unit_id": "cap_174d38cd4ea9"
+          },
+          {
+            "index": 3,
+            "text": "local source repo on Black Air",
+            "unit_id": "cap_40f61f29d618"
+          },
+          {
+            "index": 4,
+            "text": "live governed/runtime state on Colossus",
+            "unit_id": "cap_7e9d3ac149ad"
+          },
+          {
+            "index": 5,
+            "text": "The good news is the important part checked out: PEM is talking to the local model and writing governed artifacts in the right remote place.",
+            "unit_id": "cap_8192d4425672"
+          },
+          {
+            "index": 6,
+            "text": "If you want, the next sensible step is a very small operator convenience pass so PEM gets the same quality-of-life treatment we gave CCE:",
+            "unit_id": "cap_a24708e90bb6"
+          },
+          {
+            "index": 7,
+            "text": "`sync-pem-colossus`",
+            "unit_id": "cap_6afd880d340c"
+          },
+          {
+            "index": 8,
+            "text": "`check-pem-colossus`",
+            "unit_id": "cap_0ba3c6dd4881"
+          },
+          {
+            "index": 9,
+            "text": "maybe `smoke-pem-ollama-colossus`",
+            "unit_id": "cap_457f030db039"
+          },
+          {
+            "index": 10,
+            "text": "That would make future PEM work much less fiddly.",
+            "unit_id": "cap_c58a92192d24"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:11:32Z",
+        "turn_id": "turn_b85d78a6dace4d75a668dc9c423e7e85",
+        "unit_count": 84,
+        "units": [
+          {
+            "index": 1,
+            "text": "**Boundary**",
+            "unit_id": "cap_04c5c011d45b"
+          },
+          {
+            "index": 2,
+            "text": "The smallest structural hook is a **two-stage gate**:",
+            "unit_id": "cap_df63a37cc8dc"
+          },
+          {
+            "index": 3,
+            "text": "Stage 1: classify the request in the **CCE routing layer**",
+            "unit_id": "cap_dacfddf2d13c"
+          },
+          {
+            "index": 4,
+            "text": "Stage 2: enforce capability limits in the **tool/shell/file execution layer**",
+            "unit_id": "cap_6ffdf74740eb"
+          },
+          {
+            "index": 5,
+            "text": "That keeps CCE as the locus of control, PEM as the governance backbone, and avoids deep runtime coupling.",
+            "unit_id": "cap_20623e81f79e"
+          },
+          {
+            "index": 6,
+            "text": "**1.",
+            "unit_id": "cap_c5868fb77b0a"
+          },
+          {
+            "index": 7,
+            "text": "Requests that must be PEM-governed**",
+            "unit_id": "cap_9794a7fbb2e2"
+          },
+          {
+            "index": 8,
+            "text": "These should require active PEM governance before the model can do substantive work:",
+            "unit_id": "cap_262fbee5ac99"
+          },
+          {
+            "index": 9,
+            "text": "code changes",
+            "unit_id": "cap_281f82d7859e"
+          },
+          {
+            "index": 10,
+            "text": "file creation, deletion, or modification",
+            "unit_id": "cap_08f348e41045"
+          },
+          {
+            "index": 11,
+            "text": "shell commands that inspect or change project state in a meaningful way",
+            "unit_id": "cap_da509fec0a1e"
+          },
+          {
+            "index": 12,
+            "text": "test runs used to justify claims about project state",
+            "unit_id": "cap_5402c935118c"
+          },
+          {
+            "index": 13,
+            "text": "build/deploy/restart actions",
+            "unit_id": "cap_2144c40d2daf"
+          },
+          {
+            "index": 14,
+            "text": "Git actions beyond passive read-only inspection",
+            "unit_id": "cap_a61531fc84b5"
+          },
+          {
+            "index": 15,
+            "text": "project planning that creates or updates work artifacts",
+            "unit_id": "cap_97c4c80c2001"
+          },
+          {
+            "index": 16,
+            "text": "evidence claims like \u201cI verified,\u201d \u201cI tested,\u201d \u201cI fixed,\u201d \u201cI confirmed\u201d",
+            "unit_id": "cap_a6e38344e6ca"
+          },
+          {
+            "index": 17,
+            "text": "multi-step debugging/investigation intended to affect project decisions",
+            "unit_id": "cap_597c741615aa"
+          },
+          {
+            "index": 18,
+            "text": "any answer presented as project-grounded rather than casual general knowledge",
+            "unit_id": "cap_a06dd2c487f3"
+          },
+          {
+            "index": 19,
+            "text": "In short: **anything trust-affecting or state-affecting**.",
+            "unit_id": "cap_3e238514e733"
+          },
+          {
+            "index": 20,
+            "text": "**2.",
+            "unit_id": "cap_c51acba6e85e"
+          },
+          {
+            "index": 21,
+            "text": "Requests that can remain ordinary conversation**",
+            "unit_id": "cap_1c2d50366ce9"
+          },
+          {
+            "index": 22,
+            "text": "These can stay lightweight and non-PEM by default:",
+            "unit_id": "cap_3774d434f4f2"
+          },
+          {
+            "index": 23,
+            "text": "casual chat",
+            "unit_id": "cap_0d9bed1787b3"
+          },
+          {
+            "index": 24,
+            "text": "general knowledge Q&A",
+            "unit_id": "cap_e412db2fa2c4"
+          },
+          {
+            "index": 25,
+            "text": "brainstorming with no execution",
+            "unit_id": "cap_ce85583274cc"
+          },
+          {
+            "index": 26,
+            "text": "high-level explanation of code or architecture",
+            "unit_id": "cap_9b7da3c198b4"
+          },
+          {
+            "index": 27,
+            "text": "status questions that do not claim fresh verification",
+            "unit_id": "cap_8abe071033f5"
+          },
+          {
+            "index": 28,
+            "text": "\u201cwhat would you do?\u201d discussions",
+            "unit_id": "cap_09d4a73d3681"
+          },
+          {
+            "index": 29,
+            "text": "harmless transformation tasks not tied to project state",
+            "unit_id": "cap_ba7b90f40ce9"
+          },
+          {
+            "index": 30,
+            "text": "small conversational checks that do not touch tools or artifacts",
+            "unit_id": "cap_7df3e257e44c"
+          },
+          {
+            "index": 31,
+            "text": "In short: **non-substantive conversation without project-state claims or actions**.",
+            "unit_id": "cap_fbef999ff235"
+          },
+          {
+            "index": 32,
+            "text": "**3.",
+            "unit_id": "cap_0dbd74762d08"
+          },
+          {
+            "index": 33,
+            "text": "Where the enforcement hook belongs**",
+            "unit_id": "cap_c825cf3e7a33"
+          },
+          {
+            "index": 34,
+            "text": "Best answer: **a combination**",
+            "unit_id": "cap_e6cebf3ec533"
+          },
+          {
+            "index": 35,
+            "text": "**CCE routing layer**",
+            "unit_id": "cap_87b307660784"
+          },
+          {
+            "index": 36,
+            "text": "decides whether a request is ordinary conversation or substantive work",
+            "unit_id": "cap_138edaa72b20"
+          },
+          {
+            "index": 37,
+            "text": "routes substantive work into PEM-governed mode",
+            "unit_id": "cap_c7a9231385f4"
+          },
+          {
+            "index": 38,
+            "text": "**tool/shell/file execution layer**",
+            "unit_id": "cap_3d12fbf0cff2"
+          },
+          {
+            "index": 39,
+            "text": "blocks trust-affecting capabilities unless PEM is active",
+            "unit_id": "cap_5f52a7f43d58"
+          },
+          {
+            "index": 40,
+            "text": "**not primarily MCP-tool-only**",
+            "unit_id": "cap_510254de11f3"
+          },
+          {
+            "index": 41,
+            "text": "too narrow; local-model work can escape through shell/file paths",
+            "unit_id": "cap_27fac8e85e86"
+          },
+          {
+            "index": 42,
+            "text": "So the real boundary is:",
+            "unit_id": "cap_82a8d0149b18"
+          },
+          {
+            "index": 43,
+            "text": "CCE decides",
+            "unit_id": "cap_6f1e5dbcfa3e"
+          },
+          {
+            "index": 44,
+            "text": "execution layer enforces",
+            "unit_id": "cap_8c7c3becdf15"
+          },
+          {
+            "index": 45,
+            "text": "**4.",
+            "unit_id": "cap_c55c2bb8117c"
+          },
+          {
+            "index": 46,
+            "text": "What the local model is allowed to do before PEM activation**",
+            "unit_id": "cap_7b147ca16e11"
+          },
+          {
+            "index": 47,
+            "text": "Allowed before PEM:",
+            "unit_id": "cap_446dd3f6bd3b"
+          },
+          {
+            "index": 48,
+            "text": "answer ordinary conversational questions",
+            "unit_id": "cap_671d6af64dcf"
+          },
+          {
+            "index": 49,
+            "text": "explain concepts",
+            "unit_id": "cap_60fa116b7941"
+          },
+          {
+            "index": 50,
+            "text": "discuss possible approaches",
+            "unit_id": "cap_68162cf77046"
+          },
+          {
+            "index": 51,
+            "text": "read only enough to support non-committal explanation, if you allow read-only browsing",
+            "unit_id": "cap_529873b6ae3b"
+          },
+          {
+            "index": 52,
+            "text": "ask clarifying questions",
+            "unit_id": "cap_1d63c5eb88bd"
+          },
+          {
+            "index": 53,
+            "text": "propose a PEM activation when work becomes substantive",
+            "unit_id": "cap_b1236dce98ef"
+          },
+          {
+            "index": 54,
+            "text": "It may be helpful to allow:",
+            "unit_id": "cap_5556dedb2235"
+          },
+          {
+            "index": 55,
+            "text": "read-only repository inspection",
+            "unit_id": "cap_3078dc4bc6e1"
+          },
+          {
+            "index": 56,
+            "text": "but only if resulting answers are framed as explanatory, not as verified project action",
+            "unit_id": "cap_3cdbe7e41ffe"
+          },
+          {
+            "index": 57,
+            "text": "**5.",
+            "unit_id": "cap_1d22ec3f1bae"
+          },
+          {
+            "index": 58,
+            "text": "What it is forbidden to do without PEM activation**",
+            "unit_id": "cap_12df98cf0cdd"
+          },
+          {
+            "index": 59,
+            "text": "Forbidden before PEM:",
+            "unit_id": "cap_49726b8c43eb"
+          },
+          {
+            "index": 60,
+            "text": "edit files",
+            "unit_id": "cap_006ef94e3f47"
+          },
+          {
+            "index": 61,
+            "text": "run project-changing shell commands",
+            "unit_id": "cap_aee68bf7d91e"
+          },
+          {
+            "index": 62,
+            "text": "create or update governance artifacts",
+            "unit_id": "cap_fc3aa1e27dae"
+          },
+          {
+            "index": 63,
+            "text": "run tests and then present results as governed evidence",
+            "unit_id": "cap_de2d687e7151"
+          },
+          {
+            "index": 64,
+            "text": "make verification claims about project state",
+            "unit_id": "cap_3e6fc9e860ec"
+          },
+          {
+            "index": 65,
+            "text": "perform deployment/restart/release actions",
+            "unit_id": "cap_7e68d822a87e"
+          },
+          {
+            "index": 66,
+            "text": "use project work tools that imply execution authority",
+            "unit_id": "cap_462df87f18cd"
+          },
+          {
+            "index": 67,
+            "text": "silently open or reuse a governed case for substantive work without surfacing PEM status",
+            "unit_id": "cap_0962942aafbe"
+          },
+          {
+            "index": 68,
+            "text": "The important rule is:",
+            "unit_id": "cap_6b5c40fa4acc"
+          },
+          {
+            "index": 69,
+            "text": "**no substantive project work outside PEM**",
+            "unit_id": "cap_7ee8fc68f2bd"
+          },
+          {
+            "index": 70,
+            "text": "not just \u201cplease don\u2019t,\u201d but actual blocked capability",
+            "unit_id": "cap_ccd25722c5d8"
+          },
+          {
+            "index": 71,
+            "text": "**6.",
+            "unit_id": "cap_f3eca2df565d"
+          },
+          {
+            "index": 72,
+            "text": "How CCE should detect \u201cthis must go through PEM\u201d**",
+            "unit_id": "cap_6e259496778c"
+          },
+          {
+            "index": 73,
+            "text": "Use a structural classifier in routing, not prompting alone.",
+            "unit_id": "cap_d46ee80380ef"
+          },
+          {
+            "index": 74,
+            "text": "A request should be marked **PEM-required** if any of these are true:",
+            "unit_id": "cap_c90ee6143b90"
+          },
+          {
+            "index": 75,
+            "text": "it asks to modify code/files/config",
+            "unit_id": "cap_ab4da8419c09"
+          },
+          {
+            "index": 76,
+            "text": "it asks to run commands/tests/builds/restarts",
+            "unit_id": "cap_7c8202c79396"
+          },
+          {
+            "index": 77,
+            "text": "it asks to verify or confirm project behavior",
+            "unit_id": "cap_b554d1b099bf"
+          },
+          {
+            "index": 78,
+            "text": "it asks to debug/fix/implement/review a project issue",
+            "unit_id": "cap_4151d37a168b"
+          },
+          {
+            "index": 79,
+            "text": "it references project-local artifacts as the basis for an actionable answer",
+            "unit_id": "cap_001ecc9126a9"
+          },
+          {
+            "index": 80,
+            "text": "it requests multi-step work on a local repo/system",
+            "unit_id": "cap_0acd96e1c31c"
+          },
+          {
+            "index": 81,
+            "text": "This can start as deterministic intent detection:",
+            "unit_id": "cap_fe7415288f87"
+          },
+          {
+            "index": 82,
+            "text": "verbs like `fix`, `implement`, `change`, `edit`, `patch`, `run`, `test`, `verify`, `debug`, `review`, `restart`, `deploy`",
+            "unit_id": "cap_786b1a256685"
+          },
+          {
+            "index": 83,
+            "text": "plus project-context signals like repo path, files, logs, services, workspaces, tickets, cases",
+            "unit_id": "cap_4d68f032e550"
+          },
+          {
+            "index": 84,
+            "text": "Not keyword sprawl fore",
+            "unit_id": "cap_7fb10e72f97f"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:15:17Z",
+        "turn_id": "turn_20c54714e41c4cab829d6c89934f153d",
+        "unit_count": 87,
+        "units": [
+          {
+            "index": 1,
+            "text": "**PEM Enforcement Spec**",
+            "unit_id": "cap_db39b5585de0"
+          },
+          {
+            "index": 2,
+            "text": "This is a structural gate, not a prompting pattern.",
+            "unit_id": "cap_7b3e11c14151"
+          },
+          {
+            "index": 3,
+            "text": "CCE classifies the request, checks PEM state, and only exposes trust-affecting execution capability when PEM governance is active.",
+            "unit_id": "cap_e14f2f9d54ea"
+          },
+          {
+            "index": 4,
+            "text": "**1.",
+            "unit_id": "cap_ce7287d9f3fd"
+          },
+          {
+            "index": 5,
+            "text": "Policy States**",
+            "unit_id": "cap_51748109248a"
+          },
+          {
+            "index": 6,
+            "text": "`conversation_only`",
+            "unit_id": "cap_b4534edfc024"
+          },
+          {
+            "index": 7,
+            "text": "Default for casual, non-project, non-verifying interaction.",
+            "unit_id": "cap_f34859efc361"
+          },
+          {
+            "index": 8,
+            "text": "No trust-affecting project work.",
+            "unit_id": "cap_d9e648da25d7"
+          },
+          {
+            "index": 9,
+            "text": "No write or execution capability.",
+            "unit_id": "cap_388994492cab"
+          },
+          {
+            "index": 10,
+            "text": "`read_only_project`",
+            "unit_id": "cap_e2e9eb544fc7"
+          },
+          {
+            "index": 11,
+            "text": "Project-aware, but non-substantive.",
+            "unit_id": "cap_3a62d4d3aaa8"
+          },
+          {
+            "index": 12,
+            "text": "Allows read-only inspection and grounded answers.",
+            "unit_id": "cap_50e78a1f7808"
+          },
+          {
+            "index": 13,
+            "text": "No file mutation, no execution that produces governed evidence.",
+            "unit_id": "cap_6c750e45d747"
+          },
+          {
+            "index": 14,
+            "text": "`pem_required`",
+            "unit_id": "cap_9ace770fae00"
+          },
+          {
+            "index": 15,
+            "text": "Transitional decision state, not a working state.",
+            "unit_id": "cap_bd34616ca39f"
+          },
+          {
+            "index": 16,
+            "text": "CCE has determined the request is trust-affecting or state-affecting.",
+            "unit_id": "cap_0c4e4884e537"
+          },
+          {
+            "index": 17,
+            "text": "Execution is blocked until PEM is active.",
+            "unit_id": "cap_3e504eacd6c1"
+          },
+          {
+            "index": 18,
+            "text": "`pem_governed_execution`",
+            "unit_id": "cap_a24c888829e9"
+          },
+          {
+            "index": 19,
+            "text": "PEM is reachable and active.",
+            "unit_id": "cap_1ecdf383aa54"
+          },
+          {
+            "index": 20,
+            "text": "Trust-affecting work may proceed.",
+            "unit_id": "cap_746d2e6efc7e"
+          },
+          {
+            "index": 21,
+            "text": "Write/execute capability is unlocked within the governed flow.",
+            "unit_id": "cap_e620a8b6bea4"
+          },
+          {
+            "index": 22,
+            "text": "`pem_unavailable_blocked`",
+            "unit_id": "cap_8a3625a746d5"
+          },
+          {
+            "index": 23,
+            "text": "CCE determined PEM is required, but PEM is unavailable or status is ambiguous.",
+            "unit_id": "cap_b8d85ec7d6ca"
+          },
+          {
+            "index": 24,
+            "text": "Trust-affecting work is blocked.",
+            "unit_id": "cap_684db7b1f57d"
+          },
+          {
+            "index": 25,
+            "text": "Conversation can continue, but execution cannot.",
+            "unit_id": "cap_1eab3d9d7184"
+          },
+          {
+            "index": 26,
+            "text": "**2.",
+            "unit_id": "cap_c64dd6de5304"
+          },
+          {
+            "index": 27,
+            "text": "Routing Outcomes**",
+            "unit_id": "cap_9b30a80daa7b"
+          },
+          {
+            "index": 28,
+            "text": "`ordinary answer`",
+            "unit_id": "cap_8a8f54757893"
+          },
+          {
+            "index": 29,
+            "text": "For `conversation_only`",
+            "unit_id": "cap_6a7cf41f7137"
+          },
+          {
+            "index": 30,
+            "text": "No project-state claims beyond general explanation",
+            "unit_id": "cap_a1978fda9bfd"
+          },
+          {
+            "index": 31,
+            "text": "`read-only grounded answer`",
+            "unit_id": "cap_8d830afa3280"
+          },
+          {
+            "index": 32,
+            "text": "For `read_only_project`",
+            "unit_id": "cap_47b2c7394c29"
+          },
+          {
+            "index": 33,
+            "text": "Uses workspace/project reading only",
+            "unit_id": "cap_ce1ff8aba108"
+          },
+          {
+            "index": 34,
+            "text": "No execution, no \u201cI verified\u201d claims unless PEM-governed",
+            "unit_id": "cap_413e7ecf1ef1"
+          },
+          {
+            "index": 35,
+            "text": "`PEM required`",
+            "unit_id": "cap_542d723a7288"
+          },
+          {
+            "index": 36,
+            "text": "For detected trust-affecting requests when PEM is not yet active",
+            "unit_id": "cap_362eda169e87"
+          },
+          {
+            "index": 37,
+            "text": "CCE does not proceed to execution",
+            "unit_id": "cap_5691b3a748e3"
+          },
+          {
+            "index": 38,
+            "text": "`PEM activate/resume`",
+            "unit_id": "cap_413ef16cd8e8"
+          },
+          {
+            "index": 39,
+            "text": "CCE asks PEM to establish or resume governed context",
+            "unit_id": "cap_730a7ba7d702"
+          },
+          {
+            "index": 40,
+            "text": "If successful, route moves to `pem_governed_execution`",
+            "unit_id": "cap_994ed2a836de"
+          },
+          {
+            "index": 41,
+            "text": "`PEM-governed execution allowed`",
+            "unit_id": "cap_4f65bc39f706"
+          },
+          {
+            "index": 42,
+            "text": "PEM active, execution capabilities exposed",
+            "unit_id": "cap_9d031e48b9c6"
+          },
+          {
+            "index": 43,
+            "text": "Work may proceed normally",
+            "unit_id": "cap_d149e64add23"
+          },
+          {
+            "index": 44,
+            "text": "`refusal/block because PEM unavailable`",
+            "unit_id": "cap_f51069f3303f"
+          },
+          {
+            "index": 45,
+            "text": "Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous",
+            "unit_id": "cap_d6ddd31ff0f3"
+          },
+          {
+            "index": 46,
+            "text": "CCE blocks trust-affecting work",
+            "unit_id": "cap_0caa84549ace"
+          },
+          {
+            "index": 47,
+            "text": "**3.",
+            "unit_id": "cap_c9a00f521ffe"
+          },
+          {
+            "index": 48,
+            "text": "Capability Matrix**",
+            "unit_id": "cap_e10a0c521435"
+          },
+          {
+            "index": 49,
+            "text": "| Capability | conversation_only | read_only_project | pem_required | pem_governed_execution | pem_unavailable_blocked |",
+            "unit_id": "cap_9b521a648fa2"
+          },
+          {
+            "index": 50,
+            "text": "|---|---|---|---|---|---|",
+            "unit_id": "cap_af519a2abd72"
+          },
+          {
+            "index": 51,
+            "text": "| Casual answer | allow | allow | allow | allow | allow |",
+            "unit_id": "cap_3db824211325"
+          },
+          {
+            "index": 52,
+            "text": "| General knowledge | allow | allow | allow | allow | allow |",
+            "unit_id": "cap_f2fd9e8692de"
+          },
+          {
+            "index": 53,
+            "text": "| Read workspace files | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |",
+            "unit_id": "cap_17ecf51f02aa"
+          },
+          {
+            "index": 54,
+            "text": "| Read project status/logs | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |",
+            "unit_id": "cap_3e72a6263dab"
+          },
+          {
+            "index": 55,
+            "text": "| Grounded answer from sources | block | allow | block | allow | block |",
+            "unit_id": "cap_ff100c10ee2b"
+          },
+          {
+            "index": 56,
+            "text": "| Edit files | block | block | block | allow | block |",
+            "unit_id": "cap_1c8e11adb487"
+          },
+          {
+            "index": 57,
+            "text": "| Run tests/builds | block | block | block | allow | block |",
+            "unit_id": "cap_083eb20267d7"
+          },
+          {
+            "index": 58,
+            "text": "| Restart/deploy | block | block | block | allow | block |",
+            "unit_id": "cap_59d5879b09d0"
+          },
+          {
+            "index": 59,
+            "text": "| Git mutation | block | block | block | allow | block |",
+            "unit_id": "cap_c2ec93b908ba"
+          },
+          {
+            "index": 60,
+            "text": "| Write PEM artifacts | block | block | PEM only | allow through PEM | block |",
+            "unit_id": "cap_f5282b12a62a"
+          },
+          {
+            "index": 61,
+            "text": "| Verification claims | block | block | block | allow | block |",
+            "unit_id": "cap_13e09cd2029c"
+          },
+          {
+            "index": 62,
+            "text": "**4.",
+            "unit_id": "cap_0c1d858bf1c3"
+          },
+          {
+            "index": 63,
+            "text": "Detection Rules For PEM-Required Work**",
+            "unit_id": "cap_547a191a824c"
+          },
+          {
+            "index": 64,
+            "text": "Deterministic first, based on trust-affecting intent.",
+            "unit_id": "cap_c0f3637a1f5a"
+          },
+          {
+            "index": 65,
+            "text": "A request is `PEM-required` if it asks CCE/local model to do any of these:",
+            "unit_id": "cap_f10070324e4c"
+          },
+          {
+            "index": 66,
+            "text": "mutate project state",
+            "unit_id": "cap_e87e3c0fd7ed"
+          },
+          {
+            "index": 67,
+            "text": "edit, create, delete, patch, update, rewrite",
+            "unit_id": "cap_98cf3fc7a9fc"
+          },
+          {
+            "index": 68,
+            "text": "execute project-affecting actions",
+            "unit_id": "cap_8956d6733ecf"
+          },
+          {
+            "index": 69,
+            "text": "run tests, build, restart, deploy, migrate",
+            "unit_id": "cap_701b717c3c8a"
+          },
+          {
+            "index": 70,
+            "text": "produce verification-backed claims",
+            "unit_id": "cap_6fe57bab404f"
+          },
+          {
+            "index": 71,
+            "text": "verify, confirm, validate, reproduce, prove, test",
+            "unit_id": "cap_a271ba5f3c79"
+          },
+          {
+            "index": 72,
+            "text": "perform substantive debugging or implementation",
+            "unit_id": "cap_b71612a6f2d8"
+          },
+          {
+            "index": 73,
+            "text": "fix, debug, investigate, implement, refactor, review for correctness",
+            "unit_id": "cap_a303057da0f8"
+          },
+          {
+            "index": 74,
+            "text": "make decisions based on local project evidence",
+            "unit_id": "cap_ad2dc1c6839a"
+          },
+          {
+            "index": 75,
+            "text": "\u201cwhat changed,\u201d \u201cis this working,\u201d \u201cwhich file is responsible,\u201d \u201cdid we solve X\u201d",
+            "unit_id": "cap_f165c3eb7eb7"
+          },
+          {
+            "index": 76,
+            "text": "Detection should prefer auditable features:",
+            "unit_id": "cap_3d048c4b475d"
+          },
+          {
+            "index": 77,
+            "text": "requested capability category",
+            "unit_id": "cap_b6d35cd50c8d"
+          },
+          {
+            "index": 78,
+            "text": "presence of local paths, files, services, logs, repo references",
+            "unit_id": "cap_f4c197d18945"
+          },
+          {
+            "index": 79,
+            "text": "explicit execution verbs",
+            "unit_id": "cap_b2dc163c71ba"
+          },
+          {
+            "index": 80,
+            "text": "verification verbs",
+            "unit_id": "cap_658853b4497b"
+          },
+          {
+            "index": 81,
+            "text": "Avoid broad topic keywords.",
+            "unit_id": "cap_090ea7793874"
+          },
+          {
+            "index": 82,
+            "text": "The criterion is:",
+            "unit_id": "cap_8044a9ac1fc1"
+          },
+          {
+            "index": 83,
+            "text": "**does this request require trusted action or trusted project-state judgment?**",
+            "unit_id": "cap_b0b39e9ad135"
+          },
+          {
+            "index": 84,
+            "text": "**5.",
+            "unit_id": "cap_2378e1107610"
+          },
+          {
+            "index": 85,
+            "text": "PEM Status Checks**",
+            "unit_id": "cap_bcc3415e8d32"
+          },
+          {
+            "index": 86,
+            "text": "CCE should call PEM MCP tools for status, not infer from prompts.",
+            "unit_id": "cap_b949ed61c62c"
+          },
+          {
+            "index": 87,
+            "text": "Primary PEM ch",
+            "unit_id": "cap_caa81b8a0ae0"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:19:17Z",
+        "turn_id": "turn_36a6cd899e184b6baf669a786aa16f31",
+        "unit_count": 74,
+        "units": [
+          {
+            "index": 1,
+            "text": "I inspected the current CCE Lite codebase, and the important result is: **CCE is still mostly a read/routing system, not an execution agent.** That changes the shape of the first enforcement step in a good way.",
+            "unit_id": "cap_0260062043e3"
+          },
+          {
+            "index": 2,
+            "text": "We can add the routing/policy boundary now without inventing heavy execution machinery.",
+            "unit_id": "cap_e83784b3fca3"
+          },
+          {
+            "index": 3,
+            "text": "**Current Capability Audit**",
+            "unit_id": "cap_c14b35b8b64e"
+          },
+          {
+            "index": 4,
+            "text": "1.",
+            "unit_id": "cap_5b310282a068"
+          },
+          {
+            "index": 5,
+            "text": "**File-writing capability**",
+            "unit_id": "cap_eb873f136c69"
+          },
+          {
+            "index": 6,
+            "text": "CCE does have file writes, but they are **internal runtime persistence**, not model-directed project editing.",
+            "unit_id": "cap_6e7d9a974b04"
+          },
+          {
+            "index": 7,
+            "text": "Current write paths I found include:",
+            "unit_id": "cap_725936a24643"
+          },
+          {
+            "index": 8,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/workspace_state.py`](/Volumes/kevinmattice/cce/gateway/workspace_state.py)",
+            "unit_id": "cap_200b32f0256d"
+          },
+          {
+            "index": 9,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py)",
+            "unit_id": "cap_54d350acb7ec"
+          },
+          {
+            "index": 10,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py)",
+            "unit_id": "cap_dfa7860f3688"
+          },
+          {
+            "index": 11,
+            "text": "These persist runtime state like workspace selection and Matrix sync/auth state.",
+            "unit_id": "cap_8d7faf5d06c7"
+          },
+          {
+            "index": 12,
+            "text": "I did **not** find model-exposed project file editing in CCE Lite.",
+            "unit_id": "cap_7e5e79915654"
+          },
+          {
+            "index": 13,
+            "text": "2.",
+            "unit_id": "cap_0a9fa5634064"
+          },
+          {
+            "index": 14,
+            "text": "**Shell-execution capability**",
+            "unit_id": "cap_121cc1e92e4f"
+          },
+          {
+            "index": 15,
+            "text": "Yes, but only one real path today:",
+            "unit_id": "cap_3d8cd4f594b2"
+          },
+          {
+            "index": 16,
+            "text": "[`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)",
+            "unit_id": "cap_8e2cbe516ec1"
+          },
+          {
+            "index": 17,
+            "text": "It uses `subprocess.run(...)` to invoke:",
+            "unit_id": "cap_15edb6d1f67c"
+          },
+          {
+            "index": 18,
+            "text": "`ollama run --hidethinking <model>`",
+            "unit_id": "cap_334a044e80aa"
+          },
+          {
+            "index": 19,
+            "text": "This is **model transport**, not general shell access.",
+            "unit_id": "cap_38d9214a2bcc"
+          },
+          {
+            "index": 20,
+            "text": "3.",
+            "unit_id": "cap_5bf1dbfbafe8"
+          },
+          {
+            "index": 21,
+            "text": "**Git/build/test/deploy/restart capability exposed to the model**",
+            "unit_id": "cap_b240ae7a3d3a"
+          },
+          {
+            "index": 22,
+            "text": "I did **not** find any such capability exposed through CCE.",
+            "unit_id": "cap_d040cdd737fd"
+          },
+          {
+            "index": 23,
+            "text": "No general subprocess execution layer.",
+            "unit_id": "cap_26edd835d7a5"
+          },
+          {
+            "index": 24,
+            "text": "No Git command path.",
+            "unit_id": "cap_8fde471fc9ee"
+          },
+          {
+            "index": 25,
+            "text": "No build/test/deploy/restart tool path.",
+            "unit_id": "cap_9151131b2205"
+          },
+          {
+            "index": 26,
+            "text": "The only restart behavior we\u2019ve used was operator-side via helper scripts, not CCE runtime behavior.",
+            "unit_id": "cap_0719d5e3fe6a"
+          },
+          {
+            "index": 27,
+            "text": "4.",
+            "unit_id": "cap_758aa2a52d21"
+          },
+          {
+            "index": 28,
+            "text": "**Project verification claims**",
+            "unit_id": "cap_c4d5036afc32"
+          },
+          {
+            "index": 29,
+            "text": "Today CCE can make:",
+            "unit_id": "cap_09479436e20d"
+          },
+          {
+            "index": 30,
+            "text": "conversational answers",
+            "unit_id": "cap_f646482e595c"
+          },
+          {
+            "index": 31,
+            "text": "grounded answers from declared workspace sources",
+            "unit_id": "cap_33875e3f3253"
+          },
+          {
+            "index": 32,
+            "text": "It does **not** currently verify project state by running tests, builds, or shell commands.",
+            "unit_id": "cap_87c01876ceb3"
+          },
+          {
+            "index": 33,
+            "text": "So current \u201cverification\u201d risk is mostly:",
+            "unit_id": "cap_5dc5e5077f91"
+          },
+          {
+            "index": 34,
+            "text": "the model speaking too confidently about project state",
+            "unit_id": "cap_9bd9c998401e"
+          },
+          {
+            "index": 35,
+            "text": "not actual project execution bypass",
+            "unit_id": "cap_4939b80c3e73"
+          },
+          {
+            "index": 36,
+            "text": "5.",
+            "unit_id": "cap_fce3c2743a69"
+          },
+          {
+            "index": 37,
+            "text": "**Where routing is decided**",
+            "unit_id": "cap_9685565a92fb"
+          },
+          {
+            "index": 38,
+            "text": "Main route decision today is in:",
+            "unit_id": "cap_b3599b29afd9"
+          },
+          {
+            "index": 39,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)",
+            "unit_id": "cap_11ec47a2b8e2"
+          },
+          {
+            "index": 40,
+            "text": "Then enforced in:",
+            "unit_id": "cap_f92d0e52c287"
+          },
+          {
+            "index": 41,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)",
+            "unit_id": "cap_5f41ce93c153"
+          },
+          {
+            "index": 42,
+            "text": "specifically `process_event(...)`",
+            "unit_id": "cap_9f3ee7fe1446"
+          },
+          {
+            "index": 43,
+            "text": "6.",
+            "unit_id": "cap_75f919a2273e"
+          },
+          {
+            "index": 44,
+            "text": "**Where model calls are made**",
+            "unit_id": "cap_979a9e2b019a"
+          },
+          {
+            "index": 45,
+            "text": "Model calls happen in:",
+            "unit_id": "cap_35ae58f172f5"
+          },
+          {
+            "index": 46,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/ask.py`](/Volumes/kevinmattice/cce/gateway/ask.py)",
+            "unit_id": "cap_12b511605da3"
+          },
+          {
+            "index": 47,
+            "text": "through `answer_question(...)`",
+            "unit_id": "cap_22fc6f0b7d89"
+          },
+          {
+            "index": 48,
+            "text": "Transport is:",
+            "unit_id": "cap_34f9aac4f3bd"
+          },
+          {
+            "index": 49,
+            "text": "[`/Volumes/kevinmattice/cce/models/local_model.py`](/Volumes/kevinmattice/cce/models/local_model.py)",
+            "unit_id": "cap_b07a02f05bcf"
+          },
+          {
+            "index": 50,
+            "text": "[`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)",
+            "unit_id": "cap_596a497a3509"
+          },
+          {
+            "index": 51,
+            "text": "7.",
+            "unit_id": "cap_b9a6b5cc19f6"
+          },
+          {
+            "index": 52,
+            "text": "**Where PEM-required classification naturally fits**",
+            "unit_id": "cap_adc49f3d5b29"
+          },
+          {
+            "index": 53,
+            "text": "Best fit:",
+            "unit_id": "cap_c307ca8aa550"
+          },
+          {
+            "index": 54,
+            "text": "first in [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)",
+            "unit_id": "cap_827e6133b95c"
+          },
+          {
+            "index": 55,
+            "text": "then enforced in [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)",
+            "unit_id": "cap_6e34bed67d30"
+          },
+          {
+            "index": 56,
+            "text": "That keeps CCE as the locus of control.",
+            "unit_id": "cap_de94eab2fcdc"
+          },
+          {
+            "index": 57,
+            "text": "8.",
+            "unit_id": "cap_609edf82c4cf"
+          },
+          {
+            "index": 58,
+            "text": "**Where a capability gate naturally fits**",
+            "unit_id": "cap_d0b681e6ac37"
+          },
+          {
+            "index": 59,
+            "text": "Since dangerous capabilities are minimal right now, the first gate should sit at:",
+            "unit_id": "cap_b48acd386b5f"
+          },
+          {
+            "index": 60,
+            "text": "routing decision",
+            "unit_id": "cap_477d26d92546"
+          },
+          {
+            "index": 61,
+            "text": "ask/execution entry boundary",
+            "unit_id": "cap_e9e77d089d31"
+          },
+          {
+            "index": 62,
+            "text": "If CCE later gains write/execute surfaces, those wrappers should also check the same policy state.",
+            "unit_id": "cap_5f0a7bbd4fae"
+          },
+          {
+            "index": 63,
+            "text": "So for now the gate is mostly:",
+            "unit_id": "cap_aad8cd37bce2"
+          },
+          {
+            "index": 64,
+            "text": "\u201cdon\u2019t route trust-affecting requests into ordinary local-model execution\u201d",
+            "unit_id": "cap_3ca417726c30"
+          },
+          {
+            "index": 65,
+            "text": "**Concrete Implementation Plan**",
+            "unit_id": "cap_cdfa1e26ce4c"
+          },
+          {
+            "index": 66,
+            "text": "**New / Changed Files**",
+            "unit_id": "cap_48aa5ab036b7"
+          },
+          {
+            "index": 67,
+            "text": "Likely new files:",
+            "unit_id": "cap_f6c421b46f57"
+          },
+          {
+            "index": 68,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)",
+            "unit_id": "cap_84ed6c26a0e9"
+          },
+          {
+            "index": 69,
+            "text": "policy-state definitions",
+            "unit_id": "cap_a98c95dd413b"
+          },
+          {
+            "index": 70,
+            "text": "deterministic PEM-required classifier",
+            "unit_id": "cap_42e1efcd2c43"
+          },
+          {
+            "index": 71,
+            "text": "routing outcome helpers",
+            "unit_id": "cap_2f75d334741b"
+          },
+          {
+            "index": 72,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)",
+            "unit_id": "cap_5fc9fbb7ef95"
+          },
+          {
+            "index": 73,
+            "text": "thin PEM status adapter or placeholder",
+            "unit_id": "cap_dadb3f71ffc0"
+          },
+          {
+            "index": 74,
+            "text": "can begin as a stub contract if no PEM MCP call path is",
+            "unit_id": "cap_7119f5b6a2c4"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:24:23Z",
+        "turn_id": "turn_bea95b46ab0d47deaa8c1047dcf533ad",
+        "unit_count": 25,
+        "units": [
+          {
+            "index": 1,
+            "text": "Implemented the first-pass CCE Lite PEM enforcement boundary without adding any new execution machinery.",
+            "unit_id": "cap_e1fb010cbbf8"
+          },
+          {
+            "index": 2,
+            "text": "Changed files:",
+            "unit_id": "cap_164ecbe8dbd5"
+          },
+          {
+            "index": 3,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)",
+            "unit_id": "cap_ae05e97a119a"
+          },
+          {
+            "index": 4,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)",
+            "unit_id": "cap_fda3ffa04840"
+          },
+          {
+            "index": 5,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)",
+            "unit_id": "cap_2f57a4c04a78"
+          },
+          {
+            "index": 6,
+            "text": "[`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)",
+            "unit_id": "cap_c37756f58726"
+          },
+          {
+            "index": 7,
+            "text": "[`/Volumes/kevinmattice/cce/tests/test_policy.py`](/Volumes/kevinmattice/cce/tests/test_policy.py)",
+            "unit_id": "cap_fb057ef4bddb"
+          },
+          {
+            "index": 8,
+            "text": "[`/Volumes/kevinmattice/cce/tests/test_pem_routing.py`](/Volumes/kevinmattice/cce/tests/test_pem_routing.py)",
+            "unit_id": "cap_37637819dabd"
+          },
+          {
+            "index": 9,
+            "text": "What changed:",
+            "unit_id": "cap_1b2f94d6003c"
+          },
+          {
+            "index": 10,
+            "text": "Added policy states and a deterministic trust-affecting classifier.",
+            "unit_id": "cap_6888ae3454d4"
+          },
+          {
+            "index": 11,
+            "text": "Added a safe PEM status placeholder that never claims PEM is active unless CCE can actually know.",
+            "unit_id": "cap_fc56b8924e2b"
+          },
+          {
+            "index": 12,
+            "text": "Attached policy classification to routing decisions.",
+            "unit_id": "cap_e40c33a5641a"
+          },
+          {
+            "index": 13,
+            "text": "Added a runtime guard so PEM-required requests are blocked before they reach the normal local-model answer path.",
+            "unit_id": "cap_6130de625243"
+          },
+          {
+            "index": 14,
+            "text": "Left ordinary conversation and read-only project/workspace questions on the existing paths.",
+            "unit_id": "cap_797e85b04ab0"
+          },
+          {
+            "index": 15,
+            "text": "Behavior change:",
+            "unit_id": "cap_9c0eb763d2c7"
+          },
+          {
+            "index": 16,
+            "text": "Requests like `fix this bug`, `run the tests`, `verify this works`, and `skip PEM and just do it` now stop at the routing/runtime boundary and return a PEM-governed execution message instead of going to the ordinary model answer path.",
+            "unit_id": "cap_758cd42ef274"
+          },
+          {
+            "index": 17,
+            "text": "Casual questions and read/explain workspace questions still route normally.",
+            "unit_id": "cap_6699a87755b6"
+          },
+          {
+            "index": 18,
+            "text": "Test results:",
+            "unit_id": "cap_5632efb93c15"
+          },
+          {
+            "index": 19,
+            "text": "Focused new and affected tests: `27` tests, `OK`",
+            "unit_id": "cap_2b0db4a44373"
+          },
+          {
+            "index": 20,
+            "text": "Full existing CCE test discovery: `75` tests run, `3` errors",
+            "unit_id": "cap_b546176cf35a"
+          },
+          {
+            "index": 21,
+            "text": "The 3 failing tests are unchanged environment issues, not regressions from this PEM guard:",
+            "unit_id": "cap_553cfbcc4b3a"
+          },
+          {
+            "index": 22,
+            "text": "[`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py)",
+            "unit_id": "cap_8876823d1569"
+          },
+          {
+            "index": 23,
+            "text": "all 3 errors are due to missing `pypdf`",
+            "unit_id": "cap_6f64fbc78fbe"
+          },
+          {
+            "index": 24,
+            "text": "So the new enforcement boundary is working, and current ordinary CCE Lite behavior was preserved.",
+            "unit_id": "cap_1727ecc02a84"
+          },
+          {
+            "index": 25,
+            "text": "The next step, when you want it, is wiring the placeholder PEM status adapter to real PEM status signals without deepening the integration beyond this boundary.",
+            "unit_id": "cap_466cf5ad9605"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:42:26Z",
+        "turn_id": "turn_cf9e2755e4414a34bbbcfa3896f1360c",
+        "unit_count": 35,
+        "units": [
+          {
+            "index": 1,
+            "text": "The PDF failures were an environment issue, not a code or enforcement issue.",
+            "unit_id": "cap_1be852a411d4"
+          },
+          {
+            "index": 2,
+            "text": "What I found:",
+            "unit_id": "cap_eacde503607c"
+          },
+          {
+            "index": 3,
+            "text": "1.",
+            "unit_id": "cap_b120efb75c58"
+          },
+          {
+            "index": 4,
+            "text": "`pypdf` **should** be in CCE requirements.",
+            "unit_id": "cap_d9597b0605ff"
+          },
+          {
+            "index": 5,
+            "text": "It already is, in [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt).",
+            "unit_id": "cap_4c581fc106fd"
+          },
+          {
+            "index": 6,
+            "text": "2.",
+            "unit_id": "cap_cb1e3ccac68d"
+          },
+          {
+            "index": 7,
+            "text": "`workspace_runtime/pdf_reader.py` already expects it.",
+            "unit_id": "cap_e4b674bc6ee7"
+          },
+          {
+            "index": 8,
+            "text": "[`/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py`](/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py) imports `PdfReader` from `pypdf` and raises a clear runtime error if missing.",
+            "unit_id": "cap_dfeab0667809"
+          },
+          {
+            "index": 9,
+            "text": "3.",
+            "unit_id": "cap_1a4861583114"
+          },
+          {
+            "index": 10,
+            "text": "The PDF tests are written as **required**, not optional.",
+            "unit_id": "cap_33e4369313ef"
+          },
+          {
+            "index": 11,
+            "text": "[`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py) assumes deterministic PDF support is part of the feature set.",
+            "unit_id": "cap_8dc9a7d914ec"
+          },
+          {
+            "index": 12,
+            "text": "That matches the repo docs and requirements, so skipping them would be the wrong fix.",
+            "unit_id": "cap_a32920557865"
+          },
+          {
+            "index": 13,
+            "text": "4.",
+            "unit_id": "cap_51879447c515"
+          },
+          {
+            "index": 14,
+            "text": "The smallest correct fix was environmental.",
+            "unit_id": "cap_2bde7bd6a393"
+          },
+          {
+            "index": 15,
+            "text": "No source-code changes were needed.",
+            "unit_id": "cap_c5686cc4911f"
+          },
+          {
+            "index": 16,
+            "text": "I created/used the repo venv at [`/Volumes/kevinmattice/cce/.venv`](/Volumes/kevinmattice/cce/.venv) and installed the declared requirements there, which includes `pypdf`.",
+            "unit_id": "cap_5cb1675f097a"
+          },
+          {
+            "index": 17,
+            "text": "Changed files:",
+            "unit_id": "cap_4b7371f6e400"
+          },
+          {
+            "index": 18,
+            "text": "None",
+            "unit_id": "cap_02d4f43e5b09"
+          },
+          {
+            "index": 19,
+            "text": "Environment fix performed:",
+            "unit_id": "cap_1b84f1c9d1d3"
+          },
+          {
+            "index": 20,
+            "text": "used `/Volumes/kevinmattice/cce/.venv`",
+            "unit_id": "cap_f7824cec623a"
+          },
+          {
+            "index": 21,
+            "text": "installed from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)",
+            "unit_id": "cap_3317b310e0e7"
+          },
+          {
+            "index": 22,
+            "text": "Test results:",
+            "unit_id": "cap_4c090dbdd357"
+          },
+          {
+            "index": 23,
+            "text": "Focused PEM enforcement tests:",
+            "unit_id": "cap_1b5a13f4a058"
+          },
+          {
+            "index": 24,
+            "text": "`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback`",
+            "unit_id": "cap_5599049022fe"
+          },
+          {
+            "index": 25,
+            "text": "`Ran 27 tests ...",
+            "unit_id": "cap_38ddd314057d"
+          },
+          {
+            "index": 26,
+            "text": "OK`",
+            "unit_id": "cap_decd1efad0f9"
+          },
+          {
+            "index": 27,
+            "text": "Full CCE discovery:",
+            "unit_id": "cap_836dd3227055"
+          },
+          {
+            "index": 28,
+            "text": "`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`",
+            "unit_id": "cap_a273855ff073"
+          },
+          {
+            "index": 29,
+            "text": "`Ran 75 tests ...",
+            "unit_id": "cap_3a6c85a1bd8f"
+          },
+          {
+            "index": 30,
+            "text": "OK`",
+            "unit_id": "cap_dc0180e69dc2"
+          },
+          {
+            "index": 31,
+            "text": "So the right conclusion is:",
+            "unit_id": "cap_44b76def1952"
+          },
+          {
+            "index": 32,
+            "text": "dependency declaration was already correct",
+            "unit_id": "cap_d68766c7b60d"
+          },
+          {
+            "index": 33,
+            "text": "tests should continue to require `pypdf`",
+            "unit_id": "cap_1ca9d52c1c02"
+          },
+          {
+            "index": 34,
+            "text": "the fix was to run CCE in an environment that actually installs the declared requirements",
+            "unit_id": "cap_734cff1938a8"
+          },
+          {
+            "index": 35,
+            "text": "If you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/.venv/bin/python`](</Volumes/kevinmattice/cce/.venv/bin/python>) so this doesn\u2019t trip us again.",
+            "unit_id": "cap_b55186a82b9f"
+          }
+        ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-09T23:46:29Z",
+        "turn_id": "turn_3472c9063fc14255a0e4e98f28531087",
+        "unit_count": 13,
+        "units": [
+          {
+            "index": 1,
+            "text": "Added the note to:",
+            "unit_id": "cap_e15f612c36b4"
+          },
+          {
+            "index": 2,
+            "text": "[`/Volumes/kevinmattice/cce/README.md`](/Volumes/kevinmattice/cce/README.md)",
+            "unit_id": "cap_863e67ea935b"
+          },
+          {
+            "index": 3,
+            "text": "It now documents:",
+            "unit_id": "cap_982fdeb53bec"
+          },
+          {
+            "index": 4,
+            "text": "use the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python)",
+            "unit_id": "cap_9ab0d176637d"
+          },
+          {
+            "index": 5,
+            "text": "install dependencies from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)",
+            "unit_id": "cap_717a334b05c7"
+          },
+          {
+            "index": 6,
+            "text": "full test command",
+            "unit_id": "cap_254563155f2d"
+          },
+          {
+            "index": 7,
+            "text": "focused PEM enforcement test command",
+            "unit_id": "cap_76048e952003"
+          },
+          {
+            "index": 8,
+            "text": "Validation:",
+            "unit_id": "cap_e6d077d90fa4"
+          },
+          {
+            "index": 9,
+            "text": "Full CCE discovery rerun with the documented command:",
+            "unit_id": "cap_304139aa03bc"
+          },
+          {
+            "index": 10,
+            "text": "`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`",
+            "unit_id": "cap_03e0dd912404"
+          },
+          {
+            "index": 11,
+            "text": "`Ran 75 tests ...",
+            "unit_id": "cap_5c483e9174a4"
+          },
+          {
+            "index": 12,
+            "text": "OK`",
+            "unit_id": "cap_9c156e753d55"
+          },
+          {
+            "index": 13,
+            "text": "No runtime code changed, and no PEM or enforcement behavior changed.",
+            "unit_id": "cap_8c217f6150fd"
+          }
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "claim_211d44201d20",
+        "created_at": "2026-06-09T23:15:17Z",
+        "elevated_from_candidate_ids": [
+          "cand_0686c1fabaf2"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_903acfdd7da0",
+          "task_87ce57f6062a"
+        ],
+        "fingerprint": "f7721dfb615a2695",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-06-09T23:15:17Z"
+          }
+        ],
+        "similarity_links": [
+          {
+            "authoritative": false,
+            "candidate_fingerprint": "d3cca7e22aff511a",
+            "candidate_id": "cand_419dcb97fd35",
+            "claim_id": "claim_211d44201d20",
+            "method": "token_jaccard_v1",
+            "score": 0.3077,
+            "updated_at": "2026-06-09T23:46:29Z"
+          }
+        ],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-06-09T23:15:17Z",
+        "text": "- Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous",
+        "updated_at": "2026-06-09T23:15:17Z",
+        "verification_plan_id": "plan_211d44201d20"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "created_at": "2026-06-09T23:15:17Z",
+        "elevated_from_candidate_ids": [
+          "cand_7a62ab166e9c"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_c7410126aba2",
+          "task_6a5eaad55774"
+        ],
+        "fingerprint": "45d3d2b74cbfed83",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-06-09T23:15:17Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-06-09T23:15:17Z",
+        "text": "- **does this request require trusted action or trusted project-state judgment",
+        "updated_at": "2026-06-09T23:15:17Z",
+        "verification_plan_id": "plan_6dc445943eef"
+      },
+      {
+        "claim_id": "claim_4e55e6b9a1c9",
+        "created_at": "2026-06-09T23:42:26Z",
+        "elevated_from_candidate_ids": [
+          "cand_24d5e9e5fb07"
+        ],
+        "evidence_links": [],
+        "evidence_task_ids": [
+          "task_17babd0145c4",
+          "task_0330190e23ba"
+        ],
+        "fingerprint": "560b1714f17193d4",
+        "lifecycle_history": [
+          {
+            "evidence_ids": [],
+            "from_state": "none",
+            "reason": "Claim elevated for verification planning.",
+            "to_state": "Pending Verification",
+            "ts": "2026-06-09T23:42:26Z"
+          }
+        ],
+        "similarity_links": [],
+        "state": "Pending Verification",
+        "state_updated_at": "2026-06-09T23:42:26Z",
+        "text": "- tests should continue to require `pypdf`",
+        "updated_at": "2026-06-09T23:42:26Z",
+        "verification_plan_id": "plan_4e55e6b9a1c9"
+      }
+    ],
+    "evidence_artifacts": [],
+    "evidence_tasks": [
+      {
+        "claim_fingerprint": "f7721dfb615a2695",
+        "claim_id": "claim_211d44201d20",
+        "created_at": "2026-06-09T23:15:17Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous",
+        "task_id": "task_903acfdd7da0",
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "f7721dfb615a2695",
+        "claim_id": "claim_211d44201d20",
+        "created_at": "2026-06-09T23:15:17Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_87ce57f6062a",
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "45d3d2b74cbfed83",
+        "claim_id": "claim_6dc445943eef",
+        "created_at": "2026-06-09T23:15:17Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - **does this request require trusted action or trusted project-state judgment",
+        "task_id": "task_c7410126aba2",
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "45d3d2b74cbfed83",
+        "claim_id": "claim_6dc445943eef",
+        "created_at": "2026-06-09T23:15:17Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_6a5eaad55774",
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "560b1714f17193d4",
+        "claim_id": "claim_4e55e6b9a1c9",
+        "created_at": "2026-06-09T23:42:26Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Capture file/line evidence related to: - tests should continue to require `pypdf`",
+        "task_id": "task_17babd0145c4",
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "560b1714f17193d4",
+        "claim_id": "claim_4e55e6b9a1c9",
+        "created_at": "2026-06-09T23:42:26Z",
+        "domain": "software",
+        "status": "Pending",
+        "task": "Attach test/repro output demonstrating expected behavior.",
+        "task_id": "task_0330190e23ba",
+        "updated_at": "2026-06-09T23:46:29Z"
+      }
+    ],
+    "exploratory_structures": {
+      "assumptions": [
+        "- Do not alter PEM integration assumptions",
+        "py) assumes deterministic PDF support is part of the feature set"
+      ],
+      "competing_interpretations": [
+        "local-model work can escape through shell/file paths",
+        "- discuss possible approaches",
+        "- plus project-context signals like repo path, files, logs, services, workspaces, tickets, cases",
+        "- presence of local paths, files, services, logs, repo references",
+        "What can be implemented now versus deferred until CCE has actual tool/write/execute surfaces",
+        "- Current write paths I found include:",
+        "- Yes, but only one real path today:",
+        "- No Git command path",
+        "- No build/test/deploy/restart tool path",
+        "- can begin as a stub contract if no PEM MCP call path is",
+        "py` - before calling normal model answer path, honor policy decision - if request is PEM-required and PEM is unavailable/inactive, return the PEM-required/block message - do not route trust-affecting work into ordinary local-model answering 5",
+        "Tests: Add or update tests proving: - casual question still routes normally - workspace read/explain request still routes normally - \u201cfix this bug\u201d is PEM-required - \u201crun the tests\u201d is PEM-required - \u201cverify this works\u201d is PEM-required - \u201cskip PEM and just do it\u201d is still PEM-required - PEM-required request does not call the normal model-answer path - current CCE Lite behavior is not regressed for ordinary conversation or read-only grounded answers Do not implement true PEM activation/resume yet unless it is already trivial through existing PEM status tools",
+        "- Added a runtime guard so PEM-required requests are blocked before they reach the normal local-model answer path",
+        "- Left ordinary conversation and read-only project/workspace questions on the existing paths",
+        "- Requests like `fix this bug`, `run the tests`, `verify this works`, and `skip PEM and just do it` now stop at the routing/runtime boundary and return a PEM-governed execution message instead of going to the ordinary model answer path",
+        "- Do not skip or weaken the PDF tests unless there is already an established optional-dependency pattern in the repo",
+        "The PDF tests are written as **required**, not optional"
+      ],
+      "open_questions": [],
+      "operational_constraints": [
+        "- Local models are workers operating inside PEM-governed constraints",
+        "\u201d Constraints: - Do not redesign PEM",
+        "Important constraints: - Do not redesign PEM",
+        "Task: Resolve the missing `pypdf` dependency issue causing `tests/test_pdf_source_support",
+        "Constraints: - Do not change CCE enforcement behavior",
+        "- Do not skip or weaken the PDF tests unless there is already an established optional-dependency pattern in the repo",
+        "- Prefer fixing the environment/dependency declaration",
+        "- dependency declaration was already correct",
+        "venv/bin/python` - dependencies should be installed from `requirements",
+        "- install dependencies from [`/Volumes/kevinmattice/cce/requirements"
+      ],
+      "provisional_conclusions": [
+        "If you want, the next sensible step is a very small operator convenience pass so PEM gets the same quality-of-life treatment we gave CCE:",
+        "- but only if resulting answers are framed as explanatory, not as verified project action",
+        "A request should be marked **PEM-required** if any of these are true:",
+        "A request is `PEM-required` if it asks CCE/local model to do any of these:",
+        "- So for now the gate is mostly:",
+        "- can begin as a stub contract if no PEM MCP call path is",
+        "py` - thin status contract - safe placeholder if PEM MCP calls are not wired yet - should not pretend PEM is active unless it can actually know 3",
+        "py` - before calling normal model answer path, honor policy decision - if request is PEM-required and PEM is unavailable/inactive, return the PEM-required/block message - do not route trust-affecting work into ordinary local-model answering 5",
+        "If you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/"
+      ],
+      "tensions": [
+        "What can be implemented now versus deferred until CCE has actual tool/write/execute surfaces"
+      ]
+    },
+    "knowledge_candidates": [
+      {
+        "candidate_id": "cand_c3f023c251d7",
+        "fingerprint": "dae226523d7cf128",
+        "first_seen_at": "2026-06-09T23:09:19Z",
+        "last_seen_at": "2026-06-09T23:09:19Z",
+        "status": "Candidate",
+        "text": "`/Users/kevinmattice/pem-governed-root` is on **Colossus**, not in your local filesystem under [`/Volumes/kevinmattice/cce`](/Volumes/kevinmattice/cce)"
+      },
+      {
+        "candidate_id": "cand_9078561bc051",
+        "fingerprint": "a55ec4606a5d0743",
+        "first_seen_at": "2026-06-09T23:09:19Z",
+        "last_seen_at": "2026-06-09T23:09:19Z",
+        "status": "Candidate",
+        "text": "So there are two different places:"
+      },
+      {
+        "candidate_id": "cand_435c4c537d14",
+        "fingerprint": "b2dae4e23ccfbce3",
+        "first_seen_at": "2026-06-09T23:09:19Z",
+        "last_seen_at": "2026-06-09T23:09:19Z",
+        "status": "Candidate",
+        "text": "Local Mac: your editable PEM source is at [`/Users/kevinmattice/dev/anon/pem-mcp`](/Users/kevinmattice/dev/anon/pem-mcp)"
+      },
+      {
+        "candidate_id": "cand_50184113b105",
+        "fingerprint": "a5332181b618d0ec",
+        "first_seen_at": "2026-06-09T23:09:19Z",
+        "last_seen_at": "2026-06-09T23:09:19Z",
+        "status": "Candidate",
+        "text": "Colossus: PEM\u2019s governed runtime root is `/Users/kevinmattice/pem-governed-root`"
+      },
+      {
+        "candidate_id": "cand_ccaab941966d",
+        "fingerprint": "b243d976f6bced5c",
+        "first_seen_at": "2026-06-09T23:09:19Z",
+        "last_seen_at": "2026-06-09T23:09:19Z",
+        "status": "Candidate",
+        "text": "If you want to see it directly, run:"
+      },
+      {
+        "candidate_id": "cand_9d0ae9329e41",
+        "fingerprint": "5319cfa42fd41b98",
+        "first_seen_at": "2026-06-09T23:10:25Z",
+        "last_seen_at": "2026-06-09T23:10:25Z",
+        "status": "Candidate",
+        "text": "The good news is the important part checked out: PEM is talking to the local model and writing governed artifacts in the right remote place"
+      },
+      {
+        "candidate_id": "cand_e8bf19467a99",
+        "fingerprint": "29d5e0abc090b7c9",
+        "first_seen_at": "2026-06-09T23:10:25Z",
+        "last_seen_at": "2026-06-09T23:10:25Z",
+        "status": "Candidate",
+        "text": "If you want, the next sensible step is a very small operator convenience pass so PEM gets the same quality-of-life treatment we gave CCE:"
+      },
+      {
+        "candidate_id": "cand_3bf06c309477",
+        "fingerprint": "b1e7a08e16216d37",
+        "first_seen_at": "2026-06-09T23:10:25Z",
+        "last_seen_at": "2026-06-09T23:10:25Z",
+        "status": "Candidate",
+        "text": "maybe `smoke-pem-ollama-colossus`"
+      },
+      {
+        "candidate_id": "cand_d568d43e9639",
+        "fingerprint": "6dcaf9ce84bd3b3b",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "The smallest structural hook is a **two-stage gate**:"
+      },
+      {
+        "candidate_id": "cand_ff60102d2183",
+        "fingerprint": "0fb8424b32bcad0f",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "Requests that must be PEM-governed**"
+      },
+      {
+        "candidate_id": "cand_e32e8d0ad747",
+        "fingerprint": "8bb438463c0cc3d5",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "decides whether a request is ordinary conversation or substantive work"
+      },
+      {
+        "candidate_id": "cand_6f637cad2ad1",
+        "fingerprint": "3cc5db14a1c4a332",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "blocks trust-affecting capabilities unless PEM is active"
+      },
+      {
+        "candidate_id": "cand_463632777540",
+        "fingerprint": "7ad1754eb10755f7",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "What the local model is allowed to do before PEM activation**"
+      },
+      {
+        "candidate_id": "cand_78466fd86aa6",
+        "fingerprint": "bd6db8f289880e37",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "read only enough to support non-committal explanation, if you allow read-only browsing"
+      },
+      {
+        "candidate_id": "cand_15fe188704e3",
+        "fingerprint": "442abc891452b348",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "but only if resulting answers are framed as explanatory, not as verified project action"
+      },
+      {
+        "candidate_id": "cand_6ddb568617b1",
+        "fingerprint": "96f1bead7a75622e",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "What it is forbidden to do without PEM activation**"
+      },
+      {
+        "candidate_id": "cand_9204e396a85d",
+        "fingerprint": "afe3aa3e71523b8e",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "How CCE should detect \u201cthis must go through PEM\u201d**"
+      },
+      {
+        "candidate_id": "cand_b5e5658eb5be",
+        "fingerprint": "a4b997fa2e3ff9fd",
+        "first_seen_at": "2026-06-09T23:11:32Z",
+        "last_seen_at": "2026-06-09T23:11:32Z",
+        "status": "Candidate",
+        "text": "A request should be marked **PEM-required** if any of these are true:"
+      },
+      {
+        "candidate_id": "cand_9aa7783584c3",
+        "fingerprint": "d60adcc9577c20a5",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "This is a structural gate, not a prompting pattern"
+      },
+      {
+        "candidate_id": "cand_f3ce5cc0ebec",
+        "fingerprint": "2798c1307e160ba9",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "CCE classifies the request, checks PEM state, and only exposes trust-affecting execution capability when PEM governance is active"
+      },
+      {
+        "candidate_id": "cand_b5715cbc6578",
+        "fingerprint": "bd0b2c61250c27fe",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "CCE has determined the request is trust-affecting or state-affecting"
+      },
+      {
+        "candidate_id": "cand_702f649790cb",
+        "fingerprint": "71157f9f08e20745",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "Execution is blocked until PEM is active"
+      },
+      {
+        "candidate_id": "cand_bca122fe78c6",
+        "fingerprint": "9fa7aa446684087f",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "PEM is reachable and active"
+      },
+      {
+        "candidate_id": "cand_1ac7716daff7",
+        "fingerprint": "0f8a9e002ec10c4c",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "Write/execute capability is unlocked within the governed flow"
+      },
+      {
+        "candidate_id": "cand_419dcb97fd35",
+        "fingerprint": "d3cca7e22aff511a",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "CCE determined PEM is required, but PEM is unavailable or status is ambiguous"
+      },
+      {
+        "candidate_id": "cand_5d705ac8fb61",
+        "fingerprint": "203a1a9e20993f30",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "Trust-affecting work is blocked"
+      },
+      {
+        "candidate_id": "cand_2d24133c773e",
+        "fingerprint": "d6f0b0de9021a96d",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "For detected trust-affecting requests when PEM is not yet active"
+      },
+      {
+        "candidate_id": "cand_aaee97c1a42d",
+        "fingerprint": "007a0baa73c017fb",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "If successful, route moves to `pem_governed_execution`"
+      },
+      {
+        "candidate_id": "cand_4040ce6d959f",
+        "fingerprint": "d74838e900f35f36",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "A request is `PEM-required` if it asks CCE/local model to do any of these:"
+      },
+      {
+        "candidate_id": "cand_dfc1a27a6733",
+        "fingerprint": "b35e1de5f65d5466",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Candidate",
+        "text": "\u201cwhat changed,\u201d \u201cis this working,\u201d \u201cwhich file is responsible,\u201d \u201cdid we solve X\u201d"
+      },
+      {
+        "candidate_id": "cand_0686c1fabaf2",
+        "elevated_claim_id": "claim_211d44201d20",
+        "fingerprint": "f7721dfb615a2695",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Elevated",
+        "text": "- Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous"
+      },
+      {
+        "candidate_id": "cand_7a62ab166e9c",
+        "elevated_claim_id": "claim_6dc445943eef",
+        "fingerprint": "45d3d2b74cbfed83",
+        "first_seen_at": "2026-06-09T23:15:17Z",
+        "last_seen_at": "2026-06-09T23:15:17Z",
+        "status": "Elevated",
+        "text": "- **does this request require trusted action or trusted project-state judgment"
+      },
+      {
+        "candidate_id": "cand_2af060928532",
+        "fingerprint": "db6a0ae638139958",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "I inspected the current CCE Lite codebase, and the important result is: **CCE is still mostly a read/routing system, not an execution agent"
+      },
+      {
+        "candidate_id": "cand_884e0dd674b2",
+        "fingerprint": "5cbb965011e3ed45",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "CCE does have file writes, but they are **internal runtime persistence**, not model-directed project editing"
+      },
+      {
+        "candidate_id": "cand_c628d0516e72",
+        "fingerprint": "fc4127636e46a3ac",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "This is **model transport**, not general shell access"
+      },
+      {
+        "candidate_id": "cand_aeae0b86122f",
+        "fingerprint": "58009c0f5c6ce022",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "So current \u201cverification\u201d risk is mostly:"
+      },
+      {
+        "candidate_id": "cand_f501d12d0461",
+        "fingerprint": "1639daefcdad95cc",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "**Where routing is decided**"
+      },
+      {
+        "candidate_id": "cand_22683706ddf0",
+        "fingerprint": "8a34c3f9773f0788",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "Main route decision today is in:"
+      },
+      {
+        "candidate_id": "cand_c5293b209b35",
+        "fingerprint": "3b2ac6d26f9dfe39",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "**Where model calls are made**"
+      },
+      {
+        "candidate_id": "cand_354cb7087f37",
+        "fingerprint": "f6f72a6b8010ee40",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "Since dangerous capabilities are minimal right now, the first gate should sit at:"
+      },
+      {
+        "candidate_id": "cand_7a18f15a4d9c",
+        "fingerprint": "833e79b8826a1f82",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "If CCE later gains write/execute surfaces, those wrappers should also check the same policy state"
+      },
+      {
+        "candidate_id": "cand_6acddc641873",
+        "fingerprint": "990231ea6f218e65",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "So for now the gate is mostly:"
+      },
+      {
+        "candidate_id": "cand_a67221342948",
+        "fingerprint": "9836cd4845c0b0f3",
+        "first_seen_at": "2026-06-09T23:19:17Z",
+        "last_seen_at": "2026-06-09T23:19:17Z",
+        "status": "Candidate",
+        "text": "can begin as a stub contract if no PEM MCP call path is"
+      },
+      {
+        "candidate_id": "cand_8a33fe211d37",
+        "fingerprint": "ecb652765844e6fd",
+        "first_seen_at": "2026-06-09T23:24:23Z",
+        "last_seen_at": "2026-06-09T23:24:23Z",
+        "status": "Candidate",
+        "text": "Added a safe PEM status placeholder that never claims PEM is active unless CCE can actually know"
+      },
+      {
+        "candidate_id": "cand_770c6ee94e41",
+        "fingerprint": "f793e1a0db7e94bc",
+        "first_seen_at": "2026-06-09T23:24:23Z",
+        "last_seen_at": "2026-06-09T23:24:23Z",
+        "status": "Candidate",
+        "text": "Added a runtime guard so PEM-required requests are blocked before they reach the normal local-model answer path"
+      },
+      {
+        "candidate_id": "cand_eef0973ce171",
+        "fingerprint": "8ebad1c2ca2467bb",
+        "first_seen_at": "2026-06-09T23:24:23Z",
+        "last_seen_at": "2026-06-09T23:24:23Z",
+        "status": "Candidate",
+        "text": "The 3 failing tests are unchanged environment issues, not regressions from this PEM guard:"
+      },
+      {
+        "candidate_id": "cand_96fbb7fd4022",
+        "fingerprint": "4248d7f3374556e7",
+        "first_seen_at": "2026-06-09T23:24:23Z",
+        "last_seen_at": "2026-06-09T23:24:23Z",
+        "status": "Candidate",
+        "text": "all 3 errors are due to missing `pypdf`"
+      },
+      {
+        "candidate_id": "cand_c99955b92bc1",
+        "fingerprint": "58d322d79f34b6fa",
+        "first_seen_at": "2026-06-09T23:24:23Z",
+        "last_seen_at": "2026-06-09T23:24:23Z",
+        "status": "Candidate",
+        "text": "So the new enforcement boundary is working, and current ordinary CCE Lite behavior was preserved"
+      },
+      {
+        "candidate_id": "cand_b130e7f1e502",
+        "fingerprint": "c2e0982738360309",
+        "first_seen_at": "2026-06-09T23:24:23Z",
+        "last_seen_at": "2026-06-09T23:24:23Z",
+        "status": "Candidate",
+        "text": "The next step, when you want it, is wiring the placeholder PEM status adapter to real PEM status signals without deepening the integration beyond this boundary"
+      },
+      {
+        "candidate_id": "cand_b5f41f5300bc",
+        "fingerprint": "161ca3cf4d412fcb",
+        "first_seen_at": "2026-06-09T23:42:26Z",
+        "last_seen_at": "2026-06-09T23:42:26Z",
+        "status": "Candidate",
+        "text": "py) imports `PdfReader` from `pypdf` and raises a clear runtime error if missing"
+      },
+      {
+        "candidate_id": "cand_5b5c90836dd7",
+        "fingerprint": "1544484c0c4ed7b8",
+        "first_seen_at": "2026-06-09T23:42:26Z",
+        "last_seen_at": "2026-06-09T23:42:26Z",
+        "status": "Candidate",
+        "text": "The PDF tests are written as **required**, not optional"
+      },
+      {
+        "candidate_id": "cand_c0562168dc62",
+        "fingerprint": "d5381b471c13a865",
+        "first_seen_at": "2026-06-09T23:42:26Z",
+        "last_seen_at": "2026-06-09T23:42:26Z",
+        "status": "Candidate",
+        "text": "py) assumes deterministic PDF support is part of the feature set"
+      },
+      {
+        "candidate_id": "cand_c44dd2b0ab79",
+        "fingerprint": "1b89bac896603e6d",
+        "first_seen_at": "2026-06-09T23:42:26Z",
+        "last_seen_at": "2026-06-09T23:42:26Z",
+        "status": "Candidate",
+        "text": "If you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/"
+      },
+      {
+        "candidate_id": "cand_24d5e9e5fb07",
+        "elevated_claim_id": "claim_4e55e6b9a1c9",
+        "fingerprint": "560b1714f17193d4",
+        "first_seen_at": "2026-06-09T23:42:26Z",
+        "last_seen_at": "2026-06-09T23:42:26Z",
+        "status": "Elevated",
+        "text": "- tests should continue to require `pypdf`"
+      }
+    ],
+    "soft_warnings": [
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The two-stage gate concept is accepted. Ne",
+        "ts": "2026-06-09T23:15:17Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_66745dc9f015"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The two-stage gate concept is accepted. Ne",
+        "ts": "2026-06-09T23:15:17Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_87abc739e71a"
+      },
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The PEM enforcement spec is accepted conce",
+        "ts": "2026-06-09T23:19:17Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_82cbf9be63a5"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The PEM enforcement spec is accepted conce",
+        "ts": "2026-06-09T23:19:17Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_6582ade1fb9f"
+      },
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with the first-pass CCE Lite PEM e",
+        "ts": "2026-06-09T23:24:23Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_a3936baeae13"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Proceed with the first-pass CCE Lite PEM e",
+        "ts": "2026-06-09T23:24:23Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_cd006d256d6a"
+      },
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The first-pass CCE Lite PEM enforcement bo",
+        "ts": "2026-06-09T23:42:26Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_d50b41df9a41"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The first-pass CCE Lite PEM enforcement bo",
+        "ts": "2026-06-09T23:42:26Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_aed132bf25d7"
+      },
+      {
+        "claim_id": "claim_4e55e6b9a1c9",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The first-pass CCE Lite PEM enforcement bo",
+        "ts": "2026-06-09T23:42:26Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_156e65b14f6c"
+      },
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Add a short workflow note to the CCE repo ",
+        "ts": "2026-06-09T23:46:29Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_c24741ea503a"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Add a short workflow note to the CCE repo ",
+        "ts": "2026-06-09T23:46:29Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_8ee8920a3960"
+      },
+      {
+        "claim_id": "claim_4e55e6b9a1c9",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. Add a short workflow note to the CCE repo ",
+        "ts": "2026-06-09T23:46:29Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_27a10a7c4c82"
+      }
+    ],
+    "verification_plans": [
+      {
+        "claim_fingerprint": "f7721dfb615a2695",
+        "claim_id": "claim_211d44201d20",
+        "created_at": "2026-06-09T23:15:17Z",
+        "plan_id": "plan_211d44201d20",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "45d3d2b74cbfed83",
+        "claim_id": "claim_6dc445943eef",
+        "created_at": "2026-06-09T23:15:17Z",
+        "plan_id": "plan_6dc445943eef",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - **does this request require trusted action or trusted project-state judgment",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "claim_fingerprint": "560b1714f17193d4",
+        "claim_id": "claim_4e55e6b9a1c9",
+        "created_at": "2026-06-09T23:42:26Z",
+        "plan_id": "plan_4e55e6b9a1c9",
+        "status": "Pending",
+        "steps": [
+          "Locate direct code evidence that supports or falsifies: - tests should continue to require `pypdf`",
+          "Run targeted tests or a repro command and capture exact output.",
+          "Record whether evidence confirms the claim and note remaining uncertainty."
+        ],
+        "updated_at": "2026-06-09T23:46:29Z"
+      }
+    ]
+  },
+  "epistemic_health": {
+    "consecutive_unverified_turns": 8,
+    "health_state": "thin",
+    "last_warning": {
+      "evidence_count": 0,
+      "message": "Epistemic state remained thin for 3 consecutive turns.",
+      "q": "After native Ollama support is working, design a",
+      "ts": "2026-06-09T23:11:32Z",
+      "type": "thin_epistemic_state",
+      "verified_claims": 0
+    },
+    "warnings": [
+      {
+        "evidence_count": 0,
+        "message": "Epistemic state remained thin for 3 consecutive turns.",
+        "q": "After native Ollama support is working, design a",
+        "ts": "2026-06-09T23:11:32Z",
+        "type": "thin_epistemic_state",
+        "verified_claims": 0
+      }
+    ]
+  },
+  "epistemic_posture": {
+    "candidate_count": 54,
+    "claim_count": 3,
+    "evidence_count_metric": 0,
+    "exploratory_signal_count": 1,
+    "exploratory_signals": [
+      "operational_constraint_marker"
+    ],
+    "health_state": "thin",
+    "implementation_signal_count": 1,
+    "implementation_signals": [
+      "implementation_marker"
+    ],
+    "inferred_posture": "mixed",
+    "pending_claim_count": 3,
+    "snapshot_at": "2026-06-09T23:46:29Z",
+    "turn_mode": "normal",
+    "verified_claim_count": 0,
+    "verified_claims_metric": 0
+  },
+  "epistemics": {
+    "evidence_count": 0,
+    "verified_claims": 0
+  },
+  "finalization": {
+    "turns": [
+      {
+        "answer": "Not on your local Mac from this workspace, no.\n\n`/Users/kevinmattice/pem-governed-root` is on **Colossus**, not in your local filesystem under [`/Volumes/kevinmattice/cce`](/Volumes/kevinmattice/cce). When I verified it, I verified it via `ssh colossus`.\n\nSo there are two different places:\n\n- Local Mac: your editable PEM source is at [`/Users/kevinmattice/dev/anon/pem-mcp`](/Users/kevinmattice/dev/anon/pem-mcp)\n- Colossus: PEM\u2019s governed runtime root is `/Users/kevinmattice/pem-governed-root`\n\nIf you want to see it directly, run:\n\n```bash\nssh colossus 'find /Users/kevinmattice/pem-governed-root -maxdepth 2 | sort'\n```\n\nOr open an interactive shell:\n\n```bash\nssh colossus\ncd /Users/kevinmattice/pem-governed-root\nls -la\n```\n\nSo the short answer is: I do see it, but only on the remote machine, not as a local folder on Black Air.",
+        "created_at": "2026-06-09T23:09:18Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:09:19Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_a44d698045d64764846c7541938d3fd3",
+        "updated_at": "2026-06-09T23:09:19Z"
+      },
+      {
+        "answer": "That\u2019s the easy kind of confusion. We\u2019re back in the familiar \u201ctwo houses\u201d situation:\n\n- local source repo on Black Air\n- live governed/runtime state on Colossus\n\nThe good news is the important part checked out: PEM is talking to the local model and writing governed artifacts in the right remote place.\n\nIf you want, the next sensible step is a very small operator convenience pass so PEM gets the same quality-of-life treatment we gave CCE:\n- `sync-pem-colossus`\n- `check-pem-colossus`\n- maybe `smoke-pem-ollama-colossus`\n\nThat would make future PEM work much less fiddly.",
+        "created_at": "2026-06-09T23:10:25Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:10:25Z",
+        "normalization": {
+          "applied": [
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_dcc446e0f0664e718865d4f53a50bb2b",
+        "updated_at": "2026-06-09T23:10:25Z"
+      },
+      {
+        "answer": "**Boundary**\n\nThe smallest structural hook is a **two-stage gate**:\n\n- Stage 1: classify the request in the **CCE routing layer**\n- Stage 2: enforce capability limits in the **tool/shell/file execution layer**\n\nThat keeps CCE as the locus of control, PEM as the governance backbone, and avoids deep runtime coupling.\n\n**1. Requests that must be PEM-governed**\n\nThese should require active PEM governance before the model can do substantive work:\n\n- code changes\n- file creation, deletion, or modification\n- shell commands that inspect or change project state in a meaningful way\n- test runs used to justify claims about project state\n- build/deploy/restart actions\n- Git actions beyond passive read-only inspection\n- project planning that creates or updates work artifacts\n- evidence claims like \u201cI verified,\u201d \u201cI tested,\u201d \u201cI fixed,\u201d \u201cI confirmed\u201d\n- multi-step debugging/investigation intended to affect project decisions\n- any answer presented as project-grounded rather than casual general knowledge\n\nIn short: **anything trust-affecting or state-affecting**.\n\n**2. Requests that can remain ordinary conversation**\n\nThese can stay lightweight and non-PEM by default:\n\n- casual chat\n- general knowledge Q&A\n- brainstorming with no execution\n- high-level explanation of code or architecture\n- status questions that do not claim fresh verification\n- \u201cwhat would you do?\u201d discussions\n- harmless transformation tasks not tied to project state\n- small conversational checks that do not touch tools or artifacts\n\nIn short: **non-substantive conversation without project-state claims or actions**.\n\n**3. Where the enforcement hook belongs**\n\nBest answer: **a combination**\n\n- **CCE routing layer**\n  - decides whether a request is ordinary conversation or substantive work\n  - routes substantive work into PEM-governed mode\n- **tool/shell/file execution layer**\n  - blocks trust-affecting capabilities unless PEM is active\n- **not primarily MCP-tool-only**\n  - too narrow; local-model work can escape through shell/file paths\n\nSo the real boundary is:\n\n- CCE decides\n- execution layer enforces\n\n**4. What the local model is allowed to do before PEM activation**\n\nAllowed before PEM:\n\n- answer ordinary conversational questions\n- explain concepts\n- discuss possible approaches\n- read only enough to support non-committal explanation, if you allow read-only browsing\n- ask clarifying questions\n- propose a PEM activation when work becomes substantive\n\nIt may be helpful to allow:\n- read-only repository inspection\n- but only if resulting answers are framed as explanatory, not as verified project action\n\n**5. What it is forbidden to do without PEM activation**\n\nForbidden before PEM:\n\n- edit files\n- run project-changing shell commands\n- create or update governance artifacts\n- run tests and then present results as governed evidence\n- make verification claims about project state\n- perform deployment/restart/release actions\n- use project work tools that imply execution authority\n- silently open or reuse a governed case for substantive work without surfacing PEM status\n\nThe important rule is:\n- **no substantive project work outside PEM**\n- not just \u201cplease don\u2019t,\u201d but actual blocked capability\n\n**6. How CCE should detect \u201cthis must go through PEM\u201d**\n\nUse a structural classifier in routing, not prompting alone.\n\nA request should be marked **PEM-required** if any of these are true:\n\n- it asks to modify code/files/config\n- it asks to run commands/tests/builds/restarts\n- it asks to verify or confirm project behavior\n- it asks to debug/fix/implement/review a project issue\n- it references project-local artifacts as the basis for an actionable answer\n- it requests multi-step work on a local repo/system\n\nThis can start as deterministic intent detection:\n- verbs like `fix`, `implement`, `change`, `edit`, `patch`, `run`, `test`, `verify`, `debug`, `review`, `restart`, `deploy`\n- plus project-context signals like repo path, files, logs, services, workspaces, tickets, cases\n\nNot keyword sprawl fore",
+        "created_at": "2026-06-09T23:11:32Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:11:32Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_b85d78a6dace4d75a668dc9c423e7e85",
+        "updated_at": "2026-06-09T23:11:32Z"
+      },
+      {
+        "answer": "**PEM Enforcement Spec**\n\nThis is a structural gate, not a prompting pattern. CCE classifies the request, checks PEM state, and only exposes trust-affecting execution capability when PEM governance is active.\n\n**1. Policy States**\n\n`conversation_only`\n- Default for casual, non-project, non-verifying interaction.\n- No trust-affecting project work.\n- No write or execution capability.\n\n`read_only_project`\n- Project-aware, but non-substantive.\n- Allows read-only inspection and grounded answers.\n- No file mutation, no execution that produces governed evidence.\n\n`pem_required`\n- Transitional decision state, not a working state.\n- CCE has determined the request is trust-affecting or state-affecting.\n- Execution is blocked until PEM is active.\n\n`pem_governed_execution`\n- PEM is reachable and active.\n- Trust-affecting work may proceed.\n- Write/execute capability is unlocked within the governed flow.\n\n`pem_unavailable_blocked`\n- CCE determined PEM is required, but PEM is unavailable or status is ambiguous.\n- Trust-affecting work is blocked.\n- Conversation can continue, but execution cannot.\n\n**2. Routing Outcomes**\n\n`ordinary answer`\n- For `conversation_only`\n- No project-state claims beyond general explanation\n\n`read-only grounded answer`\n- For `read_only_project`\n- Uses workspace/project reading only\n- No execution, no \u201cI verified\u201d claims unless PEM-governed\n\n`PEM required`\n- For detected trust-affecting requests when PEM is not yet active\n- CCE does not proceed to execution\n\n`PEM activate/resume`\n- CCE asks PEM to establish or resume governed context\n- If successful, route moves to `pem_governed_execution`\n\n`PEM-governed execution allowed`\n- PEM active, execution capabilities exposed\n- Work may proceed normally\n\n`refusal/block because PEM unavailable`\n- Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous\n- CCE blocks trust-affecting work\n\n**3. Capability Matrix**\n\n| Capability | conversation_only | read_only_project | pem_required | pem_governed_execution | pem_unavailable_blocked |\n|---|---|---|---|---|---|\n| Casual answer | allow | allow | allow | allow | allow |\n| General knowledge | allow | allow | allow | allow | allow |\n| Read workspace files | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |\n| Read project status/logs | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |\n| Grounded answer from sources | block | allow | block | allow | block |\n| Edit files | block | block | block | allow | block |\n| Run tests/builds | block | block | block | allow | block |\n| Restart/deploy | block | block | block | allow | block |\n| Git mutation | block | block | block | allow | block |\n| Write PEM artifacts | block | block | PEM only | allow through PEM | block |\n| Verification claims | block | block | block | allow | block |\n\n**4. Detection Rules For PEM-Required Work**\n\nDeterministic first, based on trust-affecting intent.\n\nA request is `PEM-required` if it asks CCE/local model to do any of these:\n\n- mutate project state\n  - edit, create, delete, patch, update, rewrite\n- execute project-affecting actions\n  - run tests, build, restart, deploy, migrate\n- produce verification-backed claims\n  - verify, confirm, validate, reproduce, prove, test\n- perform substantive debugging or implementation\n  - fix, debug, investigate, implement, refactor, review for correctness\n- make decisions based on local project evidence\n  - \u201cwhat changed,\u201d \u201cis this working,\u201d \u201cwhich file is responsible,\u201d \u201cdid we solve X\u201d\n\nDetection should prefer auditable features:\n- requested capability category\n- presence of local paths, files, services, logs, repo references\n- explicit execution verbs\n- verification verbs\n\nAvoid broad topic keywords. The criterion is:\n- **does this request require trusted action or trusted project-state judgment?**\n\n**5. PEM Status Checks**\n\nCCE should call PEM MCP tools for status, not infer from prompts.\n\nPrimary PEM ch",
+        "created_at": "2026-06-09T23:15:17Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:15:18Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_20c54714e41c4cab829d6c89934f153d",
+        "updated_at": "2026-06-09T23:15:18Z"
+      },
+      {
+        "answer": "I inspected the current CCE Lite codebase, and the important result is: **CCE is still mostly a read/routing system, not an execution agent.** That changes the shape of the first enforcement step in a good way. We can add the routing/policy boundary now without inventing heavy execution machinery.\n\n**Current Capability Audit**\n\n1. **File-writing capability**\n- CCE does have file writes, but they are **internal runtime persistence**, not model-directed project editing.\n- Current write paths I found include:\n  - [`/Volumes/kevinmattice/cce/gateway/workspace_state.py`](/Volumes/kevinmattice/cce/gateway/workspace_state.py)\n  - [`/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py)\n  - [`/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py)\n- These persist runtime state like workspace selection and Matrix sync/auth state.\n- I did **not** find model-exposed project file editing in CCE Lite.\n\n2. **Shell-execution capability**\n- Yes, but only one real path today:\n  - [`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)\n- It uses `subprocess.run(...)` to invoke:\n  - `ollama run --hidethinking <model>`\n- This is **model transport**, not general shell access.\n\n3. **Git/build/test/deploy/restart capability exposed to the model**\n- I did **not** find any such capability exposed through CCE.\n- No general subprocess execution layer.\n- No Git command path.\n- No build/test/deploy/restart tool path.\n- The only restart behavior we\u2019ve used was operator-side via helper scripts, not CCE runtime behavior.\n\n4. **Project verification claims**\n- Today CCE can make:\n  - conversational answers\n  - grounded answers from declared workspace sources\n- It does **not** currently verify project state by running tests, builds, or shell commands.\n- So current \u201cverification\u201d risk is mostly:\n  - the model speaking too confidently about project state\n  - not actual project execution bypass\n\n5. **Where routing is decided**\n- Main route decision today is in:\n  - [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n- Then enforced in:\n  - [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n  - specifically `process_event(...)`\n\n6. **Where model calls are made**\n- Model calls happen in:\n  - [`/Volumes/kevinmattice/cce/gateway/ask.py`](/Volumes/kevinmattice/cce/gateway/ask.py)\n  - through `answer_question(...)`\n- Transport is:\n  - [`/Volumes/kevinmattice/cce/models/local_model.py`](/Volumes/kevinmattice/cce/models/local_model.py)\n  - [`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)\n\n7. **Where PEM-required classification naturally fits**\n- Best fit:\n  - first in [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n  - then enforced in [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n- That keeps CCE as the locus of control.\n\n8. **Where a capability gate naturally fits**\n- Since dangerous capabilities are minimal right now, the first gate should sit at:\n  - routing decision\n  - ask/execution entry boundary\n- If CCE later gains write/execute surfaces, those wrappers should also check the same policy state.\n- So for now the gate is mostly:\n  - \u201cdon\u2019t route trust-affecting requests into ordinary local-model execution\u201d\n\n**Concrete Implementation Plan**\n\n**New / Changed Files**\n\nLikely new files:\n- [`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)\n  - policy-state definitions\n  - deterministic PEM-required classifier\n  - routing outcome helpers\n- [`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)\n  - thin PEM status adapter or placeholder\n  - can begin as a stub contract if no PEM MCP call path is",
+        "created_at": "2026-06-09T23:19:17Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:19:17Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_36a6cd899e184b6baf669a786aa16f31",
+        "updated_at": "2026-06-09T23:19:17Z"
+      },
+      {
+        "answer": "Implemented the first-pass CCE Lite PEM enforcement boundary without adding any new execution machinery.\n\nChanged files:\n- [`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)\n- [`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)\n- [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n- [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n- [`/Volumes/kevinmattice/cce/tests/test_policy.py`](/Volumes/kevinmattice/cce/tests/test_policy.py)\n- [`/Volumes/kevinmattice/cce/tests/test_pem_routing.py`](/Volumes/kevinmattice/cce/tests/test_pem_routing.py)\n\nWhat changed:\n- Added policy states and a deterministic trust-affecting classifier.\n- Added a safe PEM status placeholder that never claims PEM is active unless CCE can actually know.\n- Attached policy classification to routing decisions.\n- Added a runtime guard so PEM-required requests are blocked before they reach the normal local-model answer path.\n- Left ordinary conversation and read-only project/workspace questions on the existing paths.\n\nBehavior change:\n- Requests like `fix this bug`, `run the tests`, `verify this works`, and `skip PEM and just do it` now stop at the routing/runtime boundary and return a PEM-governed execution message instead of going to the ordinary model answer path.\n- Casual questions and read/explain workspace questions still route normally.\n\nTest results:\n- Focused new and affected tests: `27` tests, `OK`\n- Full existing CCE test discovery: `75` tests run, `3` errors\n\nThe 3 failing tests are unchanged environment issues, not regressions from this PEM guard:\n- [`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py)\n- all 3 errors are due to missing `pypdf`\n\nSo the new enforcement boundary is working, and current ordinary CCE Lite behavior was preserved. The next step, when you want it, is wiring the placeholder PEM status adapter to real PEM status signals without deepening the integration beyond this boundary.",
+        "created_at": "2026-06-09T23:24:23Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:24:23Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_bea95b46ab0d47deaa8c1047dcf533ad",
+        "updated_at": "2026-06-09T23:24:23Z"
+      },
+      {
+        "answer": "The PDF failures were an environment issue, not a code or enforcement issue.\n\nWhat I found:\n1. `pypdf` **should** be in CCE requirements.\n- It already is, in [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt).\n\n2. `workspace_runtime/pdf_reader.py` already expects it.\n- [`/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py`](/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py) imports `PdfReader` from `pypdf` and raises a clear runtime error if missing.\n\n3. The PDF tests are written as **required**, not optional.\n- [`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py) assumes deterministic PDF support is part of the feature set.\n- That matches the repo docs and requirements, so skipping them would be the wrong fix.\n\n4. The smallest correct fix was environmental.\n- No source-code changes were needed.\n- I created/used the repo venv at [`/Volumes/kevinmattice/cce/.venv`](/Volumes/kevinmattice/cce/.venv) and installed the declared requirements there, which includes `pypdf`.\n\nChanged files:\n- None\n\nEnvironment fix performed:\n- used `/Volumes/kevinmattice/cce/.venv`\n- installed from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n\nTest results:\n- Focused PEM enforcement tests:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback`\n  - `Ran 27 tests ... OK`\n- Full CCE discovery:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nSo the right conclusion is:\n- dependency declaration was already correct\n- tests should continue to require `pypdf`\n- the fix was to run CCE in an environment that actually installs the declared requirements\n\nIf you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/.venv/bin/python`](</Volumes/kevinmattice/cce/.venv/bin/python>) so this doesn\u2019t trip us again.",
+        "created_at": "2026-06-09T23:42:25Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:42:26Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_cf9e2755e4414a34bbbcfa3896f1360c",
+        "updated_at": "2026-06-09T23:42:26Z"
+      },
+      {
+        "answer": "Added the note to:\n- [`/Volumes/kevinmattice/cce/README.md`](/Volumes/kevinmattice/cce/README.md)\n\nIt now documents:\n- use the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python)\n- install dependencies from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n- full test command\n- focused PEM enforcement test command\n\nValidation:\n- Full CCE discovery rerun with the documented command:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nNo runtime code changed, and no PEM or enforcement behavior changed.",
+        "created_at": "2026-06-09T23:46:29Z",
+        "error": null,
+        "finalized_at": "2026-06-09T23:46:29Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_3472c9063fc14255a0e4e98f28531087",
+        "updated_at": "2026-06-09T23:46:29Z"
+      }
+    ]
+  },
+  "hash_length": 10,
+  "history": [
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "Not on your local Mac from this workspace, no.\n\n`/Users/kevinmattice/pem-governed-root` is on **Colossus**, not in your local filesystem under [`/Volumes/kevinmattice/cce`](/Volumes/kevinmattice/cce). When I verified it, I verified it via `ssh colossus`.\n\nSo there are two different places:\n\n- Local Mac: your editable PEM source is at [`/Users/kevinmattice/dev/anon/pem-mcp`](/Users/kevinmattice/dev/anon/pem-mcp)\n- Colossus: PEM\u2019s governed runtime root is `/Users/kevinmattice/pem-governed-root`\n\nIf you want to see it directly, run:\n\n```bash\nssh colossus 'find /Users/kevinmattice/pem-governed-root -maxdepth 2 | sort'\n```\n\nOr open an interactive shell:\n\n```bash\nssh colossus\ncd /Users/kevinmattice/pem-governed-root\nls -la\n```\n\nSo the short answer is: I do see it, but only on the remote machine, not as a local folder on Black Air.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:09:19Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "That\u2019s the easy kind of confusion. We\u2019re back in the familiar \u201ctwo houses\u201d situation:\n\n- local source repo on Black Air\n- live governed/runtime state on Colossus\n\nThe good news is the important part checked out: PEM is talking to the local model and writing governed artifacts in the right remote place.\n\nIf you want, the next sensible step is a very small operator convenience pass so PEM gets the same quality-of-life treatment we gave CCE:\n- `sync-pem-colossus`\n- `check-pem-colossus`\n- maybe `smoke-pem-ollama-colossus`\n\nThat would make future PEM work much less fiddly.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:10:25Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "**Boundary**\n\nThe smallest structural hook is a **two-stage gate**:\n\n- Stage 1: classify the request in the **CCE routing layer**\n- Stage 2: enforce capability limits in the **tool/shell/file execution layer**\n\nThat keeps CCE as the locus of control, PEM as the governance backbone, and avoids deep runtime coupling.\n\n**1. Requests that must be PEM-governed**\n\nThese should require active PEM governance before the model can do substantive work:\n\n- code changes\n- file creation, deletion, or modification\n- shell commands that inspect or change project state in a meaningful way\n- test runs used to justify claims about project state\n- build/deploy/restart actions\n- Git actions beyond passive read-only inspection\n- project planning that creates or updates work artifacts\n- evidence claims like \u201cI verified,\u201d \u201cI tested,\u201d \u201cI fixed,\u201d \u201cI confirmed\u201d\n- multi-step debugging/investigation intended to affect project decisions\n- any answer presented as project-grounded rather than casual general knowledge\n\nIn short: **anything trust-affecting or state-affecting**.\n\n**2. Requests that can remain ordinary conversation**\n\nThese can stay lightweight and non-PEM by default:\n\n- casual chat\n- general knowledge Q&A\n- brainstorming with no execution\n- high-level explanation of code or architecture\n- status questions that do not claim fresh verification\n- \u201cwhat would you do?\u201d discussions\n- harmless transformation tasks not tied to project state\n- small conversational checks that do not touch tools or artifacts\n\nIn short: **non-substantive conversation without project-state claims or actions**.\n\n**3. Where the enforcement hook belongs**\n\nBest answer: **a combination**\n\n- **CCE routing layer**\n  - decides whether a request is ordinary conversation or substantive work\n  - routes substantive work into PEM-governed mode\n- **tool/shell/file execution layer**\n  - blocks trust-affecting capabilities unless PEM is active\n- **not primarily MCP-tool-only**\n  - too narrow; local-model work can escape through shell/file paths\n\nSo the real boundary is:\n\n- CCE decides\n- execution layer enforces\n\n**4. What the local model is allowed to do before PEM activation**\n\nAllowed before PEM:\n\n- answer ordinary conversational questions\n- explain concepts\n- discuss possible approaches\n- read only enough to support non-committal explanation, if you allow read-only browsing\n- ask clarifying questions\n- propose a PEM activation when work becomes substantive\n\nIt may be helpful to allow:\n- read-only repository inspection\n- but only if resulting answers are framed as explanatory, not as verified project action\n\n**5. What it is forbidden to do without PEM activation**\n\nForbidden before PEM:\n\n- edit files\n- run project-changing shell commands\n- create or update governance artifacts\n- run tests and then present results as governed evidence\n- make verification claims about project state\n- perform deployment/restart/release actions\n- use project work tools that imply execution authority\n- silently open or reuse a governed case for substantive work without surfacing PEM status\n\nThe important rule is:\n- **no substantive project work outside PEM**\n- not just \u201cplease don\u2019t,\u201d but actual blocked capability\n\n**6. How CCE should detect \u201cthis must go through PEM\u201d**\n\nUse a structural classifier in routing, not prompting alone.\n\nA request should be marked **PEM-required** if any of these are true:\n\n- it asks to modify code/files/config\n- it asks to run commands/tests/builds/restarts\n- it asks to verify or confirm project behavior\n- it asks to debug/fix/implement/review a project issue\n- it references project-local artifacts as the basis for an actionable answer\n- it requests multi-step work on a local repo/system\n\nThis can start as deterministic intent detection:\n- verbs like `fix`, `implement`, `change`, `edit`, `patch`, `run`, `test`, `verify`, `debug`, `review`, `restart`, `deploy`\n- plus project-context signals like repo path, files, logs, services, workspaces, tickets, cases\n\nNot keyword sprawl fore",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:11:32Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "**PEM Enforcement Spec**\n\nThis is a structural gate, not a prompting pattern. CCE classifies the request, checks PEM state, and only exposes trust-affecting execution capability when PEM governance is active.\n\n**1. Policy States**\n\n`conversation_only`\n- Default for casual, non-project, non-verifying interaction.\n- No trust-affecting project work.\n- No write or execution capability.\n\n`read_only_project`\n- Project-aware, but non-substantive.\n- Allows read-only inspection and grounded answers.\n- No file mutation, no execution that produces governed evidence.\n\n`pem_required`\n- Transitional decision state, not a working state.\n- CCE has determined the request is trust-affecting or state-affecting.\n- Execution is blocked until PEM is active.\n\n`pem_governed_execution`\n- PEM is reachable and active.\n- Trust-affecting work may proceed.\n- Write/execute capability is unlocked within the governed flow.\n\n`pem_unavailable_blocked`\n- CCE determined PEM is required, but PEM is unavailable or status is ambiguous.\n- Trust-affecting work is blocked.\n- Conversation can continue, but execution cannot.\n\n**2. Routing Outcomes**\n\n`ordinary answer`\n- For `conversation_only`\n- No project-state claims beyond general explanation\n\n`read-only grounded answer`\n- For `read_only_project`\n- Uses workspace/project reading only\n- No execution, no \u201cI verified\u201d claims unless PEM-governed\n\n`PEM required`\n- For detected trust-affecting requests when PEM is not yet active\n- CCE does not proceed to execution\n\n`PEM activate/resume`\n- CCE asks PEM to establish or resume governed context\n- If successful, route moves to `pem_governed_execution`\n\n`PEM-governed execution allowed`\n- PEM active, execution capabilities exposed\n- Work may proceed normally\n\n`refusal/block because PEM unavailable`\n- Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous\n- CCE blocks trust-affecting work\n\n**3. Capability Matrix**\n\n| Capability | conversation_only | read_only_project | pem_required | pem_governed_execution | pem_unavailable_blocked |\n|---|---|---|---|---|---|\n| Casual answer | allow | allow | allow | allow | allow |\n| General knowledge | allow | allow | allow | allow | allow |\n| Read workspace files | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |\n| Read project status/logs | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |\n| Grounded answer from sources | block | allow | block | allow | block |\n| Edit files | block | block | block | allow | block |\n| Run tests/builds | block | block | block | allow | block |\n| Restart/deploy | block | block | block | allow | block |\n| Git mutation | block | block | block | allow | block |\n| Write PEM artifacts | block | block | PEM only | allow through PEM | block |\n| Verification claims | block | block | block | allow | block |\n\n**4. Detection Rules For PEM-Required Work**\n\nDeterministic first, based on trust-affecting intent.\n\nA request is `PEM-required` if it asks CCE/local model to do any of these:\n\n- mutate project state\n  - edit, create, delete, patch, update, rewrite\n- execute project-affecting actions\n  - run tests, build, restart, deploy, migrate\n- produce verification-backed claims\n  - verify, confirm, validate, reproduce, prove, test\n- perform substantive debugging or implementation\n  - fix, debug, investigate, implement, refactor, review for correctness\n- make decisions based on local project evidence\n  - \u201cwhat changed,\u201d \u201cis this working,\u201d \u201cwhich file is responsible,\u201d \u201cdid we solve X\u201d\n\nDetection should prefer auditable features:\n- requested capability category\n- presence of local paths, files, services, logs, repo references\n- explicit execution verbs\n- verification verbs\n\nAvoid broad topic keywords. The criterion is:\n- **does this request require trusted action or trusted project-state judgment?**\n\n**5. PEM Status Checks**\n\nCCE should call PEM MCP tools for status, not infer from prompts.\n\nPrimary PEM ch",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:15:17Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "I inspected the current CCE Lite codebase, and the important result is: **CCE is still mostly a read/routing system, not an execution agent.** That changes the shape of the first enforcement step in a good way. We can add the routing/policy boundary now without inventing heavy execution machinery.\n\n**Current Capability Audit**\n\n1. **File-writing capability**\n- CCE does have file writes, but they are **internal runtime persistence**, not model-directed project editing.\n- Current write paths I found include:\n  - [`/Volumes/kevinmattice/cce/gateway/workspace_state.py`](/Volumes/kevinmattice/cce/gateway/workspace_state.py)\n  - [`/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py)\n  - [`/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py)\n- These persist runtime state like workspace selection and Matrix sync/auth state.\n- I did **not** find model-exposed project file editing in CCE Lite.\n\n2. **Shell-execution capability**\n- Yes, but only one real path today:\n  - [`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)\n- It uses `subprocess.run(...)` to invoke:\n  - `ollama run --hidethinking <model>`\n- This is **model transport**, not general shell access.\n\n3. **Git/build/test/deploy/restart capability exposed to the model**\n- I did **not** find any such capability exposed through CCE.\n- No general subprocess execution layer.\n- No Git command path.\n- No build/test/deploy/restart tool path.\n- The only restart behavior we\u2019ve used was operator-side via helper scripts, not CCE runtime behavior.\n\n4. **Project verification claims**\n- Today CCE can make:\n  - conversational answers\n  - grounded answers from declared workspace sources\n- It does **not** currently verify project state by running tests, builds, or shell commands.\n- So current \u201cverification\u201d risk is mostly:\n  - the model speaking too confidently about project state\n  - not actual project execution bypass\n\n5. **Where routing is decided**\n- Main route decision today is in:\n  - [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n- Then enforced in:\n  - [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n  - specifically `process_event(...)`\n\n6. **Where model calls are made**\n- Model calls happen in:\n  - [`/Volumes/kevinmattice/cce/gateway/ask.py`](/Volumes/kevinmattice/cce/gateway/ask.py)\n  - through `answer_question(...)`\n- Transport is:\n  - [`/Volumes/kevinmattice/cce/models/local_model.py`](/Volumes/kevinmattice/cce/models/local_model.py)\n  - [`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)\n\n7. **Where PEM-required classification naturally fits**\n- Best fit:\n  - first in [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n  - then enforced in [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n- That keeps CCE as the locus of control.\n\n8. **Where a capability gate naturally fits**\n- Since dangerous capabilities are minimal right now, the first gate should sit at:\n  - routing decision\n  - ask/execution entry boundary\n- If CCE later gains write/execute surfaces, those wrappers should also check the same policy state.\n- So for now the gate is mostly:\n  - \u201cdon\u2019t route trust-affecting requests into ordinary local-model execution\u201d\n\n**Concrete Implementation Plan**\n\n**New / Changed Files**\n\nLikely new files:\n- [`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)\n  - policy-state definitions\n  - deterministic PEM-required classifier\n  - routing outcome helpers\n- [`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)\n  - thin PEM status adapter or placeholder\n  - can begin as a stub contract if no PEM MCP call path is",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:19:17Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "Implemented the first-pass CCE Lite PEM enforcement boundary without adding any new execution machinery.\n\nChanged files:\n- [`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)\n- [`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)\n- [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n- [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n- [`/Volumes/kevinmattice/cce/tests/test_policy.py`](/Volumes/kevinmattice/cce/tests/test_policy.py)\n- [`/Volumes/kevinmattice/cce/tests/test_pem_routing.py`](/Volumes/kevinmattice/cce/tests/test_pem_routing.py)\n\nWhat changed:\n- Added policy states and a deterministic trust-affecting classifier.\n- Added a safe PEM status placeholder that never claims PEM is active unless CCE can actually know.\n- Attached policy classification to routing decisions.\n- Added a runtime guard so PEM-required requests are blocked before they reach the normal local-model answer path.\n- Left ordinary conversation and read-only project/workspace questions on the existing paths.\n\nBehavior change:\n- Requests like `fix this bug`, `run the tests`, `verify this works`, and `skip PEM and just do it` now stop at the routing/runtime boundary and return a PEM-governed execution message instead of going to the ordinary model answer path.\n- Casual questions and read/explain workspace questions still route normally.\n\nTest results:\n- Focused new and affected tests: `27` tests, `OK`\n- Full existing CCE test discovery: `75` tests run, `3` errors\n\nThe 3 failing tests are unchanged environment issues, not regressions from this PEM guard:\n- [`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py)\n- all 3 errors are due to missing `pypdf`\n\nSo the new enforcement boundary is working, and current ordinary CCE Lite behavior was preserved. The next step, when you want it, is wiring the placeholder PEM status adapter to real PEM status signals without deepening the integration beyond this boundary.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:24:23Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "The PDF failures were an environment issue, not a code or enforcement issue.\n\nWhat I found:\n1. `pypdf` **should** be in CCE requirements.\n- It already is, in [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt).\n\n2. `workspace_runtime/pdf_reader.py` already expects it.\n- [`/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py`](/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py) imports `PdfReader` from `pypdf` and raises a clear runtime error if missing.\n\n3. The PDF tests are written as **required**, not optional.\n- [`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py) assumes deterministic PDF support is part of the feature set.\n- That matches the repo docs and requirements, so skipping them would be the wrong fix.\n\n4. The smallest correct fix was environmental.\n- No source-code changes were needed.\n- I created/used the repo venv at [`/Volumes/kevinmattice/cce/.venv`](/Volumes/kevinmattice/cce/.venv) and installed the declared requirements there, which includes `pypdf`.\n\nChanged files:\n- None\n\nEnvironment fix performed:\n- used `/Volumes/kevinmattice/cce/.venv`\n- installed from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n\nTest results:\n- Focused PEM enforcement tests:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback`\n  - `Ran 27 tests ... OK`\n- Full CCE discovery:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nSo the right conclusion is:\n- dependency declaration was already correct\n- tests should continue to require `pypdf`\n- the fix was to run CCE in an environment that actually installs the declared requirements\n\nIf you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/.venv/bin/python`](</Volumes/kevinmattice/cce/.venv/bin/python>) so this doesn\u2019t trip us again.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:42:26Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "Added the note to:\n- [`/Volumes/kevinmattice/cce/README.md`](/Volumes/kevinmattice/cce/README.md)\n\nIt now documents:\n- use the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python)\n- install dependencies from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n- full test command\n- focused PEM enforcement test command\n\nValidation:\n- Full CCE discovery rerun with the documented command:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nNo runtime code changed, and no PEM or enforcement behavior changed.",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-09T23:46:29Z"
+    }
+  ],
+  "initial_subject": "Not on your local Mac from this workspace, no.",
+  "intake_question": "Good. Add a short workflow note to the CCE repo docs explaining the expected test environment.\n\nKeep it minimal.\n\nInclude:\n\n- CCE tests should be run with the repo venv at `/Volumes/kevinmattice/cce/.venv/bin/python`\n- dependencies should be installed from `requirements.txt`\n- full test command:\n`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n- focused PEM enforcement test command:\n`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback`\n\nDo not change runtime code.\nDo not change PEM behavior.\nDo not change enforcement behavior.\n\nAfter adding the note, run full CCE test discovery once more and report the changed doc file and test result.",
+  "mode": {
+    "case_hash_length": 10,
+    "llm_mode": "openai",
+    "llm_model": "gpt-4o-mini",
+    "response_format": "json_schema",
+    "storage_mode": "standalone",
+    "storage_root": "/Volumes/kevinmattice/cce"
+  },
+  "privacy_mode": "public_slug",
+  "projection": {
+    "hash": "5b0b4fd53611"
+  },
+  "question": "Not on your local Mac from this workspace, no.",
+  "routing": {
+    "history": [
+      {
+        "active_marker": "checkin date",
+        "incoming_marker": "local mac",
+        "matched_case_ids": [],
+        "previous_case_id": "question-on-what-date-do-i-check-in-to-the-hotel-answer-checkin.case.mnefpfnnda",
+        "routing_decision": "new_case",
+        "routing_reason": "explicit_marker_mismatch",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=17",
+          "active_unit_count=1973",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=checkin date",
+          "incoming_marker=local mac",
+          "prior_match_source=recent_cases",
+          "prior_match_count=0"
+        ],
+        "ts": "2026-06-09T23:09:18Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=10",
+          "active_unit_count=17",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:10:25Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_markers_ambiguous",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=84",
+          "active_unit_count=27",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=stage 1",
+          "incoming_marker=stage 2"
+        ],
+        "ts": "2026-06-09T23:11:32Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=87",
+          "active_unit_count=111",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:15:17Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=74",
+          "active_unit_count=198",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:19:17Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=25",
+          "active_unit_count=272",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:24:23Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=35",
+          "active_unit_count=297",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:42:25Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=13",
+          "active_unit_count=332",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-09T23:46:29Z"
+      }
+    ],
+    "last": {
+      "active_marker": "local mac",
+      "incoming_marker": null,
+      "matched_case_ids": [],
+      "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+      "routing_decision": "preserve_current_behavior",
+      "routing_reason": "incoming_marker_missing",
+      "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+      "signals_used": [
+        "candidate_source=discussion_anchor",
+        "incoming_unit_count=13",
+        "active_unit_count=332",
+        "active_marker_source=committed_capture_units",
+        "incoming_marker_source=incoming_capture_units",
+        "active_marker=local mac",
+        "incoming_marker=none"
+      ],
+      "ts": "2026-06-09T23:46:29Z"
+    }
+  },
+  "seed_namespace": "pem",
+  "seed_version": "v1",
+  "slug": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice",
+  "state": {
+    "plan": {
+      "current": [],
+      "history": []
+    },
+    "skeptic": {
+      "current": [],
+      "history": []
+    },
+    "status": "active",
+    "summary": "Added the note to:\n- [`/Volumes/kevinmattice/cce/README.md`](/Volumes/kevinmattice/cce/README.md)\n\nIt now documents:\n- use the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python)\n- install dependencies from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n- full test command\n- focused PEM enforcement test command\n\nValidation:\n- Full CCE discovery rerun with the documented command:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nNo runtime code changed, and no PEM or enforcement behavior changed."
+  },
+  "topic_hash": "grijltbdnw",
+  "turns": [
+    {
+      "answer": "Not on your local Mac from this workspace, no.\n\n`/Users/kevinmattice/pem-governed-root` is on **Colossus**, not in your local filesystem under [`/Volumes/kevinmattice/cce`](/Volumes/kevinmattice/cce). When I verified it, I verified it via `ssh colossus`.\n\nSo there are two different places:\n\n- Local Mac: your editable PEM source is at [`/Users/kevinmattice/dev/anon/pem-mcp`](/Users/kevinmattice/dev/anon/pem-mcp)\n- Colossus: PEM\u2019s governed runtime root is `/Users/kevinmattice/pem-governed-root`\n\nIf you want to see it directly, run:\n\n```bash\nssh colossus 'find /Users/kevinmattice/pem-governed-root -maxdepth 2 | sort'\n```\n\nOr open an interactive shell:\n\n```bash\nssh colossus\ncd /Users/kevinmattice/pem-governed-root\nls -la\n```\n\nSo the short answer is: I do see it, but only on the remote machine, not as a local folder on Black Air.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "7ab261eb6896",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:09:19Z",
+      "turn_id": "turn_a44d698045d64764846c7541938d3fd3",
+      "verified_claims": 0
+    },
+    {
+      "answer": "That\u2019s the easy kind of confusion. We\u2019re back in the familiar \u201ctwo houses\u201d situation:\n\n- local source repo on Black Air\n- live governed/runtime state on Colossus\n\nThe good news is the important part checked out: PEM is talking to the local model and writing governed artifacts in the right remote place.\n\nIf you want, the next sensible step is a very small operator convenience pass so PEM gets the same quality-of-life treatment we gave CCE:\n- `sync-pem-colossus`\n- `check-pem-colossus`\n- maybe `smoke-pem-ollama-colossus`\n\nThat would make future PEM work much less fiddly.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "20936df3ad68",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:10:25Z",
+      "turn_id": "turn_dcc446e0f0664e718865d4f53a50bb2b",
+      "verified_claims": 0
+    },
+    {
+      "answer": "**Boundary**\n\nThe smallest structural hook is a **two-stage gate**:\n\n- Stage 1: classify the request in the **CCE routing layer**\n- Stage 2: enforce capability limits in the **tool/shell/file execution layer**\n\nThat keeps CCE as the locus of control, PEM as the governance backbone, and avoids deep runtime coupling.\n\n**1. Requests that must be PEM-governed**\n\nThese should require active PEM governance before the model can do substantive work:\n\n- code changes\n- file creation, deletion, or modification\n- shell commands that inspect or change project state in a meaningful way\n- test runs used to justify claims about project state\n- build/deploy/restart actions\n- Git actions beyond passive read-only inspection\n- project planning that creates or updates work artifacts\n- evidence claims like \u201cI verified,\u201d \u201cI tested,\u201d \u201cI fixed,\u201d \u201cI confirmed\u201d\n- multi-step debugging/investigation intended to affect project decisions\n- any answer presented as project-grounded rather than casual general knowledge\n\nIn short: **anything trust-affecting or state-affecting**.\n\n**2. Requests that can remain ordinary conversation**\n\nThese can stay lightweight and non-PEM by default:\n\n- casual chat\n- general knowledge Q&A\n- brainstorming with no execution\n- high-level explanation of code or architecture\n- status questions that do not claim fresh verification\n- \u201cwhat would you do?\u201d discussions\n- harmless transformation tasks not tied to project state\n- small conversational checks that do not touch tools or artifacts\n\nIn short: **non-substantive conversation without project-state claims or actions**.\n\n**3. Where the enforcement hook belongs**\n\nBest answer: **a combination**\n\n- **CCE routing layer**\n  - decides whether a request is ordinary conversation or substantive work\n  - routes substantive work into PEM-governed mode\n- **tool/shell/file execution layer**\n  - blocks trust-affecting capabilities unless PEM is active\n- **not primarily MCP-tool-only**\n  - too narrow; local-model work can escape through shell/file paths\n\nSo the real boundary is:\n\n- CCE decides\n- execution layer enforces\n\n**4. What the local model is allowed to do before PEM activation**\n\nAllowed before PEM:\n\n- answer ordinary conversational questions\n- explain concepts\n- discuss possible approaches\n- read only enough to support non-committal explanation, if you allow read-only browsing\n- ask clarifying questions\n- propose a PEM activation when work becomes substantive\n\nIt may be helpful to allow:\n- read-only repository inspection\n- but only if resulting answers are framed as explanatory, not as verified project action\n\n**5. What it is forbidden to do without PEM activation**\n\nForbidden before PEM:\n\n- edit files\n- run project-changing shell commands\n- create or update governance artifacts\n- run tests and then present results as governed evidence\n- make verification claims about project state\n- perform deployment/restart/release actions\n- use project work tools that imply execution authority\n- silently open or reuse a governed case for substantive work without surfacing PEM status\n\nThe important rule is:\n- **no substantive project work outside PEM**\n- not just \u201cplease don\u2019t,\u201d but actual blocked capability\n\n**6. How CCE should detect \u201cthis must go through PEM\u201d**\n\nUse a structural classifier in routing, not prompting alone.\n\nA request should be marked **PEM-required** if any of these are true:\n\n- it asks to modify code/files/config\n- it asks to run commands/tests/builds/restarts\n- it asks to verify or confirm project behavior\n- it asks to debug/fix/implement/review a project issue\n- it references project-local artifacts as the basis for an actionable answer\n- it requests multi-step work on a local repo/system\n\nThis can start as deterministic intent detection:\n- verbs like `fix`, `implement`, `change`, `edit`, `patch`, `run`, `test`, `verify`, `debug`, `review`, `restart`, `deploy`\n- plus project-context signals like repo path, files, logs, services, workspaces, tickets, cases\n\nNot keyword sprawl fore",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "ec848fc799d3",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:11:32Z",
+      "turn_id": "turn_b85d78a6dace4d75a668dc9c423e7e85",
+      "verified_claims": 0
+    },
+    {
+      "answer": "**PEM Enforcement Spec**\n\nThis is a structural gate, not a prompting pattern. CCE classifies the request, checks PEM state, and only exposes trust-affecting execution capability when PEM governance is active.\n\n**1. Policy States**\n\n`conversation_only`\n- Default for casual, non-project, non-verifying interaction.\n- No trust-affecting project work.\n- No write or execution capability.\n\n`read_only_project`\n- Project-aware, but non-substantive.\n- Allows read-only inspection and grounded answers.\n- No file mutation, no execution that produces governed evidence.\n\n`pem_required`\n- Transitional decision state, not a working state.\n- CCE has determined the request is trust-affecting or state-affecting.\n- Execution is blocked until PEM is active.\n\n`pem_governed_execution`\n- PEM is reachable and active.\n- Trust-affecting work may proceed.\n- Write/execute capability is unlocked within the governed flow.\n\n`pem_unavailable_blocked`\n- CCE determined PEM is required, but PEM is unavailable or status is ambiguous.\n- Trust-affecting work is blocked.\n- Conversation can continue, but execution cannot.\n\n**2. Routing Outcomes**\n\n`ordinary answer`\n- For `conversation_only`\n- No project-state claims beyond general explanation\n\n`read-only grounded answer`\n- For `read_only_project`\n- Uses workspace/project reading only\n- No execution, no \u201cI verified\u201d claims unless PEM-governed\n\n`PEM required`\n- For detected trust-affecting requests when PEM is not yet active\n- CCE does not proceed to execution\n\n`PEM activate/resume`\n- CCE asks PEM to establish or resume governed context\n- If successful, route moves to `pem_governed_execution`\n\n`PEM-governed execution allowed`\n- PEM active, execution capabilities exposed\n- Work may proceed normally\n\n`refusal/block because PEM unavailable`\n- Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous\n- CCE blocks trust-affecting work\n\n**3. Capability Matrix**\n\n| Capability | conversation_only | read_only_project | pem_required | pem_governed_execution | pem_unavailable_blocked |\n|---|---|---|---|---|---|\n| Casual answer | allow | allow | allow | allow | allow |\n| General knowledge | allow | allow | allow | allow | allow |\n| Read workspace files | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |\n| Read project status/logs | block or minimal | allow | allow for classification only | allow | allow for diagnosis only |\n| Grounded answer from sources | block | allow | block | allow | block |\n| Edit files | block | block | block | allow | block |\n| Run tests/builds | block | block | block | allow | block |\n| Restart/deploy | block | block | block | allow | block |\n| Git mutation | block | block | block | allow | block |\n| Write PEM artifacts | block | block | PEM only | allow through PEM | block |\n| Verification claims | block | block | block | allow | block |\n\n**4. Detection Rules For PEM-Required Work**\n\nDeterministic first, based on trust-affecting intent.\n\nA request is `PEM-required` if it asks CCE/local model to do any of these:\n\n- mutate project state\n  - edit, create, delete, patch, update, rewrite\n- execute project-affecting actions\n  - run tests, build, restart, deploy, migrate\n- produce verification-backed claims\n  - verify, confirm, validate, reproduce, prove, test\n- perform substantive debugging or implementation\n  - fix, debug, investigate, implement, refactor, review for correctness\n- make decisions based on local project evidence\n  - \u201cwhat changed,\u201d \u201cis this working,\u201d \u201cwhich file is responsible,\u201d \u201cdid we solve X\u201d\n\nDetection should prefer auditable features:\n- requested capability category\n- presence of local paths, files, services, logs, repo references\n- explicit execution verbs\n- verification verbs\n\nAvoid broad topic keywords. The criterion is:\n- **does this request require trusted action or trusted project-state judgment?**\n\n**5. PEM Status Checks**\n\nCCE should call PEM MCP tools for status, not infer from prompts.\n\nPrimary PEM ch",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "09ca0458dba9",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:15:17Z",
+      "turn_id": "turn_20c54714e41c4cab829d6c89934f153d",
+      "verified_claims": 0
+    },
+    {
+      "answer": "I inspected the current CCE Lite codebase, and the important result is: **CCE is still mostly a read/routing system, not an execution agent.** That changes the shape of the first enforcement step in a good way. We can add the routing/policy boundary now without inventing heavy execution machinery.\n\n**Current Capability Audit**\n\n1. **File-writing capability**\n- CCE does have file writes, but they are **internal runtime persistence**, not model-directed project editing.\n- Current write paths I found include:\n  - [`/Volumes/kevinmattice/cce/gateway/workspace_state.py`](/Volumes/kevinmattice/cce/gateway/workspace_state.py)\n  - [`/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_sync_state.py)\n  - [`/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py`](/Volumes/kevinmattice/cce/gateway/matrix_auth_state.py)\n- These persist runtime state like workspace selection and Matrix sync/auth state.\n- I did **not** find model-exposed project file editing in CCE Lite.\n\n2. **Shell-execution capability**\n- Yes, but only one real path today:\n  - [`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)\n- It uses `subprocess.run(...)` to invoke:\n  - `ollama run --hidethinking <model>`\n- This is **model transport**, not general shell access.\n\n3. **Git/build/test/deploy/restart capability exposed to the model**\n- I did **not** find any such capability exposed through CCE.\n- No general subprocess execution layer.\n- No Git command path.\n- No build/test/deploy/restart tool path.\n- The only restart behavior we\u2019ve used was operator-side via helper scripts, not CCE runtime behavior.\n\n4. **Project verification claims**\n- Today CCE can make:\n  - conversational answers\n  - grounded answers from declared workspace sources\n- It does **not** currently verify project state by running tests, builds, or shell commands.\n- So current \u201cverification\u201d risk is mostly:\n  - the model speaking too confidently about project state\n  - not actual project execution bypass\n\n5. **Where routing is decided**\n- Main route decision today is in:\n  - [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n- Then enforced in:\n  - [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n  - specifically `process_event(...)`\n\n6. **Where model calls are made**\n- Model calls happen in:\n  - [`/Volumes/kevinmattice/cce/gateway/ask.py`](/Volumes/kevinmattice/cce/gateway/ask.py)\n  - through `answer_question(...)`\n- Transport is:\n  - [`/Volumes/kevinmattice/cce/models/local_model.py`](/Volumes/kevinmattice/cce/models/local_model.py)\n  - [`/Volumes/kevinmattice/cce/models/local_ollama.py`](/Volumes/kevinmattice/cce/models/local_ollama.py)\n\n7. **Where PEM-required classification naturally fits**\n- Best fit:\n  - first in [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n  - then enforced in [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n- That keeps CCE as the locus of control.\n\n8. **Where a capability gate naturally fits**\n- Since dangerous capabilities are minimal right now, the first gate should sit at:\n  - routing decision\n  - ask/execution entry boundary\n- If CCE later gains write/execute surfaces, those wrappers should also check the same policy state.\n- So for now the gate is mostly:\n  - \u201cdon\u2019t route trust-affecting requests into ordinary local-model execution\u201d\n\n**Concrete Implementation Plan**\n\n**New / Changed Files**\n\nLikely new files:\n- [`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)\n  - policy-state definitions\n  - deterministic PEM-required classifier\n  - routing outcome helpers\n- [`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)\n  - thin PEM status adapter or placeholder\n  - can begin as a stub contract if no PEM MCP call path is",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "dc27285990b9",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:19:17Z",
+      "turn_id": "turn_36a6cd899e184b6baf669a786aa16f31",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Implemented the first-pass CCE Lite PEM enforcement boundary without adding any new execution machinery.\n\nChanged files:\n- [`/Volumes/kevinmattice/cce/gateway/policy.py`](/Volumes/kevinmattice/cce/gateway/policy.py)\n- [`/Volumes/kevinmattice/cce/gateway/pem_status.py`](/Volumes/kevinmattice/cce/gateway/pem_status.py)\n- [`/Volumes/kevinmattice/cce/gateway/routing.py`](/Volumes/kevinmattice/cce/gateway/routing.py)\n- [`/Volumes/kevinmattice/cce/gateway/runtime.py`](/Volumes/kevinmattice/cce/gateway/runtime.py)\n- [`/Volumes/kevinmattice/cce/tests/test_policy.py`](/Volumes/kevinmattice/cce/tests/test_policy.py)\n- [`/Volumes/kevinmattice/cce/tests/test_pem_routing.py`](/Volumes/kevinmattice/cce/tests/test_pem_routing.py)\n\nWhat changed:\n- Added policy states and a deterministic trust-affecting classifier.\n- Added a safe PEM status placeholder that never claims PEM is active unless CCE can actually know.\n- Attached policy classification to routing decisions.\n- Added a runtime guard so PEM-required requests are blocked before they reach the normal local-model answer path.\n- Left ordinary conversation and read-only project/workspace questions on the existing paths.\n\nBehavior change:\n- Requests like `fix this bug`, `run the tests`, `verify this works`, and `skip PEM and just do it` now stop at the routing/runtime boundary and return a PEM-governed execution message instead of going to the ordinary model answer path.\n- Casual questions and read/explain workspace questions still route normally.\n\nTest results:\n- Focused new and affected tests: `27` tests, `OK`\n- Full existing CCE test discovery: `75` tests run, `3` errors\n\nThe 3 failing tests are unchanged environment issues, not regressions from this PEM guard:\n- [`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py)\n- all 3 errors are due to missing `pypdf`\n\nSo the new enforcement boundary is working, and current ordinary CCE Lite behavior was preserved. The next step, when you want it, is wiring the placeholder PEM status adapter to real PEM status signals without deepening the integration beyond this boundary.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "c598c7f640f3",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:24:23Z",
+      "turn_id": "turn_bea95b46ab0d47deaa8c1047dcf533ad",
+      "verified_claims": 0
+    },
+    {
+      "answer": "The PDF failures were an environment issue, not a code or enforcement issue.\n\nWhat I found:\n1. `pypdf` **should** be in CCE requirements.\n- It already is, in [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt).\n\n2. `workspace_runtime/pdf_reader.py` already expects it.\n- [`/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py`](/Volumes/kevinmattice/cce/workspace_runtime/pdf_reader.py) imports `PdfReader` from `pypdf` and raises a clear runtime error if missing.\n\n3. The PDF tests are written as **required**, not optional.\n- [`/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py`](/Volumes/kevinmattice/cce/tests/test_pdf_source_support.py) assumes deterministic PDF support is part of the feature set.\n- That matches the repo docs and requirements, so skipping them would be the wrong fix.\n\n4. The smallest correct fix was environmental.\n- No source-code changes were needed.\n- I created/used the repo venv at [`/Volumes/kevinmattice/cce/.venv`](/Volumes/kevinmattice/cce/.venv) and installed the declared requirements there, which includes `pypdf`.\n\nChanged files:\n- None\n\nEnvironment fix performed:\n- used `/Volumes/kevinmattice/cce/.venv`\n- installed from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n\nTest results:\n- Focused PEM enforcement tests:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback`\n  - `Ran 27 tests ... OK`\n- Full CCE discovery:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nSo the right conclusion is:\n- dependency declaration was already correct\n- tests should continue to require `pypdf`\n- the fix was to run CCE in an environment that actually installs the declared requirements\n\nIf you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/.venv/bin/python`](</Volumes/kevinmattice/cce/.venv/bin/python>) so this doesn\u2019t trip us again.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "8e7b461be9d5",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:42:26Z",
+      "turn_id": "turn_cf9e2755e4414a34bbbcfa3896f1360c",
+      "verified_claims": 0
+    },
+    {
+      "answer": "Added the note to:\n- [`/Volumes/kevinmattice/cce/README.md`](/Volumes/kevinmattice/cce/README.md)\n\nIt now documents:\n- use the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python)\n- install dependencies from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n- full test command\n- focused PEM enforcement test command\n\nValidation:\n- Full CCE discovery rerun with the documented command:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nNo runtime code changed, and no PEM or enforcement behavior changed.",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 0,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "5b0b4fd53611",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-09T23:46:29Z",
+      "turn_id": "turn_3472c9063fc14255a0e4e98f28531087",
+      "verified_claims": 0
+    }
+  ],
+  "updated_at": "2026-06-09T23:46:29Z"
+}

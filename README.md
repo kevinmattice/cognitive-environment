@@ -29,3 +29,19 @@ CCE is a private, low-friction, inspectable operating channel between a human-fa
 ## Dependencies
 
 - PDF declared-source support (text extraction only) requires `pypdf` (see `requirements.txt`).
+
+## Test Environment
+
+Run CCE tests with the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python) after installing dependencies from [`requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt).
+
+Full suite:
+
+```bash
+/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests
+```
+
+Focused PEM enforcement slice:
+
+```bash
+/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback
+```

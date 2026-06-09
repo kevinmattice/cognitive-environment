@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from gateway.policy import PolicyDecision, classify_policy
+
 
 SAFE_COMMAND_HELP = "Unknown command. Supported commands: status, workspace list, workspace open <id>, workspace status, sources, read <source>, ask <question>"
 
@@ -29,6 +31,7 @@ class RouteDecision:
     action: str  # "ignore" | "command" | "ask" | "help"
     question: str | None = None
     force_grounded: bool = False
+    policy: PolicyDecision | None = None
 
 
 def decide_route(message: str, *, has_active_workspace: bool) -> RouteDecision:
@@ -42,7 +45,8 @@ def decide_route(message: str, *, has_active_workspace: bool) -> RouteDecision:
     if lowered == "ask":
         return RouteDecision(action="command")
     if lowered.startswith("ask "):
-        return RouteDecision(action="ask", question=text[4:].strip(), force_grounded=True)
+        question = text[4:].strip()
+        return RouteDecision(action="ask", question=question, force_grounded=True, policy=classify_policy(question))
 
     # Known commands stay commands.
     if lowered == "status":
@@ -61,5 +65,4 @@ def decide_route(message: str, *, has_active_workspace: bool) -> RouteDecision:
 
     # Ordinary text routes to the model. The runtime decides whether to use
     # grounded QA or conversational fallback.
-    return RouteDecision(action="ask", question=text, force_grounded=False)
-
+    return RouteDecision(action="ask", question=text, force_grounded=False, policy=classify_policy(text))
