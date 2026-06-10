@@ -24,6 +24,7 @@ def build_status_snapshot(
     matrix_cursor_state: str,
     active_workspace_state: str,
     workspace_persistence_state: str,
+    pem_state: str = "disabled",
 ) -> StatusSnapshot:
     return StatusSnapshot(
         gateway_state="running (status command active)",
@@ -32,7 +33,7 @@ def build_status_snapshot(
         active_workspace_state=active_workspace_state,
         workspace_persistence_state=workspace_persistence_state,
         model_state="disabled",
-        pem_state="disabled",
+        pem_state=pem_state,
         tools_state="disabled",
     )
 

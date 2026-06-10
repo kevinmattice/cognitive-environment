@@ -11,7 +11,12 @@ from gateway.ask import AskConfig, answer_question
 from gateway.matrix_auth_state import save_auth_state
 from gateway.matrix_sync_state import load_cursor, save_cursor
 from gateway.pem_status import get_pem_status
-from gateway.policy import POLICY_PEM_REQUIRED, pem_required_message, pem_unavailable_message
+from gateway.policy import (
+    POLICY_PEM_REQUIRED,
+    pem_activation_needed_message,
+    pem_governed_execution_message,
+    pem_unavailable_message,
+)
 from gateway.routing import SAFE_COMMAND_HELP, decide_route
 from gateway.status import build_status_snapshot, handle_command, handle_workspace_command
 from gateway.workspace_state import load_workspace_state, save_workspace_state
@@ -73,6 +78,11 @@ def load_config(config_path: Path) -> dict:
     config.setdefault("model_max_context_bytes", 24000)
     config.setdefault("model_timeout_s", 30)
     config.setdefault("conversational_fallback_enabled", True)
+    config.setdefault("pem_enabled", False)
+    config.setdefault("pem_launcher_path", None)
+    config.setdefault("pem_project_root", None)
+    config.setdefault("pem_config_path", None)
+    config.setdefault("pem_timeout_s", 10)
     return config
 
 
@@ -101,11 +111,16 @@ def process_event(
     model,
     body: str,
 ) -> tuple[str | None, str]:
+    normalized_body = body.strip().lower()
+    pem_state = "disabled"
+    if normalized_body == "status":
+        pem_state = get_pem_status(config).state
     snapshot = build_status_snapshot(
         matrix_connection_state=matrix_connection_state(last_sync_at),
         matrix_cursor_state=cursor_state,
         active_workspace_state=workspace.status_line(),
         workspace_persistence_state=workspace_persistence_state,
+        pem_state=pem_state,
     )
     ws_reply, new_state = handle_workspace_command(
         body.strip(),
@@ -121,10 +136,12 @@ def process_event(
         return None, workspace_persistence_state
     if decision.action == "ask":
         if decision.policy and decision.policy.state == POLICY_PEM_REQUIRED:
-            pem_status = get_pem_status()
+            pem_status = get_pem_status(config)
             if pem_status.active:
-                return pem_required_message(), workspace_persistence_state
-            if pem_status.state in {"unavailable", "ambiguous", "inactive"}:
+                return pem_governed_execution_message(), workspace_persistence_state
+            if pem_status.state == "inactive":
+                return pem_activation_needed_message(), workspace_persistence_state
+            if pem_status.state in {"unavailable", "ambiguous"}:
                 return pem_unavailable_message(), workspace_persistence_state
         return (
             answer_question(

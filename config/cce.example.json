@@ -26,5 +26,11 @@
   "model_name": "llama3.1",
   "model_max_context_bytes": 24000,
   "model_timeout_s": 30,
-  "conversational_fallback_enabled": true
+  "conversational_fallback_enabled": true,
+
+  "pem_enabled": false,
+  "pem_launcher_path": "/absolute/path/to/pem-mcp/start.sh",
+  "pem_project_root": "/absolute/path/to/cce",
+  "pem_config_path": "/absolute/path/to/pem.toml",
+  "pem_timeout_s": 10
 }

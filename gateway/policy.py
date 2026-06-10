@@ -117,9 +117,22 @@ def pem_required_message() -> str:
     return "This request affects project work or verification, so I need PEM-governed execution before I can do it."
 
 
+def pem_activation_needed_message() -> str:
+    return (
+        "This request affects project work or verification, and PEM is reachable but inactive, "
+        "so it needs activation before I can do it."
+    )
+
+
+def pem_governed_execution_message() -> str:
+    return (
+        "This request requires PEM-governed execution. PEM is active, so this would transition into "
+        "pem_governed_execution, but that execution path is not wired into CCE Lite yet."
+    )
+
+
 def pem_unavailable_message() -> str:
     return (
         "This request requires PEM-governed execution, and PEM is not available right now, "
         "so I’m not going to do the work outside governance."
     )
-
