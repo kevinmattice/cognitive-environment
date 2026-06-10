@@ -2,8 +2,8 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
-    "projection_hash": "5b0b4fd53611",
-    "q": "Good. Add a short workflow note to the CCE repo ",
+    "projection_hash": "64f88a232078",
+    "q": "Before commit, inspect the dirty case artifact: ",
     "reused_active_case": true
   },
   "canonical_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
@@ -28,7 +28,7 @@
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-09T23:46:29Z",
+  "canonical_subject_updated_at": "2026-06-10T15:52:45Z",
   "case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -1857,6 +1857,80 @@
             "unit_id": "cap_8c217f6150fd"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-10T15:52:45Z",
+        "turn_id": "turn_37511c5648dd463a8f448ff9008b870a",
+        "unit_count": 13,
+        "units": [
+          {
+            "index": 1,
+            "text": "The dirty case artifact at [cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json](/Volumes/kevinmattice/cce/cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json:1) is a real `cases/` continuity surface, not an accidental unknown file.",
+            "unit_id": "cap_c9dc6e377355"
+          },
+          {
+            "index": 2,
+            "text": "But this particular diff was just fresh runtime transcript/projection updates from this working session, unrelated to the PEM status code change, so I treated it as runtime residue for this commit and restored it to `HEAD` rather than deleting it.",
+            "unit_id": "cap_48e8310b9395"
+          },
+          {
+            "index": 3,
+            "text": "The CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`.",
+            "unit_id": "cap_c307f0cdbaf7"
+          },
+          {
+            "index": 4,
+            "text": "I kept the commit scoped to the code and tests only.",
+            "unit_id": "cap_e1cf6e7afd79"
+          },
+          {
+            "index": 5,
+            "text": "Verification:",
+            "unit_id": "cap_0e0453d6ed64"
+          },
+          {
+            "index": 6,
+            "text": "Focused PEM tests passed:",
+            "unit_id": "cap_33978404f7f4"
+          },
+          {
+            "index": 7,
+            "text": "`python3 -m unittest tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`",
+            "unit_id": "cap_f2aedb8d2e67"
+          },
+          {
+            "index": 8,
+            "text": "Full suite passed in the project venv:",
+            "unit_id": "cap_e90603516d9e"
+          },
+          {
+            "index": 9,
+            "text": "`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`",
+            "unit_id": "cap_d0955184dbed"
+          },
+          {
+            "index": 10,
+            "text": "`Ran 84 tests ...",
+            "unit_id": "cap_bd3ce868658c"
+          },
+          {
+            "index": 11,
+            "text": "OK`",
+            "unit_id": "cap_3870612e198f"
+          },
+          {
+            "index": 12,
+            "text": "::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}",
+            "unit_id": "cap_a46780c9aae4"
+          },
+          {
+            "index": 13,
+            "text": "::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+            "unit_id": "cap_2dfdfed75b5e"
+          }
+        ]
       }
     ],
     "claims": [
@@ -1889,7 +1963,7 @@
             "claim_id": "claim_211d44201d20",
             "method": "token_jaccard_v1",
             "score": 0.3077,
-            "updated_at": "2026-06-09T23:46:29Z"
+            "updated_at": "2026-06-10T15:52:45Z"
           }
         ],
         "state": "Pending Verification",
@@ -1955,7 +2029,18 @@
         "verification_plan_id": "plan_4e55e6b9a1c9"
       }
     ],
-    "evidence_artifacts": [],
+    "evidence_artifacts": [
+      {
+        "created_at": "2026-06-10T15:52:45Z",
+        "evidence_id": "evi_986262736f56",
+        "explicit_rejection": false,
+        "explicit_verification": false,
+        "fingerprint": "f2a4ed0cab788f7c",
+        "last_seen_at": "2026-06-10T15:52:45Z",
+        "source_turn_q": "Before commit, inspect the dirty case artifact: ",
+        "text": "Then, if it is unrelated runtime residue, leave it uncommitted or clean it according to the repo\u2019s existing case-artifact policy"
+      }
+    ],
     "evidence_tasks": [
       {
         "claim_fingerprint": "f7721dfb615a2695",
@@ -1965,7 +2050,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous",
         "task_id": "task_903acfdd7da0",
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "f7721dfb615a2695",
@@ -1975,7 +2060,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_87ce57f6062a",
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "45d3d2b74cbfed83",
@@ -1985,7 +2070,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - **does this request require trusted action or trusted project-state judgment",
         "task_id": "task_c7410126aba2",
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "45d3d2b74cbfed83",
@@ -1995,7 +2080,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_6a5eaad55774",
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "560b1714f17193d4",
@@ -2005,7 +2090,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - tests should continue to require `pypdf`",
         "task_id": "task_17babd0145c4",
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "560b1714f17193d4",
@@ -2015,7 +2100,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_0330190e23ba",
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       }
     ],
     "exploratory_structures": {
@@ -2064,7 +2149,8 @@
         "- can begin as a stub contract if no PEM MCP call path is",
         "py` - thin status contract - safe placeholder if PEM MCP calls are not wired yet - should not pretend PEM is active unless it can actually know 3",
         "py` - before calling normal model answer path, honor policy decision - if request is PEM-required and PEM is unavailable/inactive, return the PEM-required/block message - do not route trust-affecting work into ordinary local-model answering 5",
-        "If you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/"
+        "If you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/",
+        "Then, if it is unrelated runtime residue, leave it uncommitted or clean it according to the repo\u2019s existing case-artifact policy"
       ],
       "tensions": [
         "What can be implemented now versus deferred until CCE has actual tool/write/execute surfaces"
@@ -2505,6 +2591,22 @@
         "last_seen_at": "2026-06-09T23:42:26Z",
         "status": "Elevated",
         "text": "- tests should continue to require `pypdf`"
+      },
+      {
+        "candidate_id": "cand_e39bebec00b1",
+        "fingerprint": "76acc444ced89824",
+        "first_seen_at": "2026-06-10T15:52:45Z",
+        "last_seen_at": "2026-06-10T15:52:45Z",
+        "status": "Candidate",
+        "text": "json:1) is a real `cases/` continuity surface, not an accidental unknown file"
+      },
+      {
+        "candidate_id": "cand_d63b74ece56c",
+        "fingerprint": "e5911a2ee03ed4c8",
+        "first_seen_at": "2026-06-10T15:52:45Z",
+        "last_seen_at": "2026-06-10T15:52:45Z",
+        "status": "Candidate",
+        "text": "The CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`"
       }
     ],
     "soft_warnings": [
@@ -2603,6 +2705,30 @@
         "ts": "2026-06-09T23:46:29Z",
         "type": "unverified_claim_drives_implementation",
         "warning_id": "warn_27a10a7c4c82"
+      },
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Before commit, inspect the dirty case artifact: ",
+        "ts": "2026-06-10T15:52:45Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_5079841b6d3a"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Before commit, inspect the dirty case artifact: ",
+        "ts": "2026-06-10T15:52:45Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_6b653c0e4afc"
+      },
+      {
+        "claim_id": "claim_4e55e6b9a1c9",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Before commit, inspect the dirty case artifact: ",
+        "ts": "2026-06-10T15:52:45Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_929b9117f9dc"
       }
     ],
     "verification_plans": [
@@ -2617,7 +2743,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "45d3d2b74cbfed83",
@@ -2630,7 +2756,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       },
       {
         "claim_fingerprint": "560b1714f17193d4",
@@ -2643,13 +2769,13 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-09T23:46:29Z"
+        "updated_at": "2026-06-10T15:52:45Z"
       }
     ]
   },
   "epistemic_health": {
-    "consecutive_unverified_turns": 8,
-    "health_state": "thin",
+    "consecutive_unverified_turns": 0,
+    "health_state": "mixed",
     "last_warning": {
       "evidence_count": 0,
       "message": "Epistemic state remained thin for 3 consecutive turns.",
@@ -2670,27 +2796,28 @@
     ]
   },
   "epistemic_posture": {
-    "candidate_count": 54,
+    "candidate_count": 56,
     "claim_count": 3,
-    "evidence_count_metric": 0,
+    "evidence_count_metric": 1,
     "exploratory_signal_count": 1,
     "exploratory_signals": [
-      "operational_constraint_marker"
+      "uncertainty_marker"
     ],
-    "health_state": "thin",
-    "implementation_signal_count": 1,
+    "health_state": "mixed",
+    "implementation_signal_count": 2,
     "implementation_signals": [
+      "evidence_marker",
       "implementation_marker"
     ],
     "inferred_posture": "mixed",
     "pending_claim_count": 3,
-    "snapshot_at": "2026-06-09T23:46:29Z",
+    "snapshot_at": "2026-06-10T15:52:45Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
   },
   "epistemics": {
-    "evidence_count": 0,
+    "evidence_count": 1,
     "verified_claims": 0
   },
   "finalization": {
@@ -2900,6 +3027,32 @@
         ],
         "turn_id": "turn_3472c9063fc14255a0e4e98f28531087",
         "updated_at": "2026-06-09T23:46:29Z"
+      },
+      {
+        "answer": "The dirty case artifact at [cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json](/Volumes/kevinmattice/cce/cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json:1) is a real `cases/` continuity surface, not an accidental unknown file. But this particular diff was just fresh runtime transcript/projection updates from this working session, unrelated to the PEM status code change, so I treated it as runtime residue for this commit and restored it to `HEAD` rather than deleting it.\n\nThe CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`. I kept the commit scoped to the code and tests only.\n\nVerification:\n- Focused PEM tests passed:\n  - `python3 -m unittest tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Full suite passed in the project venv:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n  - `Ran 84 tests ... OK`\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+        "created_at": "2026-06-10T15:52:45Z",
+        "error": null,
+        "finalized_at": "2026-06-10T15:52:45Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_37511c5648dd463a8f448ff9008b870a",
+        "updated_at": "2026-06-10T15:52:45Z"
       }
     ]
   },
@@ -3040,10 +3193,27 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-09T23:46:29Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "The dirty case artifact at [cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json](/Volumes/kevinmattice/cce/cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json:1) is a real `cases/` continuity surface, not an accidental unknown file. But this particular diff was just fresh runtime transcript/projection updates from this working session, unrelated to the PEM status code change, so I treated it as runtime residue for this commit and restored it to `HEAD` rather than deleting it.\n\nThe CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`. I kept the commit scoped to the code and tests only.\n\nVerification:\n- Focused PEM tests passed:\n  - `python3 -m unittest tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Full suite passed in the project venv:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n  - `Ran 84 tests ... OK`\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-10T15:52:45Z"
     }
   ],
   "initial_subject": "Not on your local Mac from this workspace, no.",
-  "intake_question": "Good. Add a short workflow note to the CCE repo docs explaining the expected test environment.\n\nKeep it minimal.\n\nInclude:\n\n- CCE tests should be run with the repo venv at `/Volumes/kevinmattice/cce/.venv/bin/python`\n- dependencies should be installed from `requirements.txt`\n- full test command:\n`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n- focused PEM enforcement test command:\n`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest tests.test_policy tests.test_pem_routing tests.test_routing tests.test_ask tests.test_workspace_intent_fallback`\n\nDo not change runtime code.\nDo not change PEM behavior.\nDo not change enforcement behavior.\n\nAfter adding the note, run full CCE test discovery once more and report the changed doc file and test result.",
+  "intake_question": "Before commit, inspect the dirty case artifact:\n\ncases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json\n\nDetermine whether it is:\n- intentional PEM/CCE state that should be committed,\n- runtime residue that should be ignored,\n- or a file that should be moved/removed.\n\nDo not delete it without reporting what it is.\n\nThen, if it is unrelated runtime residue, leave it uncommitted or clean it according to the repo\u2019s existing case-artifact policy.\n\nAfter that, commit the CCE real PEM status integration.",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -3054,7 +3224,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "5b0b4fd53611"
+    "hash": "64f88a232078"
   },
   "question": "Not on your local Mac from this workspace, no.",
   "routing": {
@@ -3213,6 +3383,25 @@
           "incoming_marker=none"
         ],
         "ts": "2026-06-09T23:46:29Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=13",
+          "active_unit_count=345",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-10T15:52:45Z"
       }
     ],
     "last": {
@@ -3226,13 +3415,13 @@
       "signals_used": [
         "candidate_source=discussion_anchor",
         "incoming_unit_count=13",
-        "active_unit_count=332",
+        "active_unit_count=345",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=local mac",
         "incoming_marker=none"
       ],
-      "ts": "2026-06-09T23:46:29Z"
+      "ts": "2026-06-10T15:52:45Z"
     }
   },
   "seed_namespace": "pem",
@@ -3248,7 +3437,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "Added the note to:\n- [`/Volumes/kevinmattice/cce/README.md`](/Volumes/kevinmattice/cce/README.md)\n\nIt now documents:\n- use the repo venv at [`/Volumes/kevinmattice/cce/.venv/bin/python`](/Volumes/kevinmattice/cce/.venv/bin/python)\n- install dependencies from [`/Volumes/kevinmattice/cce/requirements.txt`](/Volumes/kevinmattice/cce/requirements.txt)\n- full test command\n- focused PEM enforcement test command\n\nValidation:\n- Full CCE discovery rerun with the documented command:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests`\n  - `Ran 75 tests ... OK`\n\nNo runtime code changed, and no PEM or enforcement behavior changed."
+    "summary": "The dirty case artifact at [cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json](/Volumes/kevinmattice/cce/cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json:1) is a real `cases/` continuity surface, not an accidental unknown file. But this particular diff was just fresh runtime transcript/projection updates from this working session, unrelated to the PEM status code change, so I treated it as runtime residue for this commit and restored it to `HEAD` rather than deleting it.\n\nThe CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`. I kept the commit scoped to the code and tests only.\n\nVerification:\n- Focused PEM tests passed:\n  - `python3 -m unittest tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Full suite passed in the project venv:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n  - `Ran 84 tests ... OK`\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}"
   },
   "topic_hash": "grijltbdnw",
   "turns": [
@@ -3433,7 +3622,30 @@
       "ts": "2026-06-09T23:46:29Z",
       "turn_id": "turn_3472c9063fc14255a0e4e98f28531087",
       "verified_claims": 0
+    },
+    {
+      "answer": "The dirty case artifact at [cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json](/Volumes/kevinmattice/cce/cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json:1) is a real `cases/` continuity surface, not an accidental unknown file. But this particular diff was just fresh runtime transcript/projection updates from this working session, unrelated to the PEM status code change, so I treated it as runtime residue for this commit and restored it to `HEAD` rather than deleting it.\n\nThe CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`. I kept the commit scoped to the code and tests only.\n\nVerification:\n- Focused PEM tests passed:\n  - `python3 -m unittest tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Full suite passed in the project venv:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n  - `Ran 84 tests ... OK`\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 1,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "64f88a232078",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-10T15:52:45Z",
+      "turn_id": "turn_37511c5648dd463a8f448ff9008b870a",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-09T23:46:29Z"
+  "updated_at": "2026-06-10T15:52:45Z"
 }
