@@ -2,8 +2,8 @@
   "auth_events": [],
   "breadcrumbs": {
     "case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
-    "projection_hash": "64f88a232078",
-    "q": "Before commit, inspect the dirty case artifact: ",
+    "projection_hash": "d7ae38fb621e",
+    "q": "Good. The CCE \u2192 PEM governed handoff implementat",
     "reused_active_case": true
   },
   "canonical_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
@@ -28,7 +28,7 @@
   ],
   "canonical_subject_source": "derived_from_capture_units",
   "canonical_subject_strategy": "deterministic_v1",
-  "canonical_subject_updated_at": "2026-06-10T15:52:45Z",
+  "canonical_subject_updated_at": "2026-06-10T16:05:21Z",
   "case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
   "config": {
     "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
@@ -1931,6 +1931,70 @@
             "unit_id": "cap_2dfdfed75b5e"
           }
         ]
+      },
+      {
+        "source": "answer_text",
+        "source_had_newlines": true,
+        "ts": "2026-06-10T16:05:21Z",
+        "turn_id": "turn_6a58497ce9964e888042cc22962b5ae1",
+        "unit_count": 11,
+        "units": [
+          {
+            "index": 1,
+            "text": "Commit created: `25e2fcbb9dbf0232bfcaeaf9934ba52e20893125`",
+            "unit_id": "cap_82ccc12e39ab"
+          },
+          {
+            "index": 2,
+            "text": "Message: `Wire CCE PEM handoff through pem_ask`",
+            "unit_id": "cap_6f1d95a99fe6"
+          },
+          {
+            "index": 3,
+            "text": "Git status is clean.",
+            "unit_id": "cap_58f92896248d"
+          },
+          {
+            "index": 4,
+            "text": "Focused test result:",
+            "unit_id": "cap_2c608ddb2bd3"
+          },
+          {
+            "index": 5,
+            "text": "`python3 -m unittest tests.test_pem_handoff tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`",
+            "unit_id": "cap_56a76d91a012"
+          },
+          {
+            "index": 6,
+            "text": "Passed: `30` tests",
+            "unit_id": "cap_465c2df963a4"
+          },
+          {
+            "index": 7,
+            "text": "Full CCE suite result:",
+            "unit_id": "cap_56ee7202571f"
+          },
+          {
+            "index": 8,
+            "text": "`/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`",
+            "unit_id": "cap_0f6c6cfe44a5"
+          },
+          {
+            "index": 9,
+            "text": "Passed: `93` tests",
+            "unit_id": "cap_76d63a890bfd"
+          },
+          {
+            "index": 10,
+            "text": "::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}",
+            "unit_id": "cap_c3cbf0bed18b"
+          },
+          {
+            "index": 11,
+            "text": "::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+            "unit_id": "cap_342611d46484"
+          }
+        ]
       }
     ],
     "claims": [
@@ -1963,7 +2027,7 @@
             "claim_id": "claim_211d44201d20",
             "method": "token_jaccard_v1",
             "score": 0.3077,
-            "updated_at": "2026-06-10T15:52:45Z"
+            "updated_at": "2026-06-10T16:05:21Z"
           }
         ],
         "state": "Pending Verification",
@@ -2050,7 +2114,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - Request requires PEM, but PEM is unreachable, inactive with no recovery, or status is ambiguous",
         "task_id": "task_903acfdd7da0",
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "f7721dfb615a2695",
@@ -2060,7 +2124,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_87ce57f6062a",
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "45d3d2b74cbfed83",
@@ -2070,7 +2134,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - **does this request require trusted action or trusted project-state judgment",
         "task_id": "task_c7410126aba2",
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "45d3d2b74cbfed83",
@@ -2080,7 +2144,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_6a5eaad55774",
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "560b1714f17193d4",
@@ -2090,7 +2154,7 @@
         "status": "Pending",
         "task": "Capture file/line evidence related to: - tests should continue to require `pypdf`",
         "task_id": "task_17babd0145c4",
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "560b1714f17193d4",
@@ -2100,7 +2164,7 @@
         "status": "Pending",
         "task": "Attach test/repro output demonstrating expected behavior.",
         "task_id": "task_0330190e23ba",
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       }
     ],
     "exploratory_structures": {
@@ -2150,7 +2214,8 @@
         "py` - thin status contract - safe placeholder if PEM MCP calls are not wired yet - should not pretend PEM is active unless it can actually know 3",
         "py` - before calling normal model answer path, honor policy decision - if request is PEM-required and PEM is unavailable/inactive, return the PEM-required/block message - do not route trust-affecting work into ordinary local-model answering 5",
         "If you want, the next tidy step is for me to add one short workflow note in the repo docs telling future-you to run CCE tests with [`/Volumes/kevinmattice/cce/",
-        "Then, if it is unrelated runtime residue, leave it uncommitted or clean it according to the repo\u2019s existing case-artifact policy"
+        "Then, if it is unrelated runtime residue, leave it uncommitted or clean it according to the repo\u2019s existing case-artifact policy",
+        "json If it is unrelated runtime residue from this working session, restore it to HEAD and keep it out of this commit"
       ],
       "tensions": [
         "What can be implemented now versus deferred until CCE has actual tool/write/execute surfaces"
@@ -2607,6 +2672,14 @@
         "last_seen_at": "2026-06-10T15:52:45Z",
         "status": "Candidate",
         "text": "The CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`"
+      },
+      {
+        "candidate_id": "cand_87513e3311fb",
+        "fingerprint": "641663b1071c66c4",
+        "first_seen_at": "2026-06-10T16:05:21Z",
+        "last_seen_at": "2026-06-10T16:05:21Z",
+        "status": "Candidate",
+        "text": "Git status is clean"
       }
     ],
     "soft_warnings": [
@@ -2729,6 +2802,30 @@
         "ts": "2026-06-10T15:52:45Z",
         "type": "unverified_claim_drives_implementation",
         "warning_id": "warn_929b9117f9dc"
+      },
+      {
+        "claim_id": "claim_211d44201d20",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The CCE \u2192 PEM governed handoff implementat",
+        "ts": "2026-06-10T16:05:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_f939efac6877"
+      },
+      {
+        "claim_id": "claim_6dc445943eef",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The CCE \u2192 PEM governed handoff implementat",
+        "ts": "2026-06-10T16:05:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_62ea16175fe4"
+      },
+      {
+        "claim_id": "claim_4e55e6b9a1c9",
+        "message": "Unverified claim appears to drive an implementation decision.",
+        "q": "Good. The CCE \u2192 PEM governed handoff implementat",
+        "ts": "2026-06-10T16:05:21Z",
+        "type": "unverified_claim_drives_implementation",
+        "warning_id": "warn_455ed39d562e"
       }
     ],
     "verification_plans": [
@@ -2743,7 +2840,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "45d3d2b74cbfed83",
@@ -2756,7 +2853,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       },
       {
         "claim_fingerprint": "560b1714f17193d4",
@@ -2769,7 +2866,7 @@
           "Run targeted tests or a repro command and capture exact output.",
           "Record whether evidence confirms the claim and note remaining uncertainty."
         ],
-        "updated_at": "2026-06-10T15:52:45Z"
+        "updated_at": "2026-06-10T16:05:21Z"
       }
     ]
   },
@@ -2796,7 +2893,7 @@
     ]
   },
   "epistemic_posture": {
-    "candidate_count": 56,
+    "candidate_count": 57,
     "claim_count": 3,
     "evidence_count_metric": 1,
     "exploratory_signal_count": 1,
@@ -2804,14 +2901,13 @@
       "uncertainty_marker"
     ],
     "health_state": "mixed",
-    "implementation_signal_count": 2,
+    "implementation_signal_count": 1,
     "implementation_signals": [
-      "evidence_marker",
       "implementation_marker"
     ],
     "inferred_posture": "mixed",
     "pending_claim_count": 3,
-    "snapshot_at": "2026-06-10T15:52:45Z",
+    "snapshot_at": "2026-06-10T16:05:21Z",
     "turn_mode": "normal",
     "verified_claim_count": 0,
     "verified_claims_metric": 0
@@ -3053,6 +3149,32 @@
         ],
         "turn_id": "turn_37511c5648dd463a8f448ff9008b870a",
         "updated_at": "2026-06-10T15:52:45Z"
+      },
+      {
+        "answer": "Commit created: `25e2fcbb9dbf0232bfcaeaf9934ba52e20893125`  \nMessage: `Wire CCE PEM handoff through pem_ask`\n\nGit status is clean.\n\nFocused test result:\n- `python3 -m unittest tests.test_pem_handoff tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Passed: `30` tests\n\nFull CCE suite result:\n- `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n- Passed: `93` tests\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+        "created_at": "2026-06-10T16:05:21Z",
+        "error": null,
+        "finalized_at": "2026-06-10T16:05:21Z",
+        "normalization": {
+          "applied": [
+            "question_trimmed",
+            "history_events[0].translated_from_intent",
+            "history_events[0].options_defaulted",
+            "history_events[0].rejected_paths_defaulted",
+            "history_events[0].ts_defaulted"
+          ]
+        },
+        "question": "Not on your local Mac from this workspace, no.",
+        "status": "committed",
+        "translations": [
+          {
+            "agent_intent": "artifact_changed",
+            "internal_event_type": "artifact_update",
+            "translation_mode": "deterministic"
+          }
+        ],
+        "turn_id": "turn_6a58497ce9964e888042cc22962b5ae1",
+        "updated_at": "2026-06-10T16:05:21Z"
       }
     ]
   },
@@ -3210,10 +3332,27 @@
         "translation_mode": "deterministic"
       },
       "ts": "2026-06-10T15:52:45Z"
+    },
+    {
+      "affected_artifacts": [
+        "state.summary"
+      ],
+      "event_type": "artifact_update",
+      "investigation": "Not on your local Mac from this workspace, no.",
+      "options": [],
+      "outcome": "Commit created: `25e2fcbb9dbf0232bfcaeaf9934ba52e20893125`  \nMessage: `Wire CCE PEM handoff through pem_ask`\n\nGit status is clean.\n\nFocused test result:\n- `python3 -m unittest tests.test_pem_handoff tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Passed: `30` tests\n\nFull CCE suite result:\n- `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n- Passed: `93` tests\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+      "rationale": "Server-constructed routine recording for substantive PEM finalization.",
+      "rejected_paths": [],
+      "translation": {
+        "agent_intent": "artifact_changed",
+        "internal_event_type": "artifact_update",
+        "translation_mode": "deterministic"
+      },
+      "ts": "2026-06-10T16:05:21Z"
     }
   ],
   "initial_subject": "Not on your local Mac from this workspace, no.",
-  "intake_question": "Before commit, inspect the dirty case artifact:\n\ncases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json\n\nDetermine whether it is:\n- intentional PEM/CCE state that should be committed,\n- runtime residue that should be ignored,\n- or a file that should be moved/removed.\n\nDo not delete it without reporting what it is.\n\nThen, if it is unrelated runtime residue, leave it uncommitted or clean it according to the repo\u2019s existing case-artifact policy.\n\nAfter that, commit the CCE real PEM status integration.",
+  "intake_question": "Good. The CCE \u2192 PEM governed handoff implementation is accepted.\n\nBefore committing, inspect the dirty case artifact:\n\ncases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json\n\nIf it is unrelated runtime residue from this working session, restore it to HEAD and keep it out of this commit. Do not delete it.\n\nThen commit only the CCE handoff code and tests.\n\nUse a scoped commit message such as:\n\nWire CCE PEM handoff through pem_ask\n\nAfter commit, report:\n\n- commit hash\n- clean/dirty git status\n- focused test result\n- full CCE suite result",
   "mode": {
     "case_hash_length": 10,
     "llm_mode": "openai",
@@ -3224,7 +3363,7 @@
   },
   "privacy_mode": "public_slug",
   "projection": {
-    "hash": "64f88a232078"
+    "hash": "d7ae38fb621e"
   },
   "question": "Not on your local Mac from this workspace, no.",
   "routing": {
@@ -3402,6 +3541,25 @@
           "incoming_marker=none"
         ],
         "ts": "2026-06-10T15:52:45Z"
+      },
+      {
+        "active_marker": "local mac",
+        "incoming_marker": null,
+        "matched_case_ids": [],
+        "previous_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "routing_decision": "preserve_current_behavior",
+        "routing_reason": "incoming_marker_missing",
+        "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
+        "signals_used": [
+          "candidate_source=discussion_anchor",
+          "incoming_unit_count=11",
+          "active_unit_count=358",
+          "active_marker_source=committed_capture_units",
+          "incoming_marker_source=incoming_capture_units",
+          "active_marker=local mac",
+          "incoming_marker=none"
+        ],
+        "ts": "2026-06-10T16:05:21Z"
       }
     ],
     "last": {
@@ -3414,14 +3572,14 @@
       "selected_case_id": "i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw",
       "signals_used": [
         "candidate_source=discussion_anchor",
-        "incoming_unit_count=13",
-        "active_unit_count=345",
+        "incoming_unit_count=11",
+        "active_unit_count=358",
         "active_marker_source=committed_capture_units",
         "incoming_marker_source=incoming_capture_units",
         "active_marker=local mac",
         "incoming_marker=none"
       ],
-      "ts": "2026-06-10T15:52:45Z"
+      "ts": "2026-06-10T16:05:21Z"
     }
   },
   "seed_namespace": "pem",
@@ -3437,7 +3595,7 @@
       "history": []
     },
     "status": "active",
-    "summary": "The dirty case artifact at [cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json](/Volumes/kevinmattice/cce/cases/i-don-t-see-anything-in-my-file-system-called-users-kevinmattice.case.grijltbdnw.json:1) is a real `cases/` continuity surface, not an accidental unknown file. But this particular diff was just fresh runtime transcript/projection updates from this working session, unrelated to the PEM status code change, so I treated it as runtime residue for this commit and restored it to `HEAD` rather than deleting it.\n\nThe CCE PEM status integration is now committed as `ee950fc` with message `Wire real PEM status into CCE Lite`. I kept the commit scoped to the code and tests only.\n\nVerification:\n- Focused PEM tests passed:\n  - `python3 -m unittest tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Full suite passed in the project venv:\n  - `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n  - `Ran 84 tests ... OK`\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}"
+    "summary": "Commit created: `25e2fcbb9dbf0232bfcaeaf9934ba52e20893125`  \nMessage: `Wire CCE PEM handoff through pem_ask`\n\nGit status is clean.\n\nFocused test result:\n- `python3 -m unittest tests.test_pem_handoff tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Passed: `30` tests\n\nFull CCE suite result:\n- `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n- Passed: `93` tests\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}"
   },
   "topic_hash": "grijltbdnw",
   "turns": [
@@ -3645,7 +3803,30 @@
       "ts": "2026-06-10T15:52:45Z",
       "turn_id": "turn_37511c5648dd463a8f448ff9008b870a",
       "verified_claims": 0
+    },
+    {
+      "answer": "Commit created: `25e2fcbb9dbf0232bfcaeaf9934ba52e20893125`  \nMessage: `Wire CCE PEM handoff through pem_ask`\n\nGit status is clean.\n\nFocused test result:\n- `python3 -m unittest tests.test_pem_handoff tests.test_pem_routing tests.test_pem_status tests.test_gateway_status tests.test_policy`\n- Passed: `30` tests\n\nFull CCE suite result:\n- `/Volumes/kevinmattice/cce/.venv/bin/python -m unittest discover -s tests -p 'test_*.py'`\n- Passed: `93` tests\n\n::git-stage{cwd=\"/Volumes/kevinmattice/cce\"}\n::git-commit{cwd=\"/Volumes/kevinmattice/cce\"}",
+      "config": {
+        "hash": "00bb80cccf980be9a59944aa9aa7ba43dd213d675caeaceaf23f2b6c9f40e98d",
+        "path": "<env>",
+        "profile": "default"
+      },
+      "evidence_count": 1,
+      "normalization": {
+        "applied": [
+          "question_trimmed",
+          "history_events[0].translated_from_intent",
+          "history_events[0].options_defaulted",
+          "history_events[0].rejected_paths_defaulted",
+          "history_events[0].ts_defaulted"
+        ]
+      },
+      "projection_hash": "d7ae38fb621e",
+      "q": "Not on your local Mac from this workspace, no.",
+      "ts": "2026-06-10T16:05:21Z",
+      "turn_id": "turn_6a58497ce9964e888042cc22962b5ae1",
+      "verified_claims": 0
     }
   ],
-  "updated_at": "2026-06-10T15:52:45Z"
+  "updated_at": "2026-06-10T16:05:21Z"
 }
