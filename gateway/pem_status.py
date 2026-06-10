@@ -120,6 +120,36 @@ def _validate_client_config(cfg: PemClientConfig) -> str | None:
 
 
 def _query_pem_status(cfg: PemClientConfig) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    payload = _call_pem_tools(
+        cfg,
+        tool_calls=(
+            ("activation", "pem_activation_status", {}),
+            ("meta", "pem_meta_status", {}),
+        ),
+    )
+    activation = payload.get("activation")
+    meta = payload.get("meta")
+    if not isinstance(activation, dict):
+        raise PemProbeError("PEM status helper returned no activation payload.")
+    return activation, meta if isinstance(meta, dict) else None
+
+
+def call_pem_tool(cfg: PemClientConfig, *, tool_name: str, arguments: dict[str, Any]) -> dict[str, Any]:
+    payload = _call_pem_tools(
+        cfg,
+        tool_calls=(("result", tool_name, arguments),),
+    )
+    result = payload.get("result")
+    if not isinstance(result, dict):
+        raise PemProbeError(f"PEM helper returned malformed payload for {tool_name}.")
+    return result
+
+
+def _call_pem_tools(
+    cfg: PemClientConfig,
+    *,
+    tool_calls: tuple[tuple[str, str, dict[str, Any]], ...],
+) -> dict[str, Any]:
     env = os.environ.copy()
     env["PEM_PROJECT_ROOT"] = str(Path(cfg.project_root or "").resolve())
     if cfg.config_path:
@@ -127,6 +157,12 @@ def _query_pem_status(cfg: PemClientConfig) -> tuple[dict[str, Any], dict[str, A
     launcher_path = Path(cfg.launcher_path or "").resolve()
     helper_python = launcher_path.parent / ".venv" / "bin" / "python"
     project_root = str(Path(cfg.project_root or "").resolve())
+    helper_input = {
+        "tool_calls": [
+            {"alias": alias, "tool_name": tool_name, "arguments": arguments}
+            for alias, tool_name, arguments in tool_calls
+        ]
+    }
     try:
         result = subprocess.run(
             [
@@ -136,6 +172,7 @@ def _query_pem_status(cfg: PemClientConfig) -> tuple[dict[str, Any], dict[str, A
                 str(launcher_path),
                 project_root,
                 str(cfg.timeout_s),
+                json.dumps(helper_input, ensure_ascii=True),
             ],
             text=True,
             capture_output=True,
@@ -144,28 +181,24 @@ def _query_pem_status(cfg: PemClientConfig) -> tuple[dict[str, Any], dict[str, A
             check=False,
         )
     except subprocess.TimeoutExpired as exc:
-        raise PemProbeError("Timed out waiting for PEM status response.") from exc
+        raise PemProbeError("Timed out waiting for PEM response.") from exc
     except OSError as exc:
-        raise PemProbeError(f"Failed to launch PEM status helper: {exc}") from exc
+        raise PemProbeError(f"Failed to launch PEM helper: {exc}") from exc
 
     if result.returncode != 0:
         err = (result.stderr or result.stdout or "").strip()
-        raise PemProbeError(err or "PEM status helper failed.")
+        raise PemProbeError(err or "PEM helper failed.")
 
     stdout = (result.stdout or "").strip()
     if not stdout:
-        raise PemProbeError("PEM status helper returned no output.")
+        raise PemProbeError("PEM helper returned no output.")
     try:
         payload = json.loads(stdout)
     except json.JSONDecodeError as exc:
-        raise PemProbeError(f"PEM status helper returned malformed JSON: {exc}") from exc
+        raise PemProbeError(f"PEM helper returned malformed JSON: {exc}") from exc
     if not isinstance(payload, dict):
-        raise PemProbeError("PEM status helper returned non-object JSON.")
-    activation = payload.get("activation")
-    meta = payload.get("meta")
-    if not isinstance(activation, dict):
-        raise PemProbeError("PEM status helper returned no activation payload.")
-    return activation, meta if isinstance(meta, dict) else None
+        raise PemProbeError("PEM helper returned non-object JSON.")
+    return payload
 
 
 def _map_pem_status_payloads(
@@ -260,6 +293,12 @@ async def _main() -> None:
     launcher_path = sys.argv[1]
     project_root = sys.argv[2]
     timeout_s = int(sys.argv[3])
+    request = json.loads(sys.argv[4])
+    if not isinstance(request, dict):
+        raise RuntimeError("helper request must be a JSON object")
+    tool_calls = request.get("tool_calls")
+    if not isinstance(tool_calls, list) or not tool_calls:
+        raise RuntimeError("helper request must include tool_calls")
     env = os.environ.copy()
     params = StdioServerParameters(
         command=launcher_path,
@@ -270,20 +309,23 @@ async def _main() -> None:
     async with stdio_client(params) as (read_stream, write_stream):
         async with ClientSession(read_stream, write_stream) as session:
             await asyncio.wait_for(session.initialize(), timeout=timeout_s)
-            activation = await asyncio.wait_for(session.call_tool("pem_activation_status", {}), timeout=timeout_s)
-            try:
-                meta = await asyncio.wait_for(session.call_tool("pem_meta_status", {}), timeout=timeout_s)
-                meta_payload = meta.structuredContent
-            except Exception:
-                meta_payload = None
+            payload = {}
+            for call in tool_calls:
+                if not isinstance(call, dict):
+                    raise RuntimeError("tool call entry must be an object")
+                alias = call.get("alias")
+                tool_name = call.get("tool_name")
+                arguments = call.get("arguments")
+                if not isinstance(alias, str) or not alias:
+                    raise RuntimeError("tool call alias must be a non-empty string")
+                if not isinstance(tool_name, str) or not tool_name:
+                    raise RuntimeError("tool name must be a non-empty string")
+                if not isinstance(arguments, dict):
+                    raise RuntimeError("tool arguments must be an object")
+                result = await asyncio.wait_for(session.call_tool(tool_name, arguments), timeout=timeout_s)
+                payload[alias] = result.structuredContent
     print(
-        json.dumps(
-            {
-                "activation": activation.structuredContent,
-                "meta": meta_payload,
-            },
-            ensure_ascii=True,
-        )
+        json.dumps(payload, ensure_ascii=True)
     )
 
 

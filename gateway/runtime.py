@@ -8,13 +8,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from gateway.ask import AskConfig, answer_question
+from gateway.pem_handoff import handoff_to_pem
 from gateway.matrix_auth_state import save_auth_state
 from gateway.matrix_sync_state import load_cursor, save_cursor
 from gateway.pem_status import get_pem_status
 from gateway.policy import (
     POLICY_PEM_REQUIRED,
     pem_activation_needed_message,
-    pem_governed_execution_message,
+    pem_handoff_failed_message,
     pem_unavailable_message,
 )
 from gateway.routing import SAFE_COMMAND_HELP, decide_route
@@ -138,7 +139,10 @@ def process_event(
         if decision.policy and decision.policy.state == POLICY_PEM_REQUIRED:
             pem_status = get_pem_status(config)
             if pem_status.active:
-                return pem_governed_execution_message(), workspace_persistence_state
+                handoff = handoff_to_pem(config, question=decision.question or "")
+                if handoff.ok:
+                    return handoff.reply, workspace_persistence_state
+                return pem_handoff_failed_message(), workspace_persistence_state
             if pem_status.state == "inactive":
                 return pem_activation_needed_message(), workspace_persistence_state
             if pem_status.state in {"unavailable", "ambiguous"}:

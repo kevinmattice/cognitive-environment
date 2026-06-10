@@ -131,6 +131,13 @@ def pem_governed_execution_message() -> str:
     )
 
 
+def pem_handoff_failed_message() -> str:
+    return (
+        "This request requires PEM-governed execution, but the PEM handoff did not complete cleanly, "
+        "so I’m not going to answer it outside governance."
+    )
+
+
 def pem_unavailable_message() -> str:
     return (
         "This request requires PEM-governed execution, and PEM is not available right now, "
