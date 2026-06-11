@@ -115,9 +115,24 @@ Use kebab-case: `my-note-title.md`. One note per file.
 - Create and edit type documents when the user asks for note categories or defaults.
 - Add or modify relationships without breaking existing wikilinks.
 - Create and edit saved views in `views/`.
+- Run an orientation preflight before diagnosing or editing adjacent CCE or PEM systems.
 - Update `AGENTS.md` only when the user asks for vault-level guidance changes.
 - Search the bundled Tolaria docs when the user asks how Tolaria works or when you need product behavior beyond these base conventions.
 - Use Portent as the default best-practice model when the user asks how to improve, organize, or restructure the knowledge base. Combine Portent's types, relationships, and capture -> organize -> archive lifecycle with Tolaria's type documents, properties, Inbox, archive, and saved views.
+
+## Orientation Preflight
+
+Before touching CCE or PEM, prove repo identity first:
+
+1. `pwd`
+2. `git rev-parse --show-toplevel`
+3. `git remote -v`
+4. `git status --short`
+5. `git log -1 --oneline`
+6. `ls` expected key files or directories
+7. `./whereami` if present
+
+Do not proceed unless the path, repo role, and expected working-tree files match the intended target.
 
 ## What agents should avoid
 
@@ -125,3 +140,4 @@ Use kebab-case: `my-note-title.md`. One note per file.
 - Do not treat files in `attachments/` as notes, types, or view definitions.
 - Do not silently overwrite an existing custom `AGENTS.md`.
 - Do not rewrite installation-specific app configuration unless the user explicitly asks.
+- Do not diagnose live CCE Lite runtime behavior from this vault unless the user explicitly asks for historical-note or Git-history analysis.

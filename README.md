@@ -1,4 +1,4 @@
- Cognitive Environment Atlas
+# Cognitive Environment Atlas
 
 This repository is the Tolaria / vault / notes surface for the cognitive environment.
 

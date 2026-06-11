@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+set -eu
+
+repo_root="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
+current_host="$(hostname 2>/dev/null || echo unknown)"
+
+cat <<OUT
+project: Cognitive Environment Atlas
+role: vault / notes / Tolaria surface
+path: ${repo_root}
+host: ${current_host}
+safe_to_edit_here: yes
+runtime_authoritative: no
+live_cce_black_air: /Volumes/kevinmattice/cce
+live_cce_colossus: /Users/kevinmattice/cce
+pem_source_black_air: /Users/kevinmattice/dev/anon/pem-mcp
+pem_runtime_colossus: /Users/kevinmattice/pem-mcp
+warning: This repository is not the live CCE Lite runtime/code checkout.
+OUT
