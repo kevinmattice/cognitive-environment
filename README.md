@@ -2,13 +2,11 @@
 
 This repository is the Tolaria / vault / notes surface for the cognitive environment.
 
-It is not the live CCE Lite runtime or canonical live CCE Lite code checkout.
+It is not the live CCE codebase or runtime checkout.
 
-For live CCE Lite code, use:
-- `/Volumes/kevinmattice/cce` on Black Air
-- `/Users/kevinmattice/cce` on Colossus
+Use this tree for documentation, atlas work, and historical context only.
 
-Diagnose live CCE Lite runtime behavior from this tree only when you are explicitly working from historical notes or committed history.
+Do not diagnose live CCE runtime behavior or make operational CCE changes from this repo unless you are explicitly working from historical notes or committed history.
 
 This repository is the first public seed of the Cognitive Environment Atlas: a shared human/AI atlas for Kevin's Cognitive Computing Environment.
 
